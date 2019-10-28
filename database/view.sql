@@ -1,0 +1,3 @@
+/*
+    Ce fichier contient les view utiliser dans le projet
+*/
