@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
     <header>
         <span class="logo">
             <h1>
-                Herault Events
+                Hérault events
             </h1>
         </span>
         <nav>
@@ -27,7 +28,7 @@
     <main>
         <section class="first-page">
             <div class="title-page">
-                <h1>Herault Events</h1>
+                <h1>Hérault events</h1>
                 <p>
                     Trouver un événement prés de chez vous.
                 </p>
