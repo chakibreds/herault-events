@@ -7,14 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HéraultEvents</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        .pl-1{
+            padding-left: $spacer * .100;
+        }
+    </style>
 </head>
 
 <body>
     <header class="container-fluid">
-        <nav class="row" class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="col-lg-offset-10"></div>
-            <button class="btn btn-outline-success my-1 my-sm-0" type="submit">Sign in</button>
-            <button class="btn btn-outline-success my-1 my-sm-0" type="submit">Sign up</button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <form class="form-inline my-2">
+                <div class="pl-lg-1">
+                    <button class="btn btn-outline-success" type="submit">Sign in</button>
+                </div>
+                    <!--<button class="btn btn-outline-success" type="submit">Sign up</button>-->
+            </form>
         </nav>
 
     </header>
