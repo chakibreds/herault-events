@@ -21,7 +21,7 @@ header {
     align-items    : center;
 
     padding: 0 30px;
-    
+
 
     h1 {
         font-size: 30px;
@@ -43,14 +43,16 @@ header {
                 margin-right    : 10px;
                 text-decoration : none;
                 transition: 0.6s;
+
+            
                 &:hover {
                     color           : $couleurPrincipal;
                     background-color: $couleurSecondaire;
                 }
-            } 
+            }
 
         }
-    } 
+    }
 }
 
 main {
@@ -69,9 +71,9 @@ main {
 
         .title-page {
             //background-color: #e0e0e0de;
-            border-radius   : 5px;
-            min-height      : 50%;
-            width           : 50%;
+            border-radius     : 5px;
+            min-height        : 50%;
+            width             : 50%;
 
             display        : flex;
             flex-direction : column;
@@ -82,10 +84,10 @@ main {
             p {
                 text-align: center;
                 text-shadow: 2px 0 $couleurPrincipal, -2px 0 $couleurPrincipal,
-                0 2px $couleurPrincipal, 0 -2px $couleurPrincipal,
-                1px 1px $couleurPrincipal, -1px -1px $couleurPrincipal,
-                1px -1px $couleurPrincipal, -1px 1px $couleurPrincipal;
-                color: $couleurSecondaire; 
+                    0 2px $couleurPrincipal, 0 -2px $couleurPrincipal,
+                    1px 1px $couleurPrincipal, -1px -1px $couleurPrincipal,
+                    1px -1px $couleurPrincipal, -1px 1px $couleurPrincipal;
+                color: $couleurSecondaire;
             }
 
             h1 {
@@ -100,12 +102,12 @@ main {
         .form {
             background-color: #feffffc7;
             border-radius   : 5px;
-            min-height      : 75%;
-            widows          : 25%;
+            width          : 25%;
+            min-width: 320px;
             padding         : 0px 50px;
 
             @include flex-column-start;
-            align-items    : center;
+            align-items: center;
 
             font-size: 20px;
             color    : $couleurPrincipal;
@@ -114,12 +116,21 @@ main {
 
             .find-form {
                 @include flex-column-start;
-
+                
                 border-bottom: 2px solid $couleurPrincipal;
                 padding      : 20px 10px 40px 10px;
+                width: 100%;
+                
+                
+                .find {
+                    display        : flex;
+                    justify-content: center;
 
-                input {
-                    padding-right: 45px;
+                    input {
+                        padding-right: 45px;
+                        margin       : 0;
+                        margin-right: -35px;
+                    }
                 }
 
             }
@@ -128,7 +139,8 @@ main {
                 @include flex-column-start;
                 align-items: center;
 
-                padding      : 20px 10px 40px 10px;
+                padding: 20px 10px 40px 10px;
+                width: 100%;
 
                 .pseudo,
                 .email,
@@ -136,6 +148,8 @@ main {
                     display        : flex;
                     flex-direction : column;
                     justify-content: flex-start;
+
+                    width: 100%;
                 }
             }
         }

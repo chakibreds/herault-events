@@ -101,8 +101,8 @@ main .first-page .title-page p {
 main .first-page .form {
   background-color: #feffffc7;
   border-radius: 5px;
-  min-height: 75%;
-  widows: 25%;
+  width: 25%;
+  min-width: 320px;
   padding: 0px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -134,10 +134,22 @@ main .first-page .form .find-form {
           justify-content: flex-start;
   border-bottom: 2px solid #0e6655;
   padding: 20px 10px 40px 10px;
+  width: 100%;
 }
 
-main .first-page .form .find-form input {
+main .first-page .form .find-form .find {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .first-page .form .find-form .find input {
   padding-right: 45px;
+  margin: 0;
+  margin-right: -35px;
 }
 
 main .first-page .form .sign-up {
@@ -155,6 +167,7 @@ main .first-page .form .sign-up {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px 10px 40px 10px;
+  width: 100%;
 }
 
 main .first-page .form .sign-up .pseudo,
@@ -170,5 +183,6 @@ main .first-page .form .sign-up .password {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
