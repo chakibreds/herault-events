@@ -9,7 +9,7 @@ $couleurSecondaire : #f0f3f4;
     margin    : 0;
     padding   : 0;
     box-sizing: border-box;
-    outline: none;
+    outline   : none;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 
 label {
     margin-bottom: 5px;
-    font-size: 18px;
+    font-size    : 18px;
 }
 
 input[type=text],
@@ -31,6 +31,7 @@ input[type=password] {
     font-size       : 17px;
     font-family     : inherit;
     color           : black;
+    width: 100%;
 
     border    : 1px solid transparent;
     box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
@@ -62,18 +63,19 @@ form button[type=submit] {
     }
 
     &.btn-search {
-        position : absolute;
-        transform: translateX(-100%);
-        width    : inherit;
-        margin   : 0;
+        position   : relative;
+        //transform: translateX(-100%);
+        margin     : 0;
+        width :35px;
+
 
         color           : $couleurPrincipal;
         border-color    : transparent;
         background-color: transparent;
-        cursor: pointer;
+        cursor          : pointer;
 
-        border-left: 1px solid $couleurPrincipal;
-        border-top-left-radius: initial;
+        border-left              : 1px solid $couleurPrincipal;
+        border-top-left-radius   : initial;
         border-bottom-left-radius: initial;
 
     }

@@ -29,6 +29,7 @@ input[type=password] {
   font-size: 17px;
   font-family: inherit;
   color: black;
+  width: 100%;
   border: 1px solid transparent;
   -webkit-box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
           box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
@@ -65,11 +66,9 @@ form button[type=submit]:hover {
 }
 
 form button[type=submit].btn-search {
-  position: absolute;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  width: inherit;
+  position: relative;
   margin: 0;
+  width: 35px;
   color: #0e6655;
   border-color: transparent;
   background-color: transparent;
@@ -78,4 +77,3 @@ form button[type=submit].btn-search {
   border-top-left-radius: initial;
   border-bottom-left-radius: initial;
 }
-/*# sourceMappingURL=default.css.map */
