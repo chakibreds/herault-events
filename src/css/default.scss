@@ -1,0 +1,78 @@
+/* 
+    Ce fichier contient les styles par défault de quelques éléments récurents
+*/
+
+$couleurPrincipal  : #0e6655;
+$couleurSecondaire : #f0f3f4;
+
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    margin-bottom   : 12px;
+    padding         : 5px 12px;
+    background-color: $couleurSecondaire;
+    border-radius   : 5px;
+    font-size       : 17px;
+    font-family     : inherit;
+    color           : black;
+
+    border    : 1px solid transparent;
+    box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
+    transition: border-color 0.6s ease;
+    transition: box-shadow 0.6s ease;
+
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus {
+    border-color: $couleurPrincipal;
+    box-shadow  : 2px 2px 5px 0.2rem #0e6654a1;
+}
+
+form button[type=submit] {
+    width        : 100%;
+    border       : 1px solid $couleurPrincipal;
+    border-radius: 5px;
+    color        : $couleurPrincipal;
+    margin       : 10px;
+    padding      : 5px 12px;
+
+    transition: 0.6s ease;
+
+    &:hover {
+        background-color: #0e6655;
+        color           : $couleurSecondaire;
+    }
+
+    &.btn-search {
+        position : absolute;
+        transform: translateX(-100%);
+        width    : inherit;
+        margin   : 0;
+
+        color           : $couleurPrincipal;
+        border-color    : transparent;
+        background-color: transparent;
+        cursor: pointer;
+
+        border-left: 1px solid $couleurPrincipal;
+        border-top-left-radius: initial;
+        border-bottom-left-radius: initial;
+
+    }
+}

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HéraultEvents</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
@@ -38,7 +37,7 @@
                     <label for="find">Rechercher un événement</label>
                     <div class="find">
                         <input type="text" name="find" id="find" />
-                        <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                        <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
                     </div>
                 </form>
                 <form action="" class="sign-up">
@@ -48,7 +47,7 @@
                     </div>
                     <div class="email">
                         <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email">
+                        <input type="email" name="email" id="email">
                     </div>
                     <div class="password">
                         <label for="password">Mot de passe</label>
