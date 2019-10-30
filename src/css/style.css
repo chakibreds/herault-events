@@ -37,6 +37,7 @@ header nav li a {
   background-color: #0e6655;
   border-radius: 5px;
   margin-right: 10px;
+  text-decoration: none;
 }
 
 header nav li a:hover {
@@ -62,10 +63,9 @@ main .first-page {
 }
 
 main .first-page .title-page {
-  background-color: #feffffc7;
   border-radius: 5px;
   min-height: 50%;
-  width: 25%;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,15 +83,17 @@ main .first-page .title-page {
 
 main .first-page .title-page h1,
 main .first-page .title-page p {
-  color: #0e6655;
+  text-align: center;
+  text-shadow: 2px 0 #0e6655, -2px 0 #0e6655, 0 2px #0e6655, 0 -2px #0e6655, 1px 1px #0e6655, -1px -1px #0e6655, 1px -1px #0e6655, -1px 1px #0e6655;
+  color: #f0f3f4;
 }
 
 main .first-page .title-page h1 {
-  font-size: 40px;
+  font-size: 70px;
 }
 
 main .first-page .title-page p {
-  font-size: 20px;
+  font-size: 40px;
 }
 
 main .first-page .form {
@@ -150,7 +152,7 @@ main .first-page .form .sign-up {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 40px 10px 20px 10px;
+  padding: 20px 10px 40px 10px;
 }
 
 main .first-page .form .sign-up .pseudo,
@@ -167,3 +169,4 @@ main .first-page .form .sign-up .password {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
+/*# sourceMappingURL=style.css.map */

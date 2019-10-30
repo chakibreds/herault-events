@@ -9,6 +9,7 @@ $couleurSecondaire : #f0f3f4;
     margin    : 0;
     padding   : 0;
     box-sizing: border-box;
+    outline: none;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 
 label {
     margin-bottom: 5px;
+    font-size: 18px;
 }
 
 input[type=text],
@@ -50,7 +52,7 @@ form button[type=submit] {
     border-radius: 5px;
     color        : $couleurPrincipal;
     margin       : 10px;
-    padding      : 5px 12px;
+    padding      : 7px 12px;
 
     transition: 0.6s ease;
 

@@ -41,14 +41,15 @@ header {
                 background-color: $couleurPrincipal;
                 border-radius   : 5px;
                 margin-right    : 10px;
-            }
+                text-decoration: none;
+            } 
 
             a:hover {
                 color           : $couleurPrincipal;
                 background-color: $couleurSecondaire;
             }
         }
-    }
+    } 
 }
 
 main {
@@ -66,10 +67,10 @@ main {
         background-size    : cover;
 
         .title-page {
-            background-color: #feffffc7;
+            //background-color: #e0e0e0de;
             border-radius   : 5px;
             min-height      : 50%;
-            width           : 25%;
+            width           : 50%;
 
             display        : flex;
             flex-direction : column;
@@ -78,15 +79,20 @@ main {
 
             h1,
             p {
-                color: $couleurPrincipal;
+                text-align: center;
+                text-shadow: 2px 0 $couleurPrincipal, -2px 0 $couleurPrincipal,
+                0 2px $couleurPrincipal, 0 -2px $couleurPrincipal,
+                1px 1px $couleurPrincipal, -1px -1px $couleurPrincipal,
+                1px -1px $couleurPrincipal, -1px 1px $couleurPrincipal;
+                color: $couleurSecondaire; 
             }
 
             h1 {
-                font-size: 40px;
+                font-size: 70px;
             }
 
             p {
-                font-size: 20px;
+                font-size: 40px;
             }
         }
 
@@ -121,7 +127,7 @@ main {
                 @include flex-column-start;
                 align-items: center;
 
-                padding: 40px 10px 20px 10px;
+                padding      : 20px 10px 40px 10px;
 
                 .pseudo,
                 .email,

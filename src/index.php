@@ -42,7 +42,7 @@
                 </form>
                 <form action="" class="sign-up">
                     <div class="pseudo">
-                        <label for="pseudo">Pseudo</label>
+                        <label for="pseudo">Nom d'utilisateur</label>
                         <input type="text" name="pseudo" id="pseudo">
                     </div>
                     <div class="email">
