@@ -7,17 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HéraultEvents</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/media.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/80ea9751af.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <span class="logo">
-            <h1>
-                Hérault events
-            </h1>
+            <h1>Hérault events</h1>
         </span>
+        <div class="menu">
+            <i class="fas fa-bars"></i>
+        </div>
         <nav>
             <li><a href="#">Sign In</a></li>
             <li><a href="#">Sign Up</a></li>
@@ -37,7 +39,7 @@
                     <label for="find">Rechercher un événement</label>
                     <div class="find">
                         <input type="text" name="find" id="find" />
-                        <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                        <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
                 <form action="" class="sign-up">
@@ -58,10 +60,10 @@
             </div>
         </section>
     </main>
-
+    
     <footer>
-
-    </footer>
-</body>
-
-</html>
+        
+        </footer>
+    </body>
+    
+    </html>
