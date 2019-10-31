@@ -8,8 +8,7 @@
     <title>HéraultEvents</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
-    <script src="https://kit.fontawesome.com/80ea9751af.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +19,7 @@
         <div class="menu">
             <i class="fas fa-bars"></i>
         </div>
-        <nav>
+        <nav class="mobile-display-none">
             <li><a href="#">Sign In</a></li>
             <li><a href="#">Sign Up</a></li>
         </nav>
@@ -61,10 +60,12 @@
             </div>
         </section>
     </main>
-    
+
     <footer>
-        
-        </footer>
-    </body>
-    
-    </html>
+
+    </footer>
+    <script src="https://kit.fontawesome.com/80ea9751af.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -11,8 +11,31 @@
   header div.menu {
     display: inherit;
   }
-  header nav {
+  header .mobile-display-none {
     display: none;
+  }
+  header nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 10vh;
+    height: inherit;
+  }
+  header nav li a {
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    text-align: center;
+    height: 50px;
+  }
+  header nav li:last-child a {
+    border-bottom: 1px solid #f0f3f4;
   }
   main .first-page {
     -webkit-box-orient: vertical;
