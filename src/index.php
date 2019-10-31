@@ -59,6 +59,35 @@
                 </form>
             </div>
         </section>
+        
+        <section class="events-page" id="events-page">
+            <div class="events-title">
+                <h1>Trouver votre plaisir :</h1>
+                <p>
+                    Nous proposant plus de <b>(inserer un nombre énorme ici)</b> événements. c'est pour dire que vous trouverez sûrement votre bonheur:
+                </p>
+            </div>
+            <div class="events">
+                <div class="events-card">
+                    <h2>Title event</h2>
+                    <img src="img/background-1.jpg" alt="évenement" />
+                    <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
+                    <button type="button">Voir plus</button>
+                </div>
+                <div class="events-card">
+                    <h2>Title event</h2>
+                    <img src="img/fireworks-1.jpg" alt="évenement" />
+                    <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
+                    <button type="button">Voir plus</button>
+                </div>
+                <div class="events-card">
+                    <h2>Title event</h2>
+                    <img src="img/background-comedie-1.jpg" alt="évenement" />
+                    <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
+                    <button type="button">Voir plus</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>

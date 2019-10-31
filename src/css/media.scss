@@ -17,15 +17,27 @@ $couleurSecondaire : #f0f3f4;
         .mobile-display-none {
             display: none;
         }
-
+        
         nav {
             flex-direction: column;
             width         : 100%;
             position      : absolute;
             top           : 10vh;
+            
+            @keyframes opacity-height {
+                from {
+                    height: 0px;
+                    opacity: 0;
+                }
 
-            height: inherit;
+                to {
+                    height: 100px;
+                    opacity: 1;
+                }
+            }
 
+            animation: opacity-height 0.6s;
+            
             li {
                 a {
                     border-bottom: none;
@@ -36,7 +48,6 @@ $couleurSecondaire : #f0f3f4;
                     border-radius: 0;
                     text-align   : center;
                     height       : 50px;
-
                 }
             }
 

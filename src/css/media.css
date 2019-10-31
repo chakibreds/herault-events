@@ -22,7 +22,28 @@
     width: 100%;
     position: absolute;
     top: 10vh;
-    height: inherit;
+    -webkit-animation: opacity-height 0.6s;
+            animation: opacity-height 0.6s;
+  }
+  @-webkit-keyframes opacity-height {
+    from {
+      height: 0px;
+      opacity: 0;
+    }
+    to {
+      height: 100px;
+      opacity: 1;
+    }
+  }
+  @keyframes opacity-height {
+    from {
+      height: 0px;
+      opacity: 0;
+    }
+    to {
+      height: 100px;
+      opacity: 1;
+    }
   }
   header nav li a {
     border-bottom: none;
