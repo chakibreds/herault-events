@@ -57,11 +57,11 @@ form button[type=submit] {
   color: #0e6655;
   margin: 10px;
   padding: 7px 12px;
-  -webkit-transition: 0.6s ease;
-  transition: 0.6s ease;
+  -webkit-transition: color,background-color 0.6s ease;
+  transition: color,background-color 0.6s ease;
 }
 
-form button[type=submit]:hover {
+form button[type=submit]:hover, form button[type=submit]:focus {
   background-color: #0e6655;
   color: #f0f3f4;
 }
@@ -77,4 +77,13 @@ form button[type=submit].btn-search {
   border-left: 1px solid #0e6655;
   border-top-left-radius: initial;
   border-bottom-left-radius: initial;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transition: color,background-color 0.6s;
+  transition: color,background-color 0.6s;
+}
+
+form button[type=submit].btn-search:hover, form button[type=submit].btn-search:focus {
+  color: #f0f3f4;
+  background-color: #0e6655;
 }

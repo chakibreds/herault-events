@@ -30,13 +30,13 @@ header div.menu {
   top: 18px;
   cursor: pointer;
   border-radius: 5px;
+  -webkit-transition: color, background-color 0.6s;
+  transition: color, background-color 0.6s;
 }
 
 header div.menu:hover, header div.menu:focus {
   background-color: #f0f3f4;
   color: #0e6655;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
 }
 
 header nav {
@@ -57,13 +57,13 @@ header nav li a {
   border-radius: 5px;
   margin-right: 10px;
   text-decoration: none;
+  -webkit-transition: color, background-color 0.6s;
+  transition: color, background-color 0.6s;
 }
 
 header nav li a:hover, header nav li a:focus {
   color: #0e6655;
   background-color: #f0f3f4;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
 }
 
 main .first-page {
@@ -115,6 +115,43 @@ main .first-page .title-page h1 {
 
 main .first-page .title-page p {
   font-size: 40px;
+}
+
+main .first-page .title-page .fa-chevron-down {
+  display: none;
+  font-size: 50px;
+  text-shadow: 2px 0 #0e6655, -2px 0 #0e6655, 0 2px #0e6655, 0 -2px #0e6655, 1px 1px #0e6655, -1px -1px #0e6655, 1px -1px #0e6655, -1px 1px #0e6655;
+  color: #f0f3f4;
+  position: absolute;
+  top: 90%;
+  -webkit-animation-name: chevron-animation;
+          animation-name: chevron-animation;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes chevron-animation {
+  from {
+    top: 90%;
+  }
+  to {
+    top: 94%;
+  }
+}
+
+@keyframes chevron-animation {
+  from {
+    top: 90%;
+  }
+  to {
+    top: 94%;
+  }
 }
 
 main .first-page .form {

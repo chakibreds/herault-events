@@ -33,6 +33,7 @@
                 <p>
                     Trouver un événement prés de chez vous.
                 </p>
+                <i class="fas fa-chevron-down"></i>
             </div>
             <div class="form">
                 <form action="" class="find-form">

@@ -56,9 +56,9 @@ form button[type=submit] {
     margin       : 10px;
     padding      : 7px 12px;
 
-    transition: 0.6s ease;
+    transition: color,background-color 0.6s ease;
 
-    &:hover {
+    &:hover,&:focus {
         background-color: #0e6655;
         color           : $couleurSecondaire;
     }
@@ -79,5 +79,13 @@ form button[type=submit] {
         border-top-left-radius   : initial;
         border-bottom-left-radius: initial;
 
+        transition: none;
+        transition: color,background-color 0.6s;
+
+        &:hover, &:focus {
+            color: $couleurSecondaire;
+            background-color: $couleurPrincipal;
+
+        }
     }
 }

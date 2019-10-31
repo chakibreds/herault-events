@@ -38,6 +38,10 @@
     height: 90vh;
     margin: 0 20px;
   }
+  main .first-page .title-page .fa-chevron-down {
+    display: inline;
+    text-align: center;
+  }
   main .first-page .form {
     width: 100%;
     border-radius: 0;
