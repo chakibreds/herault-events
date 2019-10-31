@@ -47,7 +47,7 @@ header {
         cursor       : pointer;
         border-radius: 5px;
 
-        transition-property: background-color,color , border-radius;
+        transition-property: background-color, color, border-radius;
         transition-duration: 0.6s;
 
         &:hover,
@@ -207,6 +207,102 @@ main {
                     width: 100%;
                 }
             }
+        }
+    }
+
+    // deuxième page - page des évenements
+
+    .events-page {
+        height          : 100vh;
+        background-color: $couleurSecondaire;
+        display         : flex;
+        flex-direction  : column;
+        align-items     : center;
+        justify-content : space-evenly;
+
+        .events-title {
+            flex           : 1;
+            display        : flex;
+            flex-direction : column;
+            justify-content: center;
+
+            h1 {
+                color          : $couleurPrincipal;
+                font-size      : 50px;
+                text-decoration: underline;
+
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 25px;
+            }
+        }
+
+        .events {
+            flex           : 3;
+            width          : 100%;
+            display        : flex;
+            justify-content: space-around;
+            align-items    : flex-start;
+
+            .events-card {
+                height: 80%;
+                width : 25%;
+                border: 3px solid $couleurPrincipal;
+
+                display        : flex;
+                flex-direction : column;
+                align-items    : center;
+                justify-content: space-evenly;
+                background-color: #dadddeb2;
+                transition: box-shadow 0.6s;
+                
+                &:hover {
+                    box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
+
+                    h2 {
+                        transition: 0.7s;
+                        color : $couleurPrincipal;
+                    }
+                }
+
+                img {
+                    // can be slide
+                    width: 85%;
+                    height: 45%;
+                    border: 2px solid $couleurPrincipal;
+                    border-radius: 5px;
+                    // /box-shadow: 4px 5px 14px 6px $couleurPrincipal;
+                }
+
+                button {
+                    border          : 1px solid $couleurSecondaire;
+                    background-color: #0e6655;
+                    color           : $couleurSecondaire;
+                    border-radius   : 5px;
+                    padding         : 10px;
+                    min-width       : 35%;
+
+                    transition: border,background-color,color 0.7s;
+
+                    &:hover {
+                        border          : 1px solid $couleurPrincipal;
+                        background-color: $couleurSecondaire;
+                        color           : $couleurPrincipal;
+                    }
+                }
+
+                p {
+                    width: 85%;
+
+                    i {
+                        color: $couleurPrincipal;
+                    }
+                }
+
+            }
+
         }
     }
 }
