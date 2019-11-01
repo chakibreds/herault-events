@@ -1,7 +1,13 @@
 @import url(./default.css);
 
-$couleurPrincipal  : #0e6655;
-$couleurSecondaire : #f0f3f4;
+//$couleurPrincipal  : #0e6655;
+//$couleurSecondaire : #f0f3f4;
+
+/* Couleur V2 */
+$couleurPrincipal : #2A2627;
+$couleurSecondaire: #00CE87;
+$couleurTroisieme : whitesmoke;
+
 @mixin flex-column-start {
     display        : flex;
     flex-direction : column;

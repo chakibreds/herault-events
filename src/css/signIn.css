@@ -1,4 +1,5 @@
 @import url(./default.css);
+/* Couleur V2 */
 main {
   width: 100%;
   height: 100vh;
@@ -40,7 +41,7 @@ main .form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #0e6655;
+  color: #2A2627;
 }
 
 main .form label {
@@ -119,7 +120,7 @@ main .new-compte {
       -ms-flex-align: center;
           align-items: center;
   font-size: 20px;
-  color: #0e6655;
+  color: #2A2627;
 }
 
 main .new-compte p {

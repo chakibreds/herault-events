@@ -2,8 +2,10 @@
     Gérer le responsive
 */
 
-$couleurPrincipal  : #0e6655;
-$couleurSecondaire : #f0f3f4;
+/* Couleur V2 */
+$couleurPrincipal : #2A2627;
+$couleurSecondaire: #00CE87;
+$couleurTroisieme : whitesmoke;
 
 @media (max-width: 700px),
 (max-height: 545px) {
@@ -53,7 +55,7 @@ $couleurSecondaire : #f0f3f4;
 
             li:last-child {
                 a {
-                    border-bottom: 1px solid #f0f3f4;
+                    border-bottom: 1px solid $couleurSecondaire;
                 }
             }
         }
@@ -95,10 +97,20 @@ $couleurSecondaire : #f0f3f4;
     }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 510px) {
     header {
         justify-content: flex-start;
         padding-left   : 10px;
+        margin-left: 0;
+
+    }
+}
+
+@media (max-width: 450px) {
+    header {
+        h1 {
+            display: none;
+        }
 
     }
 }
