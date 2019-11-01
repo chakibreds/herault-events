@@ -59,7 +59,7 @@
                 </form>
             </div>
         </section>
-        
+
         <section class="events-page" id="events-page">
             <div class="events-title">
                 <h1>Trouver votre plaisir :</h1>
@@ -91,7 +91,21 @@
     </main>
 
     <footer>
-
+        <span class="logo">
+            <h1>Hérault events</h1>
+        </span>
+        <ul>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+            <li><a href="#">Lien</a></li>
+        </ul>
     </footer>
     <script src="https://kit.fontawesome.com/80ea9751af.js" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
