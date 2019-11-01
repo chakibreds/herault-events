@@ -55,12 +55,11 @@ main{
             padding: 20px 10px 40px 10px;
             width  : 100%;
 
-            .pseudo,
-            .password {
-                display        : flex;
-                flex-direction : column;
-                justify-content: flex-start;
+            div{
+                width: 100%;
 
+            }
+            input {
                 width: 100%;
             }
             button{
@@ -69,7 +68,7 @@ main{
             }
         }
     }
-    .new-compte{
+    .old-compte{
         background-color: #feffffc7;
         border-radius   : 5px;
         width           : 25%;
@@ -92,6 +91,3 @@ main{
             }
     }
 }   
-
-
-

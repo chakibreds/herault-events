@@ -78,18 +78,11 @@ main .form form {
   width: 100%;
 }
 
-main .form form .pseudo,
-main .form form .password {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+main .form form div {
+  width: 100%;
+}
+
+main .form form input {
   width: 100%;
 }
 
@@ -98,7 +91,7 @@ main .form form button {
   cursor: pointer;
 }
 
-main .new-compte {
+main .old-compte {
   background-color: #feffffc7;
   border-radius: 5px;
   width: 25%;
@@ -122,12 +115,12 @@ main .new-compte {
   color: #0e6655;
 }
 
-main .new-compte p {
+main .old-compte p {
   font-size: 15px;
 }
 
-main .new-compte p a {
+main .old-compte p a {
   text-decoration: none;
   font-size: 12px;
 }
-/*# sourceMappingURL=signIn.css.map */
+/*# sourceMappingURL=signUp.css.map */

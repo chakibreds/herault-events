@@ -21,7 +21,7 @@
         </div>
         <nav class="mobile-display-none">
             <li><a href="signIn.php">Sign In</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="signUp.php">Sign Up</a></li>
         </nav>
     </header>
 
