@@ -243,6 +243,9 @@ main .first-page .form .sign-up .password {
           justify-content: flex-start;
   width: 100%;
 }
+<<<<<<< HEAD
+/*# sourceMappingURL=style.css.map */
+=======
 
 main .events-page {
   height: 90vh;
@@ -370,6 +373,7 @@ main .events-page .events .events-card p {
 main .events-page .events .events-card p i {
   color: #0e6655;
 }
+<<<<<<< HEAD
 
 footer {
   height: 50vh;
@@ -390,3 +394,6 @@ footer {
 footer ul {
   float: right;
 }
+=======
+>>>>>>> 3d720c6d573b09bda569f324ba858384a3e43b0e
+>>>>>>> 51fee77740a471a047df339e3bf10d4a72e4106a

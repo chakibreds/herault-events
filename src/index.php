@@ -20,7 +20,7 @@
             <i class="fas fa-bars"></i>
         </div>
         <nav class="mobile-display-none">
-            <li><a href="#">Sign In</a></li>
+            <li><a href="signIn.php">Sign In</a></li>
             <li><a href="#">Sign Up</a></li>
         </nav>
     </header>
