@@ -213,7 +213,7 @@ main {
     // deuxième page - page des évenements
 
     .events-page {
-        height          : 100vh;
+        height          : 90vh;
         background-color: $couleurSecondaire;
         display         : flex;
         flex-direction  : column;
@@ -304,5 +304,19 @@ main {
             }
 
         }
+    }
+}
+
+footer {
+    height: 50vh;
+    width: 100%;
+    background-color: $couleurPrincipal;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    ul {
+        float: right;
     }
 }

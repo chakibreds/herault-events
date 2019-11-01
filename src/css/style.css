@@ -245,7 +245,7 @@ main .first-page .form .sign-up .password {
 }
 
 main .events-page {
-  height: 100vh;
+  height: 90vh;
   background-color: #f0f3f4;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -369,4 +369,24 @@ main .events-page .events .events-card p {
 
 main .events-page .events .events-card p i {
   color: #0e6655;
+}
+
+footer {
+  height: 50vh;
+  width: 100%;
+  background-color: #0e6655;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer ul {
+  float: right;
 }
