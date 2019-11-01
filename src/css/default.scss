@@ -2,8 +2,10 @@
     Ce fichier contient les styles par défault de quelques éléments récurents
 */
 
-$couleurPrincipal  : #0e6655;
-$couleurSecondaire : #f0f3f4;
+/* Couleur V2 */
+$couleurPrincipal : #2A2627;
+$couleurSecondaire: #00CE87;
+$couleurTroisieme : whitesmoke;
 
 * {
     margin    : 0;
@@ -14,12 +16,13 @@ $couleurSecondaire : #f0f3f4;
 
 body {
     font-family: 'Raleway', sans-serif !important;
-    width: 100%;
+    width      : 100%;
 }
 
 label {
     margin-bottom: 5px;
     font-size    : 18px;
+    color        : $couleurPrincipal;
 }
 
 input[type=text],
@@ -27,12 +30,12 @@ input[type=email],
 input[type=password] {
     margin-bottom   : 12px;
     padding         : 5px 12px;
-    background-color: $couleurSecondaire;
+    background-color: $couleurTroisieme;
     border-radius   : 5px;
     font-size       : 17px;
     font-family     : inherit;
-    color           : black;
-    width: 100%;
+    color           : $couleurPrincipal;
+    width           : 100%;
 
     border    : 1px solid transparent;
     box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
@@ -44,30 +47,39 @@ input[type=password] {
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=password]:focus {
-    border-color: $couleurPrincipal;
-    box-shadow  : 2px 2px 5px 0.2rem #0e6654a1;
+    border-color: $couleurSecondaire;
+    box-shadow  : 2px 2px 5px 0.2rem $couleurSecondaire;
 }
 
-form button[type=submit] {
-    width        : 100%;
-    border       : 1px solid $couleurPrincipal;
-    border-radius: 5px;
-    color        : $couleurPrincipal;
-    margin       : 10px;
-    padding      : 7px 12px;
+button[type=submit],
+button[type=button] {
+    form & {
+        width: 100%;
+    }
+    border          : 1px solid $couleurPrincipal;
+    border-radius   : 5px;
+    background-color: $couleurSecondaire;
+    color           : $couleurPrincipal;
+    margin          : 10px;
+    padding         : 7px 12px;
 
-    transition: color,background-color 0.6s ease;
+    transition-property: background-color, color, border-color;
+    transition-duration: 0.6s;
 
-    &:hover,&:focus {
-        background-color: #0e6655;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $couleurPrincipal;
         color           : $couleurSecondaire;
+        border-color    : $couleurSecondaire;
     }
 
     &.btn-search {
         position   : relative;
         //transform: translateX(-100%);
         margin     : 0;
-        width :35px;
+        width      : 35px;
 
 
         color           : $couleurPrincipal;
@@ -79,12 +91,15 @@ form button[type=submit] {
         border-top-left-radius   : initial;
         border-bottom-left-radius: initial;
 
-        transition: none;
-        transition: color,background-color 0.6s;
+        transition         : none;
+        transition-property: color, background-color, border-color;
+        transition-duration: .6s;
 
-        &:hover, &:focus {
-            color: $couleurSecondaire;
+        &:hover,
+        &:focus {
+            color           : $couleurSecondaire;
             background-color: $couleurPrincipal;
+            border-color    : $couleurSecondaire;
 
         }
     }

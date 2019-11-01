@@ -14,6 +14,7 @@
 <body>
     <header>
         <span class="logo">
+            <img src="./img/logo/HE-couleur.png" alt="logo" />
             <h1>Hérault events</h1>
         </span>
         <div class="menu">
@@ -91,21 +92,26 @@
     </main>
 
     <footer>
-        <span class="logo">
-            <h1>Hérault events</h1>
-        </span>
-        <ul>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-            <li><a href="#">Lien</a></li>
-        </ul>
+        <div class="head-footer">
+            <span class="logo">
+                <img src="./img/logo/HE-couleur.png" alt="logo" />
+                <h1>Hérault events</h1>
+            </span>
+            <ul>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./about.html">À propos</a></li>
+                <li><a href="./security.html">Sécurite</a></li>
+                <li><a href="./privacy.html">Privacy</a></li>
+                <li><a href="./help.html">Aide</a></li>
+                <li><a href="./copyright.html">Copyright</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <a href="https://fb.me/heraultEvents"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
     </footer>
     <script src="https://kit.fontawesome.com/80ea9751af.js" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>

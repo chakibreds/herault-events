@@ -2,6 +2,7 @@
 /* 
     Gérer le responsive
 */
+/* Couleur V2 */
 @media (max-width: 700px), (max-height: 545px) {
   header {
     -webkit-box-pack: center;
@@ -56,7 +57,7 @@
     height: 50px;
   }
   header nav li:last-child a {
-    border-bottom: 1px solid #f0f3f4;
+    border-bottom: 1px solid #00CE87;
   }
   main .first-page {
     -webkit-box-orient: vertical;
@@ -92,12 +93,18 @@
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 510px) {
   header {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
     padding-left: 10px;
+    margin-left: 0;
   }
 }
-/*# sourceMappingURL=media.css.map */
+
+@media (max-width: 450px) {
+  header h1 {
+    display: none;
+  }
+}

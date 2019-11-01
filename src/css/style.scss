@@ -1,7 +1,15 @@
 @import url(./default.css);
 
-$couleurPrincipal  : #0e6655;
-$couleurSecondaire : #f0f3f4;
+/*
+    Couleur V1
+//$couleurPrincipal  : #0e6655;
+//$couleurSecondaire : #f0f3f4;
+*/
+
+/* Couleur V2 */
+$couleurPrincipal : #2A2627;
+$couleurSecondaire: #00CE87;
+$couleurTroisieme : whitesmoke;
 
 @mixin flex-column-start {
     display        : flex;
@@ -22,17 +30,27 @@ header {
 
     background-color: $couleurPrincipal;
 
- 
+
     display        : flex;
     justify-content: space-between;
     align-items    : center;
 
     padding: 0 30px;
 
+    span.logo {
+        display    : flex;
+        align-items: center;
 
-    h1 {
-        font-size: 30px;
-        color    : $couleurSecondaire;
+        img {
+            height: 30px;
+            margin: 0 20px;
+        }
+
+        h1 {
+            font-size : 40px;
+            color     : $couleurSecondaire;
+            font-style: italic;
+        }
     }
 
     div.menu {
@@ -213,12 +231,17 @@ main {
     // deuxième page - page des évenements
 
     .events-page {
-        height          : 90vh;
-        background-color: $couleurSecondaire;
-        display         : flex;
-        flex-direction  : column;
-        align-items     : center;
-        justify-content : space-evenly;
+        height             : 100vh;
+        //background-color : $couleurTroisieme;
+        background-image   : url("../img/Jade_Masri_Unsplash.jpg");
+        background-position: top;
+        background-repeat  : no-repeat;
+        background-size    : cover;
+
+        display        : flex;
+        flex-direction : column;
+        align-items    : center;
+        justify-content: space-evenly;
 
         .events-title {
             flex           : 1;
@@ -250,47 +273,38 @@ main {
                 height: 80%;
                 width : 25%;
                 border: 3px solid $couleurPrincipal;
+                color : $couleurPrincipal;
 
-                display        : flex;
-                flex-direction : column;
-                align-items    : center;
-                justify-content: space-evenly;
-                background-color: #dadddeb2;
-                transition: box-shadow 0.6s;
-                
+                display         : flex;
+                flex-direction  : column;
+                align-items     : center;
+                justify-content : space-evenly;
+                background-color: #dadddef1;
+                transition      : box-shadow 0.6s;
+
                 &:hover {
                     box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
 
                     h2 {
-                        transition: 0.7s;
-                        color : $couleurPrincipal;
+                        transition     : 0.7s;
+                        color          : $couleurSecondaire;
+                        text-decoration: underline;
                     }
                 }
 
                 img {
                     // can be slide
-                    width: 85%;
-                    height: 45%;
-                    border: 2px solid $couleurPrincipal;
-                    border-radius: 5px;
+                    width         : 85%;
+                    height        : 45%;
+                    border        : 2px solid $couleurPrincipal;
+                    border-radius : 5px;
                     // /box-shadow: 4px 5px 14px 6px $couleurPrincipal;
                 }
 
                 button {
-                    border          : 1px solid $couleurSecondaire;
-                    background-color: #0e6655;
-                    color           : $couleurSecondaire;
-                    border-radius   : 5px;
-                    padding         : 10px;
-                    min-width       : 35%;
-
-                    transition: border,background-color,color 0.7s;
-
-                    &:hover {
-                        border          : 1px solid $couleurPrincipal;
-                        background-color: $couleurSecondaire;
-                        color           : $couleurPrincipal;
-                    }
+                    padding  : 10px;
+                    min-width: 35%;
+                    width    : inherit !important;
                 }
 
                 p {
@@ -308,15 +322,93 @@ main {
 }
 
 footer {
-    height: 50vh;
-    width: 100%;
+    height          : 40vh;
+    width           : 100%;
     background-color: $couleurPrincipal;
-
-    display: flex;
+    display         : flex;
     flex-direction: column;
     justify-content: space-between;
 
-    ul {
-        float: right;
+    .head-footer {
+        display: flex;
+        flex-direction : row;
+        justify-content: space-between;
+        align-items    : baseline;
+
+        span.logo {
+            display        : flex;
+            justify-content: flex-start;
+            align-items    : center;
+            height         : 20%;
+
+            margin-left: 50px;
+            margin-top : 50px;
+
+            img {
+                height: 40px;
+                margin: 0 20px;
+            }
+
+            h1 {
+                color     : $couleurSecondaire;
+                font-style: italic;
+                font-size : 45px;
+            }
+
+        }
+
+        ul {
+            margin-right: 50px;
+            margin-top  : 50px;
+
+            display        : flex;
+            flex-direction : row;
+            justify-content: space-around;
+
+            a {
+                color          : $couleurTroisieme;
+                text-decoration: none;
+                font-size      : 17px;
+                padding        : 10px 15px;
+
+                &:hover {
+                    color: grey;
+                }
+            }
+
+            li {
+                list-style: none;
+
+            }
+        }
     }
+
+    .social-media {
+        width: 20%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        * {
+            font-size: 35px;
+        }
+
+        .fa-facebook {
+            color: #3B5DA0;
+        }
+
+        .fa-instagram {
+            color: #DD3170;
+        }
+    
+        .fa-github {
+            color: white;
+        }
+
+        .fa-twitter {
+            color: #3191F6;
+        }
+
+    }
+
 }
