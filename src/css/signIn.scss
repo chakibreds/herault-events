@@ -93,8 +93,14 @@ main {
         width           : 25%;
         min-width       : 450px;
         padding         : 20px 20px;
+<<<<<<< HEAD
         margin-top      : 20px;
 
+=======
+        margin-top: 20px;
+        
+        
+>>>>>>> e815d24d44b03a4aadf28e0342b2bd8d6a5fb7dd
         @include flex-column-start;
         align-items: center;
 
