@@ -2,7 +2,7 @@
 /* Couleur V2 */
 main {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,6 +28,7 @@ main .form {
   width: 25%;
   min-width: 450px;
   padding: 0px 50px;
+  color: #2A2627;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,7 +42,6 @@ main .form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #2A2627;
 }
 
 main .form label {
@@ -79,8 +79,7 @@ main .form form {
   width: 100%;
 }
 
-main .form form .pseudo,
-main .form form .password {
+main .form form .label-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,6 +91,14 @@ main .form form .password {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 100%;
+}
+
+main .form form .label-input span.forgot-password a {
+  text-decoration: none;
+}
+
+main .form form .label-input span.forgot-password a:hover {
+  text-decoration: underline;
 }
 
 main .form form button {
@@ -129,6 +136,8 @@ main .new-compte p {
 
 main .new-compte p a {
   text-decoration: none;
-  font-size: 12px;
 }
-/*# sourceMappingURL=signIn.css.map */
+
+main .new-compte p a:hover {
+  text-decoration: underline;
+}

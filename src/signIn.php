@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login HéraultEvents</title>
     <link rel="icon" href="./img/logo/HE-icon.png" type="image/png">
-    <link rel="stylesheet" href="./css/signIn.css">
+    <link rel="stylesheet" href="./css/signIn.css"/>
+    <link rel="stylesheet" href="./css/media.css"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 
@@ -21,19 +22,20 @@
                 <a href="index.php"> <img src="./img/logo/HE-noir.png" alt=""> </a>
             </span>
             <form action="">
-                <div class="pseudo">
+                <div class="label-input">
                     <label for="pseudo">Nom d'utilisateur ou e-mail : </label>
                     <input type="text" name="pseudo" id="pseudo" placeholder="exemple@123.fr">
                 </div>
-                <div class="password">
+                <div class="label-input">
                     <label for="password">Mot de passe : </label>
                     <input type="password" name="password" id="password">
+                    <span class="forgot-password"><a href="forgot-password.php">Mot de passe oublié ?</a></span>
                 </div>
                 <button type="submit" class="btn">Sign In</button>
             </form>
         </div>
         <div class="new-compte">
-            <p>Nouveau utilisateur ?<a href="signUp.php">Créer un compte</a></p>
+            <p>Nouveau utilisateur ? <a href="signUp.php">Créer un compte</a></p>
         </div>
     </main>
 

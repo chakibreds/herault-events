@@ -12,11 +12,14 @@ $couleurTroisieme : whitesmoke;
     padding   : 0;
     box-sizing: border-box;
     outline   : none;
+
 }
 
 body {
     font-family: 'Raleway', sans-serif !important;
     width      : 100%;
+    overflow-x: hidden !important;
+
 }
 
 label {

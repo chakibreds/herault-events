@@ -13,7 +13,7 @@
     display: inherit;
   }
   header .mobile-display-none {
-    display: none;
+    left: 100%;
   }
   header nav {
     -webkit-box-orient: vertical;
@@ -23,28 +23,11 @@
     width: 100%;
     position: absolute;
     top: 10vh;
-    -webkit-animation: opacity-height 0.6s;
-            animation: opacity-height 0.6s;
-  }
-  @-webkit-keyframes opacity-height {
-    from {
-      height: 0px;
-      opacity: 0;
-    }
-    to {
-      height: 100px;
-      opacity: 1;
-    }
-  }
-  @keyframes opacity-height {
-    from {
-      height: 0px;
-      opacity: 0;
-    }
-    to {
-      height: 100px;
-      opacity: 1;
-    }
+    left: 0%;
+    -webkit-transition-property: left;
+    transition-property: left;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
   }
   header nav li a {
     border-bottom: none;
@@ -58,6 +41,9 @@
   }
   header nav li:last-child a {
     border-bottom: 1px solid #00CE87;
+  }
+  main {
+    /* events-page */
   }
   main .first-page {
     -webkit-box-orient: vertical;
@@ -91,6 +77,63 @@
     width: 100%;
     border-radius: 0;
   }
+  main .events-page p, main .events-page h1 {
+    text-align: center;
+  }
+  main .events-page h1 {
+    font-size: 40px !important;
+  }
+  main .events-page p {
+    font-size: 25px !important;
+  }
+  main .events-page .events .events-card {
+    max-width: 100% !important;
+  }
+  main .events-page .events .events-card button {
+    padding: 10px;
+    min-width: 35%;
+    width: inherit !important;
+  }
+  main {
+    /*  for signIn.php */
+  }
+  main .form,
+  main .new-compte {
+    min-width: inherit;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+  }
+  footer .head-footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .head-footer span.logo {
+    margin-left: 0;
+  }
+  footer .head-footer span.logo h1 {
+    display: none;
+  }
+  footer .head-footer ul {
+    width: 100%;
+    margin-right: 0;
+    -webkit-box-align: space-around;
+        -ms-flex-align: space-around;
+            align-items: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  footer .head-footer ul > * {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 510px) {
@@ -105,6 +148,12 @@
 
 @media (max-width: 450px) {
   header h1 {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  footer .logo h1 {
     display: none;
   }
 }

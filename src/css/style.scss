@@ -25,8 +25,9 @@ $couleurTroisieme : whitesmoke;
 }
 
 header {
-    width : 100%;
-    height: 10vh;
+    width     : 100%;
+    height    : 10vh;
+    min-height: 50px;
 
     background-color: $couleurPrincipal;
 
@@ -231,12 +232,13 @@ main {
     // deuxième page - page des évenements
 
     .events-page {
-        height             : 100vh;
+        min-height         : 100vh;
         //background-color : $couleurTroisieme;
         background-image   : url("../img/Jade_Masri_Unsplash.jpg");
         background-position: top;
         background-repeat  : no-repeat;
         background-size    : cover;
+        padding            : 20px 10px;
 
         display        : flex;
         flex-direction : column;
@@ -248,6 +250,7 @@ main {
             display        : flex;
             flex-direction : column;
             justify-content: center;
+            margin-bottom  : 20px;
 
             h1 {
                 color          : $couleurPrincipal;
@@ -263,24 +266,30 @@ main {
         }
 
         .events {
-            flex           : 3;
-            width          : 100%;
+            flex  : 3;
+            width : 100%;
+            margin: auto;
+
             display        : flex;
+            flex-direction : row;
+            flex-wrap      : wrap;
             justify-content: space-around;
-            align-items    : flex-start;
+            align-items    : center;
 
             .events-card {
-                height: 80%;
-                width : 25%;
-                border: 3px solid $couleurPrincipal;
-                color : $couleurPrincipal;
+                height   : 450px;
+                width    : 25%;
+                min-width: 335px;
+                border   : 3px solid $couleurPrincipal;
+                color    : $couleurPrincipal;
+                background-color: #dadddef1;
+                transition      : box-shadow 0.6s;
+                margin-bottom: 20px;
 
                 display         : flex;
                 flex-direction  : column;
                 align-items     : center;
                 justify-content : space-evenly;
-                background-color: #dadddef1;
-                transition      : box-shadow 0.6s;
 
                 &:hover {
                     box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
@@ -322,15 +331,15 @@ main {
 }
 
 footer {
-    height          : 40vh;
+    min-height      : 40vh;
     width           : 100%;
     background-color: $couleurPrincipal;
     display         : flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction  : column;
+    justify-content : space-between;
 
     .head-footer {
-        display: flex;
+        display        : flex;
         flex-direction : row;
         justify-content: space-between;
         align-items    : baseline;
@@ -384,29 +393,62 @@ footer {
     }
 
     .social-media {
-        width: 20%;
-        margin: auto;
-        display: flex;
+        width          : 40%;
+        min-width      : 200px;
+        margin         : auto;
+        height         : 40px;
+        display        : flex;
         justify-content: space-between;
-        margin-bottom: 25px;
-        * {
-            font-size: 35px;
+        margin-bottom  : 25px;
+
+
+        a i {
+            font-size          : 35px;
+            transition         : .5s ease;
+            transition-property: font-size, color, background, background-clip, -webkit-text-fill-color;
+            width              : 35px;
+
         }
 
         .fa-facebook {
-            color: #3B5DA0;
+            color: grey;
+
+            &:hover {
+                font-size: 40px;
+                color    : #3B5DA0;
+            }
         }
 
         .fa-instagram {
-            color: #DD3170;
+            color: grey;
+
+            &:hover {
+                font-size              : 40px;
+                background             : linear-gradient(to right top, #f58529, #f97238, #f95e47, #f64b56, #ee3a66, #e73478, #dc348a, #cd399a, #bb47ae, #a455bf, #8761cc, #626bd5);
+                background-clip        : text;
+                -webkit-background-clip: text;
+                -moz-background-clip   : text;
+                -webkit-text-fill-color: transparent;
+                color                  : transparent;
+            }
         }
-    
+
         .fa-github {
-            color: white;
+            color: grey;
+
+            &:hover {
+                font-size: 40px;
+                color    : white;
+            }
         }
 
         .fa-twitter {
-            color: #3191F6;
+            color: grey;
+
+            &:hover {
+                font-size: 40px;
+                color    : #3191F6;
+            }
         }
 
     }

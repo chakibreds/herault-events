@@ -8,6 +8,7 @@
 header {
   width: 100%;
   height: 10vh;
+  min-height: 50px;
   background-color: #2A2627;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -266,11 +267,12 @@ main .first-page .form .sign-up .password {
 }
 
 main .events-page {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("../img/Jade_Masri_Unsplash.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 20px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,6 +302,7 @@ main .events-page .events-title {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 20px;
 }
 
 main .events-page .events-title h1 {
@@ -318,21 +321,35 @@ main .events-page .events {
       -ms-flex: 3;
           flex: 3;
   width: 100%;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .events-page .events .events-card {
-  height: 80%;
+  height: 450px;
   width: 25%;
+  min-width: 335px;
   border: 3px solid #2A2627;
   color: #2A2627;
+  background-color: #dadddef1;
+  -webkit-transition: -webkit-box-shadow 0.6s;
+  transition: -webkit-box-shadow 0.6s;
+  transition: box-shadow 0.6s;
+  transition: box-shadow 0.6s, -webkit-box-shadow 0.6s;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,11 +363,6 @@ main .events-page .events .events-card {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background-color: #dadddef1;
-  -webkit-transition: -webkit-box-shadow 0.6s;
-  transition: -webkit-box-shadow 0.6s;
-  transition: box-shadow 0.6s;
-  transition: box-shadow 0.6s, -webkit-box-shadow 0.6s;
 }
 
 main .events-page .events .events-card:hover {
@@ -387,7 +399,7 @@ main .events-page .events .events-card p i {
 }
 
 footer {
-  height: 40vh;
+  min-height: 40vh;
   width: 100%;
   background-color: #2A2627;
   display: -webkit-box;
@@ -474,8 +486,10 @@ footer .head-footer ul li {
 }
 
 footer .social-media {
-  width: 20%;
+  width: 40%;
+  min-width: 200px;
   margin: auto;
+  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -485,23 +499,52 @@ footer .social-media {
   margin-bottom: 25px;
 }
 
-footer .social-media * {
+footer .social-media a i {
   font-size: 35px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  transition-property: font-size, color, background, background-clip, -webkit-text-fill-color;
+  width: 35px;
 }
 
 footer .social-media .fa-facebook {
+  color: grey;
+}
+
+footer .social-media .fa-facebook:hover {
+  font-size: 40px;
   color: #3B5DA0;
 }
 
 footer .social-media .fa-instagram {
-  color: #DD3170;
+  color: grey;
+}
+
+footer .social-media .fa-instagram:hover {
+  font-size: 40px;
+  background: -webkit-gradient(linear, left bottom, right top, from(#f58529), color-stop(#f97238), color-stop(#f95e47), color-stop(#f64b56), color-stop(#ee3a66), color-stop(#e73478), color-stop(#dc348a), color-stop(#cd399a), color-stop(#bb47ae), color-stop(#a455bf), color-stop(#8761cc), to(#626bd5));
+  background: linear-gradient(to right top, #f58529, #f97238, #f95e47, #f64b56, #ee3a66, #e73478, #dc348a, #cd399a, #bb47ae, #a455bf, #8761cc, #626bd5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 footer .social-media .fa-github {
+  color: grey;
+}
+
+footer .social-media .fa-github:hover {
+  font-size: 40px;
   color: white;
 }
 
 footer .social-media .fa-twitter {
+  color: grey;
+}
+
+footer .social-media .fa-twitter:hover {
+  font-size: 40px;
   color: #3191F6;
 }
-/*# sourceMappingURL=style.css.map */
