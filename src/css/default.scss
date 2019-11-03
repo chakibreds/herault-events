@@ -55,7 +55,7 @@ input[type=email]:focus,
 input[type=password]:focus,
 input[type=date]:focus,
 input[type=tel]:focus,
-input[type=number]::focus{
+input[type=number]:focus{
     border-color: $couleurSecondaire;
     box-shadow  : 2px 2px 5px 0.2rem $couleurSecondaire;
 }
