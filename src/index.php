@@ -8,6 +8,8 @@
     <title>HéraultEvents</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
+    <link rel="icon" href="./img/logo/HE-icon.png" type="image/png">
+
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 
