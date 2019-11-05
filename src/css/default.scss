@@ -15,10 +15,11 @@ $couleurTroisieme : whitesmoke;
 
 }
 
-body {
+body,html {
     font-family: 'Raleway', sans-serif !important;
     width      : 100%;
     overflow-x: hidden !important;
+    position: relative;
 
 }
 

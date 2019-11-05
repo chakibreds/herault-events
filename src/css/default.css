@@ -11,10 +11,11 @@
   outline: none;
 }
 
-body {
+body, html {
   font-family: 'Raleway', sans-serif !important;
   width: 100%;
   overflow-x: hidden !important;
+  position: relative;
 }
 
 label {
@@ -114,4 +115,3 @@ button[type=button].btn-search:focus {
   background-color: #2A2627;
   border-color: #00CE87;
 }
-/*# sourceMappingURL=default.css.map */
