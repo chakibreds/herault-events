@@ -28,6 +28,7 @@
     transition-property: left;
     -webkit-transition-duration: 1s;
             transition-duration: 1s;
+    z-index: 1;
   }
   header nav li a {
     border-bottom: none;
@@ -75,8 +76,10 @@
   }
   main .first-page .form {
     width: 100%;
-    min-height: 100vh;
     border-radius: 0;
+  }
+  main .events-page {
+    min-height: 100vh;
   }
   main .events-page p, main .events-page h1 {
     text-align: center;

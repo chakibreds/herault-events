@@ -29,6 +29,7 @@ $couleurTroisieme : whitesmoke;
             transition-property: left;
             transition-duration: 1s;
 
+            z-index: 1;
 
             li {
                 a {
@@ -83,13 +84,14 @@ $couleurTroisieme : whitesmoke;
 
             .form {
                 width        : 100%;
-                min-height: 100vh;
+                //min-height: 100vh;
                 border-radius: 0;
             }
         }
 
         /* events-page */
         .events-page {
+            min-height: 100vh;
             p,h1 {
                 text-align: center;
             }

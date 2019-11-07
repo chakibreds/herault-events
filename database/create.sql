@@ -34,7 +34,7 @@ CREATE TABLE user (
     pseudo VARCHAR(100),
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
-    date_nai DATETIME NOT NULL,
+    date_nai DATE NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     tel VARCHAR(20) UNIQUE,
     mdp VARCHAR(255) NOT NULL,
@@ -55,7 +55,8 @@ CREATE TABLE events (
     max_participant INT,
     gps_coord INT,
     id_adresse INT,
-    CONSTRAINT CHK_events_adresse CHECK (gps_coord IS NOT NULL OR id_adresse IS NOT NULL),
+    /* check don't work here, implements a trigger */
+    /* CONSTRAINT CHK_events_adresse CHECK (gps_coord IS NOT NULL OR id_adresse IS NOT NULL),*/ 
     pseudo_contributor VARCHAR(100) NOT NULL,
     CONSTRAINT PK_events PRIMARY KEY (id_event),
     CONSTRAINT FK_events_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse),
@@ -77,8 +78,7 @@ CREATE TABLE commentaire(
 CREATE TABLE participate(
     id_event INT,
     pseudo VARCHAR(100),
-    note INT(1),
-    CONSTRAINT CHK_participate_note CHECK (note IN (0,1,2,3,4,5)),
+    note ENUM('0','1','2','3','4','5'),
     CONSTRAINT PK_participate PRIMARY KEY (id_event, pseudo),
     CONSTRAINT FK_participate_events FOREIGN KEY (id_event) REFERENCES events(id_event),
     CONSTRAINT FK_participate_user FOREIGN KEY (pseudo) REFERENCES user(pseudo)
@@ -92,3 +92,14 @@ CREATE TABLE interested(
     CONSTRAINT FK_interested_events FOREIGN KEY (id_event) REFERENCES events(id_event),
     CONSTRAINT FK_interested_user FOREIGN KEY (pseudo) REFERENCES user(pseudo)
 );
+
+
+/* TABLES STOCKANT LES ERREURS QUI PEUVENT ARRIVER */
+
+/* LES ERREUR D'INSERTION */
+DROP TABLE IF EXISTS ERREUR_INSERT;
+CREATE TABLE ERREUR_INSERT(
+    TEXT_ERREUR VARCHAR(255) NOT NULL UNIQUE,
+    CONSTRAINT PK_ERREUR_INSERT PRIMARY KEY (TEXT_ERREUR)
+);
+INSERT INTO ERREUR_INSERT(TEXT_ERREUR) VALUES('ERR_CHK_EVENTS_ADRESSE');

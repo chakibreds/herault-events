@@ -18,6 +18,7 @@ body, html {
   position: relative;
 }
 
+/* les label, input et les buttons  */
 label {
   margin-bottom: 5px;
   font-size: 18px;
@@ -114,4 +115,22 @@ button[type=button].btn-search:focus {
   color: #00CE87;
   background-color: #2A2627;
   border-color: #00CE87;
+}
+
+/* le text en gras, les liens et autres */
+b {
+  color: #00CE87;
+}
+
+b:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #00CE87;
+  text-decoration: underline;
 }

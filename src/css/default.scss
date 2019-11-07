@@ -23,6 +23,9 @@ body,html {
 
 }
 
+
+/* les label, input et les buttons  */
+
 label {
     margin-bottom: 5px;
     font-size    : 18px;
@@ -112,5 +115,21 @@ button[type=button] {
             border-color    : $couleurSecondaire;
 
         }
+    }
+}
+
+/* le text en gras, les liens et autres */
+b {
+    color: $couleurSecondaire;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+a {
+    color: inherit;
+    &:hover {
+        color: $couleurSecondaire;
+        text-decoration: underline;
     }
 }
