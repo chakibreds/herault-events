@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-require($server_root . 'view/head.html');
+$title = "Acceuil";
+require $server_root . 'view/head.html';
+
+
 ?>
 
 <body>

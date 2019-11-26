@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
+$title = "Hérault events";
 require $dir_root . 'view/head.php';
 ?>
 

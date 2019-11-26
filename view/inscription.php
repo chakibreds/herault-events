@@ -3,6 +3,7 @@
 
 
 <?php 
+    $title = "Inscription";
     require_once '../controller/path.php';
     require($dir_root . 'view/head.php');
 ?>
