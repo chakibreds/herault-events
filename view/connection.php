@@ -8,7 +8,7 @@ require $dir_root . 'view/head.php';
 ?>
 
 <body>
-    <main>
+    <main class = "connection">
         <div class="form">
             <span class="logo">
                 <a href="<?= $server_root . 'index.php' ?>"> <img src="<?= $server_root . 'view/img/logo/HE-noir.png' ?>" alt=""> </a>

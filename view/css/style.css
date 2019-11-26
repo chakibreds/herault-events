@@ -140,7 +140,149 @@ a:hover {
   text-decoration: underline;
 }
 
-main {
+main.connection {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #2A2627;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main.connection .form {
+  background-color: #feffffc7;
+  border-radius: 5px;
+  width: 25%;
+  min-width: 450px;
+  padding: 0px 50px;
+  color: #2A2627;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.connection .form label {
+  font-size: 17px;
+}
+
+main.connection .form label::after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+main.connection .form img {
+  height: 35px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+main.connection .form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 10px 40px 10px;
+  width: 100%;
+}
+
+main.connection .form form .label-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+main.connection .form form .label-input span.forgot-password a {
+  text-decoration: none;
+}
+
+main.connection .form form .label-input span.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+main.connection .form form button {
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+main.connection .new-compte {
+  background-color: #feffffc7;
+  border-radius: 5px;
+  width: 25%;
+  min-width: 450px;
+  padding: 20px 20px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  color: #2A2627;
+}
+
+main.connection .new-compte p {
+  font-size: 15px;
+}
+
+main.connection .new-compte p a {
+  text-decoration: none;
+}
+
+main.connection .new-compte p a:hover {
+  text-decoration: underline;
+}
+
+main.inscription {
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -162,7 +304,7 @@ main {
   background-size: cover;
 }
 
-main .form {
+main.inscription .form {
   background-color: #feffffc7;
   border-radius: 5px;
   width: 25%;
@@ -186,20 +328,20 @@ main .form {
   color: #2A2627;
 }
 
-main .form img {
+main.inscription .form img {
   height: 35px;
   margin: auto;
   margin-top: 20px;
 }
 
-main .form input:required + label::after {
+main.inscription .form input:required + label::after {
   content: "*";
   color: red;
   margin-left: 5px;
   font-size: 20px;
 }
 
-main .form form {
+main.inscription .form form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,11 +359,11 @@ main .form form {
   width: 100%;
 }
 
-main .form form .nom-prenom,
-main .form form .mdp,
-main .form form .email-tel,
-main .form form .adresse1,
-main .form form .adresse2 {
+main.inscription .form form .nom-prenom,
+main.inscription .form form .mdp,
+main.inscription .form form .email-tel,
+main.inscription .form form .adresse1,
+main.inscription .form form .adresse2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,11 +377,11 @@ main .form form .adresse2 {
   width: 100%;
 }
 
-main .form form .adresse2 .num-r {
+main.inscription .form form .adresse2 .num-r {
   width: 50px;
 }
 
-main .form form .input-label {
+main.inscription .form form .input-label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,13 +396,13 @@ main .form form .input-label {
   margin: 0 5px;
 }
 
-main .form form button {
+main.inscription .form form button {
   margin-top: 25px;
   cursor: pointer;
   width: 50%;
 }
 
-main .old-compte {
+main.inscription .old-compte {
   background-color: #feffffc7;
   border-radius: 5px;
   width: 25%;
@@ -285,155 +427,13 @@ main .old-compte {
   color: #2A2627;
 }
 
-main .old-compte p {
+main.inscription .old-compte p {
   font-size: 15px;
 }
 
-main .old-compte p a {
+main.inscription .old-compte p a {
   text-decoration: none;
   font-size: 12px;
-}
-
-main {
-  width: 100%;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: #2A2627;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-main .form {
-  background-color: #feffffc7;
-  border-radius: 5px;
-  width: 25%;
-  min-width: 450px;
-  padding: 0px 50px;
-  color: #2A2627;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main .form label {
-  font-size: 17px;
-}
-
-main .form label::after {
-  content: "*";
-  color: red;
-  margin-left: 5px;
-  font-size: 20px;
-}
-
-main .form img {
-  height: 35px;
-  margin: auto;
-  margin-top: 20px;
-}
-
-main .form form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px 10px 40px 10px;
-  width: 100%;
-}
-
-main .form form .label-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 100%;
-}
-
-main .form form .label-input span.forgot-password a {
-  text-decoration: none;
-}
-
-main .form form .label-input span.forgot-password a:hover {
-  text-decoration: underline;
-}
-
-main .form form button {
-  margin-top: 25px;
-  cursor: pointer;
-}
-
-main .new-compte {
-  background-color: #feffffc7;
-  border-radius: 5px;
-  width: 25%;
-  min-width: 450px;
-  padding: 20px 20px;
-  margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 20px;
-  color: #2A2627;
-}
-
-main .new-compte p {
-  font-size: 15px;
-}
-
-main .new-compte p a {
-  text-decoration: none;
-}
-
-main .new-compte p a:hover {
-  text-decoration: underline;
 }
 
 /* 
@@ -685,7 +685,7 @@ header nav li a:hover, header nav li a:focus {
   background-color: #00CE87;
 }
 
-main {
+main.index-hors-ligne {
   position: relative;
   z-index: 0;
   display: -webkit-box;
@@ -700,7 +700,7 @@ main {
           justify-content: flex-start;
 }
 
-main .first-page {
+main.index-hors-ligne .first-page {
   width: 100%;
   min-height: 90vh;
   display: -webkit-box;
@@ -717,7 +717,7 @@ main .first-page {
   background-size: cover;
 }
 
-main .first-page .title-page {
+main.index-hors-ligne .first-page .title-page {
   position: relative;
   border-radius: 5px;
   min-height: 50%;
@@ -737,22 +737,22 @@ main .first-page .title-page {
           align-items: flex-start;
 }
 
-main .first-page .title-page h1,
-main .first-page .title-page p {
+main.index-hors-ligne .first-page .title-page h1,
+main.index-hors-ligne .first-page .title-page p {
   text-align: center;
   text-shadow: 2px 0 #2A2627, -2px 0 #2A2627, 0 2px #2A2627, 0 -2px #2A2627, 1px 1px #2A2627, -1px -1px #2A2627, 1px -1px #2A2627, -1px 1px #2A2627;
   color: #00CE87;
 }
 
-main .first-page .title-page h1 {
+main.index-hors-ligne .first-page .title-page h1 {
   font-size: 70px;
 }
 
-main .first-page .title-page p {
+main.index-hors-ligne .first-page .title-page p {
   font-size: 40px;
 }
 
-main .first-page .title-page .fa-chevron-down {
+main.index-hors-ligne .first-page .title-page .fa-chevron-down {
   display: none;
   font-size: 50px;
   text-shadow: 2px 0 #2A2627, -2px 0 #2A2627, 0 2px #2A2627, 0 -2px #2A2627, 1px 1px #2A2627, -1px -1px #2A2627, 1px -1px #2A2627, -1px 1px #2A2627;
@@ -783,7 +783,7 @@ main .first-page .title-page .fa-chevron-down {
   }
 }
 
-main .first-page .form {
+main.index-hors-ligne .first-page .form {
   background-color: #feffffc7;
   border-radius: 5px;
   width: 25%;
@@ -806,7 +806,7 @@ main .first-page .form {
   color: #2A2627;
 }
 
-main .first-page .form .find-form {
+main.index-hors-ligne .first-page .form .find-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -822,7 +822,7 @@ main .first-page .form .find-form {
   width: 100%;
 }
 
-main .first-page .form .find-form .find {
+main.index-hors-ligne .first-page .form .find-form .find {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -831,13 +831,13 @@ main .first-page .form .find-form .find {
           justify-content: center;
 }
 
-main .first-page .form .find-form .find input {
+main.index-hors-ligne .first-page .form .find-form .find input {
   padding-right: 45px;
   margin: 0;
   margin-right: -35px;
 }
 
-main .first-page .form .sign-up {
+main.index-hors-ligne .first-page .form .sign-up {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -855,9 +855,9 @@ main .first-page .form .sign-up {
   width: 100%;
 }
 
-main .first-page .form .sign-up .pseudo,
-main .first-page .form .sign-up .email,
-main .first-page .form .sign-up .password {
+main.index-hors-ligne .first-page .form .sign-up .pseudo,
+main.index-hors-ligne .first-page .form .sign-up .email,
+main.index-hors-ligne .first-page .form .sign-up .password {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -871,7 +871,7 @@ main .first-page .form .sign-up .password {
   width: 100%;
 }
 
-main .events-page {
+main.index-hors-ligne .events-page {
   min-height: 100vh;
   background-image: url("../img/compressed/Jade_Masri_Unsplash.jpg");
   background-position: top;
@@ -893,7 +893,7 @@ main .events-page {
           justify-content: space-evenly;
 }
 
-main .events-page .events-title {
+main.index-hors-ligne .events-page .events-title {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
@@ -914,18 +914,18 @@ main .events-page .events-title {
   width: 90%;
 }
 
-main .events-page .events-title h1 {
+main.index-hors-ligne .events-page .events-title h1 {
   color: #2A2627;
   font-size: 50px;
   text-decoration: underline;
   margin-bottom: 20px;
 }
 
-main .events-page .events-title p {
+main.index-hors-ligne .events-page .events-title p {
   font-size: 25px;
 }
 
-main .events-page .events {
+main.index-hors-ligne .events-page .events {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
@@ -947,17 +947,17 @@ main .events-page .events {
           align-items: center;
 }
 
-main .events-page .events .events-card {
+main.index-hors-ligne .events-page .events .events-card {
   height: 450px;
   width: 25%;
   min-width: 335px;
   border: 3px solid #2A2627;
   color: #2A2627;
   background-color: #dadddef1;
-  -webkit-transition: -webkit-box-shadow 0.6s;
-  transition: -webkit-box-shadow 0.6s;
-  transition: box-shadow 0.6s;
-  transition: box-shadow 0.6s, -webkit-box-shadow 0.6s;
+  -webkit-transition: -webkit-box-shadow,-webkit-transform 0.6s;
+  transition: -webkit-box-shadow,-webkit-transform 0.6s;
+  transition: box-shadow,transform 0.6s;
+  transition: box-shadow,transform 0.6s,-webkit-box-shadow,-webkit-transform 0.6s;
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -974,36 +974,38 @@ main .events-page .events .events-card {
           justify-content: space-evenly;
 }
 
-main .events-page .events .events-card:hover {
+main.index-hors-ligne .events-page .events .events-card:hover {
   -webkit-box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
           box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
-main .events-page .events .events-card:hover h2 {
+main.index-hors-ligne .events-page .events .events-card:hover h2 {
   -webkit-transition: 0.7s;
   transition: 0.7s;
   color: #00CE87;
   text-decoration: underline;
 }
 
-main .events-page .events .events-card img {
+main.index-hors-ligne .events-page .events .events-card img {
   width: 85%;
   height: 45%;
   border: 2px solid #2A2627;
   border-radius: 5px;
 }
 
-main .events-page .events .events-card button {
+main.index-hors-ligne .events-page .events .events-card button {
   padding: 10px;
   min-width: 35%;
   width: inherit !important;
 }
 
-main .events-page .events .events-card p {
+main.index-hors-ligne .events-page .events .events-card p {
   width: 85%;
 }
 
-main .events-page .events .events-card p i {
+main.index-hors-ligne .events-page .events .events-card p i {
   color: #2A2627;
 }
 

@@ -7,7 +7,7 @@
     require($dir_root . 'view/head.php');
 ?>
 <body>
-    <main>
+    <main class = "inscription">
 
         <div class="form">
             <span class="logo">

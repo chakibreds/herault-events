@@ -6,7 +6,7 @@ require $dir_root . 'view/head.php';
 
 <body>
     <?php require $dir_root . 'view/headerHorsLigne.php'; ?>
-    <main>
+    <main class="index-hors-ligne">
         <section class="first-page">
             <div class="title-page">
                 <h1>Hérault events</h1>
