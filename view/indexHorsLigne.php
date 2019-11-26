@@ -1,32 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HéraultEvents</title>
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/media.css">
-    <link rel="icon" href="./src/img/logo/HE-icon-tiny.ico" type="image/ico">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-</head>
+<?php
+require $dir_root . 'view/head.php';
+?>
 
 <body>
-    <header>
-        <span class="logo">
-            <img src="./src/img/logo/HE-couleur.png" alt="logo" />
-            <h1>Hérault events</h1>
-        </span>
-        <div class="menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <nav class="mobile-display-none">
-            <li><a href="src/signIn.html">Sign In</a></li>
-            <li><a href="src/signUp.html">Sign Up</a></li>
-        </nav>
-    </header>
-
+    <?php require $dir_root . 'view/headerHorsLigne.php'; ?>
     <main>
         <section class="first-page">
             <div class="title-page">
@@ -73,19 +52,19 @@
             <div class="events">
                 <div class="events-card">
                     <h2>Title event</h2>
-                    <img src="./src/img/compressed/background-1.jpg" alt="évenement" />
+                    <img src="<?= $server_root. 'view/img/compressed/background-1.jpg'?>" alt="évenement" />
                     <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
                     <button type="button">Voir plus</button>
                 </div>
                 <div class="events-card">
                     <h2>Title event</h2>
-                    <img src="./src/img/compressed/fireworks-1.jpg" alt="évenement" />
+                    <img src="<?= $server_root. 'view/img/compressed/fireworks-1.jpg'?>" alt="évenement" />
                     <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
                     <button type="button">Voir plus</button>
                 </div>
                 <div class="events-card">
                     <h2>Title event</h2>
-                    <img src="./src/img/compressed/background-comedie-1.jpg" alt="évenement" />
+                    <img src="<?= $server_root. 'view/img/compressed/background-comedie-1.jpg'?>" alt="évenement" />
                     <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
                     <button type="button">Voir plus</button>
                 </div>
@@ -93,30 +72,7 @@
         </section>
     </main>
 
-    <footer>
-        <div class="head-footer">
-            <span class="logo">
-                <img src="./src/img/logo/HE-couleur.png" alt="logo" />
-                <h1>Hérault events</h1>
-            </span>
-            <ul>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./about.html">À propos</a></li>
-                <li><a href="./security.html">Sécurite</a></li>
-                <li><a href="./privacy.html">Privacy</a></li>
-                <li><a href="./help.html">Aide</a></li>
-                <li><a href="./copyright.html">Copyright</a></li>
-            </ul>
-        </div>
-        <div class="social-media">
-            <a href="https://fb.me/heraultEvents"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="https://github.com/chakibreds/herault-events"><i class="fab fa-github"></i></a>
-        </div>
-    </footer>
-    <script src="https://kit.fontawesome.com/80ea9751af.js" crossorigin="anonymous"></script>
-    <script src="./src/js/script.js"></script>
+    <?php require $dir_root . 'view/footer.php'; ?>
 </body>
 
 </html>

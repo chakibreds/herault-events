@@ -1,25 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login HéraultEvents</title>
-    <link rel="icon" href="./img/logo/HE-icon-tiny.ico" type="image/ico">
-    <link rel="stylesheet" href="./css/signUp.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-</head>
 
+<?php 
+    require_once '../controller/path.php';
+    require($dir_root . 'view/head.php');
+?>
 <body>
-    <header class="">
-
-    </header>
     <main>
 
         <div class="form">
             <span class="logo">
-                <a href="../index.html"> <img src="./img/logo/HE-noir.png" alt=""> </a>
+                <a href="<?= $server_root . 'index.php'?>"> <img src="<?= $server_root . 'view/img/logo/HE-noir.png'?>" alt=""> </a>
             </span>
             <form action="">
                 <div class="nom-prenom">
@@ -92,7 +84,7 @@
             </form>
         </div>
         <div class="old-compte">
-            <p>Vous avez déja un compte ? <a href="signIn.html">Connectez vous !</a></p>
+            <p>Vous avez déja un compte ? <a href="<?= $server_root . 'view/connection.php'?>">Connectez vous !</a></p>
         </div>
     </main>
 </body>
