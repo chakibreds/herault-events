@@ -1,0 +1,104 @@
+
+
+
+main {
+    width     : 100%;
+    min-height: 100vh;
+
+    display            : flex;
+    align-items        : center;
+    justify-content    : center;
+    flex-direction     : column;
+    //background-image : url("../img/jossuha-theophile-unsplash-2.jpg");
+    background-color   : #2A2627;
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+
+    .form {
+        background-color: #feffffc7;
+        border-radius   : 5px;
+        width           : 25%;
+        min-width       : 450px;
+        padding         : 0px 50px;
+
+        color: $couleurPrincipal;
+        @include flex-column-start;
+        align-items: center;
+
+        label {
+            &::after {
+                content    : "*";
+                color      : red;
+                margin-left: 5px;
+                font-size  : 20px;
+            }
+
+            font-size: 17px;
+        }
+
+        img {
+            height    : 35px;
+            margin    : auto;
+            margin-top: 20px;
+        }
+
+        form {
+            @include flex-column-start;
+            align-items: center;
+
+            padding: 20px 10px 40px 10px;
+            width  : 100%;
+
+
+            .label-input {
+                display        : flex;
+                flex-direction : column;
+                justify-content: flex-start;
+
+                width: 100%;
+
+                span.forgot-password a {
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            button {
+                margin-top: 25px;
+                cursor    : pointer;
+            }
+        }
+    }
+
+    .new-compte {
+        background-color: #feffffc7;
+        border-radius   : 5px;
+        width           : 25%;
+        min-width       : 450px;
+        padding         : 20px 20px;
+        margin-top      : 20px;
+
+        @include flex-column-start;
+        align-items: center;
+
+        font-size: 20px;
+        color    : $couleurPrincipal;
+
+        p {
+            //@include flex-column-start;
+            font-size: 15px;
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

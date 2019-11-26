@@ -1,0 +1,131 @@
+/* 
+    Ce fichier contient les styles par défault de quelques éléments récurents
+*/
+
+
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+    outline   : none;
+
+}
+
+body,html {
+    font-family: 'Raleway', sans-serif !important;
+    width      : 100%;
+    overflow-x: hidden !important;
+    position: relative;
+
+}
+
+
+/* les label, input et les buttons  */
+
+label {
+    margin-bottom: 5px;
+    font-size    : 18px;
+    color        : $couleurPrincipal;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=tel],
+input[type=number]{
+    margin-bottom   : 12px;
+    padding         : 5px 12px;
+    background-color: $couleurTroisieme;
+    border-radius   : 5px;
+    font-size       : 17px;
+    font-family     : inherit;
+    color           : $couleurPrincipal;
+    width           : 100%;
+
+    border    : 1px solid transparent;
+    box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
+    transition: border-color 0.6s ease;
+    transition: box-shadow 0.6s ease;
+
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=date]:focus,
+input[type=tel]:focus,
+input[type=number]:focus{
+    border-color: $couleurSecondaire;
+    box-shadow  : 2px 2px 5px 0.2rem $couleurSecondaire;
+}
+
+button[type=submit],
+button[type=button] {
+    form & {
+        width: 100%;
+    }
+    border          : 1px solid $couleurPrincipal;
+    border-radius   : 5px;
+    background-color: $couleurSecondaire;
+    color           : $couleurPrincipal;
+    margin          : 10px;
+    padding         : 7px 12px;
+
+    transition-property: background-color, color, border-color;
+    transition-duration: 0.6s;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $couleurPrincipal;
+        color           : $couleurSecondaire;
+        border-color    : $couleurSecondaire;
+    }
+
+    &.btn-search {
+        position   : relative;
+        //transform: translateX(-100%);
+        margin     : 0;
+        width      : 35px;
+
+
+        color           : $couleurPrincipal;
+        border-color    : transparent;
+        background-color: transparent;
+        cursor          : pointer;
+
+        border-left              : 1px solid $couleurPrincipal;
+        border-top-left-radius   : initial;
+        border-bottom-left-radius: initial;
+
+        transition         : none;
+        transition-property: color, background-color, border-color;
+        transition-duration: .6s;
+
+        &:hover,
+        &:focus {
+            color           : $couleurSecondaire;
+            background-color: $couleurPrincipal;
+            border-color    : $couleurSecondaire;
+
+        }
+    }
+}
+
+/* le text en gras, les liens et autres */
+b {
+    color: $couleurSecondaire;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+a {
+    color: inherit;
+    &:hover {
+        color: $couleurSecondaire;
+        text-decoration: underline;
+    }
+}
