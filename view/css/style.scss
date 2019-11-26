@@ -1,10 +1,7 @@
-@import url(./default.css);
-@import url(./signUp.css);
-@import url(./signIn.css);
 
 
 /*
-    Couleur V1
+Couleur V1
 //$couleurPrincipal  : #0e6655;
 //$couleurSecondaire : #f0f3f4;
 */
@@ -22,10 +19,14 @@ $couleurTroisieme : whitesmoke;
 
 @mixin shadow-text {
     text-shadow: 2px 0 $couleurPrincipal, -2px 0 $couleurPrincipal,
-        0 2px $couleurPrincipal, 0 -2px $couleurPrincipal,
-        1px 1px $couleurPrincipal, -1px -1px $couleurPrincipal,
-        1px -1px $couleurPrincipal, -1px 1px $couleurPrincipal;
+    0 2px $couleurPrincipal, 0 -2px $couleurPrincipal,
+    1px 1px $couleurPrincipal, -1px -1px $couleurPrincipal,
+    1px -1px $couleurPrincipal, -1px 1px $couleurPrincipal;
 }
+@import './default';
+@import './inscription';
+@import './connection';
+@import './media';
 
 header {
     min-height      : 10vh;
