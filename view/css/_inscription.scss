@@ -69,7 +69,14 @@ main.inscription {
       button {
         margin-top: 25px;
         cursor: pointer;
-        width: 50%;
+        width: auto;
+      }
+      .continuer-retour-inscrire
+      {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
       }
     }
   }

@@ -2,16 +2,9 @@
 <html lang="fr">
 
 
-<<<<<<< HEAD
 <?php
 require_once '../controller/path.php';
 require($dir_root . 'view/head.php');
-=======
-<?php 
-    $title = "Inscription";
-    require_once '../controller/path.php';
-    require($dir_root . 'view/head.php');
->>>>>>> 73b885e7acd2bf25585175f3d53a4914d3d699f8
 ?>
 
 <body>
@@ -101,8 +94,12 @@ require($dir_root . 'view/head.php');
                     </div>
                 </div>
 
-                <button type="submit" class="btn inscrire">S'inscrire</button>
-                <button class="btn next">Continuer</button>
+                <div class="continuer-retour-inscrire">
+                    <button type="button" class="btn next">Continuer</button>
+                    <button type="submit" class="btn     inscrire">S'inscrire</button>
+                    <button type="button" class="btn retour">Retour</button>
+                </div>
+
             </form>
         </div>
         <div class="old-compte">
@@ -110,5 +107,6 @@ require($dir_root . 'view/head.php');
         </div>
     </main>
 </body>
-<script src="<?=$server_root . 'view/js/inscription.js'?>"></script>
+<script src="<?= $server_root . 'view/js/inscription.js' ?>"></script>
+
 </html>

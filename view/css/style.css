@@ -397,7 +397,20 @@ main.inscription .form form .input-label {
 main.inscription .form form button {
   margin-top: 25px;
   cursor: pointer;
-  width: 50%;
+  width: auto;
+}
+
+main.inscription .form form .continuer-retour-inscrire {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main.inscription .old-compte {
