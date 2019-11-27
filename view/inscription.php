@@ -2,9 +2,16 @@
 <html lang="fr">
 
 
+<<<<<<< HEAD
 <?php
 require_once '../controller/path.php';
 require($dir_root . 'view/head.php');
+=======
+<?php 
+    $title = "Inscription";
+    require_once '../controller/path.php';
+    require($dir_root . 'view/head.php');
+>>>>>>> 73b885e7acd2bf25585175f3d53a4914d3d699f8
 ?>
 
 <body>

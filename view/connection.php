@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-
+$title = "Connection";
 require_once '../controller/path.php';
 require $dir_root . 'view/head.php';
 
