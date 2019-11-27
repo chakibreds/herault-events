@@ -31,10 +31,10 @@ main.inscription {
       margin-top: 20px;
     }
     input:required + label::after {
-        content: "*";
-        color: red;
-        margin-left: 5px;
-        font-size: 20px;
+      content: "*";
+      color: red;
+      margin-left: 5px;
+      font-size: 20px;
     }
 
     form {
@@ -47,16 +47,15 @@ main.inscription {
       .mdp,
       .email-tel,
       .adresse1,
-      .adresse2{
+      .adresse2 {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         width: 100%;
-       
       }
-      .adresse2{
-        .num-r{
-          width:50px;
+      .adresse2 {
+        .num-r {
+          width: 50px;
         }
       }
       .input-label {

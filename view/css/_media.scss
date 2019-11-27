@@ -2,11 +2,10 @@
     Gérer le responsive
 */
 
-@media (max-width: 700px),
+@media (max-width: 760px),
 (max-height: 545px) {
     header {
         justify-content: center;
-
         div.menu {
             display: inherit;
         }
@@ -23,12 +22,10 @@
             left: 0%;
             transition-property: left;
             transition-duration: 1s;
-
             z-index: 1;
-
             li {
                 a {
-                    border-bottom: none;
+                border-bottom: none;
                     border-left  : none;
                     border-right : none;
                     display      : block;
@@ -47,7 +44,7 @@
         }
     }
 
-    main {
+    main.index-hors-ligne{
 
         .first-page {
             flex-direction : column;
@@ -114,7 +111,7 @@
     }
 
 
-    main {
+    main.connection {
 
         /*  for signIn.php */
         .form,
@@ -164,7 +161,6 @@
         justify-content: flex-start;
         padding-left   : 10px;
         margin-left    : 0;
-
     }
 }
 

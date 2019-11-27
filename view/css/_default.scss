@@ -77,8 +77,7 @@ button[type=button] {
 
     cursor: pointer;
 
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: $couleurPrincipal;
         color           : $couleurSecondaire;
         border-color    : $couleurSecondaire;
@@ -104,8 +103,8 @@ button[type=button] {
         transition-property: color, background-color, border-color;
         transition-duration: .6s;
 
-        &:hover,
-        &:focus {
+        &:hover
+         {
             color           : $couleurSecondaire;
             background-color: $couleurPrincipal;
             border-color    : $couleurSecondaire;
