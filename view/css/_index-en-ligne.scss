@@ -1,3 +1,32 @@
+aside.explore {
+    flex: 1;
+    background-color: white;
+    border-right: 1px solid $couleurPrincipal;
+    h2 {
+        font-size: larger;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        a {
+            color: $vertFonce;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            h3 {
+                padding: 5px;
+
+                i {
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+}
+
 main.index-en-ligne {
     min-height: 90vh;
     display: flex;
@@ -11,34 +40,6 @@ main.index-en-ligne {
         padding: 25px 15px;
     }
 
-    aside.explore {
-        flex: 1;
-        background-color: white;
-        border-right: 1px solid $couleurPrincipal;
-        h2 {
-            font-size: larger;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            a {
-                color: $vertFonce;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-
-                h3 {
-                    padding: 5px;
-
-                    i {
-                        padding: 0 5px;
-                    }
-                }
-            }
-        }
-    }
 
     article.acceuil {
         flex: 4;
