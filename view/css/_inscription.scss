@@ -36,6 +36,12 @@ main.inscription {
       margin-left: 5px;
       font-size: 20px;
     }
+    select + label::after {
+      content: "*";
+      color: red;
+      margin-left: 5px;
+      font-size: 20px;
+    }
 
     form {
       @include flex-column-start;
@@ -80,7 +86,7 @@ main.inscription {
       }
       .info,.errMdp
       {
-          //width : 100%;
+          width :100%;
           margin-top: 5px;
          
           background-color:indianred;

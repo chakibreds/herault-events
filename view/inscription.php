@@ -15,7 +15,7 @@ require($dir_root . 'view/head.php');
             <span class="logo">
                 <a href="<?= $server_root . 'index.php' ?>"> <img src="<?= $server_root . 'view/img/logo/HE-noir.png' ?>" alt=""> </a>
             </span>
-            <form action="" onsubmit="event.preventDefault();   return validateMdp();">
+            <form action="" onsubmit="return validateMdp();">
 
                 <div class="donnees-personnels">
 
@@ -32,6 +32,14 @@ require($dir_root . 'view/head.php');
                     <div class="input-label">
                         <input type="date" name="date_nai" id="date_nai" required>
                         <label for="date_nai">Date de naissance</label>
+                    </div>
+                    <div class="input-label">
+                        <select name="civilité" id="civilité" >
+                            <option value="Monsieur">Mr</option>
+                            <option value="madame">Mme</option>
+                            <option value="autres">Autres</option>
+                        </select>
+                        <label for="civilité">Civilité</label>
                     </div>
                 </div>
 

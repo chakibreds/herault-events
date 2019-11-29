@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         if (nbNext == 1) {
             if (perso.querySelector("#nom").value != "" && perso.querySelector("#prenom").value != "" && perso.querySelector("#date_nai").value != "") {
+
                 inscrire.style.display = "none";
                 next.style.display = "block";
                 perso.style.display = "none";
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
             else {
                 info.style.display = "block";
-                
+
             }
         }
         if (nbNext == 2) {
@@ -93,17 +94,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
             nbNext--;
         }
     });
-    function validateMdp() {
-        console.log("ok");
-        if(connection.querySelector("#password").value != connection.querySelector("#Cpassword").value)
-        {
+
+});
+function validateMdp() {
+    var form = document.querySelector(".inscription form");
+    var connection = form.querySelector(".donnees-connection");
+    var errMdp = connection.querySelector(".errMdp");
+    console.log("ok");
+    if (connection.querySelector("#password").value != "" && connection.querySelector("#Cpassword").value != "") {
+        if (connection.querySelector("#password").value != connection.querySelector("#Cpassword").value) {
             errMdp.style.display = "block";
             return false;
-        }        
-        else
-        {
+
+        }
+        else {
             errMdp.style.display = "none";
             return true;
         }
     }
-});
+}
