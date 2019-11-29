@@ -413,6 +413,15 @@ main.inscription .form form .continuer-retour-inscrire {
           justify-content: space-between;
 }
 
+main.inscription .form form .info, main.inscription .form form .errMdp {
+  margin-top: 5px;
+  background-color: indianred;
+  text-align: center;
+  color: whitesmoke;
+  padding: 4px;
+  border-radius: 5px;
+}
+
 main.inscription .old-compte {
   background-color: #feffffc7;
   border-radius: 5px;
