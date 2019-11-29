@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-
-<?php
+    
+    
+    <?php
 require_once '../controller/path.php';
 require($dir_root . 'view/head.php');
 ?>
+<script src="<?= $server_root . 'view/js/inscription.js' ?>"></script>
 
 <body>
     <main class="inscription">
@@ -14,7 +15,7 @@ require($dir_root . 'view/head.php');
             <span class="logo">
                 <a href="<?= $server_root . 'index.php' ?>"> <img src="<?= $server_root . 'view/img/logo/HE-noir.png' ?>" alt=""> </a>
             </span>
-            <form action="">
+            <form action="" onsubmit="event.preventDefault();   return validateMdp();">
 
                 <div class="donnees-personnels">
 
@@ -88,16 +89,19 @@ require($dir_root . 'view/head.php');
                             <label for="password">Mot de passe</label>
                         </div>
                         <div class="input-label">
-                            <input type="password" name="password" id="password" required>
-                            <label for="password">confirmation</label>
+                            <input type="password" name="Cpassword" id="Cpassword" required>
+                            <label for="Cpassword">confirmation</label>
                         </div>
                     </div>
+                    <div class="errMdp">No match password</div>
                 </div>
-
+                <div class="info">
+                    Veuillez renseigner tous les champs
+                </div>
                 <div class="continuer-retour-inscrire">
-                    <button type="button" class="btn next">Continuer</button>
-                    <button type="submit" class="btn     inscrire">S'inscrire</button>
                     <button type="button" class="btn retour">Retour</button>
+                    <button type="submit" class="btn     inscrire">S'inscrire</button>
+                    <button type="button" class="btn next">Continuer</button>
                 </div>
 
             </form>
@@ -107,6 +111,5 @@ require($dir_root . 'view/head.php');
         </div>
     </main>
 </body>
-<script src="<?= $server_root . 'view/js/inscription.js' ?>"></script>
 
 </html>
