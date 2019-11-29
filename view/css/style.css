@@ -447,6 +447,143 @@ main.inscription .old-compte p a {
   font-size: 12px;
 }
 
+main.index-en-ligne {
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main.index-en-ligne li {
+  list-style: none;
+}
+
+main.index-en-ligne > * {
+  padding: 25px 15px;
+}
+
+main.index-en-ligne aside.explore {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: white;
+  border-right: 1px solid #2a2627;
+}
+
+main.index-en-ligne aside.explore h2 {
+  font-size: larger;
+  margin-bottom: 10px;
+}
+
+main.index-en-ligne aside.explore ul a {
+  color: #008556;
+  text-decoration: none;
+}
+
+main.index-en-ligne aside.explore ul a:hover {
+  text-decoration: underline;
+}
+
+main.index-en-ligne aside.explore ul a h3 {
+  padding: 5px;
+}
+
+main.index-en-ligne aside.explore ul a h3 i {
+  padding: 0 5px;
+}
+
+main.index-en-ligne article.acceuil {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  background-color: #F6F6F8;
+}
+
+main.index-en-ligne article.acceuil > section {
+  text-align: center;
+  border-bottom: 1px solid grey;
+  padding: 20px 10px;
+}
+
+main.index-en-ligne article.acceuil section.my-events h2, main.index-en-ligne article.acceuil section.find-events h2 {
+  margin-bottom: 20px;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul, main.index-en-ligne article.acceuil section.find-events ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul a, main.index-en-ligne article.acceuil section.find-events ul a {
+  border-radius: 5px;
+  background-color: white;
+  width: 30%;
+  border: 2px solid #008556;
+  margin: 10px auto;
+  padding: 15px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  text-align: left;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul a:hover, main.index-en-ligne article.acceuil section.find-events ul a:hover {
+  color: inherit;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul a:hover h3, main.index-en-ligne article.acceuil section.find-events ul a:hover h3 {
+  color: #008556;
+  text-decoration: underline;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul a div.localisation, main.index-en-ligne article.acceuil section.find-events ul a div.localisation {
+  width: 100%;
+  margin: 10px 0;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul a div.localisation *, main.index-en-ligne article.acceuil section.find-events ul a div.localisation * {
+  display: inline;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul a div.button, main.index-en-ligne article.acceuil section.find-events ul a div.button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul a div.button button, main.index-en-ligne article.acceuil section.find-events ul a div.button button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: inherit auto;
+}
+
+main.index-en-ligne article.acceuil section.my-events ul a div.button button i, main.index-en-ligne article.acceuil section.find-events ul a div.button button i {
+  margin-right: 5px;
+}
+
 header {
   min-height: 10vh;
   background-color: #2a2627;
@@ -461,6 +598,10 @@ header {
           align-items: center;
   position: relative;
   padding: 10px 30px;
+}
+
+header a:hover {
+  text-decoration: none;
 }
 
 header span.logo {
@@ -1171,4 +1312,3 @@ footer .social-media .fa-twitter:hover {
     display: none;
   }
 }
-/*# sourceMappingURL=style.css.map */
