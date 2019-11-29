@@ -447,6 +447,36 @@ main.inscription .old-compte p a {
   font-size: 12px;
 }
 
+aside.explore {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: white;
+  border-right: 1px solid #2a2627;
+}
+
+aside.explore h2 {
+  font-size: larger;
+  margin-bottom: 10px;
+}
+
+aside.explore ul a {
+  color: #008556;
+  text-decoration: none;
+}
+
+aside.explore ul a:hover {
+  text-decoration: underline;
+}
+
+aside.explore ul a h3 {
+  padding: 5px;
+}
+
+aside.explore ul a h3 i {
+  padding: 0 5px;
+}
+
 main.index-en-ligne {
   min-height: 90vh;
   display: -webkit-box;
@@ -464,36 +494,6 @@ main.index-en-ligne li {
 
 main.index-en-ligne > * {
   padding: 25px 15px;
-}
-
-main.index-en-ligne aside.explore {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background-color: white;
-  border-right: 1px solid #2a2627;
-}
-
-main.index-en-ligne aside.explore h2 {
-  font-size: larger;
-  margin-bottom: 10px;
-}
-
-main.index-en-ligne aside.explore ul a {
-  color: #008556;
-  text-decoration: none;
-}
-
-main.index-en-ligne aside.explore ul a:hover {
-  text-decoration: underline;
-}
-
-main.index-en-ligne aside.explore ul a h3 {
-  padding: 5px;
-}
-
-main.index-en-ligne aside.explore ul a h3 i {
-  padding: 0 5px;
 }
 
 main.index-en-ligne article.acceuil {
@@ -673,6 +673,38 @@ header nav li a {
 header nav li a:hover {
   color: #2a2627;
   background-color: #00ce87;
+}
+
+main.events {
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main.events li {
+  list-style: none;
+}
+
+main.events > * {
+  padding: 25px 15px;
+}
+
+main.events article.event {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  background-color: #F6F6F8;
+}
+
+main.events article.event div.title-event {
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+main.events article.event div.title-event h2 {
+  color: white;
 }
 
 main.index-hors-ligne {

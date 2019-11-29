@@ -75,5 +75,4 @@ require $dir_root . 'view/head.php';
 
     <?php require $dir_root . 'view/footer.php'; ?>
 </body>
-<script src="<?= $server_root ?>view/js/script.js"></script>
 </html>

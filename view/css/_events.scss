@@ -1,0 +1,27 @@
+main.events {
+    min-height: 90vh;
+    display: flex;
+
+    li {
+        list-style: none;
+    }
+    
+    & > * {
+        padding: 25px 15px;
+    }
+
+    article.event {
+
+        flex: 4;
+        background-color: $blanc;
+
+        div.title-event {
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;            
+            h2 {
+                color: white;
+            }
+        }
+    }
+}

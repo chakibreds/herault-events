@@ -11,3 +11,4 @@
         <li><a href="<?= $server_root . 'view/connection.php'?>">Se connecter</a></li>
     </nav>
 </header>
+<script src="<?= $server_root ?>view/js/script.js"></script>

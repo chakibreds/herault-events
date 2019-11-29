@@ -3,8 +3,7 @@
 <?php
 $title = "Acceuil";
 
-require $dir_root . 'view/head.php';
-
+require_once $dir_root . 'view/head.php';
 
 ?>
 
