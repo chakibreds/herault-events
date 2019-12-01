@@ -729,6 +729,15 @@ main.events article.event div.image-event {
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid #2a2627;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+main.events article.event div.image-event:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 main.events article.event h2 {
@@ -744,8 +753,18 @@ main.events article.event h2 {
 main.events article.event section {
   padding: 15px 10px;
   margin: 5px 0;
-  border-bottom: 1px solid #00ce87;
+  border: 1px solid #00ce87;
   border-radius: 5px;
+  background-color: white;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+main.events article.event section:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 main.events article.event section h3 {
@@ -765,6 +784,14 @@ main.events article.event section.information-event ul.information-list li::befo
   font-weight: 900;
   content: "\f105";
   margin: 0 15px;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+}
+
+main.events article.event section.information-event ul.information-list li:hover::before {
+  color: #00ce87;
 }
 
 main.index-hors-ligne {
@@ -1404,4 +1431,3 @@ footer .social-media .fa-twitter:hover {
     display: none;
   }
 }
-/*# sourceMappingURL=style.css.map */
