@@ -39,8 +39,8 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
         </aside>
 
         <article class="event">
-            <div class="image-event" style="background-image : url('<?= $server_root?>view/img/compressed/background-1.jpg');">
-            </div>    
+            <div class="image-event" style="background-image : url('<?= $server_root ?>view/img/compressed/background-1.jpg');">
+            </div>
             <h2>Title event</h2>
             <section class="description-event">
                 <h3>Description :</h3>
@@ -49,7 +49,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 </p>
             </section>
             <section class="information-event">
-                <h3>Information sur l'évenement</h3>            
+                <h3>Information sur l'évenement :</h3>
                 <ul class="information-list">
                     <li>Code de l'évenement : 00001</li>
                     <li>Date de l'évenement : 20/08/1998</li>
@@ -59,10 +59,13 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <li>Rue : Some where</li>
                 </ul>
             </section>
-            <section class="contributeur-event">
-                <h3>Information sur le contributeur</h3>        
-                <div class="">
-
+            <section class="contributeur-card">
+                <h3>Information sur le contributeur : </h3>
+                <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/user/contributeur1.jpg);">
+                </div>
+                <div class="contributeur-information">
+                    <h4><b>John Doe</b></h4>
+                    <p>Architect & Engineer</p>
                 </div>
             </section>
         </article>

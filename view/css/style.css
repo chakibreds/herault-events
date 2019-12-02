@@ -751,7 +751,7 @@ main.events article.event h2 {
 }
 
 main.events article.event section {
-  padding: 15px 10px;
+  padding: 25px 20px;
   margin: 5px 0;
   border: 1px solid #00ce87;
   border-radius: 5px;
@@ -779,6 +779,10 @@ main.events article.event section.description-event {
   grid-column: 1 / 3;
 }
 
+main.events article.event section.information-event ul.information-list li {
+  padding: 3px;
+}
+
 main.events article.event section.information-event ul.information-list li::before {
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
@@ -792,6 +796,19 @@ main.events article.event section.information-event ul.information-list li::befo
 
 main.events article.event section.information-event ul.information-list li:hover::before {
   color: #00ce87;
+}
+
+main.events article.event section.contributeur-card div.contributeur-img {
+  max-width: 100%;
+  height: 300px;
+  margin: auto;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+}
+
+main.events article.event section.contributeur-card div.contributeur-information {
+  padding: 2px 16px;
 }
 
 main.index-hors-ligne {

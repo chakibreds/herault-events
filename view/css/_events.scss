@@ -38,7 +38,7 @@ main.events {
 
         // pour toutes les sections
         section {
-            padding         : 15px 10px;
+            padding         : 25px 20px;
             margin          : 5px 0;
             border          : 1px solid $couleurSecondaire;
             border-radius   : 5px;
@@ -58,18 +58,38 @@ main.events {
 
             &.information-event {
                 ul.information-list {
-                    li::before {
-                        font-family: "Font Awesome 5 Pro";
-                        font-weight: 900;
-                        content    : "\f105";
-                        margin     : 0 15px;
-                        transition-property: color;
-                        transition-duration: 0.6s;
-                    }
+                    li {
+                        padding: 3px;
 
-                    li:hover::before {
-                        color: $couleurSecondaire;
+                        &::before {
+                            font-family        : "Font Awesome 5 Pro";
+                            font-weight        : 900;
+                            content            : "\f105";
+                            margin             : 0 15px;
+                            transition-property: color;
+                            transition-duration: 0.6s;
+                        }
+
+                        &:hover::before {
+                            color: $couleurSecondaire;
+                        }
                     }
+                }
+            }
+
+            &.contributeur-card {
+                div.contributeur-img {
+                    max-width: 100%;
+                    height   : 300px;
+                    margin: auto;
+                    border-radius: 5px;
+
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                div.contributeur-information {
+                    padding: 2px 16px;
                 }
             }
         }
