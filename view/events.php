@@ -60,12 +60,14 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 </ul>
             </section>
             <section class="contributeur-card">
-                <h3>Information sur le contributeur : </h3>
                 <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/user/contributeur1.jpg);">
                 </div>
                 <div class="contributeur-information">
-                    <h4><b>John Doe</b></h4>
-                    <p>Architect & Engineer</p>
+                    <h3><b>John Doe</b></h3>
+                    <ul>
+                        <li>Membre depuis le 01/01/1970</li>
+                    </ul>
+                    <a href="#"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
                 </div>
             </section>
         </article>

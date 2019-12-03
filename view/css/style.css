@@ -716,8 +716,8 @@ main.events article.event {
   background-color: #F6F6F8;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
   grid-gap: 20px;
 }
 
@@ -747,13 +747,13 @@ main.events article.event h2 {
   color: #2a2627;
   text-align: center;
   font-size: 2.5em;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 main.events article.event section {
   padding: 25px 20px;
   margin: 5px 0;
-  border: 1px solid #00ce87;
+  border: 1px solid #2a2627;
   border-radius: 5px;
   background-color: white;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -781,6 +781,7 @@ main.events article.event section.description-event {
 
 main.events article.event section.information-event ul.information-list li {
   padding: 3px;
+  font-size: 1.2em;
 }
 
 main.events article.event section.information-event ul.information-list li::before {
@@ -798,17 +799,39 @@ main.events article.event section.information-event ul.information-list li:hover
   color: #00ce87;
 }
 
+main.events article.event section.contributeur-card {
+  padding: 0;
+}
+
 main.events article.event section.contributeur-card div.contributeur-img {
   max-width: 100%;
-  height: 300px;
-  margin: auto;
+  height: 250px;
+  margin: 0;
   border-radius: 5px;
   background-size: cover;
   background-position: center;
 }
 
 main.events article.event section.contributeur-card div.contributeur-information {
-  padding: 2px 16px;
+  padding: 15px 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main.events article.event section.contributeur-card div.contributeur-information a {
+  margin: 15px 0;
+}
+
+main.events article.event section.contributeur-card div.contributeur-information a button {
+  margin: 0;
 }
 
 main.index-hors-ligne {

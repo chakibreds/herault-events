@@ -15,7 +15,7 @@ main.events {
         background-color: $blanc;
 
         display              : grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 3fr 1fr;
         grid-gap             : 20px;
 
         div.image-event {
@@ -33,14 +33,14 @@ main.events {
             color      : $couleurPrincipal;
             text-align : center;
             font-size  : 2.5em;
-            margin-top : 25px;
+            margin-top : 15px;
         }
 
         // pour toutes les sections
         section {
             padding         : 25px 20px;
             margin          : 5px 0;
-            border          : 1px solid $couleurSecondaire;
+            border          : 1px solid $couleurPrincipal;
             border-radius   : 5px;
             background-color: white;
 
@@ -60,7 +60,7 @@ main.events {
                 ul.information-list {
                     li {
                         padding: 3px;
-
+                        font-size: 1.2em;
                         &::before {
                             font-family        : "Font Awesome 5 Pro";
                             font-weight        : 900;
@@ -78,10 +78,12 @@ main.events {
             }
 
             &.contributeur-card {
+                padding: 0;
+
                 div.contributeur-img {
                     max-width: 100%;
-                    height   : 300px;
-                    margin: auto;
+                    height   : 250px;
+                    margin: 0;
                     border-radius: 5px;
 
                     background-size: cover;
@@ -89,7 +91,18 @@ main.events {
                 }
 
                 div.contributeur-information {
-                    padding: 2px 16px;
+                    padding: 15px 25px;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+
+                    a {
+                        margin: 15px 0;
+
+                        button {
+                            margin: 0;
+                        }
+                    }
                 }
             }
         }
