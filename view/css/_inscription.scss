@@ -45,7 +45,7 @@ main.inscription {
 
     form {
       @include flex-column-start;
-      align-items: center;
+      //align-items: center;
       padding: 20px 10px 40px 10px;
       width: 100%;
 
@@ -55,7 +55,7 @@ main.inscription {
       .adresse1,
       .adresse2 {
         display: flex;
-        flex-direction: row;
+        flex-direction: row;  
         justify-content: flex-start;
         width: 100%;
       }
