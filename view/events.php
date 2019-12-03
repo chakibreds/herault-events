@@ -58,6 +58,32 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <li>Ville : Montpellier</li>
                     <li>Rue : Some where</li>
                 </ul>
+                <h3>Autre : </h3>
+                <div class="note-event">
+                    <div class="participant">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span class="number">300+</span>
+                        <span class="text">Participant</span>
+                    </div>
+                    <div class="interesser">
+                        <i class="far fa-heart"></i>
+                        <span class="number">700+</span>
+                        <span class="text">Interesser</span>
+                    </div>
+                    <div class="note">
+                        <i class="fas fa-marker"></i>
+                        <span class="number">9.8</span>
+                        <span class="text">Note</span>
+                    </div>
+                </div>
+                <div class="button-rejoindre-interesser">
+                    <button type="button"><i class="fas fa-plus"></i>
+                        Rejoindre
+                    </button>
+                    <button type="button"><i class="fas fa-heart"></i>
+                        Interesser
+                    </button>
+                </div>
             </section>
             <section class="contributeur-card">
                 <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/user/contributeur1.jpg);">
@@ -67,7 +93,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <ul>
                         <li>Membre depuis le 01/01/1970</li>
                     </ul>
-                    <a href="#"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
+                    <a href="<?= $server_root ?>view/profile.php"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
                 </div>
             </section>
         </article>

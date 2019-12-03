@@ -53,21 +53,27 @@ require $dir_root . 'view/head.php';
             <div class="events">
                 <div class="events-card">
                     <h2>Title event</h2>
-                    <img src="<?= $server_root. 'view/img/compressed/background-1.jpg'?>" alt="évenement" />
+                    <img src="<?= $server_root . 'view/img/compressed/background-1.jpg' ?>" alt="évenement" />
                     <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
-                    <button type="button">Voir plus</button>
+                    <a href="<?= $server_root ?>view/events.php">
+                        <button type="button">Voir plus</button>
+                    </a>
                 </div>
                 <div class="events-card">
                     <h2>Title event</h2>
-                    <img src="<?= $server_root. 'view/img/compressed/fireworks-1.jpg'?>" alt="évenement" />
+                    <img src="<?= $server_root . 'view/img/compressed/fireworks-1.jpg' ?>" alt="évenement" />
                     <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
-                    <button type="button">Voir plus</button>
+                    <a href="<?= $server_root ?>view/events.php">
+                        <button type="button">Voir plus</button>
+                    </a>
                 </div>
                 <div class="events-card">
                     <h2>Title event</h2>
-                    <img src="<?= $server_root. 'view/img/compressed/background-comedie-1.jpg'?>" alt="évenement" />
+                    <img src="<?= $server_root . 'view/img/compressed/background-comedie-1.jpg' ?>" alt="évenement" />
                     <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
-                    <button type="button">Voir plus</button>
+                    <a href="<?= $server_root ?>view/events.php">
+                        <button type="button">Voir plus</button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -75,4 +81,5 @@ require $dir_root . 'view/head.php';
 
     <?php require $dir_root . 'view/footer.php'; ?>
 </body>
+
 </html>

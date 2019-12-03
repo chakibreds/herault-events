@@ -10,11 +10,11 @@ header {
     padding: 10px 30px;
 
 
-    a:hover {
+    a:hover,a {
         text-decoration: none;
     }
 
-    span.logo {
+    .logo {
         display    : flex;
         align-items: center;
 

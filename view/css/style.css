@@ -27,7 +27,7 @@ body, html {
 label {
   margin-bottom: 5px;
   font-size: 18px;
-  color: #2a2627;
+  color: #444;
 }
 
 input[type=text],
@@ -43,7 +43,7 @@ select {
   border-radius: 5px;
   font-size: 17px;
   font-family: inherit;
-  color: #2a2627;
+  color: #444;
   width: 100%;
   border: 1px solid transparent;
   -webkit-box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
@@ -70,10 +70,10 @@ select:focus {
 
 button[type=submit],
 button[type=button] {
-  border: 1px solid #2a2627;
+  border: 1px solid #444;
   border-radius: 5px;
   background-color: #00ce87;
-  color: #2a2627;
+  color: #444;
   margin: 10px;
   padding: 7px 12px;
   -webkit-transition-property: background-color, color, border-color;
@@ -90,7 +90,7 @@ button[type=button] {
 
 button[type=submit]:hover,
 button[type=button]:hover {
-  background-color: #2a2627;
+  background-color: #444;
   color: #00ce87;
   border-color: #00ce87;
 }
@@ -100,11 +100,11 @@ button[type=button].btn-search {
   position: relative;
   margin: 0;
   width: 35px;
-  color: #2a2627;
+  color: #444;
   border-color: transparent;
   background-color: transparent;
   cursor: pointer;
-  border-left: 1px solid #2a2627;
+  border-left: 1px solid #444;
   border-top-left-radius: initial;
   border-bottom-left-radius: initial;
   -webkit-transition: none;
@@ -118,7 +118,7 @@ button[type=button].btn-search {
 button[type=submit].btn-search:hover,
 button[type=button].btn-search:hover {
   color: #00ce87;
-  background-color: #2a2627;
+  background-color: #444;
   border-color: #00ce87;
 }
 
@@ -168,7 +168,7 @@ main.connection .form {
   width: 25%;
   min-width: 450px;
   padding: 0px 50px;
-  color: #2a2627;
+  color: #444;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,7 +267,7 @@ main.connection .new-compte {
       -ms-flex-align: center;
           align-items: center;
   font-size: 20px;
-  color: #2a2627;
+  color: #444;
 }
 
 main.connection .new-compte p {
@@ -325,7 +325,7 @@ main.inscription .form {
       -ms-flex-align: center;
           align-items: center;
   font-size: 17px;
-  color: #2a2627;
+  color: #444;
 }
 
 main.inscription .form img {
@@ -454,7 +454,7 @@ main.inscription .old-compte {
       -ms-flex-align: center;
           align-items: center;
   font-size: 20px;
-  color: #2a2627;
+  color: #444;
 }
 
 main.inscription .old-compte p {
@@ -471,7 +471,7 @@ aside.explore {
       -ms-flex: 1;
           flex: 1;
   background-color: white;
-  border-right: 1px solid #2a2627;
+  border-right: 1px solid #444;
 }
 
 aside.explore h2 {
@@ -605,7 +605,7 @@ main.index-en-ligne article.acceuil section.my-events ul a div.button button i, 
 
 header {
   min-height: 10vh;
-  background-color: #2a2627;
+  background-color: #444;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -619,11 +619,11 @@ header {
   padding: 10px 30px;
 }
 
-header a:hover {
+header a:hover, header a {
   text-decoration: none;
 }
 
-header span.logo {
+header .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -632,12 +632,12 @@ header span.logo {
           align-items: center;
 }
 
-header span.logo img {
+header .logo img {
   height: 30px;
   margin: 0 20px;
 }
 
-header span.logo h1 {
+header .logo h1 {
   font-size: 40px;
   color: #00ce87;
   font-style: italic;
@@ -664,7 +664,7 @@ header div.menu {
 
 header div.menu:hover {
   background-color: #00ce87;
-  color: #2a2627;
+  color: #444;
 }
 
 header nav {
@@ -681,7 +681,7 @@ header nav li a {
   border: 1px solid #00ce87;
   padding: 10px 30px;
   color: #00ce87;
-  background-color: #2a2627;
+  background-color: #444;
   border-radius: 5px;
   margin-right: 10px;
   text-decoration: none;
@@ -690,7 +690,7 @@ header nav li a {
 }
 
 header nav li a:hover {
-  color: #2a2627;
+  color: #444;
   background-color: #00ce87;
 }
 
@@ -728,7 +728,7 @@ main.events article.event div.image-event {
   min-height: 250px;
   background-size: cover;
   background-position: center;
-  border-bottom: 1px solid #2a2627;
+  border-bottom: 1px solid #444;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
@@ -744,7 +744,7 @@ main.events article.event h2 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / 3;
-  color: #2a2627;
+  color: #444;
   text-align: center;
   font-size: 2.5em;
   margin-top: 15px;
@@ -753,7 +753,7 @@ main.events article.event h2 {
 main.events article.event section {
   padding: 25px 20px;
   margin: 5px 0;
-  border: 1px solid #2a2627;
+  border: 1px solid #444;
   border-radius: 5px;
   background-color: white;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -768,15 +768,58 @@ main.events article.event section:hover {
 }
 
 main.events article.event section h3 {
-  margin-bottom: 15px;
+  margin: 15px 0;
   font-size: 1.8em;
-  color: #2a2627;
+  color: #444;
 }
 
 main.events article.event section.description-event {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / 3;
+}
+
+main.events article.event section.information-event .note-event {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main.events article.event section.information-event .note-event div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 150px;
+  width: 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #00ce87;
+  border-radius: 10px;
+  background-color: #444;
+  color: #00ce87;
+}
+
+main.events article.event section.information-event .note-event div > * {
+  margin: 5px 0;
+}
+
+main.events article.event section.information-event .note-event div i {
+  font-size: 2.2em;
+}
+
+main.events article.event section.information-event .note-event div span {
+  font-size: 1.3em;
 }
 
 main.events article.event section.information-event ul.information-list li {
@@ -799,8 +842,27 @@ main.events article.event section.information-event ul.information-list li:hover
   color: #00ce87;
 }
 
+main.events article.event section.information-event .button-rejoindre-interesser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 25px 0 15px 0;
+}
+
 main.events article.event section.contributeur-card {
   padding: 0;
+  max-height: 450px;
 }
 
 main.events article.event section.contributeur-card div.contributeur-img {
@@ -888,7 +950,7 @@ main.index-hors-ligne .first-page .title-page {
 
 main.index-hors-ligne .first-page .title-page h1,
 main.index-hors-ligne .first-page .title-page p {
-  text-shadow: 2px 0 #2a2627, -2px 0 #2a2627, 0 2px #2a2627, 0 -2px #2a2627, 1px 1px #2a2627, -1px -1px #2a2627, 1px -1px #2a2627, -1px 1px #2a2627;
+  text-shadow: 2px 0 #444, -2px 0 #444, 0 2px #444, 0 -2px #444, 1px 1px #444, -1px -1px #444, 1px -1px #444, -1px 1px #444;
   color: #00ce87;
 }
 
@@ -903,7 +965,7 @@ main.index-hors-ligne .first-page .title-page p {
 main.index-hors-ligne .first-page .title-page .fa-chevron-down {
   display: none;
   font-size: 50px;
-  text-shadow: 2px 0 #2a2627, -2px 0 #2a2627, 0 2px #2a2627, 0 -2px #2a2627, 1px 1px #2a2627, -1px -1px #2a2627, 1px -1px #2a2627, -1px 1px #2a2627;
+  text-shadow: 2px 0 #444, -2px 0 #444, 0 2px #444, 0 -2px #444, 1px 1px #444, -1px -1px #444, 1px -1px #444, -1px 1px #444;
   color: #00ce87;
   position: absolute;
   bottom: 20px;
@@ -951,7 +1013,7 @@ main.index-hors-ligne .first-page .form {
       -ms-flex-align: center;
           align-items: center;
   font-size: 20px;
-  color: #2a2627;
+  color: #444;
 }
 
 main.index-hors-ligne .first-page .form .find-form {
@@ -965,7 +1027,7 @@ main.index-hors-ligne .first-page .form .find-form {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border-bottom: 2px solid #2a2627;
+  border-bottom: 2px solid #444;
   padding: 20px 10px 40px 10px;
   width: 100%;
 }
@@ -1063,7 +1125,7 @@ main.index-hors-ligne .events-page .events-title {
 }
 
 main.index-hors-ligne .events-page .events-title h1 {
-  color: #2a2627;
+  color: #444;
   font-size: 50px;
   text-decoration: underline;
   margin-bottom: 20px;
@@ -1099,8 +1161,8 @@ main.index-hors-ligne .events-page .events .events-card {
   height: 450px;
   width: 25%;
   min-width: 335px;
-  border: 3px solid #2a2627;
-  color: #2a2627;
+  border: 3px solid #444;
+  color: #444;
   background-color: #dadddef1;
   -webkit-transition: -webkit-box-shadow, -webkit-transform 0.6s;
   transition: -webkit-box-shadow, -webkit-transform 0.6s;
@@ -1139,7 +1201,7 @@ main.index-hors-ligne .events-page .events .events-card:hover h2 {
 main.index-hors-ligne .events-page .events .events-card img {
   width: 85%;
   height: 45%;
-  border: 2px solid #2a2627;
+  border: 2px solid #444;
   border-radius: 5px;
 }
 
@@ -1154,13 +1216,13 @@ main.index-hors-ligne .events-page .events .events-card p {
 }
 
 main.index-hors-ligne .events-page .events .events-card p i {
-  color: #2a2627;
+  color: #444;
 }
 
 footer {
   min-height: 40vh;
   width: 100%;
-  background-color: #2a2627;
+  background-color: #444;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
