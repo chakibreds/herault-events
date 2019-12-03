@@ -359,9 +359,6 @@ main.inscription .form form {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 20px 10px 40px 10px;
   width: 100%;
 }
@@ -1453,7 +1450,8 @@ footer .social-media .fa-twitter:hover {
   main.index-hors-ligne .events-page {
     min-height: 100vh;
   }
-  main.index-hors-ligne .events-page p, main.index-hors-ligne .events-page h1 {
+  main.index-hors-ligne .events-page p,
+  main.index-hors-ligne .events-page h1 {
     text-align: center;
   }
   main.index-hors-ligne .events-page h1 {
@@ -1471,7 +1469,7 @@ footer .social-media .fa-twitter:hover {
     width: inherit !important;
   }
   main.connection {
-    /*  for signIn.php */
+    /*  for connection.php */
   }
   main.connection .form,
   main.connection .new-compte {
@@ -1533,3 +1531,29 @@ footer .social-media .fa-twitter:hover {
     display: none;
   }
 }
+
+@media (max-width: 600px), (max-height: 545px) {
+  main.inscription {
+    /*  for inscription.php */
+  }
+  main.inscription .form,
+  main.inscription .old-compte {
+    min-width: inherit;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: inherit;
+  }
+  main.inscription .form form .email-tel, main.inscription .form form .nom-prenom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -2,179 +2,194 @@
     Gérer le responsive
 */
 
-@media (max-width: 760px),
-(max-height: 545px) {
-    header {
-        justify-content: center;
-        div.menu {
-            display: inherit;
-        }
-
-        .mobile-display-none {
-            left: 100%;
-        }
-
-        nav {
-            flex-direction: column;
-            width         : 100%;
-            position      : absolute;
-            top           : 10vh;
-            left: 0%;
-            transition-property: left;
-            transition-duration: 1s;
-            z-index: 1;
-            li {
-                a {
-                border-bottom: none;
-                    border-left  : none;
-                    border-right : none;
-                    display      : block;
-                    width        : 100%;
-                    border-radius: 0;
-                    text-align   : center;
-                    height       : 50px;
-                }
-            }
-
-            li:last-child {
-                a {
-                    border-bottom: 1px solid $couleurSecondaire;
-                }
-            }
-        }
+@media (max-width: 760px), (max-height: 545px) {
+  header {
+    justify-content: center;
+    div.menu {
+      display: inherit;
     }
 
-    main.index-hors-ligne{
-
-        .first-page {
-            flex-direction : column;
-            justify-content: start;
-            min-height     : 150vh;
-
-
-            h1 {
-                font-size: 50px !important;
-            }
-
-            p {
-                font-size: 35px !important;
-            }
-
-            .title-page {
-                align-items: center;
-
-                width : 100%;
-                min-height: 90vh;
-
-                margin: 0 20px;
-
-                .fa-chevron-down {
-                    display   : inline;
-                    text-align: center;
-                }
-            }
-
-            .form {
-                width        : 100%;
-                //min-height: 100vh;
-                border-radius: 0;
-            }
-        }
-
-        /* events-page */
-        .events-page {
-            min-height: 100vh;
-            p,h1 {
-                text-align: center;
-            }
-            h1 {
-                font-size: 40px !important;
-            }
-
-            p {
-                font-size: 25px !important;
-            }
-
-            .events {
-
-                .events-card {
-                    //width: 80% !important;
-                    max-width: 100% !important;
-                    button {
-                        padding  : 10px;
-                        min-width: 35%;
-                        width    : inherit !important;
-                    }
-                }
-            }
-        }
+    .mobile-display-none {
+      left: 100%;
     }
 
-
-    main.connection {
-
-        /*  for signIn.php */
-        .form,
-        .new-compte {
-            min-width: inherit;
-            width        : 100%;
-            padding-left: 0;
-            padding-right: 0;
-
-            border-radius: 0;
-
-            //margin: 0;
+    nav {
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 10vh;
+      left: 0%;
+      transition-property: left;
+      transition-duration: 1s;
+      z-index: 1; //la superposition
+      li {
+        a {
+          border-bottom: none;
+          border-left: none;
+          border-right: none;
+          display: block;
+          width: 100%;
+          border-radius: 0;
+          text-align: center;
+          height: 50px;
         }
+      }
 
+      li:last-child {
+        a {
+          border-bottom: 1px solid $couleurSecondaire;
+        }
+      }
+    }
+  }
+
+  main.index-hors-ligne {
+    .first-page {
+      flex-direction: column;
+      justify-content: start;
+      min-height: 150vh;
+
+      h1 {
+        font-size: 50px !important;
+      }
+
+      p {
+        font-size: 35px !important;
+      }
+
+      .title-page {
+        align-items: center;
+
+        width: 100%;
+        min-height: 90vh;
+
+        margin: 0 20px;
+
+        .fa-chevron-down {
+          display: inline;
+          text-align: center;
+        }
+      }
+
+      .form {
+        width: 100%;
+        //min-height: 100vh;
+        border-radius: 0;
+      }
     }
 
-    footer {
-        
-        .head-footer {
-            flex-direction: column;
-            align-items: center;
-            span.logo {
-                margin-left: 0;
-                h1 {
-                    display: none;
-                }
-            }
+    /* events-page */
+    .events-page {
+      min-height: 100vh;
+      p,
+      h1 {
+        text-align: center;
+      }
+      h1 {
+        font-size: 40px !important;
+      }
 
-            ul {
-                width: 100%;
-                margin-right: 0;
+      p {
+        font-size: 25px !important;
+      }
 
-                align-items: space-around;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                
-                & > * {
-                    margin-bottom: 20px;
-                }
-            }
+      .events {
+        .events-card {
+          //width: 80% !important;
+          max-width: 100% !important;
+          button {
+            padding: 10px;
+            min-width: 35%;
+            width: inherit !important;
+          }
         }
+      }
     }
+  }
+
+  main.connection {
+    /*  for connection.php */
+    .form,
+    .new-compte {
+      min-width: inherit;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+
+      border-radius: 0;
+
+      //margin: 0;
+    }
+  }
+
+  footer {
+    .head-footer {
+      flex-direction: column;
+      align-items: center;
+      span.logo {
+        margin-left: 0;
+        h1 {
+          display: none;
+        }
+      }
+
+      ul {
+        width: 100%;
+        margin-right: 0;
+
+        align-items: space-around;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        & > * {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 510px) {
-    header {
-        justify-content: flex-start;
-        padding-left   : 10px;
-        margin-left    : 0;
-    }
+  header {
+    justify-content: flex-start;
+    padding-left: 10px;
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 450px) {
-    header {
-        h1 {
-            display: none;
-        }
-
+  header {
+    h1 {
+      display: none;
     }
+  }
 }
 
 @media (max-width: 1100px) {
-    footer .logo h1{
-        display: none;
+  footer .logo h1 {
+    display: none;
+  }
+}
+@media (max-width: 600px), (max-height: 545px) {
+  main.inscription {
+    /*  for inscription.php */
+    .form,
+    .old-compte {
+      min-width: inherit;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 5px;
+      margin-right: 5px;
+      border-radius: inherit;
+
+      //margin: 0;
     }
+    .form  form {
+      .email-tel,.nom-prenom {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
 }
