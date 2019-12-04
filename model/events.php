@@ -1,6 +1,8 @@
 <?php
 
-class Event {
+require_once $dir_root . 'model/model.php';
+
+class Event extends Model {
     private $id_events;         // int
     private $titre = "";        // string
     private $date_event;        // date

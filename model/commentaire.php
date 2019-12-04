@@ -1,6 +1,8 @@
 <?php
 
-class Commentaire {
+require_once $dir_root . 'model/model.php';
+
+class Commentaire extends Model {
     private $id_event;              // int
     private $pseudo;                // string
     private $date_commentaire;      // date

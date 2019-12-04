@@ -1,6 +1,8 @@
 <?php
 
-class Adresse {
+require_once $dir_root . 'model/model.php';
+
+class Adresse extends Model {
     private $id_adresse;        // int
     private $num_rue;           // int
     private $nom_rue = "";      // string
