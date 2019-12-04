@@ -14,19 +14,19 @@ require_once $dir_root . 'view/head.php';
             <h2>Best ratted events</h2>
             <input type="text" placeholder="Trouver un évenment..." class="find-event" />
             <ul>
-                <a href="#" class="event">
+                <a href="<?=$server_root?>view/events.php" class="event">
                     <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
                 </a>
-                <a href="#" class="event">
+                <a href="<?=$server_root?>view/events.php" class="event">
                     <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
                 </a>
-                <a href="#" class="event">
+                <a href="<?=$server_root?>view/events.php" class="event">
                     <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
                 </a>
-                <a href="#" class="event">
+                <a href="<?=$server_root?>view/events.php" class="event">
                     <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
                 </a>
-                <a href="#" class="event">
+                <a href="<?=$server_root?>view/events.php" class="event">
                     <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
                 </a>
             </ul>
@@ -35,32 +35,32 @@ require_once $dir_root . 'view/head.php';
             <section class="my-events">
                 <h2>Mes évenement</h2>
                 <ul>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
@@ -70,7 +70,7 @@ require_once $dir_root . 'view/head.php';
             <section class="find-events">
                 <h2>Évenement pouvant m'interesser</h2>
                 <ul>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <div class="localisation">
@@ -85,7 +85,7 @@ require_once $dir_root . 'view/head.php';
                             <button type="button"><i class="fas fa-plus"></i> Participer</button>
                         </div>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <div class="localisation">
@@ -100,7 +100,7 @@ require_once $dir_root . 'view/head.php';
                             <button type="button"><i class="fas fa-plus"></i> Participer</button>
                         </div>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
                         <div class="localisation">

@@ -1,10 +1,31 @@
+<?php
+session_start();
+require_once '../controller/path.php';
+require_once $dir_root . 'controller/all.php';
+
+
+if (isset($_POST['inscrire'])) {
+    $user = inscription($_POST);
+    if ($user) {
+        $_SESSION['user'] = serialize($user);
+    } else {
+        echo "Impossible d'ajouter l'utilisateur";
+    }
+}
+
+if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
+    // if the user is logged in
+    header("Location: $server_root");
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
-    
 <?php
-require_once '../controller/path.php';
 require_once $dir_root . 'view/head.php';
 ?>
+
 <script src="<?= $server_root . 'view/js/inscription.js' ?>"></script>
 
 <body>
@@ -14,7 +35,7 @@ require_once $dir_root . 'view/head.php';
             <span class="logo">
                 <a href="<?= $server_root . 'index.php' ?>"> <img src="<?= $server_root . 'view/img/logo/HE-noir.png' ?>" alt=""> </a>
             </span>
-            <form action="" onsubmit="return validateMdp();">
+            <form action="" method="post" onsubmit="return validateMdp();">
 
                 <div class="donnees-personnels">
 
@@ -33,12 +54,12 @@ require_once $dir_root . 'view/head.php';
                         <label for="date_nai">Date de naissance</label>
                     </div>
                     <div class="input-label">
-                        <select name="civilité" id="civilité" >
-                            <option value="Monsieur">Mr</option>
+                        <select name="civilite" id="civilite">
+                            <option value="monsieur">Mr</option>
                             <option value="madame">Mme</option>
-                            <option value="autres">Autres</option>
+                            <option value="autre">Autres</option>
                         </select>
-                        <label for="civilité">Civilité</label>
+                        <label for="civilite">Civilité</label>
                     </div>
                 </div>
 
@@ -46,15 +67,15 @@ require_once $dir_root . 'view/head.php';
 
                     <div class="adresse1">
                         <div class="input-label">
-                            <input type="number" name="num-r" id="num-r">
+                            <input type="number" name="num_r" id="num-r">
                             <label for="num-r">N°rue</label>
                         </div>
                         <div class="input-label">
-                            <input type="text" name="nom-r" id="nom-r">
+                            <input type="text" name="nom_r" id="nom-r">
                             <label for="nom-r">Nom rue</label>
                         </div>
                         <div class="input-label">
-                            <input type="number" name="code-postal" id="code-postal" pattern="[0-9]{5}">
+                            <input type="number" name="code_postal" id="code-postal" pattern="[0-9]{5}">
                             <label for="code-postal">Code Postal</label>
                         </div>
                     </div>
@@ -64,7 +85,7 @@ require_once $dir_root . 'view/head.php';
                             <label for="ville">Ville</label>
                         </div>
                         <div class="input-label">
-                            <input type="text" name="Pays" id="Pays">
+                            <input type="text" name="pays" id="Pays">
                             <label for="Pays">Pays</label>
                         </div>
                     </div>
@@ -107,7 +128,7 @@ require_once $dir_root . 'view/head.php';
                 </div>
                 <div class="continuer-retour-inscrire">
                     <button type="button" class="btn retour">Retour</button>
-                    <button type="submit" class="btn     inscrire">S'inscrire</button>
+                    <button type="submit" name="inscrire" class="btn inscrire">S'inscrire</button>
                     <button type="button" class="btn next">Continuer</button>
                 </div>
 
