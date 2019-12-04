@@ -17,6 +17,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     require_once $dir_root . 'view/headerHorsLigne.php';
 }
 ?>
+<script src="<?= $server_root . 'view/js/profil.js' ?>"></script>
 <body>
     <main class = "profil">
         <aside class="profil-information">
@@ -30,19 +31,19 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
             <section class="liste-liens">
             <ul>
                 <li>
-                    <a class = "active" href ="#">Évenements</a>
+                    <a id = "my-events" class = "active" href ="#">Évenements</a>
                 </li>
                 <li>
-                    <a href ="#">interssé Par</a>
+                    <a id ="find-events" href ="#">interssé Par</a>
                 </li>
                 <li>
-                    <a href ="#">Contribution</a>
+                    <a id ="" href ="#">Contribution</a>
                 </li>
                 <li>
-                    <a href ="#">Modifier Profil</a>
+                    <a id ="" href ="#">Modifier Profil</a>
                 </li>
                 <li>
-                    <a href ="#">Gérer</a>
+                    <a id ="" href ="#">Gérer</a>
                 </li>
             </ul>
             </section>
