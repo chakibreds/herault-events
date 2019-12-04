@@ -84,17 +84,7 @@ main.inscription {
         flex-direction: row;
         justify-content: space-between;
       }
-      .info,.errMdp
-      {
-          width :100%;
-          margin-top: 5px;
-         
-          background-color:indianred;
-          text-align: center;
-          color: $couleurTroisieme;
-          padding: 4px;
-          border-radius: 5px;
-      }
+      
     }
   }
   .old-compte {

@@ -2,7 +2,7 @@
 
 class Model
 {
-    protected function dbConnect()
+    protected static function dbConnect()
     {
         $user_name = "massyUniv";
         $password = "password";

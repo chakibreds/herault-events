@@ -19,24 +19,26 @@ class User extends Model
     public function __construct($pseudo)
     {
         $db = $this->dbConnect();
-        $req = $db.prepare('SELECT * FROM user WHERE pseudo = ?')->execute(array($pseudo))->fetch();
+        $req = $db->prepare('SELECT * FROM user WHERE pseudo = ?');
+        $req->execute(array($pseudo));
+        $res = $req->fetch();
 
-        $this->pseudo = $req['pseudo'];
-        $this->nom = $req['nom'];
-        $this->prenom = $req['prenom'];
+        $this->pseudo = $res['pseudo'];
+        $this->nom = $res['nom'];
+        $this->prenom = $res['prenom'];
 
-        $this->date_nai = $req['date_nai'];
-        $this->date_inscr = $req['date_inscr'];
-        $this->email = $req['email'];
-        $this->tel = $req['tel'];
-        $this->mdp = $req['mdp'];
-        $this->role = $req['role'];
-        $this->adresse = $req['adresse'];
+        $this->date_nai = $res['date_nai'];
+        $this->date_inscr = $res['date_inscr'];
+        $this->email = $res['email'];
+        $this->tel = $res['tel'];
+        $this->mdp = $res['mdp'];
+        $this->role = $res['role_user'];
+        $this->adresse = $res['id_adresse'];
     }
 
     public static function exists($pseudo) {
-        $db = $this->dbConnect();
-        $req = $db.prepare('SELECT * FROM user WHERE pseudo = ?')->execute(array($pseudo))->fetch();
+        $db = Model::dbConnect();
+        $req = $db->prepare('SELECT * FROM user WHERE pseudo = ?')->execute(array($pseudo));
         return (bool)$req;
     }
 
