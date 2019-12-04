@@ -518,7 +518,6 @@ main.index-en-ligne article.acceuil {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
-  background-color: #F6F6F8;
 }
 
 main.index-en-ligne article.acceuil > section {
@@ -547,7 +546,7 @@ main.index-en-ligne article.acceuil section.my-events ul a, main.index-en-ligne 
   border-radius: 5px;
   background-color: white;
   width: 30%;
-  border: 2px solid #008556;
+  border: 1px solid grey;
   margin: 10px auto;
   padding: 15px 10px;
   display: -webkit-box;
@@ -900,15 +899,20 @@ main.profil {
   display: -ms-flexbox;
   display: flex;
   min-height: 90vh;
+  width: 100%;
 }
 
 main.profil aside.profil-information {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin: 20px 20px;
   padding-right: 20px;
   border-right: 1px #444 solid;
 }
 
-main.profil aside.profil-information h2, main.profil aside.profil-information h3 {
+main.profil aside.profil-information h2,
+main.profil aside.profil-information h3 {
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -924,7 +928,6 @@ main.profil aside.profil-information p {
 
 main.profil aside.profil-information img {
   width: 100%;
-  min-height: 250px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
@@ -934,6 +937,127 @@ main.profil aside.profil-information img {
 main.profil aside.profil-information img:hover {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+main.profil article.options {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  width: 100%;
+}
+
+main.profil article.options > section {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+main.profil article.options .liste-liens ul {
+  margin: 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main.profil article.options .liste-liens ul a {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #444;
+  font-size: 15px;
+  padding: 10px 15px;
+  -webkit-transition: color 0.6s ease;
+  transition: color 0.6s ease;
+  cursor: pointer;
+  border-bottom: 1px grey solid;
+}
+
+main.profil article.options .liste-liens ul a:hover, main.profil article.options .liste-liens ul a.active {
+  color: #00ce87;
+  border-color: #00ce87;
+}
+
+main.profil article.options .liste-liens li {
+  list-style: none;
+}
+
+main.profil article.options .my-events ul, main.profil article.options .find-events ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main.profil article.options .my-events ul a, main.profil article.options .find-events ul a {
+  border-radius: 5px;
+  background-color: white;
+  width: 30%;
+  border: 1px solid grey;
+  margin: 10px auto;
+  padding: 15px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  text-align: left;
+}
+
+main.profil article.options .my-events ul a:hover, main.profil article.options .find-events ul a:hover {
+  color: inherit;
+}
+
+main.profil article.options .my-events ul a:hover h3, main.profil article.options .find-events ul a:hover h3 {
+  color: #008556;
+  text-decoration: underline;
+}
+
+main.profil article.options .my-events ul a div.localisation, main.profil article.options .find-events ul a div.localisation {
+  width: 100%;
+  margin: 10px 0;
+}
+
+main.profil article.options .my-events ul a div.localisation *, main.profil article.options .find-events ul a div.localisation * {
+  display: inline;
+}
+
+main.profil article.options .my-events ul a div.button, main.profil article.options .find-events ul a div.button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main.profil article.options .my-events ul a div.button button, main.profil article.options .find-events ul a div.button button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: inherit auto;
+}
+
+main.profil article.options .my-events ul a div.button button i, main.profil article.options .find-events ul a div.button button i {
+  margin-right: 5px;
+}
+
+main.profil article.options .my-events ul a .image img, main.profil article.options .find-events ul a .image img {
+  width: 100%;
 }
 
 footer {
@@ -1599,3 +1723,4 @@ main.index-hors-ligne .events-page .events .events-card p i {
             flex-direction: column;
   }
 }
+/*# sourceMappingURL=style.css.map */

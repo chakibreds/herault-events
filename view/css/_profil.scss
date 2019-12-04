@@ -1,29 +1,121 @@
-main.profil{
-    display : flex;
-    min-height: 90vh;
-    aside.profil-information{
-        margin : 20px 20px;
-        padding-right:  20px;
-        border-right: 1px $couleurPrincipal solid;
-        h2,h3{
-            margin-top: 5px;
-            margin-bottom: 5px;
-            
-        }
-        h3{
-            color: grey;
-        }
-        p{
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        img{
-            width: 100%;
-            min-height: 250px;
-            @include shadow-card
-        }
-        
-
+main.profil {
+  display: flex;
+  min-height: 90vh;
+  width: 100%;
+  aside.profil-information {
+    flex: 1;
+    margin: 20px 20px;
+    padding-right: 20px;
+    border-right: 1px $couleurPrincipal solid;
+    h2,
+    h3 {
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
+    h3 {
+      color: grey;
+    }
+    p {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 100%;
 
+      @include shadow-card;
+    }
+  }
+  article.options {
+    flex: 4;
+
+    width: 100%;
+    & > section {
+        text-align: center;
+        padding: 20px 10px;
+    }
+    .liste-liens {
+      ul {
+        margin: 20px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        a {
+          text-decoration: none;
+          margin-left: 10px;
+          color: $couleurPrincipal;
+          font-size: 15px;
+          padding: 10px 15px;
+          transition: color 0.6s ease;
+          cursor: pointer;
+          border-bottom: 1px grey solid;
+          &:hover,
+          &.active {
+            color: $couleurSecondaire;
+            border-color: $couleurSecondaire;
+          }
+          
+        }
+      }
+
+      li {
+        list-style: none;
+      }
+    }
+    .my-events,.find-events {
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        a {
+          border-radius: 5px;
+          background-color: white;
+          width: 30%;
+          border: 1px solid grey;
+          margin: 10px auto;
+          padding: 15px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+
+          text-align: left;
+
+          &:hover {
+            color: inherit;
+
+            h3 {
+              color: $vertFonce;
+              text-decoration: underline;
+            }
+          }
+          div.localisation {
+            width: 100%;
+            margin: 10px 0;
+            * {
+                display: inline;
+            }
+        }
+
+        div.button {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            button {
+                display: flex;
+                margin: inherit auto;
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .image  img{
+            width : 100%
+        }
+        }
+      }
+    }
+  }
 }

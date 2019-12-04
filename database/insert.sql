@@ -17,6 +17,7 @@ INSERT INTO adresse VALUES(NULL,19,'USTHB','ALGER','ALGERIE',16000,NULL);
 
 /* insertion des user */
 INSERT INTO user VALUES('y2ssam','Kezzoul','Massili','1998-08-20','massy.kezzoul@gmail.com',NULL,'password','2019-11-07 17:57:00','admin',1);
+INSERT INTO user VALUES('chakibReds','ELHOUITI','Chakib','1998-09-19','celhouiti@gmail.com',NULL,'password','2019-12-04 19:14:00','admin',2);
 
 /* INSERTION des events */
 

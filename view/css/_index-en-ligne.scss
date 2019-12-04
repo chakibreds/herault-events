@@ -43,7 +43,7 @@ main.index-en-ligne {
 
     article.acceuil {
         flex: 4;
-        background-color: $blanc;
+        
 
         & > section {
             text-align: center;
@@ -64,7 +64,7 @@ main.index-en-ligne {
                     border-radius: 5px;
                     background-color: white;
                     width: 30%;
-                    border: 2px solid $vertFonce;
+                    border: 1px solid grey ;
                     margin: 10px auto;
                     padding: 15px 10px;
                     display: flex;
