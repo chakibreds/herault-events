@@ -37,6 +37,9 @@ $blanc            : #F6F6F8;
 @import "./index-en-ligne";
 @import "./header";
 @import "./events";
+@import "./profil";
+@import "./footer";
+
 
 
 main.index-hors-ligne {
@@ -263,136 +266,5 @@ main.index-hors-ligne {
   }
 }
 
-footer {
-  min-height      : 40vh;
-  width           : 100%;
-  background-color: $couleurPrincipal;
-  display         : flex;
-  flex-direction  : column;
-  justify-content : space-between;
-
-  .head-footer {
-    display        : flex;
-    flex-direction : row;
-    justify-content: space-between;
-    align-items    : baseline;
-
-    span.logo {
-      display        : flex;
-      justify-content: flex-start;
-      align-items    : center;
-      height         : 20%;
-
-      margin-left: 50px;
-      margin-top : 50px;
-
-      img {
-        height: 40px;
-        margin: 0 20px;
-      }
-
-      h1 {
-        color     : $couleurSecondaire;
-        font-style: italic;
-        font-size : 45px;
-      }
-    }
-
-    ul {
-      margin-right: 50px;
-      margin-top  : 50px;
-
-      display        : flex;
-      flex-direction : row;
-      justify-content: space-around;
-
-      a {
-        color          : $couleurTroisieme;
-        text-decoration: none;
-        font-size      : 17px;
-        padding        : 10px 15px;
-        transition     : color 0.6s ease;
-
-        &:hover {
-          color: grey;
-        }
-      }
-
-      li {
-        list-style: none;
-      }
-    }
-  }
-
-  .social-media {
-    width          : 40%;
-    min-width      : 200px;
-    margin         : auto;
-    height         : 40px;
-    display        : flex;
-    justify-content: space-between;
-    margin-bottom  : 25px;
-
-    a i {
-      font-size          : 35px;
-      transition         : 0.5s ease;
-      transition-property: font-size, color, background, background-clip, -webkit-text-fill-color;
-      width              : 35px;
-    }
-
-    .fa-facebook {
-      color: grey;
-
-      &:hover {
-        font-size: 40px;
-        color    : #3b5da0;
-      }
-    }
-
-    .fa-instagram {
-      color: grey;
-
-      &:hover {
-        font-size: 40px;
-        background: linear-gradient(to right top,
-            #f58529,
-            #f97238,
-            #f95e47,
-            #f64b56,
-            #ee3a66,
-            #e73478,
-            #dc348a,
-            #cd399a,
-            #bb47ae,
-            #a455bf,
-            #8761cc,
-            #626bd5);
-        background-clip        : text;
-        -webkit-background-clip: text;
-        -moz-background-clip   : text;
-        -webkit-text-fill-color: transparent;
-        color                  : transparent;
-      }
-    }
-
-    .fa-github {
-      color: grey;
-
-      &:hover {
-        font-size: 40px;
-        color    : white;
-      }
-    }
-
-    .fa-twitter {
-      color: grey;
-
-      &:hover {
-        font-size: 40px;
-        color    : #3191f6;
-      }
-    }
-  }
-}
 
 @import "./media";

@@ -1,0 +1,29 @@
+main.profil{
+    display : flex;
+    min-height: 90vh;
+    aside.profil-information{
+        margin : 20px 20px;
+        padding-right:  20px;
+        border-right: 1px $couleurPrincipal solid;
+        h2,h3{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            
+        }
+        h3{
+            color: grey;
+        }
+        p{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        img{
+            width: 100%;
+            min-height: 250px;
+            @include shadow-card
+        }
+        
+
+    }
+
+}

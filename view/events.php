@@ -93,7 +93,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <ul>
                         <li>Membre depuis le 01/01/1970</li>
                     </ul>
-                    <a href="<?= $server_root ?>view/profile.php"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
+                    <a href="<?= $server_root ?>view/profil.php"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
                 </div>
             </section>
         </article>

@@ -893,6 +893,200 @@ main.events article.event section.contributeur-card div.contributeur-information
   margin: 0;
 }
 
+main.profil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 90vh;
+}
+
+main.profil aside.profil-information {
+  margin: 20px 20px;
+  padding-right: 20px;
+  border-right: 1px #444 solid;
+}
+
+main.profil aside.profil-information h2, main.profil aside.profil-information h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+main.profil aside.profil-information h3 {
+  color: grey;
+}
+
+main.profil aside.profil-information p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+main.profil aside.profil-information img {
+  width: 100%;
+  min-height: 250px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+main.profil aside.profil-information img:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  min-height: 40vh;
+  width: 100%;
+  background-color: #444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .head-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+footer .head-footer span.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20%;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+footer .head-footer span.logo img {
+  height: 40px;
+  margin: 0 20px;
+}
+
+footer .head-footer span.logo h1 {
+  color: #00ce87;
+  font-style: italic;
+  font-size: 45px;
+}
+
+footer .head-footer ul {
+  margin-right: 50px;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer .head-footer ul a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 10px 15px;
+  -webkit-transition: color 0.6s ease;
+  transition: color 0.6s ease;
+}
+
+footer .head-footer ul a:hover {
+  color: grey;
+}
+
+footer .head-footer ul li {
+  list-style: none;
+}
+
+footer .social-media {
+  width: 40%;
+  min-width: 200px;
+  margin: auto;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+footer .social-media a i {
+  font-size: 35px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  transition-property: font-size, color, background, background-clip, -webkit-text-fill-color;
+  width: 35px;
+}
+
+footer .social-media .fa-facebook {
+  color: grey;
+}
+
+footer .social-media .fa-facebook:hover {
+  font-size: 40px;
+  color: #3b5da0;
+}
+
+footer .social-media .fa-instagram {
+  color: grey;
+}
+
+footer .social-media .fa-instagram:hover {
+  font-size: 40px;
+  background: -webkit-gradient(linear, left bottom, right top, from(#f58529), color-stop(#f97238), color-stop(#f95e47), color-stop(#f64b56), color-stop(#ee3a66), color-stop(#e73478), color-stop(#dc348a), color-stop(#cd399a), color-stop(#bb47ae), color-stop(#a455bf), color-stop(#8761cc), to(#626bd5));
+  background: linear-gradient(to right top, #f58529, #f97238, #f95e47, #f64b56, #ee3a66, #e73478, #dc348a, #cd399a, #bb47ae, #a455bf, #8761cc, #626bd5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+footer .social-media .fa-github {
+  color: grey;
+}
+
+footer .social-media .fa-github:hover {
+  font-size: 40px;
+  color: white;
+}
+
+footer .social-media .fa-twitter {
+  color: grey;
+}
+
+footer .social-media .fa-twitter:hover {
+  font-size: 40px;
+  color: #3191f6;
+}
+
 main.index-hors-ligne {
   position: relative;
   z-index: 0;
@@ -1214,159 +1408,6 @@ main.index-hors-ligne .events-page .events .events-card p {
 
 main.index-hors-ligne .events-page .events .events-card p i {
   color: #444;
-}
-
-footer {
-  min-height: 40vh;
-  width: 100%;
-  background-color: #444;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-footer .head-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-}
-
-footer .head-footer span.logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 20%;
-  margin-left: 50px;
-  margin-top: 50px;
-}
-
-footer .head-footer span.logo img {
-  height: 40px;
-  margin: 0 20px;
-}
-
-footer .head-footer span.logo h1 {
-  color: #00ce87;
-  font-style: italic;
-  font-size: 45px;
-}
-
-footer .head-footer ul {
-  margin-right: 50px;
-  margin-top: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-footer .head-footer ul a {
-  color: whitesmoke;
-  text-decoration: none;
-  font-size: 17px;
-  padding: 10px 15px;
-  -webkit-transition: color 0.6s ease;
-  transition: color 0.6s ease;
-}
-
-footer .head-footer ul a:hover {
-  color: grey;
-}
-
-footer .head-footer ul li {
-  list-style: none;
-}
-
-footer .social-media {
-  width: 40%;
-  min-width: 200px;
-  margin: auto;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 25px;
-}
-
-footer .social-media a i {
-  font-size: 35px;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-  transition-property: font-size, color, background, background-clip, -webkit-text-fill-color;
-  width: 35px;
-}
-
-footer .social-media .fa-facebook {
-  color: grey;
-}
-
-footer .social-media .fa-facebook:hover {
-  font-size: 40px;
-  color: #3b5da0;
-}
-
-footer .social-media .fa-instagram {
-  color: grey;
-}
-
-footer .social-media .fa-instagram:hover {
-  font-size: 40px;
-  background: -webkit-gradient(linear, left bottom, right top, from(#f58529), color-stop(#f97238), color-stop(#f95e47), color-stop(#f64b56), color-stop(#ee3a66), color-stop(#e73478), color-stop(#dc348a), color-stop(#cd399a), color-stop(#bb47ae), color-stop(#a455bf), color-stop(#8761cc), to(#626bd5));
-  background: linear-gradient(to right top, #f58529, #f97238, #f95e47, #f64b56, #ee3a66, #e73478, #dc348a, #cd399a, #bb47ae, #a455bf, #8761cc, #626bd5);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-footer .social-media .fa-github {
-  color: grey;
-}
-
-footer .social-media .fa-github:hover {
-  font-size: 40px;
-  color: white;
-}
-
-footer .social-media .fa-twitter {
-  color: grey;
-}
-
-footer .social-media .fa-twitter:hover {
-  font-size: 40px;
-  color: #3191f6;
 }
 
 /* 
