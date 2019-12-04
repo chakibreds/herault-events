@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
     
-    
-    <?php
+<?php
 require_once '../controller/path.php';
-require($dir_root . 'view/head.php');
+require_once $dir_root . 'view/head.php';
 ?>
 <script src="<?= $server_root . 'view/js/inscription.js' ?>"></script>
 
@@ -101,9 +100,9 @@ require($dir_root . 'view/head.php');
                             <label for="Cpassword">confirmation</label>
                         </div>
                     </div>
-                    <div class="errMdp">No match password</div>
+                    <div class="errorBlock errMdp">No match password</div>
                 </div>
-                <div class="info">
+                <div class="errorBlock info">
                     Veuillez renseigner tous les champs
                 </div>
                 <div class="continuer-retour-inscrire">

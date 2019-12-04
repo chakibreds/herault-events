@@ -16,7 +16,8 @@ Couleur V1
   outline: none;
 }
 
-body, html {
+body,
+html {
   font-family: 'Raleway', sans-serif !important;
   width: 100%;
   overflow-x: hidden !important;
@@ -138,6 +139,17 @@ a {
 a:hover {
   color: #00ce87;
   text-decoration: underline;
+}
+
+/* error div */
+div.errorBlock {
+  width: 100%;
+  margin-top: 5px;
+  background-color: indianred;
+  text-align: center;
+  color: whitesmoke;
+  padding: 4px;
+  border-radius: 5px;
 }
 
 main.connection {
@@ -417,16 +429,6 @@ main.inscription .form form .continuer-retour-inscrire {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-main.inscription .form form .info, main.inscription .form form .errMdp {
-  width: 100%;
-  margin-top: 5px;
-  background-color: indianred;
-  text-align: center;
-  color: whitesmoke;
-  padding: 4px;
-  border-radius: 5px;
 }
 
 main.inscription .old-compte {
@@ -1597,4 +1599,3 @@ main.index-hors-ligne .events-page .events .events-card p i {
             flex-direction: column;
   }
 }
-/*# sourceMappingURL=style.css.map */

@@ -1,17 +1,21 @@
+<?php
+session_start();
+require_once '../controller/path.php';
+require_once $dir_root . 'controller/all.php';
+require_once $dir_root . 'view/head.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <?php
-
-require_once '../controller/path.php';
-require_once $dir_root . 'controller/all.php';
-require_once $dir_root . 'view/head.php';
 
 if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     require_once $dir_root . 'view/headerEnLigne.php';
 } else {
     require_once $dir_root . 'view/headerHorsLigne.php';
 }
+
 ?>
 
 <body>
