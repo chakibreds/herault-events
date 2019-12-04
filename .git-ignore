@@ -1,4 +1,3 @@
 
-src/css/*.css.map
-
-src/bootstrap/
+view/css/*.css.map
+model/model.php

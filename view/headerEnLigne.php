@@ -7,8 +7,8 @@
         <i class="fas fa-bars"></i>
     </div>
     <nav class="mobile-display-none">
-        <li><a href="#"><i class="fas fa-user"></i> <?= $user->get_nom() ." ". $user->get_prenom()?></a></li>
-        <li><a href="<?= $server_root ?>view/compte.php">Compte</a></li>
-        <li><a href="<?= $server_root ?>view/disconnect.php">Deconnection</a></li>
+        <li><a href="<?= $server_root ?>"><i class="fas fa-home"></i> Acceuil</a></li>
+        <li><a href="<?= $server_root ?>view/profil.php"><i class="fas fa-user"></i> <?= $user->get_nom() ." ". $user->get_prenom()?></a></li>
+        <li><a href="<?= $server_root ?>view/disconnect.php"><i class="fas fa-sign-out-alt"></i> Deconnection</a></li>
     </nav>
 </header>

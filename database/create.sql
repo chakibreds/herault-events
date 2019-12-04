@@ -24,7 +24,7 @@ CREATE TABLE adresse (
     nom_rue VARCHAR(255) NOT NULL,
     ville VARCHAR(255) NOT NULL,
     pays VARCHAR(255) NOT NULL,
-    code_postal INT(5) NOT NULL,
+    code_postal VARCHAR(5) NOT NULL,
     additional_adresse VARCHAR(255),
     CONSTRAINT PK_adresse PRIMARY KEY (id_adresse)
 );
@@ -34,6 +34,7 @@ CREATE TABLE user (
     pseudo VARCHAR(100),
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
+    civilite ENUM('monsieur', 'madame', 'autre') NOT NULL DEFAULT 'autre',
     date_nai DATE NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     tel VARCHAR(20) UNIQUE,
