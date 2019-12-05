@@ -12,3 +12,4 @@
         <li><a href="<?= $server_root ?>view/disconnect.php"><i class="fas fa-sign-out-alt"></i> Deconnection</a></li>
     </nav>
 </header>
+<script src="<?= $server_root ?>view/js/script.js"></script>

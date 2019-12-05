@@ -951,7 +951,7 @@ main.profil article.options > section {
   padding: 20px 10px;
 }
 
-main.profil article.options .liste-liens ul {
+main.profil article.options .listeLiens ul {
   margin: 20px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -964,7 +964,7 @@ main.profil article.options .liste-liens ul {
       justify-content: space-around;
 }
 
-main.profil article.options .liste-liens ul a {
+main.profil article.options .listeLiens ul a {
   text-decoration: none;
   margin-left: 10px;
   color: #444;
@@ -976,12 +976,12 @@ main.profil article.options .liste-liens ul a {
   border-bottom: 1px grey solid;
 }
 
-main.profil article.options .liste-liens ul a:hover, main.profil article.options .liste-liens ul a.active {
+main.profil article.options .listeLiens ul a:hover, main.profil article.options .listeLiens ul a.active {
   color: #00ce87;
   border-color: #00ce87;
 }
 
-main.profil article.options .liste-liens li {
+main.profil article.options .listeLiens li {
   list-style: none;
 }
 
