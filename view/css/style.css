@@ -946,7 +946,12 @@ main.profil article.options {
   width: 100%;
 }
 
-main.profil article.options > section {
+main.profil article.options section {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+main.profil article.options .listeLiens {
   text-align: center;
   padding: 20px 10px;
 }
@@ -985,7 +990,8 @@ main.profil article.options .listeLiens li {
   list-style: none;
 }
 
-main.profil article.options .my-events ul, main.profil article.options .find-events ul {
+main.profil article.options .my-events ul,
+main.profil article.options .find-events ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -997,7 +1003,8 @@ main.profil article.options .my-events ul, main.profil article.options .find-eve
       flex-wrap: wrap;
 }
 
-main.profil article.options .my-events ul a, main.profil article.options .find-events ul a {
+main.profil article.options .my-events ul a,
+main.profil article.options .find-events ul a {
   border-radius: 5px;
   background-color: white;
   width: 30%;
@@ -1018,25 +1025,30 @@ main.profil article.options .my-events ul a, main.profil article.options .find-e
   text-align: left;
 }
 
-main.profil article.options .my-events ul a:hover, main.profil article.options .find-events ul a:hover {
+main.profil article.options .my-events ul a:hover,
+main.profil article.options .find-events ul a:hover {
   color: inherit;
 }
 
-main.profil article.options .my-events ul a:hover h3, main.profil article.options .find-events ul a:hover h3 {
+main.profil article.options .my-events ul a:hover h3,
+main.profil article.options .find-events ul a:hover h3 {
   color: #008556;
   text-decoration: underline;
 }
 
-main.profil article.options .my-events ul a div.localisation, main.profil article.options .find-events ul a div.localisation {
+main.profil article.options .my-events ul a div.localisation,
+main.profil article.options .find-events ul a div.localisation {
   width: 100%;
   margin: 10px 0;
 }
 
-main.profil article.options .my-events ul a div.localisation *, main.profil article.options .find-events ul a div.localisation * {
+main.profil article.options .my-events ul a div.localisation *,
+main.profil article.options .find-events ul a div.localisation * {
   display: inline;
 }
 
-main.profil article.options .my-events ul a div.button, main.profil article.options .find-events ul a div.button {
+main.profil article.options .my-events ul a div.button,
+main.profil article.options .find-events ul a div.button {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1045,18 +1057,21 @@ main.profil article.options .my-events ul a div.button, main.profil article.opti
       justify-content: space-around;
 }
 
-main.profil article.options .my-events ul a div.button button, main.profil article.options .find-events ul a div.button button {
+main.profil article.options .my-events ul a div.button button,
+main.profil article.options .find-events ul a div.button button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: inherit auto;
 }
 
-main.profil article.options .my-events ul a div.button button i, main.profil article.options .find-events ul a div.button button i {
+main.profil article.options .my-events ul a div.button button i,
+main.profil article.options .find-events ul a div.button button i {
   margin-right: 5px;
 }
 
-main.profil article.options .my-events ul a .image img, main.profil article.options .find-events ul a .image img {
+main.profil article.options .my-events ul a .image img,
+main.profil article.options .find-events ul a .image img {
   width: 100%;
 }
 

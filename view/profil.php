@@ -26,7 +26,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
             <p><i class="fas fa-map-marker-alt"></i> Localisation</p>
         </aside>
         <article class="options">
-            <section class="listeLiens">
+            <div class="listeLiens">
                 <ul>
                     <li>
                         <a id="my-events" class="active" href="#">Évenements</a>
@@ -44,7 +44,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                         <a id="gerer" href="#">Gérer</a>
                     </li>
                 </ul>
-            </section>
+            </div>
             <section class="my-events">
                 <h2>Evenements</h2>
                 <ul>

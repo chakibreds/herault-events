@@ -29,11 +29,13 @@ main.profil {
     flex: 4;
 
     width: 100%;
-    & > section {
-        text-align: center;
-        padding: 20px 10px;
+    & section {
+      text-align: center;
+      padding: 20px 10px;
     }
     .listeLiens {
+      text-align: center;
+      padding: 20px 10px;
       ul {
         margin: 20px 20px;
         display: flex;
@@ -53,7 +55,6 @@ main.profil {
             color: $couleurSecondaire;
             border-color: $couleurSecondaire;
           }
-          
         }
       }
 
@@ -61,7 +62,8 @@ main.profil {
         list-style: none;
       }
     }
-    .my-events,.find-events {
+    .my-events,
+    .find-events {
       ul {
         display: flex;
         flex-direction: row;
@@ -93,27 +95,27 @@ main.profil {
             width: 100%;
             margin: 10px 0;
             * {
-                display: inline;
+              display: inline;
             }
-        }
+          }
 
-        div.button {
+          div.button {
             width: 100%;
             display: flex;
             justify-content: space-around;
 
             button {
-                display: flex;
-                margin: inherit auto;
+              display: flex;
+              margin: inherit auto;
 
-                i {
-                    margin-right: 5px;
-                }
+              i {
+                margin-right: 5px;
+              }
             }
-        }
-        .image  img{
-            width : 100%
-        }
+          }
+          .image img {
+            width: 100%;
+          }
         }
       }
     }
