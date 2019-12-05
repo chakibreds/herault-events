@@ -1,7 +1,7 @@
 var liens = ["my-events", "find-events", "contribution", "edit-profil", "gerer"];
 
 var profil = document.querySelector(".profil");
-var sections = document.querySelectorAll("article section");
+var sections = document.querySelectorAll("article > section");
 var divLiens = document.querySelector(".listeLiens");
 
 for (let sec of sections) {

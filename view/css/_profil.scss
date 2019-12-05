@@ -1,123 +1,218 @@
 main.profil {
-  display: flex;
-  min-height: 90vh;
-  width: 100%;
-  aside.profil-information {
-    flex: 1;
-    margin: 20px 20px;
-    padding-right: 20px;
-    border-right: 1px $couleurPrincipal solid;
-    h2,
-    h3 {
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-    h3 {
-      color: grey;
-    }
-    p {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-    img {
-      width: 100%;
+	display   : flex;
+	min-height: 90vh;
+	width     : 100%;
 
-      @include shadow-card;
-    }
-  }
-  article.options {
-    flex: 4;
+	aside.profil-information {
+		flex         : 1;
+		margin       : 20px 20px;
+		padding-right: 20px;
+		border-right : 1px $couleurPrincipal solid;
 
-    width: 100%;
-    & section {
-      text-align: center;
-      padding: 20px 10px;
-    }
-    .listeLiens {
-      text-align: center;
-      padding: 20px 10px;
-      ul {
-        margin: 20px 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        a {
-          text-decoration: none;
-          margin-left: 10px;
-          color: $couleurPrincipal;
-          font-size: 15px;
-          padding: 10px 15px;
-          transition: color 0.6s ease;
-          cursor: pointer;
-          border-bottom: 1px grey solid;
-          &:hover,
-          &.active {
-            color: $couleurSecondaire;
-            border-color: $couleurSecondaire;
-          }
-        }
-      }
+		ul {
+			list-style: none;
 
-      li {
-        list-style: none;
-      }
-    }
-    .my-events,
-    .find-events {
-      ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+			li {
+				font-size    : 1em;
+				margin-top   : 5px;
+				margin-bottom: 5px;
+			}
 
-        a {
-          border-radius: 5px;
-          background-color: white;
-          width: 30%;
-          border: 1px solid grey;
-          margin: 10px auto;
-          padding: 15px 10px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-decoration: none;
+			li.nom {
+				font-size  : 2em;
+				font-weight: bold;
+			}
 
-          text-align: left;
+			li.pseudo {
+				color    : $couleurPrincipal;
+				font-size: 1.4em;
+			}
 
-          &:hover {
-            color: inherit;
+			button {
+				margin-left: 0;
+				width      : 100%;
+			}
 
-            h3 {
-              color: $vertFonce;
-              text-decoration: underline;
-            }
-          }
-          div.localisation {
-            width: 100%;
-            margin: 10px 0;
-            * {
-              display: inline;
-            }
-          }
+		}
 
-          div.button {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
+		img {
+			width: 100%;
+			@include shadow-card;
+		}
+	}
 
-            button {
-              display: flex;
-              margin: inherit auto;
+	article.options {
+		flex : 4;
+		width: 100%;
 
-              i {
-                margin-right: 5px;
-              }
-            }
-          }
-          .image img {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
+		.listeLiens {
+			text-align: center;
+			padding   : 20px 10px;
+
+			ul {
+				margin         : 20px 20px;
+				display        : flex;
+				flex-direction : row;
+				justify-content: space-around;
+
+				a {
+					text-decoration: none;
+					margin-left    : 10px;
+					color          : $couleurPrincipal;
+					font-size      : 15px;
+					padding        : 10px 15px;
+					transition     : color 0.6s ease;
+					cursor         : pointer;
+					border-bottom  : 1px grey solid;
+
+					&:hover,
+					&.active {
+						color       : $couleurSecondaire;
+						border-color: $couleurSecondaire;
+					}
+				}
+			}
+
+			li {
+				list-style: none;
+			}
+		}
+
+		section {
+			padding: 0 10px 20px 10px;
+
+			p {
+				font-size: 1.2em;
+				margin   : 20px 0;
+			}
+
+			h2 {
+				text-align: center;
+			}
+
+			ul {
+				display       : flex;
+				flex-direction: row;
+				flex-wrap     : wrap;
+
+				a {
+					@include shadow-card;
+					border-radius   : 5px;
+					background-color: white;
+					width           : 30%;
+					border          : 1px solid grey;
+					margin          : 10px auto;
+					padding         : 15px 10px;
+					display         : flex;
+					flex-direction  : column;
+					align-items     : center;
+					text-decoration : none;
+
+					text-align: left;
+
+					&:hover {
+						color: inherit;
+
+						h3 {
+							color          : $vertFonce;
+							text-decoration: underline;
+						}
+					}
+
+					div.localisation {
+						width : 100%;
+						margin: 10px 0;
+
+						* {
+							display: inline;
+						}
+					}
+
+					div.button {
+						width          : 100%;
+						display        : flex;
+						justify-content: space-around;
+
+						button {
+							display: flex;
+							margin : inherit auto;
+
+							i {
+								margin-right: 5px;
+							}
+						}
+					}
+
+					img {
+						width        : 100%;
+						border-radius: 5px;
+						margin       : 10px 0;
+					}
+				}
+			}
+
+			&.edit-profil form.form-edit {
+				display              : grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap             : 20px;
+
+				section {
+					border       : 1px solid $vertFonce;
+					border-radius: 5px;
+					@include shadow-card;
+
+
+					legend {
+						display         : inline-block;
+						color           : $vertFonce;
+						position        : relative;
+						top             : 0;
+						transform       : translateY(-50%);
+						font-size       : 1.2em;
+						padding         : 2px 10px;
+						background-color: white;
+
+					}
+
+					div.label-input {
+						display       : flex;
+						flex-direction: row;
+
+						label {
+							width    : 40%;
+							max-width: 300px;
+
+
+						}
+
+						input,
+						textarea {
+							margin-right: 20px;
+							width       : 50%;
+							max-width   : 300px;
+						}
+					}
+
+					&.submit,
+					&.information-compte {
+						grid-column: 1 / 3;
+					}
+
+					&.submit {
+						border: none;
+						@include rm-shadow-card;
+						display        : flex;
+						flex-direction : row;
+						justify-content: center;
+
+						button {
+							margin: 0 10px;
+							width : inherit;
+							height: initial;
+						}
+					}
+				}
+			}
+		}
+	}
 }

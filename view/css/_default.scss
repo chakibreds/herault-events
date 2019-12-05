@@ -35,6 +35,7 @@ input[type=password],
 input[type=date],
 input[type=tel],
 input[type=number],
+textarea,
 select {
     margin-bottom   : 12px;
     padding         : 5px 12px;
@@ -50,21 +51,16 @@ select {
     transition: border-color 0.6s ease;
     transition: box-shadow 0.6s ease;
 
-}
+    &:focus {
+        border-color: $couleurSecondaire;
+        box-shadow  : 2px 2px 5px 0.2rem $couleurSecondaire;
+    }
 
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-input[type=date]:focus,
-input[type=tel]:focus,
-input[type=number]:focus,
-select:focus {
-    border-color: $couleurSecondaire;
-    box-shadow  : 2px 2px 5px 0.2rem $couleurSecondaire;
 }
 
 button[type=submit],
-button[type=button] {
+button[type=button],
+button[type=reset] {
     form & {
         width: 100%;
     }
@@ -89,6 +85,10 @@ button[type=button] {
         border-color    : $couleurSecondaire;
     }
 
+    &:disabled {
+        cursor: not-allowed;
+    }
+
     &.btn-search {
         position   : relative;
         //transform: translateX(-100%);
@@ -109,13 +109,18 @@ button[type=button] {
         transition-property: color, background-color, border-color;
         transition-duration: .6s;
 
-        &:hover {
+        &:hover, &:disabled {
             color           : $couleurSecondaire;
             background-color: $couleurPrincipal;
             border-color    : $couleurSecondaire;
 
         }
     }
+}
+
+button[type=reset] {
+    color: $couleurSecondaire;
+    background-color: $couleurPrincipal;
 }
 
 /* le text en gras, les liens et autres */

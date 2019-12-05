@@ -31,6 +31,15 @@ $blanc            : #F6F6F8;
   }
 }
 
+@mixin rm-shadow-card {
+  box-shadow: none;
+  transition: none;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
 @import "./default";
 @import "./connection";
 @import "./inscription";

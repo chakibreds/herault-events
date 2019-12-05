@@ -37,6 +37,7 @@ input[type=password],
 input[type=date],
 input[type=tel],
 input[type=number],
+textarea,
 select {
   margin-bottom: 12px;
   padding: 5px 12px;
@@ -63,6 +64,7 @@ input[type=password]:focus,
 input[type=date]:focus,
 input[type=tel]:focus,
 input[type=number]:focus,
+textarea:focus,
 select:focus {
   border-color: #00ce87;
   -webkit-box-shadow: 2px 2px 5px 0.2rem #00ce87;
@@ -70,7 +72,8 @@ select:focus {
 }
 
 button[type=submit],
-button[type=button] {
+button[type=button],
+button[type=reset] {
   border: 1px solid #444;
   border-radius: 5px;
   background-color: #00ce87;
@@ -85,19 +88,28 @@ button[type=button] {
 }
 
 form button[type=submit], form
-button[type=button] {
+button[type=button], form
+button[type=reset] {
   width: 100%;
 }
 
 button[type=submit]:hover,
-button[type=button]:hover {
+button[type=button]:hover,
+button[type=reset]:hover {
   background-color: #444;
   color: #00ce87;
   border-color: #00ce87;
 }
 
+button[type=submit]:disabled,
+button[type=button]:disabled,
+button[type=reset]:disabled {
+  cursor: not-allowed;
+}
+
 button[type=submit].btn-search,
-button[type=button].btn-search {
+button[type=button].btn-search,
+button[type=reset].btn-search {
   position: relative;
   margin: 0;
   width: 35px;
@@ -116,11 +128,19 @@ button[type=button].btn-search {
           transition-duration: .6s;
 }
 
-button[type=submit].btn-search:hover,
-button[type=button].btn-search:hover {
+button[type=submit].btn-search:hover, button[type=submit].btn-search:disabled,
+button[type=button].btn-search:hover,
+button[type=button].btn-search:disabled,
+button[type=reset].btn-search:hover,
+button[type=reset].btn-search:disabled {
   color: #00ce87;
   background-color: #444;
   border-color: #00ce87;
+}
+
+button[type=reset] {
+  color: #00ce87;
+  background-color: #444;
 }
 
 /* le text en gras, les liens et autres */
@@ -911,19 +931,29 @@ main.profil aside.profil-information {
   border-right: 1px #444 solid;
 }
 
-main.profil aside.profil-information h2,
-main.profil aside.profil-information h3 {
+main.profil aside.profil-information ul {
+  list-style: none;
+}
+
+main.profil aside.profil-information ul li {
+  font-size: 1em;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-main.profil aside.profil-information h3 {
-  color: grey;
+main.profil aside.profil-information ul li.nom {
+  font-size: 2em;
+  font-weight: bold;
 }
 
-main.profil aside.profil-information p {
-  margin-top: 20px;
-  margin-bottom: 20px;
+main.profil aside.profil-information ul li.pseudo {
+  color: #444;
+  font-size: 1.4em;
+}
+
+main.profil aside.profil-information ul button {
+  margin-left: 0;
+  width: 100%;
 }
 
 main.profil aside.profil-information img {
@@ -944,11 +974,6 @@ main.profil article.options {
       -ms-flex: 4;
           flex: 4;
   width: 100%;
-}
-
-main.profil article.options section {
-  text-align: center;
-  padding: 20px 10px;
 }
 
 main.profil article.options .listeLiens {
@@ -990,8 +1015,20 @@ main.profil article.options .listeLiens li {
   list-style: none;
 }
 
-main.profil article.options .my-events ul,
-main.profil article.options .find-events ul {
+main.profil article.options section {
+  padding: 0 10px 20px 10px;
+}
+
+main.profil article.options section p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+main.profil article.options section h2 {
+  text-align: center;
+}
+
+main.profil article.options section ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1003,8 +1040,11 @@ main.profil article.options .find-events ul {
       flex-wrap: wrap;
 }
 
-main.profil article.options .my-events ul a,
-main.profil article.options .find-events ul a {
+main.profil article.options section ul a {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   border-radius: 5px;
   background-color: white;
   width: 30%;
@@ -1025,30 +1065,30 @@ main.profil article.options .find-events ul a {
   text-align: left;
 }
 
-main.profil article.options .my-events ul a:hover,
-main.profil article.options .find-events ul a:hover {
+main.profil article.options section ul a:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+main.profil article.options section ul a:hover {
   color: inherit;
 }
 
-main.profil article.options .my-events ul a:hover h3,
-main.profil article.options .find-events ul a:hover h3 {
+main.profil article.options section ul a:hover h3 {
   color: #008556;
   text-decoration: underline;
 }
 
-main.profil article.options .my-events ul a div.localisation,
-main.profil article.options .find-events ul a div.localisation {
+main.profil article.options section ul a div.localisation {
   width: 100%;
   margin: 10px 0;
 }
 
-main.profil article.options .my-events ul a div.localisation *,
-main.profil article.options .find-events ul a div.localisation * {
+main.profil article.options section ul a div.localisation * {
   display: inline;
 }
 
-main.profil article.options .my-events ul a div.button,
-main.profil article.options .find-events ul a div.button {
+main.profil article.options section ul a div.button {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1057,22 +1097,112 @@ main.profil article.options .find-events ul a div.button {
       justify-content: space-around;
 }
 
-main.profil article.options .my-events ul a div.button button,
-main.profil article.options .find-events ul a div.button button {
+main.profil article.options section ul a div.button button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: inherit auto;
 }
 
-main.profil article.options .my-events ul a div.button button i,
-main.profil article.options .find-events ul a div.button button i {
+main.profil article.options section ul a div.button button i {
   margin-right: 5px;
 }
 
-main.profil article.options .my-events ul a .image img,
-main.profil article.options .find-events ul a .image img {
+main.profil article.options section ul a img {
   width: 100%;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+main.profil article.options section.edit-profil form.form-edit {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+main.profil article.options section.edit-profil form.form-edit section {
+  border: 1px solid #008556;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+main.profil article.options section.edit-profil form.form-edit section:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+main.profil article.options section.edit-profil form.form-edit section legend {
+  display: inline-block;
+  color: #008556;
+  position: relative;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.2em;
+  padding: 2px 10px;
+  background-color: white;
+}
+
+main.profil article.options section.edit-profil form.form-edit section div.label-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main.profil article.options section.edit-profil form.form-edit section div.label-input label {
+  width: 40%;
+  max-width: 300px;
+}
+
+main.profil article.options section.edit-profil form.form-edit section div.label-input input,
+main.profil article.options section.edit-profil form.form-edit section div.label-input textarea {
+  margin-right: 20px;
+  width: 50%;
+  max-width: 300px;
+}
+
+main.profil article.options section.edit-profil form.form-edit section.submit, main.profil article.options section.edit-profil form.form-edit section.information-compte {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+}
+
+main.profil article.options section.edit-profil form.form-edit section.submit {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: none;
+  transition: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main.profil article.options section.edit-profil form.form-edit section.submit:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main.profil article.options section.edit-profil form.form-edit section.submit button {
+  margin: 0 10px;
+  width: inherit;
+  height: initial;
 }
 
 footer {
@@ -1738,4 +1868,3 @@ main.index-hors-ligne .events-page .events .events-card p i {
             flex-direction: column;
   }
 }
-/*# sourceMappingURL=style.css.map */

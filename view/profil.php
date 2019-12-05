@@ -19,11 +19,17 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 <body>
     <main class="profil">
         <aside class="profil-information">
-
             <img src="<?= $server_root ?>view/img/user/profil_vide.jpg" alt="">
-            <h2>NOM PRENOM</h2>
-            <h3>Pseudo</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Localisation</p>
+            <ul>
+                <li class="nom">Nom Prenom</li>
+                <li class="pseudo"><i class="fas fa-at"></i>Pseudo</li>
+                <li class="edit"><button type="button"><i class="fas fa-edit"></i> Modifier</button></li>
+                <li class="localisation"><i class="fas fa-map-marker-alt"></i> Adresse</li>
+                <li class="Role">Rôle : admin</li>
+                <li class="membre">Membre depuis : 01/01/1975</li>
+                <li class="bio">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati aperiam porro illum vitae! Ad dolor fuga nostrum nam soluta velit possimus eligendi, eos qui quasi magnam blanditiis, quos harum.</li>
+                <li class="contact"><button type="button"><i class="fas fa-envelope"></i> Contacter</button></li>
+            </ul>
         </aside>
         <article class="options">
             <div class="listeLiens">
@@ -48,42 +54,42 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
             <section class="my-events">
                 <h2>Evenements</h2>
                 <ul>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -93,9 +99,9 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 </ul>
             </section>
             <section class="find-events">
-            <h2>intersser par</h2>
+                <h2>intersser par</h2>
                 <ul>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -112,7 +118,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                             <button type="button"><i class="fas fa-plus"></i> Participer</button>
                         </div>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -129,7 +135,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                             <button type="button"><i class="fas fa-plus"></i> Participer</button>
                         </div>
                     </a>
-                    <a href="#" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -149,10 +155,95 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 </ul>
             </section>
             <section class="contribution">
-                <h2>Contribution</h2>
+                <h2>Contributions</h2>
+                <p>Ici vous trouverer les contribution de l'utilisateur : </p>
+                <ul>
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                        <h3>Title event</h3>
+                        <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        <button type="button"><i class="fas fa-info-circle"></i> Voir plus</button>
+                    </a>
+                </ul>
             </section>
             <section class="edit-profil">
                 <h2>Edit Profile</h2>
+                <p>Modifier vos information</p>
+                <form action="" method="post" class="form-edit">
+                    <section class="information-personnelle">
+                        <legend>Informations personnelles</legend>
+                        <div class="label-input">
+                            <label for="nom">Nom</label>
+                            <input type="text" name="nom" id="nom" />
+                        </div>
+                        <div class="label-input">
+                            <label for="prenom">Prenom</label>
+                            <input type="text" name="prenom" id="prenom" />
+                        </div>
+                        <div class="label-input">
+                            <label for="civilite">Civilié</label>
+                            <input type="text" name="civilite" id="civilite" />
+                        </div>
+                        <div class="label-input">
+                            <label for="date_nai">Date naissance</label>
+                            <input type="date" name="" id="" />
+                        </div>
+                        <div class="label-input">
+                            <label for="tel">Numéro de télephone</label>
+                            <input type="tel" name="tel" id="tel" />
+                        </div>
+                        <div class="label-input">
+                            <label for="bio">Bio</label>
+                            <textarea name="bio" id="bio"></textarea>
+                        </div>
+                    </section>
+                    <section class="adresse">
+                        <legend>Informations sur l'adresse</legend>
+                        <div class="label-input">
+                            <label for="num_r">Numéro de la rue</label>
+                            <input type="number" name="num_r" id="num_r" />
+                        </div>
+                        <div class="label-input">
+                            <label for="nom_r">Nom de la rue</label>
+                            <input type="text" name="nom_r" id="nom_r" />
+                        </div>
+                        <div class="label-input">
+                            <label for="ville">Ville</label>
+                            <input type="text" name="ville" id="ville" />
+                        </div>
+                        <div class="label-input">
+                            <label for="pays">Pays</label>
+                            <input type="text" name="pays" id="pays" />
+                        </div>
+                        <div class="label-input">
+                            <label for="code_postal">Code postal</label>
+                            <input type="text" name="code_postal" id="code_postal" />
+                        </div>
+                        <div class="label-input">
+                            <label for="cmp_adr">Complément d'adresse</label>
+                            <textarea id="cmp_adr" name="cmp_adr"></textarea>
+                        </div>
+                    </section>
+                    <section class="information-compte">
+                        <legend>Informations sur le compte</legend>
+                        <div class="label-input">
+                            <label for="pseudo">Pseudo</label>
+                            <input type="text" name="pseudo" id="pseudo"/>
+                        </div>
+                        <div class="label-input">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email"/>
+                        </div>
+                        <div class="label-input">
+                            <label for="mdp">Mot de passe</label>
+                            <input type="password" name="mdp" id="mdp"/>
+                            <input type="password" name="Cmdp" id="Cmdp"/>
+                        </div>
+                    </section>
+                    <section class="submit">
+                        <button type="submit"><i class="fas fa-check"></i> Modifier</button>
+                        <button type="reset"><i class="fas fa-times"></i> Annuler</button>
+                    </section>
+                </form>
             </section>
             <section class="gerer">
                 <h2>Gerer</h2>
