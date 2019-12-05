@@ -101,11 +101,24 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <a href="<?= $server_root ?>view/profil.php"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
                 </div>
             </section>
+            <section class="map-event">
+                <div id="map" class="map">
+                    <i id="marker" class="fas fa-map-pin"></i>
+                </div>
+            </section>
         </article>
     </main>
 </body>
 <?php
 require_once $dir_root . '/view/footer.php';
 ?>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.0.1/build/ol.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.0.1/css/ol.css" />
+
+<script src="<?= $server_root ?>view/js/map.js"></script>
 
 </html>
