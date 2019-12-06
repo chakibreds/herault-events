@@ -1132,15 +1132,22 @@ main.profil article.options section ul a img {
   margin: 10px 0;
 }
 
-main.profil article.options section form.form-edit, main.profil article.options section form.form-event {
+main.profil article.options section form.form-edit,
+main.profil article.options section form.form-event,
+main.profil article.options section form.add-contributeur,
+main.profil article.options section form.rm-contributeur {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  margin-bottom: 20px;
 }
 
-main.profil article.options section form.form-edit section, main.profil article.options section form.form-event section {
+main.profil article.options section form.form-edit section,
+main.profil article.options section form.form-event section,
+main.profil article.options section form.add-contributeur section,
+main.profil article.options section form.rm-contributeur section {
   border: 1px solid #008556;
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -1149,12 +1156,18 @@ main.profil article.options section form.form-edit section, main.profil article.
   transition: 0.3s;
 }
 
-main.profil article.options section form.form-edit section:hover, main.profil article.options section form.form-event section:hover {
+main.profil article.options section form.form-edit section:hover,
+main.profil article.options section form.form-event section:hover,
+main.profil article.options section form.add-contributeur section:hover,
+main.profil article.options section form.rm-contributeur section:hover {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-main.profil article.options section form.form-edit section legend, main.profil article.options section form.form-event section legend {
+main.profil article.options section form.form-edit section legend,
+main.profil article.options section form.form-event section legend,
+main.profil article.options section form.add-contributeur section legend,
+main.profil article.options section form.rm-contributeur section legend {
   display: inline-block;
   color: #008556;
   position: relative;
@@ -1166,7 +1179,10 @@ main.profil article.options section form.form-edit section legend, main.profil a
   background-color: white;
 }
 
-main.profil article.options section form.form-edit section div.label-input, main.profil article.options section form.form-event section div.label-input {
+main.profil article.options section form.form-edit section div.label-input,
+main.profil article.options section form.form-event section div.label-input,
+main.profil article.options section form.add-contributeur section div.label-input,
+main.profil article.options section form.rm-contributeur section div.label-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1176,26 +1192,49 @@ main.profil article.options section form.form-edit section div.label-input, main
           flex-direction: row;
 }
 
-main.profil article.options section form.form-edit section div.label-input label, main.profil article.options section form.form-event section div.label-input label {
+main.profil article.options section form.form-edit section div.label-input label,
+main.profil article.options section form.form-event section div.label-input label,
+main.profil article.options section form.add-contributeur section div.label-input label,
+main.profil article.options section form.rm-contributeur section div.label-input label {
   width: 40%;
   max-width: 300px;
 }
 
 main.profil article.options section form.form-edit section div.label-input input,
-main.profil article.options section form.form-edit section div.label-input textarea, main.profil article.options section form.form-event section div.label-input input,
-main.profil article.options section form.form-event section div.label-input textarea {
+main.profil article.options section form.form-edit section div.label-input textarea,
+main.profil article.options section form.form-event section div.label-input input,
+main.profil article.options section form.form-event section div.label-input textarea,
+main.profil article.options section form.add-contributeur section div.label-input input,
+main.profil article.options section form.add-contributeur section div.label-input textarea,
+main.profil article.options section form.rm-contributeur section div.label-input input,
+main.profil article.options section form.rm-contributeur section div.label-input textarea {
   margin-right: 20px;
   max-width: 300px;
   min-width: 300px;
 }
 
-main.profil article.options section form.form-edit section.submit, main.profil article.options section form.form-edit section.information-compte, main.profil article.options section form.form-event section.submit, main.profil article.options section form.form-event section.information-compte {
+main.profil article.options section form.form-edit section.submit, main.profil article.options section form.form-edit section.information-compte, main.profil article.options section form.form-edit section.add-contributeur, main.profil article.options section form.form-edit section.rm-contributeur,
+main.profil article.options section form.form-event section.submit,
+main.profil article.options section form.form-event section.information-compte,
+main.profil article.options section form.form-event section.add-contributeur,
+main.profil article.options section form.form-event section.rm-contributeur,
+main.profil article.options section form.add-contributeur section.submit,
+main.profil article.options section form.add-contributeur section.information-compte,
+main.profil article.options section form.add-contributeur section.add-contributeur,
+main.profil article.options section form.add-contributeur section.rm-contributeur,
+main.profil article.options section form.rm-contributeur section.submit,
+main.profil article.options section form.rm-contributeur section.information-compte,
+main.profil article.options section form.rm-contributeur section.add-contributeur,
+main.profil article.options section form.rm-contributeur section.rm-contributeur {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / 3;
 }
 
-main.profil article.options section form.form-edit section.submit, main.profil article.options section form.form-event section.submit {
+main.profil article.options section form.form-edit section.submit,
+main.profil article.options section form.form-event section.submit,
+main.profil article.options section form.add-contributeur section.submit,
+main.profil article.options section form.rm-contributeur section.submit {
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -1213,15 +1252,27 @@ main.profil article.options section form.form-edit section.submit, main.profil a
           justify-content: center;
 }
 
-main.profil article.options section form.form-edit section.submit:hover, main.profil article.options section form.form-event section.submit:hover {
+main.profil article.options section form.form-edit section.submit:hover,
+main.profil article.options section form.form-event section.submit:hover,
+main.profil article.options section form.add-contributeur section.submit:hover,
+main.profil article.options section form.rm-contributeur section.submit:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-main.profil article.options section form.form-edit section.submit button, main.profil article.options section form.form-event section.submit button {
+main.profil article.options section form.form-edit section.submit button,
+main.profil article.options section form.form-event section.submit button,
+main.profil article.options section form.add-contributeur section.submit button,
+main.profil article.options section form.rm-contributeur section.submit button {
   margin: 0 10px;
   width: inherit;
-  height: initial;
+}
+
+main.profil article.options section form.form-edit section div.submit button,
+main.profil article.options section form.form-event section div.submit button,
+main.profil article.options section form.add-contributeur section div.submit button,
+main.profil article.options section form.rm-contributeur section div.submit button {
+  width: inherit;
 }
 
 footer {

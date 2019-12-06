@@ -311,11 +311,31 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 <form action="" method="post" class="add-contributeur">
                     <section class="add-contributeur">
                         <legend>Ajouter un contributeur</legend>
+                        <div class="input-label">
+                            <label for="nom">Selectionner un utilisateur</label>
+                            <select name="user-pseudo" id="nom">
+                                <option value="Y2ssam">Massili Kezzoul</option>
+                                <option value="chakibReds">Chakib Elhouiti</option>
+                            </select>
+                        </div>
+                        <div class="submit">
+                            <button type="submit"><i class="fas fa-check"></i> Ajouter</button>
+                        </div>
                     </section>
                 </form>
                 <form action="" method="post" class="rm-contributeur">
                     <section class="rm-contributeur">
                         <legend>Supprimer un contributeur : </legend>
+                        <div class="input-label">
+                            <label for="nom">Selectionner un utilisateur</label>
+                            <select name="user-pseudo" id="nom">
+                                <option value="Y2ssam">Massili Kezzoul</option>
+                                <option value="chakibReds">Chakib Elhouiti</option>
+                            </select>
+                        </div>
+                        <div class="submit">
+                            <button type="submit"><i class="fas fa-times"></i> Supprimer</button>
+                        </div>
                     </section>
 
                 </form>
