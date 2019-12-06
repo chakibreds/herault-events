@@ -14,10 +14,20 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 } else {
     require_once $dir_root . 'view/headerHorsLigne.php';
 }
+// Ajout d'un event
+if (isset($_POST['add-event']) && isset($user)) {
+    $event = ajout_event($_POST,$user->get_pseudo());
+    if (!$event) {
+        // erreur
+    } else {
+        // réussi
+    }
+}
+
 if (isset($_GET['user'])) {
-    
     $profil_user = new User($_GET['user']);
-}   
+}  
+
 ?>
 
 <body>
@@ -225,7 +235,7 @@ if (isset($_GET['user'])) {
                         </div>
                     </section>
                     <section class="submit">
-                        <button type="submit"><i class="fas fa-check"></i> Ajouter évenement</button>
+                        <button type="submit" name="add-event"><i class="fas fa-check"></i> Ajouter évenement</button>
                         <button type="reset"><i class="fas fa-times"></i> Annuler</button>
                     </section>
                 </form>

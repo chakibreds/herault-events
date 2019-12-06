@@ -15,7 +15,7 @@
 
 ## Model
 
-- RAS
+- Écrire tout les insertion faite dans in fichier insert.sql
 
 ## Database
 

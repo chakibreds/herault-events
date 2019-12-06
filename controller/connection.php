@@ -58,3 +58,18 @@ function inscription($post) {
         return false;
     }
 }
+
+/**
+ * Ajout d'un évenement par un contributuer
+ * @var $_post toute les information transmi par le formulaire
+ * @var $pseudo pseudo de l'utilisateur
+ * @return vrai ou faux selon la réussite ou l'echec de l'ajout
+ */
+
+function ajout_event($post,$pseudo) {
+    if (
+        isset($post['id_event'])
+    ) {
+        echo "zeb";
+    }
+}

@@ -42,6 +42,8 @@ CREATE TABLE user (
     date_inscr DATETIME NOT NULL,
     role_user ENUM('visitor', 'contributor', 'admin') NOT NULL DEFAULT 'visitor',
     id_adresse INT,
+    url_image VARCHAR(255) UNIQUE,
+    bio TEXT,
     CONSTRAINT PK_user PRIMARY KEY (pseudo),
     CONSTRAINT FK_user_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse)
 );
@@ -54,8 +56,8 @@ CREATE TABLE events (
     description_event text,
     min_participant INT,
     max_participant INT,
-    gps_coord INT,
     id_adresse INT,
+    url_image VARCHAR(255) UNIQUE,
     /* check don't work here, implements a trigger */
     /* CONSTRAINT CHK_events_adresse CHECK (gps_coord IS NOT NULL OR id_adresse IS NOT NULL),*/ 
     pseudo_contributor VARCHAR(100) NOT NULL,
@@ -103,4 +105,5 @@ CREATE TABLE ERREUR_INSERT(
     TEXT_ERREUR VARCHAR(255) NOT NULL UNIQUE,
     CONSTRAINT PK_ERREUR_INSERT PRIMARY KEY (TEXT_ERREUR)
 );
-INSERT INTO ERREUR_INSERT(TEXT_ERREUR) VALUES('ERR_CHK_EVENTS_ADRESSE');
+
+/* INSERT INTO ERREUR_INSERT(TEXT_ERREUR) VALUES('ERR_CHK_EVENTS_ADRESSE'); */
