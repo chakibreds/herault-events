@@ -6,8 +6,6 @@
 - Responsive events.php
 - Responsive profil.php
 - Responsive indexHorsLigne.php
-- profil.php : remplir les sections -- en cours (massy)
-- events.php : ajouter la map -- en cours (chakib)
 - gerer tout les champs du formulaire d'inscription (tél,mail, ...)
 - deplacer le style du footer dans un fichier _footer.scss;
 
@@ -28,5 +26,3 @@
 - remplir la base de données avec des infos;
 
 ## autres
-
-- regler le probleme des .gitignore:
