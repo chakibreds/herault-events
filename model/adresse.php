@@ -10,8 +10,19 @@ class Adresse extends Model {
     private $pays = "";         // string
     private $code_postal = "";  // string
     private $additional_adresse = ""; // string
-
-    public function __construct($num_rue,$nom_rue,$ville,$pays,$code_postal,$additional_adresse) {
+    public function __construct()
+    {
+        $argv = func_get_args();
+        switch (func_num_args()) {
+            case 1:
+                self::__construct1($argv[0]);
+                break;
+            case 7:
+                self::__construct2($argv[0], $argv[1], $argv[2], $argv[3],$argv[4], $argv[5], $argv[6] );
+                break;
+        }
+    }
+    private function __construct2($num_rue,$nom_rue,$ville,$pays,$code_postal,$additional_adresse) {
         $this->id_adresse = NULL;
         $this->num_rue = (int)$num_rue;
         $this->nom_rue = $nom_rue;
@@ -21,6 +32,21 @@ class Adresse extends Model {
         $this->additional_adresse = $additional_adresse;
 
         $this->insert();
+    }
+    private function __construct1($id_adresse)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT * FROM adresse WHERE id_adresse = ?');
+        $req->execute(array($id_adresse));
+        $res = $req->fetch();
+        //on  construit l'objet récupérer
+        $this->id_adresse = $res['id_adresse'];
+        $this->num_rue = $res['num_rue'];
+        $this->nom_rue = $res['nom_rue'];
+        $this->ville = $res['ville'];
+        $this->pays = $res['pays'];
+        $this->code_postal = $res['code_postal'];
+        $this->additional_adresse = $res['additional_adresse'];
     }
 
     public function insert() {

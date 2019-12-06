@@ -623,6 +623,12 @@ main.index-en-ligne article.acceuil section.my-events ul a div.button button i, 
   margin-right: 5px;
 }
 
+main.index-en-ligne article.acceuil section.my-events ul a img, main.index-en-ligne article.acceuil section.find-events ul a img {
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
 header {
   min-height: 10vh;
   background-color: #444;
