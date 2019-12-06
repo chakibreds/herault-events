@@ -30,7 +30,7 @@ class User extends Model
         }
     }
 
-    public function __construct1($psd)
+    private function __construct1($psd)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM user WHERE pseudo = ?');
@@ -50,7 +50,7 @@ class User extends Model
         $this->adresse = $res['id_adresse'];
     }
 
-    public function __construct2($pseudo, $nom, $prenom, $civilite, $date_nai, $email, $tel, $mdp, $id_adresse)
+    private function __construct2($pseudo, $nom, $prenom, $civilite, $date_nai, $email, $tel, $mdp, $id_adresse)
     {
         $this->pseudo = $pseudo;
         $this->nom = $nom;
@@ -142,7 +142,7 @@ class User extends Model
     }
     public function get_date_inscr()
     {
-        return $this->date_inscr;
+        return substr($this->date_inscr,0,10);
     }
     public function get_email()
     {
