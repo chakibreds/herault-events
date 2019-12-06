@@ -26,19 +26,19 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
             <input type="text" placeholder="Trouver un évenment..." class="find-event" />
             <ul>
                 <a href="#" class="event">
-                    <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
+                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
                 </a>
                 <a href="#" class="event">
-                    <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
+                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
                 </a>
                 <a href="#" class="event">
-                    <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
+                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
                 </a>
                 <a href="#" class="event">
-                    <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
+                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
                 </a>
                 <a href="#" class="event">
-                    <h3><i class="fas fa-calendar-plus"></i>Titre event</h3>
+                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
                 </a>
             </ul>
         </aside>

@@ -32,7 +32,7 @@ else
                 <li class="nom"><?=$profil_user->get_nom()." ".$profil_user->get_prenom() ?></li>
                 <li class="pseudo"><i class="fas fa-at"></i><?=$profil_user->get_pseudo()?></li>
                 <li class="edit"><button type="button"><i class="fas fa-edit"></i> Modifier</button></li>
-                <li class="localisation"><i class="fas fa-map-marker-alt"></i> <?=$profil_adresse->get_ville().",".$profil_adresse->get_pays()?></li>
+                <li class="localisation"><i class="fas fa-map-marker-alt"></i> <?=$profil_adresse->get_ville().", ".$profil_adresse->get_pays()?></li>
                 <li class="Role">Rôle : <?=$profil_user->get_role()?></li>
                 <li class="membre">Membre depuis : <?=$profil_user->get_date_inscr()?></li>
                 <li class="bio">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati aperiam porro illum vitae! Ad dolor fuga nostrum nam soluta velit possimus eligendi, eos qui quasi magnam blanditiis, quos harum.</li>
@@ -67,12 +67,9 @@ else
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
-                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
@@ -81,12 +78,9 @@ else
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
-                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
@@ -95,12 +89,42 @@ else
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
                     <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
+                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
+                    </a>
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                        <h3>Title event</h3>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
+                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
+                    </a>
+                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                        <h3>Title event</h3>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
@@ -118,6 +142,7 @@ else
                             <i class="fas fa-map-marker-alt"></i>
                             <p>Location</p>
                         </div>
+                        
                         <div class="button">
                             <button type="button">
                                 <i class="fas fa-heart"></i>
@@ -125,6 +150,7 @@ else
                             </button>
                             <button type="button"><i class="fas fa-plus"></i> Participer</button>
                         </div>
+                       
                     </a>
                     <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>

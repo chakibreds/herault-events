@@ -37,32 +37,68 @@ require_once $dir_root . 'view/head.php';
                 <ul>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Location</p>
+                        </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
                 </ul>
@@ -72,7 +108,9 @@ require_once $dir_root . 'view/head.php';
                 <ul>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
                         <div class="localisation">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>Location</p>
@@ -87,7 +125,9 @@ require_once $dir_root . 'view/head.php';
                     </a>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
                         <div class="localisation">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>Location</p>
@@ -102,7 +142,9 @@ require_once $dir_root . 'view/head.php';
                     </a>
                     <a href="<?=$server_root?>view/events.php" class="event-card">
                         <h3>Title event</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et non illum, tenetur error voluptatem quis in perferendis nemo dolorum incidunt earum laudantium facilis vitae fugit cumque, quam saepe numquam.</p>
+                        <div class=image>
+                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
+                        </div>
                         <div class="localisation">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>Location</p>
