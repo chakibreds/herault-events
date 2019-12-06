@@ -101,6 +101,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <a href="<?= $server_root ?>view/profil.php"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
                 </div>
             </section>
+            <h3>L'évenement sur la map : </h3>
             <section class="map-event">
                 <div id="map" class="map">
                     <i id="marker" class="fas fa-map-pin"></i>

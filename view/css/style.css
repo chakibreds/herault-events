@@ -729,6 +729,12 @@ main.events > * {
   padding: 25px 15px;
 }
 
+main.events h3 {
+  margin: 15px 0;
+  font-size: 1.8em;
+  color: #444;
+}
+
 main.events article.event {
   -webkit-box-flex: 4;
       -ms-flex: 4;
@@ -785,12 +791,6 @@ main.events article.event section {
 main.events article.event section:hover {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-main.events article.event section h3 {
-  margin: 15px 0;
-  font-size: 1.8em;
-  color: #444;
 }
 
 main.events article.event section.description-event, main.events article.event section.map-event {
@@ -918,7 +918,7 @@ main.events article.event section.contributeur-card div.contributeur-information
 
 main.events article.event section.map-event {
   padding: 0;
-  height: 400px;
+  height: 500px;
 }
 
 main.events article.event section.map-event .map {
@@ -1938,3 +1938,4 @@ main.index-hors-ligne .events-page .events .events-card p i {
             flex-direction: column;
   }
 }
+/*# sourceMappingURL=style.css.map */
