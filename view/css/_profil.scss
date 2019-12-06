@@ -151,7 +151,7 @@ main.profil {
 				}
 			}
 
-			&.edit-profil form.form-edit {
+			form.form-edit,form.form-event {
 				display              : grid;
 				grid-template-columns: 1fr 1fr;
 				grid-gap             : 20px;
@@ -188,8 +188,8 @@ main.profil {
 						input,
 						textarea {
 							margin-right: 20px;
-							width       : 50%;
 							max-width   : 300px;
+							min-width   : 300px;
 						}
 					}
 

@@ -164,6 +164,67 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                         <button type="button"><i class="fas fa-info-circle"></i> Voir plus</button>
                     </a>
                 </ul>
+                <p>Ajouter un évenement :</p>
+                <form action="" method="post" class="form-event">
+                    <section class="add-event">
+                        <legend>Information sur l'évenement</legend>
+                        <div class="label-input">
+                            <label for="title">Titre</label>
+                            <input type="text" name="title" id="title" required />
+                        </div>
+                        <div class="label-input">
+                            <label for="date_event">Date</label>
+                            <input type="date" name="date_event" id="date_event" />
+                        </div>
+                        <div class="label-input">
+                            <label for="min_participant">Nombre min de participant</label>
+                            <input type="number" name="min_participant" id="min_participant" />
+                        </div>
+                        <div class="label-input">
+                            <label for="max_participant">Nombre max de participant</label>
+                            <input type="number" name="max_participant" id="max_participant" />
+                        </div>
+                        <div class="label-input">
+                            <label for="image">Ajouter une image</label>
+                            <input type="file" name="image" id="image" />
+                        </div>
+                        <div class="label-input">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description"></textarea>
+                        </div>
+                    </section>
+                    <section class="adresse">
+                        <legend>Informations sur l'adresse</legend>
+                        <div class="label-input">
+                            <label for="num_r">Numéro de la rue</label>
+                            <input type="number" name="num_r" id="num_r" />
+                        </div>
+                        <div class="label-input">
+                            <label for="nom_r">Nom de la rue</label>
+                            <input type="text" name="nom_r" id="nom_r" />
+                        </div>
+                        <div class="label-input">
+                            <label for="ville">Ville</label>
+                            <input type="text" name="ville" id="ville" />
+                        </div>
+                        <div class="label-input">
+                            <label for="pays">Pays</label>
+                            <input type="text" name="pays" id="pays" />
+                        </div>
+                        <div class="label-input">
+                            <label for="code_postal">Code postal</label>
+                            <input type="text" name="code_postal" id="code_postal" />
+                        </div>
+                        <div class="label-input">
+                            <label for="cmp_adr">Complément d'adresse</label>
+                            <textarea id="cmp_adr" name="cmp_adr"></textarea>
+                        </div>
+                    </section>
+                    <section class="submit">
+                        <button type="submit"><i class="fas fa-check"></i> Ajouter évenement</button>
+                        <button type="reset"><i class="fas fa-times"></i> Annuler</button>
+                    </section>
+                </form>
             </section>
             <section class="edit-profil">
                 <h2>Edit Profile</h2>
@@ -227,16 +288,16 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                         <legend>Informations sur le compte</legend>
                         <div class="label-input">
                             <label for="pseudo">Pseudo</label>
-                            <input type="text" name="pseudo" id="pseudo"/>
+                            <input type="text" name="pseudo" id="pseudo" />
                         </div>
                         <div class="label-input">
                             <label for="email">E-mail</label>
-                            <input type="email" name="email" id="email"/>
+                            <input type="email" name="email" id="email" />
                         </div>
                         <div class="label-input">
                             <label for="mdp">Mot de passe</label>
-                            <input type="password" name="mdp" id="mdp"/>
-                            <input type="password" name="Cmdp" id="Cmdp"/>
+                            <input type="password" name="mdp" id="mdp" />
+                            <input type="password" name="Cmdp" id="Cmdp" />
                         </div>
                     </section>
                     <section class="submit">
@@ -247,6 +308,17 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
             </section>
             <section class="gerer">
                 <h2>Gerer</h2>
+                <form action="" method="post" class="add-contributeur">
+                    <section class="add-contributeur">
+                        <legend>Ajouter un contributeur</legend>
+                    </section>
+                </form>
+                <form action="" method="post" class="rm-contributeur">
+                    <section class="rm-contributeur">
+                        <legend>Supprimer un contributeur : </legend>
+                    </section>
+
+                </form>
             </section>
         </article>
     </main>

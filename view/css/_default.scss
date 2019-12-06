@@ -35,6 +35,7 @@ input[type=password],
 input[type=date],
 input[type=tel],
 input[type=number],
+input[type=file],
 textarea,
 select {
     margin-bottom   : 12px;
@@ -85,10 +86,6 @@ button[type=reset] {
         border-color    : $couleurSecondaire;
     }
 
-    &:disabled {
-        cursor: not-allowed;
-    }
-
     &.btn-search {
         position   : relative;
         //transform: translateX(-100%);
@@ -114,6 +111,10 @@ button[type=reset] {
             background-color: $couleurPrincipal;
             border-color    : $couleurSecondaire;
 
+        }
+
+        &:disabled {
+            cursor: not-allowed;
         }
     }
 }
