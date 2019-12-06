@@ -14,6 +14,10 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 } else {
     require_once $dir_root . 'view/headerHorsLigne.php';
 }
+if (isset($_GET['user'])) {
+    
+    $profil_user = new User($_GET['user']);
+}   
 ?>
 
 <body>
@@ -21,8 +25,8 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
         <aside class="profil-information">
             <img src="<?= $server_root ?>view/img/user/profil_vide.jpg" alt="">
             <ul>
-                <li class="nom">Nom Prenom</li>
-                <li class="pseudo"><i class="fas fa-at"></i>Pseudo</li>
+                <li class="nom"><?=$profil_user->get_nom()." ".$profil_user->get_prenom() ?></li>
+                <li class="pseudo"><i class="fas fa-at"></i><?=$profil_user->get_pseudo()?></li>
                 <li class="edit"><button type="button"><i class="fas fa-edit"></i> Modifier</button></li>
                 <li class="localisation"><i class="fas fa-map-marker-alt"></i> Adresse</li>
                 <li class="Role">Rôle : admin</li>
