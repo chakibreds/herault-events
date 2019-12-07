@@ -4,14 +4,12 @@ require_once '../controller/path.php';
 require_once $dir_root . 'controller/all.php';
 
 
-if (isset($_GET['user'])&& User::exists($_GET['user'])) {
+if (isset($_GET['user']) && User::exists($_GET['user'])) {
     $profil_user = new User($_GET['user']);
     $profil_adresse = new Adresse($profil_user->get_adresse());
+} else {
+    header("Location: $server_root" . "view/404.php");
 }
-else
-{
-    header("Location: $server_root"."view/404.php");
-}   
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,30 +23,31 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 }
 // Ajout d'un event
 if (isset($_POST['add-event']) && isset($user)) {
-    $event = ajout_event($_POST,$user->get_pseudo());
+    $event = ajout_event($_POST, $user->get_pseudo());
     if (!$event) {
-        // erreur
+        echo 'erreur';        // erreur
     } else {
+        echo 'reussi';
         // réussi
     }
 }
 
 if (isset($_GET['user'])) {
     $profil_user = new User($_GET['user']);
-}  
-
+}
 ?>
+
 <body>
     <main class="profil">
         <aside class="profil-information">
             <img src="<?= $server_root ?>view/img/user/profil_vide.jpg" alt="">
             <ul>
-                <li class="nom"><?=$profil_user->get_nom()." ".$profil_user->get_prenom() ?></li>
-                <li class="pseudo"><i class="fas fa-at"></i><?=$profil_user->get_pseudo()?></li>
+                <li class="nom"><?= $profil_user->get_nom() . " " . $profil_user->get_prenom() ?></li>
+                <li class="pseudo"><i class="fas fa-at"></i><?= $profil_user->get_pseudo() ?></li>
                 <li class="edit"><button type="button"><i class="fas fa-edit"></i> Modifier</button></li>
-                <li class="localisation"><i class="fas fa-map-marker-alt"></i> <?=$profil_adresse->get_ville().", ".$profil_adresse->get_pays()?></li>
-                <li class="Role">Rôle : <?=$profil_user->get_role()?></li>
-                <li class="membre">Membre depuis : <?=$profil_user->get_date_inscr()?></li>
+                <li class="localisation"><i class="fas fa-map-marker-alt"></i> <?= $profil_adresse->get_ville() . ", " . $profil_adresse->get_pays() ?></li>
+                <li class="Role">Rôle : <?= $profil_user->get_role() ?></li>
+                <li class="membre">Membre depuis : <?= $profil_user->get_date_inscr() ?></li>
                 <li class="bio">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati aperiam porro illum vitae! Ad dolor fuga nostrum nam soluta velit possimus eligendi, eos qui quasi magnam blanditiis, quos harum.</li>
                 <li class="contact"><button type="button"><i class="fas fa-envelope"></i> Contacter</button></li>
             </ul>
@@ -77,10 +76,10 @@ if (isset($_GET['user'])) {
                 <h2>Evenements</h2>
                 <ul>
                     <a href="<?= $server_root ?>view/events.php" class="event-card">
-                        <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
+                        <h3>Title event</h3>
                         <div class="localisation">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>Location</p>
@@ -156,7 +155,7 @@ if (isset($_GET['user'])) {
                             <i class="fas fa-map-marker-alt"></i>
                             <p>Location</p>
                         </div>
-                        
+
                         <div class="button">
                             <button type="button">
                                 <i class="fas fa-heart"></i>
@@ -164,7 +163,7 @@ if (isset($_GET['user'])) {
                             </button>
                             <button type="button"><i class="fas fa-plus"></i> Participer</button>
                         </div>
-                       
+
                     </a>
                     <a href="<?= $server_root ?>view/events.php" class="event-card">
                         <h3>Title event</h3>
@@ -213,7 +212,7 @@ if (isset($_GET['user'])) {
                     </a>
                 </ul>
                 <p>Ajouter un évenement :</p>
-                <form action="" method="post" class="form-event">
+                <form enctype="multipart/form-data" action="" method="post" class="form-event">
                     <section class="add-event">
                         <legend>Information sur l'évenement</legend>
                         <div class="label-input">
@@ -223,6 +222,10 @@ if (isset($_GET['user'])) {
                         <div class="label-input">
                             <label for="date_event">Date</label>
                             <input type="date" name="date_event" id="date_event" />
+                        </div>
+                        <div class="label-input">
+                            <label for="heure_event">Heure</label>
+                            <input type="time" name="heure_event" id="heure_event" />
                         </div>
                         <div class="label-input">
                             <label for="min_participant">Nombre min de participant</label>

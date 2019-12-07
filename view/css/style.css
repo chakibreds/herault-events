@@ -39,6 +39,7 @@ input[type=tel],
 input[type=number],
 input[type=file],
 textarea,
+input[type=time],
 select {
   margin-bottom: 12px;
   padding: 5px 12px;
@@ -67,6 +68,7 @@ input[type=tel]:focus,
 input[type=number]:focus,
 input[type=file]:focus,
 textarea:focus,
+input[type=time]:focus,
 select:focus {
   border-color: #00ce87;
   -webkit-box-shadow: 2px 2px 5px 0.2rem #00ce87;
