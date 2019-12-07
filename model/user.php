@@ -16,6 +16,8 @@ class User extends Model
     private $mdp = "";
     private $role = "";
     private $adresse;
+    private $url_image = "";
+    private $bio = "";
 
     public function __construct()
     {
@@ -48,8 +50,11 @@ class User extends Model
         $this->mdp = $res['mdp'];
         $this->role = $res['role_user'];
         $this->adresse = $res['id_adresse'];
+        $this->url_image = $res['url_image'];
+        $this->bio = $res['bio'];
     }
 
+    /* a changer */
     private function __construct2($pseudo, $nom, $prenom, $civilite, $date_nai, $email, $tel, $mdp, $id_adresse)
     {
         $this->pseudo = $pseudo;
@@ -71,11 +76,24 @@ class User extends Model
 
     public function insert() {
         $db = Model::dbConnect();
-        $req = $db->prepare('INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?)');
+        $req = $db->prepare('INSERT INTO user (`pseudo`, `nom`, `prenom`, `civilite`, `date_nai`, `email`, `tel`, `mdp`, `date_inscr`, `role_user`, `id_adresse`,`url_image`,`bio`) VALUES  (?,?,?,?,?,?,?,?,?,?,?,?,?)');
 
         echo $this->adresse . "<br>";
 
-        $req->execute(array($this->pseudo, $this->nom, $this->prenom, $this->civilite, $this->date_nai, $this->email, $this->tel, $this->mdp, $this->date_inscr, $this->role, $this->adresse)) or die(print_r($req->errorInfo(), TRUE));
+        $req->execute(array(
+            $this->pseudo,
+            $this->nom,
+            $this->prenom,
+            $this->civilite,
+            $this->date_nai,
+            $this->email,
+            $this->tel,
+            $this->mdp,
+            $this->date_inscr,
+            $this->role,
+            $this->adresse,
+            $this->url_image,
+            $this->bio)) or die(print_r($req->errorInfo(), TRUE));
 
     }
 
