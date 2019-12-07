@@ -17,9 +17,12 @@ class Adresse extends Model {
             case 1:
                 self::__construct1($argv[0]);
                 break;
-            case 7:
-                self::__construct2($argv[0], $argv[1], $argv[2], $argv[3],$argv[4], $argv[5], $argv[6] );
+            case 6:
+                self::__construct2($argv[0], $argv[1], $argv[2], $argv[3],$argv[4], $argv[5]);
                 break;
+            default:
+                echo "Erreur constructeur Adresse";
+                die();
         }
     }
     private function __construct2($num_rue,$nom_rue,$ville,$pays,$code_postal,$additional_adresse) {
@@ -54,7 +57,7 @@ class Adresse extends Model {
 
         $req = $db->prepare("SELECT id_adresse FROM adresse WHERE num_rue = ? AND nom_rue = ? AND ville = ? AND pays = ? AND code_postal = ?");
         
-        $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal));
+        $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal)) or die(print_r($req->errorInfo(), TRUE));
         if ($res = $req->fetch()) {
             // existe deja dans la db
             $this->id_adresse = (int)$res['id_adresse'];
@@ -66,7 +69,7 @@ class Adresse extends Model {
             // faut récuperer l'id
             $req = $db->prepare("SELECT id_adresse FROM adresse WHERE num_rue = ? AND nom_rue = ? AND ville = ? AND pays = ? AND code_postal = ?");
 
-            $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal));
+            $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal)) or die(print_r($req->errorInfo(), TRUE));
             
             $this->id_adresse = (int)$req->fetch()['id_adresse'];
         }
