@@ -153,8 +153,8 @@ main.profil {
 
 			form.form-edit,
 			form.form-event,
-			form.add-contributeur,
-			form.rm-contributeur {
+			form.add-rm-contributeur,
+			form.add-rm-theme {
 				display              : grid;
 				grid-template-columns: 1fr 1fr;
 				grid-gap             : 20px;
@@ -185,12 +185,10 @@ main.profil {
 						label {
 							width    : 40%;
 							max-width: 300px;
-
-
 						}
 
 						input,
-						textarea {
+						textarea,select{
 							margin-right: 20px;
 							max-width   : 300px;
 							min-width   : 300px;
@@ -199,8 +197,8 @@ main.profil {
 
 					&.submit,
 					&.information-compte,
-					&.add-contributeur,
-					&.rm-contributeur {
+					&.add-rm-contributeur,
+					&.add-rm-theme {
 						grid-column: 1 / 3;
 					}
 
