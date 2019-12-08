@@ -42,7 +42,7 @@ CREATE TABLE user (
     date_inscr DATETIME NOT NULL,
     role_user ENUM('visitor', 'contributor', 'admin') NOT NULL DEFAULT 'visitor',
     id_adresse INT,
-    url_image VARCHAR(255) UNIQUE,
+    url_image VARCHAR(255)  ,
     bio TEXT,
     CONSTRAINT PK_user PRIMARY KEY (pseudo),
     CONSTRAINT FK_user_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse)
