@@ -75,7 +75,7 @@ if (isset($_GET['user'])) {
             <section class="my-events">
                 <h2>Evenements</h2>
                 <ul>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         </div>
@@ -86,7 +86,7 @@ if (isset($_GET['user'])) {
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -97,7 +97,7 @@ if (isset($_GET['user'])) {
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -108,7 +108,7 @@ if (isset($_GET['user'])) {
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -119,7 +119,7 @@ if (isset($_GET['user'])) {
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -130,7 +130,7 @@ if (isset($_GET['user'])) {
                         </div>
                         <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
                     </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -146,7 +146,7 @@ if (isset($_GET['user'])) {
             <section class="find-events">
                 <h2>intersser par</h2>
                 <ul>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -165,7 +165,7 @@ if (isset($_GET['user'])) {
                         </div>
 
                     </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -182,7 +182,7 @@ if (isset($_GET['user'])) {
                             <button type="button"><i class="fas fa-plus"></i> Participer</button>
                         </div>
                     </a>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <div class=image>
                             <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
@@ -205,7 +205,7 @@ if (isset($_GET['user'])) {
                 <h2>Contributions</h2>
                 <p>Ici vous trouverer les contribution de l'utilisateur : </p>
                 <ul>
-                    <a href="<?= $server_root ?>view/events.php" class="event-card">
+                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
                         <h3>Title event</h3>
                         <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
                         <button type="button"><i class="fas fa-info-circle"></i> Voir plus</button>
