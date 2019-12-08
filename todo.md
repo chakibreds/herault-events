@@ -26,6 +26,7 @@
 ## Database
 
 - Ajouter/Enlever les info manquantes à la base de données:
+- Ajouter la table thème.
 - remplir la base de données avec des infos;
 
 ## autres

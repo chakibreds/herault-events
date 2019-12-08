@@ -14,7 +14,7 @@ class Event extends Model
     private $max_participant = 0;   // int
     private $id_adresse;            // int
     private $pseudo_contributor;    // int
-
+    
     public function __construct()
     {
         $argv = func_get_args();

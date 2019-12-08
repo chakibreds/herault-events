@@ -17,6 +17,7 @@ if (isset($_GET['user']) && User::exists($_GET['user'])) {
 require_once $dir_root . 'view/head.php';
 if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     $user = unserialize($_SESSION['user']);
+    $adresse_user = new Adresse ($user->get_adresse());
     require_once $dir_root . 'view/headerEnLigne.php';
 } else {
     require_once $dir_root . 'view/headerHorsLigne.php';
@@ -285,70 +286,70 @@ if (isset($_GET['user'])) {
                         <legend>Informations personnelles</legend>
                         <div class="label-input">
                             <label for="nom">Nom</label>
-                            <input type="text" name="nom" id="nom" />
+                            <input value = "<?=$user->get_nom()?>" type="text" name="nom" id="nom" />
                         </div>
                         <div class="label-input">
                             <label for="prenom">Prenom</label>
-                            <input type="text" name="prenom" id="prenom" />
+                            <input value = "<?=$user->get_prenom()?>" type="text" name="prenom" id="prenom" />
                         </div>
                         <div class="label-input">
-                            <label for="civilite">Civilié</label>
-                            <input type="text" name="civilite" id="civilite" />
+                            <label for="civilite">Civilité</label>
+                            <input value = "" type="text" name="civilite" id="civilite" />
                         </div>
                         <div class="label-input">
                             <label for="date_nai">Date naissance</label>
-                            <input type="date" name="" id="" />
+                            <input value = "<?=$user->get_date_nai()?>" type="date" name="" id="" />
                         </div>
                         <div class="label-input">
                             <label for="tel">Numéro de télephone</label>
-                            <input type="tel" name="tel" id="tel" />
+                            <input value = "<?=$user->get_tel()?>" type="tel" name="tel" id="tel" />
                         </div>
                         <div class="label-input">
                             <label for="bio">Bio</label>
-                            <textarea name="bio" id="bio"></textarea>
+                            <textarea value = "<?=$user->get_bio()?>" name="bio" id="bio"></textarea>
                         </div>
                     </section>
                     <section class="adresse">
                         <legend>Informations sur l'adresse</legend>
                         <div class="label-input">
                             <label for="num_r">Numéro de la rue</label>
-                            <input type="number" name="num_r" id="num_r" />
+                            <input value = "<?=$adresse_user->get_num_rue()?>" type="number" name="num_r" id="num_r" />
                         </div>
                         <div class="label-input">
                             <label for="nom_r">Nom de la rue</label>
-                            <input type="text" name="nom_r" id="nom_r" />
+                            <input value = "<?=$adresse_user->get_nom_rue()?>" type="text" name="nom_r" id="nom_r" />
                         </div>
                         <div class="label-input">
                             <label for="ville">Ville</label>
-                            <input type="text" name="ville" id="ville" />
+                            <input value = "<?=$adresse_user->get_ville()?>" type="text" name="ville" id="ville" />
                         </div>
                         <div class="label-input">
                             <label for="pays">Pays</label>
-                            <input type="text" name="pays" id="pays" />
+                            <input value = "<?=$adresse_user->get_pays()?>" type="text" name="pays" id="pays" />
                         </div>
                         <div class="label-input">
                             <label for="code_postal">Code postal</label>
-                            <input type="text" name="code_postal" id="code_postal" />
+                            <input value = "<?=$adresse_user->get_code_postal()?>" type="text" name="code_postal" id="code_postal" />
                         </div>
                         <div class="label-input">
                             <label for="cmp_adr">Complément d'adresse</label>
-                            <textarea id="cmp_adr" name="cmp_adr"></textarea>
+                            <textarea value = "<?=$adresse_user->get_additional_adresse()?>"id="cmp_adr" name="cmp_adr"></textarea>
                         </div>
                     </section>
                     <section class="information-compte">
                         <legend>Informations sur le compte</legend>
                         <div class="label-input">
                             <label for="pseudo">Pseudo</label>
-                            <input type="text" name="pseudo" id="pseudo" />
+                            <input value = "<?=$user->get_pseudo()?>" type="text" name="pseudo" id="pseudo" />
                         </div>
                         <div class="label-input">
                             <label for="email">E-mail</label>
-                            <input type="email" name="email" id="email" />
+                            <input value = "<?=$user->get_email()?>" type="email" name="email" id="email" />
                         </div>
                         <div class="label-input">
                             <label for="mdp">Mot de passe</label>
-                            <input type="password" name="mdp" id="mdp" />
-                            <input type="password" name="Cmdp" id="Cmdp" />
+                            <input value = "" type="password" name="mdp" id="mdp" />
+                            <input value = "" type="password" name="Cmdp" id="Cmdp" />
                         </div>
                     </section>
                     <section class="submit">
