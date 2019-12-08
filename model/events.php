@@ -33,9 +33,10 @@ class Event extends Model
     {
         $db = Model::dbConnect();
         $req = $db->prepare('INSERT INTO events VALUES (NULL,?,?,?,?,?,?,?,?)');
-        $req->execute(array($this->titre, $this->date_event, $this->description_event, $this->min_participant, $this->max_participant, $this->id_adresse, $this->url_image, $this->pseudo_contributor)) or die(print_r($req->errorInfo(), TRUE));
+        $req->execute(array($this->titre, $this->date_event, $this->description_event, $this->min_participant, $this->max_participant, $this->id_adresse,
+         $this->url_image, $this->pseudo_contributor)) or die(print_r($req->errorInfo(), TRUE));
 
-        $req = $db->prepare('SELECT id_event FROM events WHERE titre = ? AND date_event = ? AND descrption_event = ? AND min_participant = ? AND max_participant = ? AND  id_adresse = ? AND url_image = ? AND pseudo_contributor = ? ');
+        $req = $db->prepare('SELECT id_event FROM events WHERE titre = ? AND date_event = ? AND description_event = ? AND min_participant = ? AND max_participant = ? AND  id_adresse = ? AND url_image = ? AND pseudo_contributor = ? ');
 
         $req->execute(array($this->titre, $this->date_event, $this->description_event, $this->min_participant, $this->max_participant, $this->id_adresse, $this->url_image, $this->pseudo_contributor)) or die(print_r($req->errorInfo(), TRUE));
         $res = $req->fetch();

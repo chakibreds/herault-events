@@ -57,7 +57,7 @@ CREATE TABLE events (
     min_participant INT,
     max_participant INT,
     id_adresse INT,
-    url_image VARCHAR(255) UNIQUE,
+    url_image VARCHAR(255) ,
     /* check don't work here, implements a trigger */
     /* CONSTRAINT CHK_events_adresse CHECK (gps_coord IS NOT NULL OR id_adresse IS NOT NULL),*/ 
     pseudo_contributor VARCHAR(100) NOT NULL,

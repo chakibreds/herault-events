@@ -1,4 +1,5 @@
 <?php
+
 require_once $dir_root . 'model/all.php';
 
 function connection($pseudo,$mdp) {
@@ -70,7 +71,7 @@ function inscription($post) {
  * @return vrai ou faux selon la réussite ou l'echec de l'ajout
  */
 
-function ajout_event($post,$pseudo) {
+function ajout_event($post,$pseudo,$upload_dir) {
     if (
         isset($post['title'])&&
          isset($post['date_event'])&&
@@ -85,27 +86,25 @@ function ajout_event($post,$pseudo) {
         isset($post['pays'])&&
         isset($post['code_postal']) 
     ) {
-        echo 'post passé';
         $id_adresse = create_adresse($post);
-        echo 'adresse : '.$id_adresse;
         //create an event
         $event = new Event(            
             $post['title'],
             $post['date_event'],
             $post['heure_event'],
             $post['description'],
-            $_FILES['image'],
+            $_FILES['image']['name'],
             $post['min_participant'],
             $post['max_participant'],
             $id_adresse,
             $pseudo
         );
-        $upload_dir = $dir_root . "view/img/event";
-        $upload_file = $upload_dir . $event->get_id_event() .  basename($_FILES['image']['name']);
+        
+        $upload_file = $upload_dir . "event_". $event->get_id_event() ."_".  basename($_FILES['image']['name']);
     
         if(move_uploaded_file($_FILES['image']['tmp_name'],$upload_file))
         {
-            echo "le fichier est validé et bien passée";
+            
         }
         return $event; 
     }

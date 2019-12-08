@@ -23,11 +23,11 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 }
 // Ajout d'un event
 if (isset($_POST['add-event']) && isset($user)) {
-    $event = ajout_event($_POST, $user->get_pseudo());
+    $event = ajout_event($_POST, $user->get_pseudo(),$upload_dir_event);
     if (!$event) {
         echo 'erreur';        // erreur
     } else {
-        echo 'reussi';
+        
         // réussi
     }
 }
