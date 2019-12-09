@@ -59,6 +59,7 @@ class Adresse extends Model {
         
         $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal,$this->additional_adresse)) or die(print_r($req->errorInfo(), TRUE));
         if ($res = $req->fetch()) {
+            echo 'hedja';
             // existe deja dans la db
             $this->id_adresse = (int)$res['id_adresse'];
         } else {

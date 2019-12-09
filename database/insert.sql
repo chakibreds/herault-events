@@ -15,7 +15,7 @@ DELETE FROM ERREUR_INSERT;
 
 INSERT INTO `adresse` (`id_adresse`, `num_rue`, `nom_rue`, `ville`, `pays`, `code_postal`, `additional_adresse`) VALUES
 (1, 29,"Frederic Peyson", "Montpellier", "France", "34000", "Chez M.Zerroug Djamel"),
-(2, 15, "Colin", "Montpellier", "France", "34000", NULL);
+(2, 15, "Colin", "Montpellier", "France", "34000", "");
 
 /* insertion des user */
 

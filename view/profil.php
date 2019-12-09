@@ -346,8 +346,8 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                     <input type="text" name="code_postal" id="code_postal" />
                                 </div>
                                 <div class="label-input">
-                                    <label for="cmp_adr">Complément d'adresse</label>
-                                    <textarea id="cmp_adr" name="cmp_adr"></textarea>
+                                    <label for="complementAdr">Complément d'adresse</label>
+                                    <textarea id="complementAdr" name="complementAdr"></textarea>
                                 </div>
                             </section>
                             <section class="submit">
@@ -418,8 +418,8 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                         <input value="<?= $adresse_user->get_code_postal() ?>" type="text" name="code_postal" id="code_postal" />
                                     </div>
                                     <div class="label-input">
-                                        <label for="cmp_adr">Complément d'adresse</label>
-                                        <textarea id="cmp_adr" name="cmp_adr"><?= $adresse_user->get_additional_adresse() ?></textarea>
+                                        <label for="complementAdr">Complément d'adresse</label>
+                                        <textarea id="complementAdr" name="complementAdr"><?= $adresse_user->get_additional_adresse() ?></textarea>
                                     </div>
                                 </section>
                                 <section class="information-compte">

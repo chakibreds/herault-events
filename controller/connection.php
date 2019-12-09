@@ -21,7 +21,7 @@ function create_adresse($post)
     $pays = (isset($post['pays']) ? $post['pays'] : "");
     $cmp_adr = (isset($post['complementAdr']) ? $post['complementAdr'] : "");
 
-    if ($ville !== "" || $pays !== "" || $code_postal !== "" || $nom_r !== "" || $num_r !== "") {
+    if ($ville !== "" || $pays !== "" || $code_postal !== "" || $nom_r !== "" || $num_r !== ""||$cmp_adr!=="") {
         $adresse = new Adresse($num_r, $nom_r, $ville, $pays, $code_postal, $cmp_adr);
         $id_adresse = $adresse->get_id_adresse();
     } else {
@@ -143,7 +143,7 @@ function modifier_profil($post, $pseudo)
        unset($post['ville']);
        unset($post['pays']);
        unset($post['code_postal']);
-       unset($post['cmp_adr']);
+       unset($post['complementAdr']);
         $user = new User($pseudo);
         $post['id_adresse'] = $id_adresse;
         $user->update($post);

@@ -128,6 +128,7 @@ class User extends Model
         $this->email = $post['email'];
         $this->tel = $post['tel'];
         $this->adresse = $post['id_adresse'];
+        $this->bio = $post['bio'];
     }
     public static function exists($pseudo)
     {
