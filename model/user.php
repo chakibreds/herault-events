@@ -188,4 +188,11 @@ class User extends Model
     {
         return $this->bio;
     }
+
+    public function get_url_image() {
+        if ($this->url_image == "")
+            return "contributeur1.jpg";
+        else 
+            return "user_". $this->pseudo . "_".$this->url_image;
+    }
 }

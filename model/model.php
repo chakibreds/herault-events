@@ -37,7 +37,6 @@ class Model
 
             if ($value !== NULL) {
                 $params[$key] = "'" . preg_quote($value) . "'";
-                echo $value;
             } else {
                 $params[$key] = 'NULL';
             }
@@ -52,6 +51,5 @@ class Model
 
         fclose($logFile);
 
-        die("En test");
     }
 }

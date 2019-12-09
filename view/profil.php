@@ -50,7 +50,7 @@ if (isset($_GET['user'])) {
 <body>
     <main class="profil">
         <aside class="profil-information">
-            <img src="<?= $server_root ?>view/img/user/profil_vide.jpg" alt="">
+            <img src="<?= $server_root ?>view/img/user/<?= $profil_user->get_url_image()?>" alt="">
             <ul>
                 <li class="nom"><?= $profil_user->get_nom() . " " . $profil_user->get_prenom() ?></li>
                 <li class="pseudo"><i class="fas fa-at"></i><?= $profil_user->get_pseudo() ?></li>

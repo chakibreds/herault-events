@@ -84,7 +84,8 @@ function ajout_event($post,$pseudo,$upload_dir) {
         isset($post['nom_r'])&&
         isset($post['ville'])&&
         isset($post['pays'])&&
-        isset($post['code_postal']) 
+        isset($post['code_postal']) &&
+        isset($post['theme'])
     ) {
         $id_adresse = create_adresse($post);
         //create an event
@@ -97,7 +98,8 @@ function ajout_event($post,$pseudo,$upload_dir) {
             $post['min_participant'],
             $post['max_participant'],
             $id_adresse,
-            $pseudo
+            $pseudo,
+            $post['theme']
         );
         
         $upload_file = $upload_dir . "event_". $event->get_id_event() ."_".  basename($_FILES['image']['name']);
