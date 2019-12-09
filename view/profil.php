@@ -97,7 +97,7 @@ if (isset($_GET['user'])) {
                         </li>
                     <?php
                     }
-                    if (isset($user) && $user->get_role() == "admin") {
+                    if (isset($user) && $user->get_role() == "admin"&& $user->get_pseudo() == $profil_user->get_pseudo()) {
                         ?>
                         <li>
                             <a id="gerer" href="#">Gérer</a>
@@ -435,7 +435,7 @@ if (isset($_GET['user'])) {
                 <?php
                 }
 
-                if (isset($user)&&$user->get_role() == "admin") {
+                if (isset($user)&&$user->get_role() == "admin"&&$user->get_pseudo()==$profil_user->get_pseudo()) {
                     ?>
                     <section class="gerer">
                         <h2>Gerer</h2>
