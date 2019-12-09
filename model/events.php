@@ -14,6 +14,7 @@ class Event extends Model
     private $max_participant = 0;   // int
     private $id_adresse;            // int
     private $pseudo_contributor;    // int
+    private $theme;
     
     public function __construct()
     {
@@ -22,8 +23,8 @@ class Event extends Model
             case 1:
                 self::__construct1($argv[0]);
                 break;
-            case 9:
-                self::__construct2($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8]);
+            case 10:
+                self::__construct2($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8], $argv[9]);
                 break;
             default:
                 echo "Erreur constructeur Event";
@@ -48,6 +49,7 @@ class Event extends Model
             $this->id_adresse = $res['id_adresse'];
             $this->url_image = $res['url_image'];
             $this->pseudo_contributor = $res['pseudo_contributor'];
+            $this->theme = $res['theme'];
 
         } else {
             //header('Location: '. $server_root .'view/404.php')
@@ -55,7 +57,7 @@ class Event extends Model
         }
     }
 
-    public function __construct2($titre, $date_event, $heure_event, $description_event, $url_image, $min_participant, $max_participant, $id_adresse, $pseudo_contributor)
+    public function __construct2($titre, $date_event, $heure_event, $description_event, $url_image, $min_participant, $max_participant, $id_adresse, $pseudo_contributor,$theme)
     {
         $this->id_event = NULL;
         $this->titre = $titre;
@@ -66,6 +68,7 @@ class Event extends Model
         $this->max_participant = $max_participant;
         $this->id_adresse = $id_adresse;
         $this->pseudo_contributor = $pseudo_contributor;
+        $this->theme = $theme;
 
         $this->insert();
     }
@@ -82,13 +85,36 @@ class Event extends Model
     private function insert()
     {
         $db = Model::dbConnect();
-        $req = $db->prepare('INSERT INTO events VALUES (NULL,?,?,?,?,?,?,?,?)');
-        $req->execute(array($this->titre, $this->date_event, $this->description_event, $this->min_participant, $this->max_participant, $this->id_adresse,
-         $this->url_image, $this->pseudo_contributor)) or die(print_r($req->errorInfo(), TRUE));
+        $query = 'INSERT INTO events (`id_event`,`titre`,`date_event`,`description_event`,`min_participant`,`max_participant`,`id_adresse`,`url_image`,`pseudo_contributor`,`theme`) VALUES (NULL,?,?,?,?,?,?,?,?,?)';
+        $param = array(
+            $this->titre, 
+            $this->date_event, 
+            $this->description_event,
+            $this->min_participant, 
+            $this->max_participant, 
+            $this->id_adresse,
+            $this->url_image, 
+            $this->pseudo_contributor,
+            $this->theme);
 
+        $this->saveQuery($query,$param);
+            
+        $req = $db->prepare($query);
+        $req->execute($param) or die(print_r($req->errorInfo(), TRUE));
+
+        /* Recherche de l'event insérer afin de trouver son id */
         $req = $db->prepare('SELECT id_event FROM events WHERE titre = ? AND date_event = ? AND description_event = ? AND min_participant = ? AND max_participant = ? AND  id_adresse = ? AND url_image = ? AND pseudo_contributor = ? ');
 
-        $req->execute(array($this->titre, $this->date_event, $this->description_event, $this->min_participant, $this->max_participant, $this->id_adresse, $this->url_image, $this->pseudo_contributor)) or die(print_r($req->errorInfo(), TRUE));
+        $req->execute(array(
+            $this->titre, 
+            $this->date_event, 
+            $this->description_event, 
+            $this->min_participant, 
+            $this->max_participant, 
+            $this->id_adresse, 
+            $this->url_image, 
+            $this->pseudo_contributor)) or die(print_r($req->errorInfo(), TRUE));
+        
         $res = $req->fetch();
         $this->id_event = (int) $res['id_event'];
     }
@@ -155,6 +181,11 @@ class Event extends Model
     public function get_max_participant()
     {
         return $this->max_participant;
+    }
+    public function get_url_image() {
+        if ($this->url_image == "")
+            return "default_event.jpg";
+        return 'event_'. $this->id_event . '_' . $this->url_image;
     }
     public function get_gps_coord()
     {

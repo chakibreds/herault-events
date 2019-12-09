@@ -76,11 +76,9 @@ class User extends Model
 
     public function insert() {
         $db = Model::dbConnect();
-        $req = $db->prepare('INSERT INTO user (`pseudo`, `nom`, `prenom`, `civilite`, `date_nai`, `email`, `tel`, `mdp`, `date_inscr`, `role_user`, `id_adresse`,`url_image`,`bio`) VALUES  (?,?,?,?,?,?,?,?,?,?,?,?,?)');
+        $query = 'INSERT INTO user (`pseudo`, `nom`, `prenom`, `civilite`, `date_nai`, `email`, `tel`, `mdp`, `date_inscr`, `role_user`, `id_adresse`,`url_image`,`bio`) VALUES  (?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
-        echo $this->adresse . "<br>";
-
-        $req->execute(array(
+        $param = array(
             $this->pseudo,
             $this->nom,
             $this->prenom,
@@ -93,7 +91,12 @@ class User extends Model
             $this->role,
             $this->adresse,
             $this->url_image,
-            $this->bio)) or die(print_r($req->errorInfo(), TRUE));
+            $this->bio);
+            
+        $this->saveQuery($query,$param);
+
+        $req = $db->prepare($query);
+        $req->execute($param) or die(print_r($req->errorInfo(), TRUE));
 
     }
     public function update($post)
@@ -212,5 +215,12 @@ class User extends Model
     public function get_bio()
     {
         return $this->bio;
+    }
+
+    public function get_url_image() {
+        if ($this->url_image == "")
+            return "contributeur1.jpg";
+        else 
+            return "user_". $this->pseudo . "_".$this->url_image;
     }
 }

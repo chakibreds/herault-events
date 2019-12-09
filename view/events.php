@@ -54,7 +54,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
         </aside>
 
         <article class="event">
-            <div class="image-event" style="background-image : url('<?= $server_root ?>view/img/compressed/background-1.jpg');">
+            <div class="image-event" style="background-image : url('<?= $server_root ?>view/img/event/<?=$event->get_url_image()?>');">
             </div>
             <h2><?= $event->get_titre()?></h2>
             <section class="description-event">
@@ -101,7 +101,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 </div>
             </section>
             <section class="contributeur-card">
-                <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/user/contributeur1.jpg);">
+                <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/user/<?= $contributeur->get_url_image()?>);">
                 </div>
                 <div class="contributeur-information">
                     <h3><b><?= $contributeur->get_nom(). ' ' .$contributeur->get_prenom() ?></b></h3>

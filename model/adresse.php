@@ -62,11 +62,22 @@ class Adresse extends Model {
             // existe deja dans la db
             $this->id_adresse = (int)$res['id_adresse'];
         } else {
-            // inserer la db
-            $req = $db->prepare("INSERT INTO adresse VALUES(NULL,?,?,?,?,?,?)");
-            $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal,$this->additional_adresse)) or die(print_r($req->errorInfo(), TRUE));
+            $query = "INSERT INTO adresse VALUES(NULL,?,?,?,?,?,?)";
+            $param = array(
+                $this->num_rue,
+                $this->nom_rue,
+                $this->ville,
+                $this->pays,
+                $this->code_postal,
+                $this->additional_adresse);
 
-            // faut récuperer l'id
+            $this->saveQuery($query,$param);
+
+            // inserer dans la db
+            $req = $db->prepare($query);
+            $req->execute($param) or die(print_r($req->errorInfo(), TRUE));
+
+            // récuperer l'id de l'adresse;
             $req = $db->prepare("SELECT id_adresse FROM adresse WHERE num_rue = ? AND nom_rue = ? AND ville = ? AND pays = ? AND code_postal = ?");
 
             $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal)) or die(print_r($req->errorInfo(), TRUE));

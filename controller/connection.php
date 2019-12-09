@@ -76,18 +76,19 @@ function inscription($post)
 function ajout_event($post, $pseudo, $upload_dir)
 {
     if (
-        isset($post['title']) &&
-        isset($post['date_event']) &&
-        isset($post['heure_event']) &&
-        isset($post['min_participant']) &&
-        isset($post['max_participant']) &&
-        isset($_FILES['image']) &&
-        isset($post['description']) &&
-        isset($post['num_r']) &&
-        isset($post['nom_r']) &&
-        isset($post['ville']) &&
-        isset($post['pays']) &&
-        isset($post['code_postal'])
+        isset($post['title'])&&
+         isset($post['date_event'])&&
+         isset($post['heure_event'])&&
+        isset($post['min_participant'])&&
+        isset($post['max_participant'])&&
+        isset($_FILES['image'])&&
+        isset($post['description'])&&
+        isset($post['num_r'])&&
+        isset($post['nom_r'])&&
+        isset($post['ville'])&&
+        isset($post['pays'])&&
+        isset($post['code_postal']) &&
+        isset($post['theme'])
     ) {
         $id_adresse = create_adresse($post);
         //create an event
@@ -100,7 +101,8 @@ function ajout_event($post, $pseudo, $upload_dir)
             $post['min_participant'],
             $post['max_participant'],
             $id_adresse,
-            $pseudo
+            $pseudo,
+            $post['theme']
         );
 
         $upload_file = $upload_dir . "event_" . $event->get_id_event() . "_" .  basename($_FILES['image']['name']);
