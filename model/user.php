@@ -96,7 +96,35 @@ class User extends Model
             $this->bio)) or die(print_r($req->errorInfo(), TRUE));
 
     }
-
+    public function update($post)
+    {
+        if (isset($post['mdp'])) { 
+            $post['mdp']=$this->hash_pwd($post['mdp']);
+            $this->mdp = $post['mdp'];
+        }
+        
+        $params = array();
+        $query = 'UPDATE user SET ';
+        foreach ($post as $key => $value) {
+            $query.= $key . " = "."?,";
+            $params[] = $value;
+        }
+        $query = substr($query,0,strlen($query)-1);
+        $query .= ' WHERE pseudo = ?';
+        $params[]=$this->pseudo;
+        //die("STOP");
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($params) or  die(print_r($req->errorInfo(), TRUE));
+        
+        $this->nom = $post['nom'];
+        $this->prenom = $post['prenom'];
+        $this->civilite = $post['civilite'];
+        $this->date_nai = $post['date_nai'];
+        $this->email = $post['email'];
+        $this->tel = $post['tel'];
+        $this->adresse = $post['id_adresse'];
+    }
     public static function exists($pseudo)
     {
         $db = Model::dbConnect();

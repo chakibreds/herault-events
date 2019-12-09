@@ -100,7 +100,6 @@ function validateMdp() {
     var form = document.querySelector(".inscription form");
     var connection = form.querySelector(".donnees-connection");
     var errMdp = connection.querySelector(".errMdp");
-    console.log("ok");
     if (connection.querySelector("#password").value != "" && connection.querySelector("#Cpassword").value != "") {
         if (connection.querySelector("#password").value != connection.querySelector("#Cpassword").value) {
             errMdp.style.display = "block";

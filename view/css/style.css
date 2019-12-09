@@ -890,7 +890,7 @@ main.events article.event section.information-event .button-rejoindre-interesser
 
 main.events article.event section.contributeur-card {
   padding: 0;
-  max-height: 450px;
+  max-height: 500px;
 }
 
 main.events article.event section.contributeur-card div.contributeur-img {
