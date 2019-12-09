@@ -9,3 +9,4 @@ require_once $dir_root . 'model/adresse.php';
 require_once $dir_root . 'model/commentaire.php';
 require_once $dir_root . 'model/user.php';
 require_once $dir_root . 'model/events.php';
+require_once $dir_root . 'model/theme.php';

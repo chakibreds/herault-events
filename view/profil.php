@@ -32,6 +32,17 @@ if (isset($_POST['add-event']) && isset($user)) {
         // réussi
     }
 }
+//ajout theme
+if (isset($_POST['add-theme'])&& isset($user)) {
+    $theme = ajout_theme($_POST);
+    if (!$theme) {
+        echo 'erreur';
+    }
+    else
+    {
+        //réussi
+    }
+}
 
 if (isset($_GET['user'])) {
     $profil_user = new User($_GET['user']);
@@ -422,8 +433,8 @@ if (isset($_GET['user'])) {
                                 <input type="text" id="theme" name="theme">
                             </div>
                             <div class="submit">
-                                <button type="submit"><i class="fas fa-check"></i> Ajouter</button>
-                                <button type="submit"><i class="fas fa-times"></i> Supprimer</button>
+                                <button name ="add-theme" type="submit"><i class="fas fa-check"></i> Ajouter</button>
+                                <button name ="rm-theme" type="submit"><i class="fas fa-times"></i> Supprimer</button>
                             </div>
                         </section>
 

@@ -113,6 +113,15 @@ function ajout_event($post,$pseudo,$upload_dir) {
         echo 'marche pas';
         return false;
     }
-  
-
+}
+function ajout_theme($post){
+    if(isset($post['theme']))
+    {
+        //create a theme
+        $theme = new Theme($post['theme']);
+    }
+    else 
+    {
+        return false;
+    }
 }
