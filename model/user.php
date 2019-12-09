@@ -153,7 +153,10 @@ class User extends Model
     {
         return $this->prenom;
     }
-
+    public function get_civilite()
+    {
+        return $this->civilite;
+    }
     public function get_date_nai()
     {
         return $this->date_nai;
@@ -177,5 +180,9 @@ class User extends Model
     public function get_adresse()
     {
         return $this->adresse;
+    }
+    public function get_bio()
+    {
+        return $this->bio;
     }
 }

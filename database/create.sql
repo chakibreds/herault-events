@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS commentaire;
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS adresse;
+DROP TABLE IF EXISTS theme;
 
 /* 
     Création des tables
@@ -48,6 +49,11 @@ CREATE TABLE user (
     CONSTRAINT FK_user_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse)
 );
 
+/* table theme */
+CREATE TABLE theme(
+    titre VARCHAR(100),
+    CONSTRAINT PK_theme PRIMARY KEY (titre)
+);
 /*table event*/
 CREATE TABLE events (
     id_event INT AUTO_INCREMENT,
@@ -61,9 +67,12 @@ CREATE TABLE events (
     /* check don't work here, implements a trigger */
     /* CONSTRAINT CHK_events_adresse CHECK (gps_coord IS NOT NULL OR id_adresse IS NOT NULL),*/ 
     pseudo_contributor VARCHAR(100) NOT NULL,
+    theme VARCHAR(100),
     CONSTRAINT PK_events PRIMARY KEY (id_event),
     CONSTRAINT FK_events_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse),
-    CONSTRAINT FK_events_user FOREIGN KEY (pseudo_contributor) REFERENCES user(pseudo)
+    CONSTRAINT FK_events_user FOREIGN KEY (pseudo_contributor) REFERENCES user(pseudo),
+    CONSTRAINT FK_events_theme FOREIGN KEY (theme) REFERENCES theme(titre)
+
 );
 
 /*table commentaire*/
