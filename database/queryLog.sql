@@ -1,0 +1,1 @@
+INSERT INTO user (`pseudo`, `nom`, `prenom`, `civilite`, `date_nai`, `email`, `tel`, `mdp`, `date_inscr`, `role_user`, `id_adresse`,`url_image`,`bio`) VALUES  ('test','Test','test','monsieur','0001\-01\-01','test@test\.com','0123456789','$2y$10$FLnK9rgPmq0AlgvCWbUi8\.7g0lk61YvI6mPnbU7eENH5/X3NDQFry','2019\-12\-09 16\:55\:00','visitor',NULL,'','');
