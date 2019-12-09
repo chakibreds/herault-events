@@ -10,4 +10,4 @@ source database/insert.sql;
 
 -- source database/trigger.sql;
 
-source database/queryLog.sql;
+ source database/queryLog.sql; 

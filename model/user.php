@@ -115,6 +115,7 @@ class User extends Model
         $query = substr($query,0,strlen($query)-1);
         $query .= ' WHERE pseudo = ?';
         $params[]=$this->pseudo;
+        echo $query;
         //die("STOP");
         $db = Model::dbConnect();
         $req = $db->prepare($query);

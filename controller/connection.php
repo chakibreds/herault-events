@@ -136,9 +136,7 @@ function modifier_profil($post, $pseudo)
     ) {
         unset($post['Cmdp']);
         unset($post['modifier-profil']);
-        if (!isset($post['mdp'])); {
-            unset($post['mdp']);
-        }
+       
         $id_adresse = create_adresse($post);
        unset($post['num_r']);
        unset($post['nom_r']);

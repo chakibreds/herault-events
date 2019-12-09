@@ -41,9 +41,7 @@ if (isset($_POST['modifier-profil']) && isset($user)) {
     $_SESSION['user'] = serialize($user);
     $adresse_user = new Adresse($user->get_adresse());
     $profil_adresse = $adresse_user;
-} else {
-    echo "not isset post<br>";
-}
+} 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
