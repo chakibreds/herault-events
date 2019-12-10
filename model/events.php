@@ -164,11 +164,15 @@ class Event extends Model
     }
     public function get_titre()
     {
-        return $this->titre;
+        return ucfirst($this->titre);
     }
     public function get_date_event()
     {
-        return substr($this->date_event,0,16);
+        return substr($this->date_event,0,10);
+    }
+
+    public function get_heure_event() {
+        return substr($this->date_event,11,5);
     }
     public function get_description_event()
     {
@@ -187,9 +191,9 @@ class Event extends Model
             return "default_event.jpg";
         return 'event_'. $this->id_event . '_' . $this->url_image;
     }
-    public function get_gps_coord()
-    {
-        return $this->gps_coord;
+
+    public function get_theme() {
+        return '#'.$this->theme;
     }
     public function get_id_adresse()
     {

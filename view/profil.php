@@ -8,33 +8,34 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     $adresse_user = new Adresse($user->get_adresse());
 }
 
+// Trouver l'utilisateur à afficher
 if (isset($_GET['user']) && User::exists($_GET['user'])) {
     $profil_user = new User($_GET['user']);
     $profil_adresse = new Adresse($profil_user->get_adresse());
 } else {
     header("Location: $server_root" . "view/404.php");
 }
+
 // Ajout d'un event
 if (isset($_POST['add-event']) && isset($user)) {
     $event = ajout_event($_POST, $user->get_pseudo(), $upload_dir_event);
     if (!$event) {
-        echo 'erreur';        // erreur
+        echo "Impossible d'ajouter l'évenement";
     } else {
-        
-        // réussi
+        echo "Event ajouté.";
     }
 }
 //ajout theme
 if (isset($_POST['add-theme']) && isset($user)) {
     $theme = ajout_theme($_POST);
     if (!$theme) {
-        echo 'erreur';
+        echo "Impossible d'ajouter le theme";
     } else {
-        //réussi
+        echo "Theme ajouté.";
     }
 }
 
-
+// Modification d'un utilisateur
 if (isset($_POST['modifier-profil']) && isset($user)) {
     $user = modifier_profil($_POST, $user->get_pseudo());
     $profil_user = $user;
@@ -52,8 +53,6 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 } else {
     require_once $dir_root . 'view/headerHorsLigne.php';
 }
-
-
 ?>
 
 <body>

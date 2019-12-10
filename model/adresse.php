@@ -109,4 +109,33 @@ class Adresse extends Model {
     public function get_additional_adresse() {
         return $this->additional_adresse;
     }
+
+    private function get_json_lon_lat() {
+        /* api openstreetmap */
+        $data = array(
+            'street'     => $this->num_rue . ' ' . $this->nom_rue,
+            'postalcode' => $this->code_postal,
+            'city'       => $this->ville,
+            'country'    => $this->pays,
+            'format'     => 'json',
+            'email'      => 'massili.kezzoul@etu.umontpellier.fr'
+          );
+          $url = 'https://nominatim.openstreetmap.org/?' . http_build_query($data);
+
+          $ch = curl_init($url);
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+          curl_setopt($ch, CURLOPT_USERAGENT, 'Mettre ici un user-agent adéquat');
+
+          $geopos = json_decode(curl_exec($ch),TRUE);
+
+        return $geopos;
+    }
+
+    public function get_lon() {
+        return $this->get_json_lon_lat()[0]['lon'];
+    }
+
+    public function get_lat() {
+        return $this->get_json_lon_lat()[0]['lat'];
+    }
 }

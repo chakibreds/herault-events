@@ -26,7 +26,7 @@ class Model
     protected function saveQuery($query, $params)
     {
         $keys = array();
-
+        $db = $this->dbConnect();
         # build a regular expression for each parameter
         foreach ($params as $key => $value) {
             if (is_string($key)) {
@@ -36,7 +36,7 @@ class Model
             }
 
             if ($value !== NULL) {
-                $params[$key] = "'" . preg_quote($value) . "'";
+                $params[$key] = "'" . $db->quote($value) . "'";
             } else {
                 $params[$key] = 'NULL';
             }
