@@ -37,12 +37,13 @@ if (isset($_POST['add-theme']) && isset($user)) {
 
 // Modification d'un utilisateur
 if (isset($_POST['modifier-profil']) && isset($user)) {
-    $user = modifier_profil($_POST, $user->get_pseudo());
+    $user = modifier_profil($_POST, $user->get_pseudo(), $upload_dir_profil);
     $profil_user = $user;
     $_SESSION['user'] = serialize($user);
     $adresse_user = new Adresse($user->get_adresse());
     $profil_adresse = $adresse_user;
-} 
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -58,7 +59,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 <body>
     <main class="profil">
         <aside class="profil-information">
-            <img src="<?= $server_root ?>view/img/user/<?= $profil_user->get_url_image()?>" alt="">
+            <img src="<?= $server_root ?>view/img/profil/<?= $profil_user->get_url_image()?>" alt="">
             <ul>
                 <li class="nom"><?= $profil_user->get_nom() . " " . $profil_user->get_prenom() ?></li>
                 <li class="pseudo"><i class="fas fa-at"></i><?= $profil_user->get_pseudo() ?></li>
@@ -362,7 +363,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                         <section class="edit-profil">
                             <h2>Edit Profile</h2>
                             <p>Modifier vos information</p>
-                            <form action="" method="post" class="form-edit" onsubmit="return validateMdp();">
+                            <form enctype="multipart/form-data" action="" method="post" class="form-edit" onsubmit="return validateMdp();">
                                 <section class="information-personnelle">
                                     <legend>Informations personnelles</legend>
                                     <div class="label-input">
@@ -392,6 +393,10 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                     <div class="label-input">
                                         <label for="bio">Bio</label>
                                         <textarea name="bio" id="bio"><?= $user->get_bio() ?></textarea>
+                                    </div>
+                                    <div class="label-input">
+                                        <label for="image">Ajouter une image</label>
+                                        <input type="file" name="image" id="image"/>
                                     </div>
                                 </section>
                                 <section class="adresse">

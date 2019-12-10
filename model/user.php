@@ -105,6 +105,9 @@ class User extends Model
             $post['mdp']=$this->hash_pwd($post['mdp']);
             $this->mdp = $post['mdp'];
         }
+        if (isset($post['url_image'])) {
+            $this->url_image = $post['url_image'];
+        }
         
         $params = array();
         $query = 'UPDATE user SET ';
@@ -115,7 +118,6 @@ class User extends Model
         $query = substr($query,0,strlen($query)-1);
         $query .= ' WHERE pseudo = ?';
         $params[]=$this->pseudo;
-        echo $query;
         //die("STOP");
         $db = Model::dbConnect();
         $req = $db->prepare($query);
@@ -129,6 +131,7 @@ class User extends Model
         $this->tel = $post['tel'];
         $this->adresse = $post['id_adresse'];
         $this->bio = $post['bio'];
+        
     }
     public static function exists($pseudo)
     {
@@ -221,8 +224,8 @@ class User extends Model
 
     public function get_url_image() {
         if ($this->url_image == "")
-            return "contributeur1.jpg";
+            return "profil_vide.jpg";
         else 
-            return "user_". $this->pseudo . "_".$this->url_image;
+            return $this->pseudo . "_".$this->url_image;
     }
 }

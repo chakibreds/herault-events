@@ -122,7 +122,7 @@ function ajout_theme($post)
         return false;
     }
 }
-function modifier_profil($post, $pseudo)
+function modifier_profil($post, $pseudo,$upload_dir)
 {
     if (
         isset($post['nom']) &&
@@ -137,12 +137,26 @@ function modifier_profil($post, $pseudo)
         unset($post['modifier-profil']);
        
         $id_adresse = create_adresse($post);
+        if ($post['mdp']=="") {
+            unset($post['mdp']);
+        }
        unset($post['num_r']);
        unset($post['nom_r']);
        unset($post['ville']);
        unset($post['pays']);
        unset($post['code_postal']);
        unset($post['complementAdr']);
+       if (isset($_FILES['image'])) {
+            $post['url_image']=$_FILES['image']['name'];
+           $upload_file = $upload_dir  . $pseudo . "_" .  basename($_FILES['image']['name']);    
+           if (move_uploaded_file($_FILES['image']['tmp_name'], $upload_file)) { }
+       }
+       unset ($post['image']);
+       unset($_FILES['image']);
+       if($post['url_image']=="")
+       {
+           unset($post['url_image']);
+       }
         $user = new User($pseudo);
         $post['id_adresse'] = $id_adresse;
         $user->update($post);

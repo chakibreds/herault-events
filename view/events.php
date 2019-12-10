@@ -103,7 +103,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 </div>
             </section>
             <section class="contributeur-card">
-                <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/user/<?= $contributeur->get_url_image() ?>);">
+                <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/profil/<?= $contributeur->get_url_image()?>);">
                 </div>
                 <div class="contributeur-information">
                     <h3><b><?= $contributeur->get_nom() . ' ' . $contributeur->get_prenom() ?></b></h3>
