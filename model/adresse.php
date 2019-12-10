@@ -71,7 +71,7 @@ class Adresse extends Model {
                 $this->code_postal,
                 $this->additional_adresse);
 
-            $this->saveQuery($query,$param);
+            //$this->saveQuery($query,$param);
 
             // inserer dans la db
             $req = $db->prepare($query);

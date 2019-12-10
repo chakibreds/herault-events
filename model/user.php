@@ -93,7 +93,7 @@ class User extends Model
             $this->url_image,
             $this->bio);
             
-        $this->saveQuery($query,$param);
+        //$this->saveQuery($query,$param);
 
         $req = $db->prepare($query);
         $req->execute($param) or die(print_r($req->errorInfo(), TRUE));

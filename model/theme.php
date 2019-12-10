@@ -20,7 +20,7 @@ class Theme extends Model{
             $this->titre
         );
 
-        $this->saveQuery($query,$param);
+        //$this->saveQuery($query,$param);
 
         $db = $this->dbConnect();
         $req = $db->prepare($query);

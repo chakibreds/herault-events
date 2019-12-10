@@ -97,7 +97,7 @@ class Event extends Model
             $this->pseudo_contributor,
             $this->theme);
 
-        $this->saveQuery($query,$param);
+        //$this->saveQuery($query,$param);
             
         $req = $db->prepare($query);
         $req->execute($param) or die(print_r($req->errorInfo(), TRUE));
