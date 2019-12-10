@@ -59,7 +59,6 @@ class Adresse extends Model {
         
         $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal,$this->additional_adresse)) or die(print_r($req->errorInfo(), TRUE));
         if ($res = $req->fetch()) {
-            echo 'hedja';
             // existe deja dans la db
             $this->id_adresse = (int)$res['id_adresse'];
         } else {
@@ -79,9 +78,9 @@ class Adresse extends Model {
             $req->execute($param) or die(print_r($req->errorInfo(), TRUE));
 
             // récuperer l'id de l'adresse;
-            $req = $db->prepare("SELECT id_adresse FROM adresse WHERE num_rue = ? AND nom_rue = ? AND ville = ? AND pays = ? AND code_postal = ?");
+            $req = $db->prepare("SELECT id_adresse FROM adresse WHERE num_rue = ? AND nom_rue = ? AND ville = ? AND pays = ? AND code_postal = ? AND additional_adresse = ? ");
 
-            $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal)) or die(print_r($req->errorInfo(), TRUE));
+            $req->execute(array($this->num_rue,$this->nom_rue,$this->ville,$this->pays,$this->code_postal,$this->additional_adresse)) or die(print_r($req->errorInfo(), TRUE));
             
             $this->id_adresse = (int)$req->fetch()['id_adresse'];
         }
