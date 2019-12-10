@@ -5,177 +5,6 @@ Couleur V1
 //$couleurSecondaire : #f0f3f4;
 */
 /* Couleur V2 */
-/* 
-    Ce fichier contient les styles par défault de quelques éléments récurents
-*/
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  outline: none;
-}
-
-body,
-html {
-  font-family: 'Raleway', sans-serif !important;
-  width: 100%;
-  overflow-x: hidden !important;
-  position: relative;
-}
-
-/* les label, input et les buttons  */
-label {
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: #444;
-}
-
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
-input[type=tel],
-input[type=number],
-input[type=file],
-textarea,
-input[type=time],
-select {
-  margin-bottom: 12px;
-  padding: 5px 12px;
-  background-color: whitesmoke;
-  border-radius: 5px;
-  font-size: 17px;
-  font-family: inherit;
-  color: #444;
-  width: 100%;
-  border: 1px solid transparent;
-  -webkit-box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
-          box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
-  -webkit-transition: border-color 0.6s ease;
-  transition: border-color 0.6s ease;
-  -webkit-transition: -webkit-box-shadow 0.6s ease;
-  transition: -webkit-box-shadow 0.6s ease;
-  transition: box-shadow 0.6s ease;
-  transition: box-shadow 0.6s ease, -webkit-box-shadow 0.6s ease;
-}
-
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-input[type=date]:focus,
-input[type=tel]:focus,
-input[type=number]:focus,
-input[type=file]:focus,
-textarea:focus,
-input[type=time]:focus,
-select:focus {
-  border-color: #00ce87;
-  -webkit-box-shadow: 2px 2px 5px 0.2rem #00ce87;
-          box-shadow: 2px 2px 5px 0.2rem #00ce87;
-}
-
-button[type=submit],
-button[type=button],
-button[type=reset] {
-  border: 1px solid #444;
-  border-radius: 5px;
-  background-color: #00ce87;
-  color: #444;
-  margin: 10px;
-  padding: 7px 12px;
-  -webkit-transition-property: background-color, color, border-color;
-  transition-property: background-color, color, border-color;
-  -webkit-transition-duration: 0.6s;
-          transition-duration: 0.6s;
-  cursor: pointer;
-}
-
-form button[type=submit], form
-button[type=button], form
-button[type=reset] {
-  width: 100%;
-}
-
-button[type=submit]:hover,
-button[type=button]:hover,
-button[type=reset]:hover {
-  background-color: #444;
-  color: #00ce87;
-  border-color: #00ce87;
-}
-
-button[type=submit].btn-search,
-button[type=button].btn-search,
-button[type=reset].btn-search {
-  position: relative;
-  margin: 0;
-  width: 35px;
-  color: #444;
-  border-color: transparent;
-  background-color: transparent;
-  cursor: pointer;
-  border-left: 1px solid #444;
-  border-top-left-radius: initial;
-  border-bottom-left-radius: initial;
-  -webkit-transition: none;
-  transition: none;
-  -webkit-transition-property: color, background-color, border-color;
-  transition-property: color, background-color, border-color;
-  -webkit-transition-duration: .6s;
-          transition-duration: .6s;
-}
-
-button[type=submit].btn-search:hover, button[type=submit].btn-search:disabled,
-button[type=button].btn-search:hover,
-button[type=button].btn-search:disabled,
-button[type=reset].btn-search:hover,
-button[type=reset].btn-search:disabled {
-  color: #00ce87;
-  background-color: #444;
-  border-color: #00ce87;
-}
-
-button[type=submit].btn-search:disabled,
-button[type=button].btn-search:disabled,
-button[type=reset].btn-search:disabled {
-  cursor: not-allowed;
-}
-
-button[type=reset] {
-  color: #00ce87;
-  background-color: #444;
-}
-
-/* le text en gras, les liens et autres */
-b {
-  color: #00ce87;
-}
-
-b:hover {
-  text-decoration: underline;
-}
-
-a {
-  color: inherit;
-}
-
-a:hover {
-  color: #00ce87;
-  text-decoration: underline;
-}
-
-/* error div */
-div.errorBlock {
-  width: 100%;
-  margin-top: 5px;
-  background-color: indianred;
-  text-align: center;
-  color: whitesmoke;
-  padding: 4px;
-  border-radius: 5px;
-}
-
 main.connection {
   width: 100%;
   min-height: 100vh;
@@ -1100,76 +929,6 @@ footer .social-media .fa-twitter:hover {
   color: #3191f6;
 }
 
-main.search {
-  height: 90vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-main.search aside.search {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin: 20px 20px;
-  padding-right: 20px;
-  border-right: 1px #444 solid;
-}
-
-main.search aside.search ul {
-  list-style: none;
-}
-
-main.search aside.search ul li {
-  font-size: 1em;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-main.search article.search {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-main.search article.search section.criteres {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin-right: 5px;
-}
-
-main.search article.search section.criteres div.label-input {
-  margin-right: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-main.search article.search section.criteres div.label-input label {
-  width: 40%;
-  max-width: 300px;
-}
-
-main.search article.search section.criteres div.label-input input,
-main.search article.search section.criteres div.label-input select {
-  margin-right: 20px;
-  max-width: 300px;
-  min-width: 300px;
-}
-
 main.profil {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1514,6 +1273,345 @@ main.profil article.options section form.form-event section div.submit button,
 main.profil article.options section form.add-rm-contributeur section div.submit button,
 main.profil article.options section form.add-rm-theme section div.submit button {
   width: inherit;
+}
+
+main.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 700px;
+}
+
+main.search aside.search {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 20px 20px;
+  padding-right: 20px;
+  border-right: 1px #444 solid;
+}
+
+main.search aside.search ul {
+  list-style: none;
+}
+
+main.search aside.search ul li {
+  font-size: 1em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+main.search article.search {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  width: 100%;
+}
+
+main.search article.search section.criteres-textuelles,
+main.search article.search section.criteres-choix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main.search article.search section.criteres-textuelles div.label-input,
+main.search article.search section.criteres-choix div.label-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 20px;
+}
+
+main.search article.search section.criteres-textuelles div.label-input label,
+main.search article.search section.criteres-choix div.label-input label {
+  width: 40%;
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+main.search article.search section.criteres-textuelles div.label-input input,
+main.search article.search section.criteres-textuelles div.label-input select,
+main.search article.search section.criteres-choix div.label-input input,
+main.search article.search section.criteres-choix div.label-input select {
+  margin-right: 20px;
+  max-width: 300px;
+  min-width: 200px;
+}
+
+main.search article.search button.search {
+  margin-left: 800px;
+}
+
+main.search article.search section.events h2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+main.search article.search section.events ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main.search article.search section.events ul a {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 5px;
+  background-color: white;
+  width: 30%;
+  border: 1px solid grey;
+  margin: 10px auto;
+  padding: 15px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  text-align: left;
+}
+
+main.search article.search section.events ul a:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+main.search article.search section.events ul a:hover {
+  color: inherit;
+}
+
+main.search article.search section.events ul a:hover h3 {
+  color: #008556;
+  text-decoration: underline;
+}
+
+main.search article.search section.events ul a div.localisation {
+  width: 100%;
+  margin: 10px 0;
+}
+
+main.search article.search section.events ul a div.localisation * {
+  display: inline;
+}
+
+main.search article.search section.events ul a div.button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main.search article.search section.events ul a div.button button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: inherit auto;
+}
+
+main.search article.search section.events ul a div.button button i {
+  margin-right: 5px;
+}
+
+main.search article.search section.events ul a img {
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* 
+    Ce fichier contient les styles par défault de quelques éléments récurents
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+body,
+html {
+  font-family: 'Raleway', sans-serif !important;
+  width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+/* les label, input et les buttons  */
+label {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #444;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=tel],
+input[type=number],
+input[type=file],
+textarea,
+input[type=time],
+select {
+  margin-bottom: 12px;
+  padding: 5px 12px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: inherit;
+  color: #444;
+  width: 100%;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
+          box-shadow: 2px 2px 3px 0.2rem rgba(0, 0, 0, 0.322);
+  -webkit-transition: border-color 0.6s ease;
+  transition: border-color 0.6s ease;
+  -webkit-transition: -webkit-box-shadow 0.6s ease;
+  transition: -webkit-box-shadow 0.6s ease;
+  transition: box-shadow 0.6s ease;
+  transition: box-shadow 0.6s ease, -webkit-box-shadow 0.6s ease;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=date]:focus,
+input[type=tel]:focus,
+input[type=number]:focus,
+input[type=file]:focus,
+textarea:focus,
+input[type=time]:focus,
+select:focus {
+  border-color: #00ce87;
+  -webkit-box-shadow: 2px 2px 5px 0.2rem #00ce87;
+          box-shadow: 2px 2px 5px 0.2rem #00ce87;
+}
+
+button[type=submit],
+button[type=button],
+button[type=reset] {
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #00ce87;
+  color: #444;
+  margin: 10px;
+  padding: 7px 12px;
+  -webkit-transition-property: background-color, color, border-color;
+  transition-property: background-color, color, border-color;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+  cursor: pointer;
+}
+
+form button[type=submit], form
+button[type=button], form
+button[type=reset] {
+  width: 100%;
+}
+
+button[type=submit]:hover,
+button[type=button]:hover,
+button[type=reset]:hover {
+  background-color: #444;
+  color: #00ce87;
+  border-color: #00ce87;
+}
+
+button[type=submit].btn-search,
+button[type=button].btn-search,
+button[type=reset].btn-search {
+  position: relative;
+  margin: 0;
+  width: 35px;
+  color: #444;
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  border-left: 1px solid #444;
+  border-top-left-radius: initial;
+  border-bottom-left-radius: initial;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transition-property: color, background-color, border-color;
+  transition-property: color, background-color, border-color;
+  -webkit-transition-duration: .6s;
+          transition-duration: .6s;
+}
+
+button[type=submit].btn-search:hover, button[type=submit].btn-search:disabled,
+button[type=button].btn-search:hover,
+button[type=button].btn-search:disabled,
+button[type=reset].btn-search:hover,
+button[type=reset].btn-search:disabled {
+  color: #00ce87;
+  background-color: #444;
+  border-color: #00ce87;
+}
+
+button[type=submit].btn-search:disabled,
+button[type=button].btn-search:disabled,
+button[type=reset].btn-search:disabled {
+  cursor: not-allowed;
+}
+
+button[type=reset] {
+  color: #00ce87;
+  background-color: #444;
+}
+
+/* le text en gras, les liens et autres */
+b {
+  color: #00ce87;
+}
+
+b:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #00ce87;
+  text-decoration: underline;
+}
+
+/* error div */
+div.errorBlock {
+  width: 100%;
+  margin-top: 5px;
+  background-color: indianred;
+  text-align: center;
+  color: whitesmoke;
+  padding: 4px;
+  border-radius: 5px;
 }
 
 main.index-hors-ligne {

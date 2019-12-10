@@ -1,6 +1,6 @@
 main.search {
-  height: 90vh;
-  display : flex ;
+  display: flex;
+  height: 700px;
   aside.search {
     flex: 1;
     margin: 20px 20px;
@@ -17,33 +17,104 @@ main.search {
       }
     }
   }
-  article.search{
-      flex:4;
-      width : 100%;
-      display : flex;
-      section.criteres{
-          display : flex ;
-          flex-direction: row;
-          margin-right : 5px;
+  article.search {
+    flex: 4;
+    width: 100%;
 
-          div.label-input {
-            margin-right : 5px;
-            display : flex;
-            flex-direction: row;
+    section.criteres-textuelles,
+    section.criteres-choix {
+      display: flex;
+      flex-direction: row;
 
-            label {
-                width    : 40%;
-                max-width: 300px;
-            }
+      div.label-input {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        label {
+          width: 40%;
+          max-width: 300px;
+          margin-right: 10px;
+        }
 
-            input,
-            select{
-                margin-right: 20px;
-                max-width   : 300px;
-                min-width   : 300px;
-            }
+        input,
+        select {
+          margin-right: 20px;
+          max-width: 300px;
+          min-width: 200px;
         }
       }
+    }
+     button.search{
+        margin-left: 800px;
+    } 
+    section.events {
+      h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
 
+
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        a {
+          @include shadow-card;
+          border-radius: 5px;
+          background-color: white;
+          width: 30%;
+          border: 1px solid grey;
+          margin: 10px auto;
+          padding: 15px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+
+          text-align: left;
+
+          &:hover {
+            color: inherit;
+
+            h3 {
+              color: $vertFonce;
+              text-decoration: underline;
+            }
+          }
+
+          div.localisation {
+            width: 100%;
+            margin: 10px 0;
+
+            * {
+              display: inline;
+            }
+          }
+
+          div.button {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            button {
+              display: flex;
+              margin: inherit auto;
+
+              i {
+                margin-right: 5px;
+              }
+            }
+          }
+
+          img {
+            width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+          }
+        }
+      }
+    }
   }
 }
