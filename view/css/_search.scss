@@ -1,0 +1,49 @@
+main.search {
+  height: 90vh;
+  display : flex ;
+  aside.search {
+    flex: 1;
+    margin: 20px 20px;
+    padding-right: 20px;
+    border-right: 1px $couleurPrincipal solid;
+
+    ul {
+      list-style: none;
+
+      li {
+        font-size: 1em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  article.search{
+      flex:4;
+      width : 100%;
+      display : flex;
+      section.criteres{
+          display : flex ;
+          flex-direction: row;
+          margin-right : 5px;
+
+          div.label-input {
+            margin-right : 5px;
+            display : flex;
+            flex-direction: row;
+
+            label {
+                width    : 40%;
+                max-width: 300px;
+            }
+
+            input,
+            select{
+                margin-right: 20px;
+                max-width   : 300px;
+                min-width   : 300px;
+            }
+        }
+      }
+
+  }
+}
