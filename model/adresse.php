@@ -112,18 +112,19 @@ class Adresse extends Model {
     private function get_json_lon_lat() {
         /* api openstreetmap */
         $data = array(
-            'street'     => $this->num_rue . ' ' . $this->nom_rue,
+            'street'     => $this->num_rue . ' Rue ' . $this->nom_rue,
             'postalcode' => $this->code_postal,
             'city'       => $this->ville,
             'country'    => $this->pays,
             'format'     => 'json',
+            'limit'      => 1,
             'email'      => 'massili.kezzoul@etu.umontpellier.fr'
           );
           $url = 'https://nominatim.openstreetmap.org/?' . http_build_query($data);
 
           $ch = curl_init($url);
           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-          curl_setopt($ch, CURLOPT_USERAGENT, 'Mettre ici un user-agent adéquat');
+          curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0');
 
           $geopos = json_decode(curl_exec($ch),TRUE);
 
@@ -131,10 +132,10 @@ class Adresse extends Model {
     }
 
     public function get_lon() {
-        return $this->get_json_lon_lat()[0]['lon'];
+        return (isset($this->get_json_lon_lat()[0]['lon'])?$this->get_json_lon_lat()[0]['lon']:"'?'");
     }
 
     public function get_lat() {
-        return $this->get_json_lon_lat()[0]['lat'];
+        return (isset($this->get_json_lon_lat()[0]['lat'])?$this->get_json_lon_lat()[0]['lat']:"'?'");
     }
 }

@@ -121,6 +121,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     </main>
 </body>
 <?php
+$adresse->get_lat();
 require_once $dir_root . '/view/footer.php';
 ?>
 

@@ -22,7 +22,7 @@ if (isset($_POST['add-event']) && isset($user)) {
     if (!$event) {
         echo "Impossible d'ajouter l'évenement";
     } else {
-        echo "Event ajouté.";
+        //echo "Event ajouté.";
     }
 }
 //ajout theme
@@ -31,7 +31,7 @@ if (isset($_POST['add-theme']) && isset($user)) {
     if (!$theme) {
         echo "Impossible d'ajouter le theme";
     } else {
-        echo "Theme ajouté.";
+        //echo "Theme ajouté.";
     }
 }
 
