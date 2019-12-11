@@ -1,0 +1,120 @@
+main.search {
+  display: flex;
+  height: 700px;
+  aside.search {
+    flex: 1;
+    margin: 20px 20px;
+    padding-right: 20px;
+    border-right: 1px $couleurPrincipal solid;
+
+    ul {
+      list-style: none;
+
+      li {
+        font-size: 1em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  article.search {
+    flex: 4;
+    width: 100%;
+
+    section.criteres-textuelles,
+    section.criteres-choix {
+      display: flex;
+      flex-direction: row;
+
+      div.label-input {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        label {
+          width: 40%;
+          max-width: 300px;
+          margin-right: 10px;
+        }
+
+        input,
+        select {
+          margin-right: 20px;
+          max-width: 300px;
+          min-width: 200px;
+        }
+      }
+    }
+     button.search{
+        margin-left: 800px;
+    } 
+    section.events {
+      h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        a {
+          @include shadow-card;
+          border-radius: 5px;
+          background-color: white;
+          width: 30%;
+          border: 1px solid grey;
+          margin: 10px auto;
+          padding: 15px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+
+          text-align: left;
+
+          &:hover {
+            color: inherit;
+
+            h3 {
+              color: $vertFonce;
+              text-decoration: underline;
+            }
+          }
+
+          div.localisation {
+            width: 100%;
+            margin: 10px 0;
+
+            * {
+              display: inline;
+            }
+          }
+
+          div.button {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            button {
+              display: flex;
+              margin: inherit auto;
+
+              i {
+                margin-right: 5px;
+              }
+            }
+          }
+
+          img {
+            width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+          }
+        }
+      }
+    }
+  }
+}
