@@ -52,29 +52,23 @@ require $dir_root . 'view/head.php';
             </div>
             <div class="events">
                 <div class="events-card">
-                    <h2>Title event</h2>
-                    <img src="<?= $server_root . 'view/img/compressed/background-1.jpg' ?>" alt="évenement" />
-                    <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
-                    <a href="<?= $server_root ?>view/events.php?event=2">
-                        <button type="button">Voir plus</button>
-                    </a>
+                    <div class="event-image" style="background-image: url('<?= $server_root  ?>view/img/compressed/background-1.jpg');">
+                        
+                    </div>
+                    <div class="event-info">
+                        <h2>Title event</h2>
+                        <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
+                        <div class="event-button">
+                        <a href="<?= $server_root ?>view/events.php?event=2">
+                            <button type="button">Voir plus</button>
+                        </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="events-card">
-                    <h2>Title event</h2>
-                    <img src="<?= $server_root . 'view/img/compressed/fireworks-1.jpg' ?>" alt="évenement" />
-                    <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
-                    <a href="<?= $server_root ?>view/events.php?event=2">
-                        <button type="button">Voir plus</button>
-                    </a>
-                </div>
-                <div class="events-card">
-                    <h2>Title event</h2>
-                    <img src="<?= $server_root . 'view/img/compressed/background-comedie-1.jpg' ?>" alt="évenement" />
-                    <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
-                    <a href="<?= $server_root ?>view/events.php?event=2">
-                        <button type="button">Voir plus</button>
-                    </a>
-                </div>
+
+
+            </div>
+
             </div>
         </section>
     </main>
