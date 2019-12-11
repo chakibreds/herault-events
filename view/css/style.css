@@ -5,6 +5,7 @@ Couleur V1
 //$couleurSecondaire : #f0f3f4;
 */
 /* Couleur V2 */
+@import url("https://fonts.googleapis.com/css?family=Cinzel&display=swap");
 main.connection {
   width: 100%;
   min-height: 100vh;
@@ -1614,6 +1615,29 @@ div.errorBlock {
   border-radius: 5px;
 }
 
+main.not-found {
+  min-height: 75vh;
+  padding: 20px;
+  font-family: 'Cinzel', serif;
+}
+
+main.not-found h1 {
+  text-align: center;
+  color: #008556;
+}
+
+main.not-found .image-404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 main.index-hors-ligne {
   position: relative;
   z-index: 0;
@@ -2124,4 +2148,3 @@ main.index-hors-ligne .events-page .events .events-card p i {
             flex-direction: column;
   }
 }
-/*# sourceMappingURL=style.css.map */

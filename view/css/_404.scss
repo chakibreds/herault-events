@@ -1,0 +1,20 @@
+main.not-found {
+    min-height: 75vh;
+    padding: 20px;
+    
+    @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+    font-family: 'Cinzel', serif;
+    
+    h1 {
+        text-align: center;
+        color: $vertFonce;
+    }
+
+    .image-404 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+}

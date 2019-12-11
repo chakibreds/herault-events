@@ -16,7 +16,14 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 ?>
 
 <body>
-    <h1>Erreur 404 NOT FOUND</h1>
+    <main class="not-found">
+        <h1>Oopss... <i class="fas fa-frown-open"></i>, La page que vous chercher n'existe pas.</h1>
+        <section class="image-404">
+            <span>
+                404
+            </span>
+        </section>
+    </main>
 </body>
 <?php
 require_once $dir_root . '/view/footer.php';
