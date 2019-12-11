@@ -1457,7 +1457,7 @@ main.search article.search section.events ul a img {
 
 body,
 html {
-  font-family: 'Raleway', sans-serif !important;
+  font-family: "Raleway", sans-serif !important;
   width: 100%;
   overflow-x: hidden !important;
   position: relative;
@@ -1470,15 +1470,15 @@ label {
   color: #444;
 }
 
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
-input[type=tel],
-input[type=number],
-input[type=file],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+input[type="number"],
+input[type="file"],
 textarea,
-input[type=time],
+input[type="time"],
 select {
   margin-bottom: 12px;
   padding: 5px 12px;
@@ -1499,24 +1499,24 @@ select {
   transition: box-shadow 0.6s ease, -webkit-box-shadow 0.6s ease;
 }
 
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-input[type=date]:focus,
-input[type=tel]:focus,
-input[type=number]:focus,
-input[type=file]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
 textarea:focus,
-input[type=time]:focus,
+input[type="time"]:focus,
 select:focus {
   border-color: #00ce87;
   -webkit-box-shadow: 2px 2px 5px 0.2rem #00ce87;
           box-shadow: 2px 2px 5px 0.2rem #00ce87;
 }
 
-button[type=submit],
-button[type=button],
-button[type=reset] {
+button[type="submit"],
+button[type="button"],
+button[type="reset"] {
   border: 1px solid #444;
   border-radius: 5px;
   background-color: #00ce87;
@@ -1530,23 +1530,23 @@ button[type=reset] {
   cursor: pointer;
 }
 
-form button[type=submit], form
-button[type=button], form
-button[type=reset] {
+form button[type="submit"], form
+button[type="button"], form
+button[type="reset"] {
   width: 100%;
 }
 
-button[type=submit]:hover,
-button[type=button]:hover,
-button[type=reset]:hover {
+button[type="submit"]:hover,
+button[type="button"]:hover,
+button[type="reset"]:hover {
   background-color: #444;
   color: #00ce87;
   border-color: #00ce87;
 }
 
-button[type=submit].btn-search,
-button[type=button].btn-search,
-button[type=reset].btn-search {
+button[type="submit"].btn-search,
+button[type="button"].btn-search,
+button[type="reset"].btn-search {
   position: relative;
   margin: 0;
   width: 35px;
@@ -1561,27 +1561,27 @@ button[type=reset].btn-search {
   transition: none;
   -webkit-transition-property: color, background-color, border-color;
   transition-property: color, background-color, border-color;
-  -webkit-transition-duration: .6s;
-          transition-duration: .6s;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
 }
 
-button[type=submit].btn-search:hover, button[type=submit].btn-search:disabled,
-button[type=button].btn-search:hover,
-button[type=button].btn-search:disabled,
-button[type=reset].btn-search:hover,
-button[type=reset].btn-search:disabled {
+button[type="submit"].btn-search:hover, button[type="submit"].btn-search:disabled,
+button[type="button"].btn-search:hover,
+button[type="button"].btn-search:disabled,
+button[type="reset"].btn-search:hover,
+button[type="reset"].btn-search:disabled {
   color: #00ce87;
   background-color: #444;
   border-color: #00ce87;
 }
 
-button[type=submit].btn-search:disabled,
-button[type=button].btn-search:disabled,
-button[type=reset].btn-search:disabled {
+button[type="submit"].btn-search:disabled,
+button[type="button"].btn-search:disabled,
+button[type="reset"].btn-search:disabled {
   cursor: not-allowed;
 }
 
-button[type=reset] {
+button[type="reset"] {
   color: #00ce87;
   background-color: #444;
 }
@@ -1612,6 +1612,105 @@ div.errorBlock {
   text-align: center;
   color: whitesmoke;
   padding: 4px;
+  border-radius: 5px;
+}
+
+.events {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.events .events-card {
+  height: 450px;
+  width: 25%;
+  min-width: 335px;
+  border: 3px solid #444;
+  color: #444;
+  background-color: #dadddef1;
+  -webkit-transition: -webkit-box-shadow, -webkit-transform 0.6s;
+  transition: -webkit-box-shadow, -webkit-transform 0.6s;
+  transition: box-shadow, transform 0.6s;
+  transition: box-shadow, transform 0.6s, -webkit-box-shadow, -webkit-transform 0.6s;
+  margin-bottom: 20px;
+}
+
+.events .events-card:hover {
+  -webkit-box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
+          box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.events .events-card .event-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 55%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.events .events-card .event-info h2 {
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  color: #00ce87;
+  text-decoration: underline;
+  font-size: 2em;
+}
+
+.events .events-card .event-info .event-button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.events .events-card .event-info .event-button button {
+  min-width: 35%;
+  width: inherit !important;
+}
+
+.events .events-card .event-info p {
+  width: 85%;
+  text-align: center;
+}
+
+.events .events-card .event-info p i {
+  color: #444;
+}
+
+.events .events-card .event-image {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 45%;
   border-radius: 5px;
 }
 
@@ -1875,90 +1974,6 @@ main.index-hors-ligne .events-page .events-title h1 {
 
 main.index-hors-ligne .events-page .events-title p {
   font-size: 25px;
-}
-
-main.index-hors-ligne .events-page .events {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
-  width: 100%;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main.index-hors-ligne .events-page .events .events-card {
-  height: 450px;
-  width: 25%;
-  min-width: 335px;
-  border: 3px solid #444;
-  color: #444;
-  background-color: #dadddef1;
-  -webkit-transition: -webkit-box-shadow, -webkit-transform 0.6s;
-  transition: -webkit-box-shadow, -webkit-transform 0.6s;
-  transition: box-shadow, transform 0.6s;
-  transition: box-shadow, transform 0.6s, -webkit-box-shadow, -webkit-transform 0.6s;
-  margin-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-main.index-hors-ligne .events-page .events .events-card:hover {
-  -webkit-box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
-          box-shadow: 4px 5px 14px 6px rgba(0, 0, 0, 0.34);
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-main.index-hors-ligne .events-page .events .events-card:hover h2 {
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
-  color: #00ce87;
-  text-decoration: underline;
-}
-
-main.index-hors-ligne .events-page .events .events-card img {
-  width: 85%;
-  height: 45%;
-  border: 2px solid #444;
-  border-radius: 5px;
-}
-
-main.index-hors-ligne .events-page .events .events-card button {
-  padding: 10px;
-  min-width: 35%;
-  width: inherit !important;
-}
-
-main.index-hors-ligne .events-page .events .events-card p {
-  width: 85%;
-}
-
-main.index-hors-ligne .events-page .events .events-card p i {
-  color: #444;
 }
 
 /* 
