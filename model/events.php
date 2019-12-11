@@ -7,7 +7,6 @@ class Event extends Model
     private $id_event;         // int
     private $titre = "";        // string
     private $date_event;        // date
-    private $heure_event;       //Time
     private $description_event = ""; // string
     private $url_image = "";        //string
     private $min_participant = 0;   // int
@@ -25,6 +24,9 @@ class Event extends Model
                 break;
             case 10:
                 self::__construct2($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8], $argv[9]);
+                break;
+            case 11:
+                self::__construct($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8], $argv[9], $argv[10]);
                 break;
             default:
                 echo "Erreur constructeur Event";
@@ -71,6 +73,60 @@ class Event extends Model
         $this->theme = $theme;
 
         $this->insert();
+    }
+
+    public function __construct3($id_event,$titre, $date_event, $description_event, $url_image, $min_participant, $max_participant, $id_adresse, $pseudo_contributor,$theme , $cons3 = NULL)
+    {
+        $this->id_event = $id_event;
+        $this->titre = $titre;
+        $this->date_event = $date_event;
+        $this->description_event = $description_event;
+        $this->url_image = $url_image;
+        $this->min_participant = $min_participant;
+        $this->max_participant = $max_participant;
+        $this->id_adresse = $id_adresse;
+        $this->pseudo_contributor = $pseudo_contributor;
+        $this->theme = $theme;
+
+    }
+
+    public static function get_best_events($limit = 5) {
+        $query = 'SELECT events.* FROM events, (SELECT e.id_event 
+                FROM events e,participate p 
+                WHERE e.id_event = p.id_event 
+                AND  e.date_event > NOW()
+                GROUP BY e.id_event
+                ORDER BY count(*)) k
+                WHERE events.id_event = k.id_event
+                LIMIT 0,?';
+        $param = array(
+            $limit
+        );
+        $best = array();
+
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die('Erreur Event::get_best_events()');
+
+        while ($res = $req->fetch() && $limit > 0) {
+            $best[] = new Event(
+                $res['id_event'],
+                $res['titre'],
+                $res['date_event'],
+                $res['desciption'],
+                $res['url_image'],
+                $res['min_participant'],
+                $res['max_participant'],
+                $res['id_adresse'],
+                $res['pseudo_contributor'],
+                $res['theme'],
+                NULL // obligatoire afin de le differencier du construct2
+            );
+            $limit--;
+        }
+
+        $req->closeCursor();
+        return $best;
     }
 
     public static function exists($id_event)

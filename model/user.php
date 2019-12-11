@@ -99,6 +99,7 @@ class User extends Model
         $req->execute($param) or die(print_r($req->errorInfo(), TRUE));
 
     }
+
     public function update($post)
     {
         if (isset($post['mdp'])) { 
@@ -133,6 +134,103 @@ class User extends Model
         $this->bio = $post['bio'];
         
     }
+
+    public function get_events_by_contributeur() {
+        $query = 'SELECT * FROM events WHERE pseudo_contributeur = ?';
+        $param = array(
+            $this->pseudo
+        );
+        
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die("Erreur User::get_events_by_contributeur();");
+
+        $events = array();
+
+        while($res = $req->fetch()) {
+            $events[] = new Event(
+                $res['id_event'],
+                $res['titre'],
+                $res['date_event'],
+                $res['desciption'],
+                $res['url_image'],
+                $res['min_participant'],
+                $res['max_participant'],
+                $res['id_adresse'],
+                $res['pseudo_contributor'],
+                $res['theme'],
+                NULL // obligatoire afin de le differencier du construct2
+            );
+        }
+        $req->closeCursor();
+
+        return $events;
+    }
+
+    public function get_participation() {
+        $query = 'SELECT e.* FROM user u,participate p,events e WHERE u.pseudo = ? AND p.pseudo = u.pseudo AND e.id_event = p.id_event';
+        $param = array(
+            $this->pseudo
+        );
+
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die("Erreur User::get_participation();");
+
+        $participation = array();
+
+        while($res = $req->fetch()) {
+            $participation[] = new Event(
+                $res['id_event'],
+                $res['titre'],
+                $res['date_event'],
+                $res['desciption'],
+                $res['url_image'],
+                $res['min_participant'],
+                $res['max_participant'],
+                $res['id_adresse'],
+                $res['pseudo_contributor'],
+                $res['theme'],
+                NULL // obligatoire afin de le differencier du construct2
+            );
+        }
+        $req->closeCursor();
+
+        return $participation;
+    }
+
+    public function get_interesser() {
+        $query = 'SELECT e.* FROM user u,interested p,events e WHERE u.pseudo = ? AND p.pseudo = u.pseudo AND e.id_event = p.id_event';
+        $param = array(
+            $this->pseudo
+        );
+
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die("Erreur User::get_interesser();");
+
+        $interesser = array();
+
+        while($res = $req->fetch()) {
+            $interesser[] = new Event(
+                $res['id_event'],
+                $res['titre'],
+                $res['date_event'],
+                $res['desciption'],
+                $res['url_image'],
+                $res['min_participant'],
+                $res['max_participant'],
+                $res['id_adresse'],
+                $res['pseudo_contributor'],
+                $res['theme'],
+                NULL // obligatoire afin de le differencier du construct2
+            );
+        }
+        $req->closeCursor();
+
+        return $interesser;
+    }
+
     public static function exists($pseudo)
     {
         $db = Model::dbConnect();
@@ -169,12 +267,20 @@ class User extends Model
 
     /**
      * @param $mdp given by the user
-     * @return true if the hash of $mdp is the same as the actual pwd
+     * @return bool true if the hash of $mdp is the same as the actual pwd
      */
     public function mdp_is($mdp)
     {
         return password_verify($mdp, $this->mdp);
     }
+
+    /**
+     *  @return bool if $this->role === ('contributeur' || 'admin')
+     */
+    public function is_contributeur() {
+        return (($this->role === 'contributeur') || ($this->role === 'admin'));
+    }
+
 
     /*  getters */
     public function get_pseudo()

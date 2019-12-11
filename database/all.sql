@@ -9,5 +9,3 @@ source database/insert.sql;
 -- source database/view.sql;
 
 -- source database/trigger.sql;
-
- source database/queryLog.sql; 

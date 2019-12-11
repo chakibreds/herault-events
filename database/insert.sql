@@ -36,6 +36,15 @@ INSERT INTO `events` (`id_event`, `titre`, `date_event`, `description_event`, `m
 (2, 'Évenement 2', '2019-12-06 18:00:00', 'description de l\'évenement 2', 100, 10000, 1, NULL, 'chakibReds', 'informatique'),
 (3, 'Soutenance projet Web', '2019-12-16 09:00:00', 'Ra7 tetbetchek', 2, 3, 3, '1105133-skyrim-logo.jpg', 'Y2ssam', 'informatique');
 
+/* INSERTION participation */
+INSERT INTO `participate` (`pseudo`,`id_event`,`note`) VALUES
+('Y2ssam',1,NULL),
+('chakibReds',2,NULL);
+
+/* INSERTION inetresser */
+INSERT INTO `interested` (`pseudo`,`id_event`) VALUES
+('Y2ssam',2),
+('chakibReds',1);
 
 /* ERREUR */
 INSERT INTO `ERREUR_INSERT` (`TEXT_ERREUR`) VALUES
