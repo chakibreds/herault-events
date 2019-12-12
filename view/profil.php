@@ -59,7 +59,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 <body>
     <main class="profil">
         <aside class="profil-information">
-            <img src="<?= $server_root ?>view/img/profil/<?= $profil_user->get_url_image()?>" alt="">
+            <img src="<?= $server_root ?>view/img/profil/<?= $profil_user->get_url_image() ?>" alt="">
             <ul>
                 <li class="nom"><?= $profil_user->get_nom() . " " . $profil_user->get_prenom() ?></li>
                 <li class="pseudo"><i class="fas fa-at"></i><?= $profil_user->get_pseudo() ?></li>
@@ -87,26 +87,15 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                         <a id="find-events" href="#">interssé Par</a>
                     </li>
                     <?php
-                    if (isset($user)) {
-
-                        if ($user->get_role() != "visitor" || $profil_user->get_role() != "visitor") {
-                            ?>
-                            <li>
-                                <a id="contribution" href="#">Contributions</a>
-                            </li>
-                        <?php
-                            }
-                        } else {
-                            if ($profil_user->get_role() != "visitor") {
-                                ?>
-                            <li>
-                                <a id="contribution" href="#">Contributions</a>
-                            </li>
-                        <?php
-                            }
-                        }
-                        if (isset($user) && $user->get_pseudo() == $profil_user->get_pseudo()) {
-                            ?>
+                    if ((isset($user) && $user->get_role() != "visitor") || $profil_user->get_role() != "visitor") {
+                        ?>
+                        <li>
+                            <a id="contribution" href="#">Contributions</a>
+                        </li>
+                    <?php
+                    }
+                    if (isset($user) && $user->get_pseudo() == $profil_user->get_pseudo()) {
+                        ?>
                         <li>
                             <a id="edit-profil" href="#">Modifier Profil</a>
                         </li>
@@ -124,167 +113,34 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
             </div>
             <section class="my-events">
                 <h2>Evenements</h2>
-                <ul>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <h3>Title event</h3>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-                        <button type="button"><i class="fas fa-minus"></i> Supprimer</button>
-                    </a>
-                </ul>
+                <div class="events">
+                    <?php
+                    affiche_events(get_participation($profil_user->get_pseudo()), $dir_root, $server_root);
+                    ?>
+                </div>
             </section>
             <section class="find-events">
                 <h2>intersser par</h2>
-                <ul>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-
-                        <div class="button">
-                            <button type="button">
-                                <i class="fas fa-heart"></i>
-                                Intéresser
-                            </button>
-                            <button type="button"><i class="fas fa-plus"></i> Participer</button>
-                        </div>
-
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-                        <div class="button">
-                            <button type="button">
-                                <i class="fas fa-heart"></i>
-                                Intéresser
-                            </button>
-                            <button type="button"><i class="fas fa-plus"></i> Participer</button>
-                        </div>
-                    </a>
-                    <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                        <h3>Title event</h3>
-                        <div class=image>
-                            <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                        </div>
-                        <div class="localisation">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Location</p>
-                        </div>
-                        <div class="button">
-                            <button type="button">
-                                <i class="fas fa-heart"></i>
-                                Intéresser
-                            </button>
-                            <button type="button"><i class="fas fa-plus"></i> Participer</button>
-                        </div>
-                    </a>
-                </ul>
+                <div class="events">
+                    <?php
+                    affiche_events(get_interesser($profil_user->get_pseudo()), $dir_root, $server_root);
+                    ?>
+                </div>
             </section>
             <?php
-            if (isset($user)) {
-                if ($user->get_role() != "visitor" || $profil_user->get_role() != "visitor") {
+                if ((isset($user) && $user->get_role() != "visitor") || $profil_user->get_role() != "visitor") {
                     ?>
                     <section class="contribution">
                         <h2>Contributions</h2>
                         <p>Ici vous trouverer les contribution de l'utilisateur : </p>
-                        <ul>
-                            <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                                <h3>Title event</h3>
-                                <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                                <button type="button"><i class="fas fa-info-circle"></i> Voir plus</button>
-                            </a>
-                        </ul>
+                        <div class="events">
+                            <?php
+                                affiche_events(get_contribution($profil_user->get_pseudo()), $dir_root, $server_root);
+                            ?>
+                        </div>
                     <?php
                         }
-                    } else {
-                        if ($profil_user->get_role() != "visitor") {
-
-                            ?>
-                        <section class="contribution">
-                            <h2>Contributions</h2>
-                            <p>Ici vous trouverer les contribution de l'utilisateur : </p>
-                            <ul>
-                                <a href="<?= $server_root ?>view/events.php?event=2" class="event-card">
-                                    <h3>Title event</h3>
-                                    <img src="<?= $server_root ?>view/img/compressed/background-comedie-1.jpg">
-                                    <button type="button"><i class="fas fa-info-circle"></i> Voir plus</button>
-                                </a>
-                            </ul>
-                        <?php
-                            }
-                        }
-                        if (isset($user) && $user->get_role() != "visitor" && ($user->get_pseudo() == $profil_user->get_pseudo())) {
+                    if (isset($user) && $user->get_role() != "visitor" && ($user->get_pseudo() == $profil_user->get_pseudo())) {
                             ?>
                         <p>Ajouter un évenement :</p>
                         <form enctype="multipart/form-data" action="" method="post" class="form-event">
@@ -396,7 +252,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                     </div>
                                     <div class="label-input">
                                         <label for="image">Ajouter une image</label>
-                                        <input type="file" name="image" id="image"/>
+                                        <input type="file" name="image" id="image" />
                                     </div>
                                 </section>
                                 <section class="adresse">

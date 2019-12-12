@@ -146,7 +146,7 @@ div.errorBlock {
   padding: 4px;
   border-radius: 5px;
 }
-.events {
+div.events {
   flex: 3;
   width: 100%;
   margin: auto;
@@ -162,6 +162,7 @@ div.errorBlock {
     width: 25%;
     min-width: 335px;
     border: 3px solid $couleurPrincipal;
+    //border-radius: 5px;
     color: $couleurPrincipal;
     background-color: #dadddef1;
     transition: box-shadow, transform 0.6s;
@@ -175,13 +176,15 @@ div.errorBlock {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      height: 55%;
+      height: 45%;
       align-items: center;
       h2 {
         transition: 0.7s;
         color: $couleurSecondaire;
         text-decoration: underline;
         font-size: 2em;
+				text-align: center;
+
       }
       .event-button {
           width: 100%;
@@ -202,13 +205,12 @@ div.errorBlock {
     }
     .event-image {
       width: 100%;
-      // can be slide
       background-size: cover;
       background-position: center;
 
-      height: 45%;
-      //border: 2px solid $couleurPrincipal;
-      border-radius: 5px;
+      height: 55%;
+      /* border-top-right-radius : 5px;
+      border-top-left-radius : 5px; */
     }
   }
 }

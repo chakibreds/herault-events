@@ -32,24 +32,15 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 <body>
     <main class="events">
         <aside class="explore">
-            <h2>Best ratted events</h2>
-            <input type="text" placeholder="Trouver un évenment..." class="find-event" />
+            <h2>Les meilleurs évenements</h2>
+            <form class="find" action="<?= $server_root ?>view/search.php" method="post">
+                <input type="text" name="titre" placeholder="Trouver un évenment..." class="find-event" />
+                <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>
+            </form>
             <ul>
-                <a href="#" class="event">
-                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
-                </a>
-                <a href="#" class="event">
-                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
-                </a>
-                <a href="#" class="event">
-                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
-                </a>
-                <a href="#" class="event">
-                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
-                </a>
-                <a href="#" class="event">
-                    <h2><i class="fas fa-calendar-plus"></i>Titre event</h2>
-                </a>
+                <?php
+                affiche_events(get_best_events(5), $dir_root, $server_root, true);
+                ?>
             </ul>
         </aside>
 
@@ -75,19 +66,31 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <li>Ville : <?= $adresse->get_ville() ?></li>
                     <li>Rue : <?= $adresse->get_num_rue() . ' Rue ' . $adresse->get_nom_rue() ?></li>
                 </ul>
-                <h3>Autre : </h3>
-                <div class="note-event">
-                    <div class="participant">
+            </section>
+            <section class="contributeur-card">
+                <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/profil/<?= $contributeur->get_url_image() ?>);">
+                </div>
+                <div class="contributeur-information">
+                    <h3><b><?= $contributeur->get_nom() . ' ' . $contributeur->get_prenom() ?></b></h3>
+                    <ul>
+                        <li>Membre depuis le <?= $contributeur->get_date_inscr() ?></li>
+                    </ul>
+                    <a href="<?= $server_root ?>view/profil.php?user=<?= $event->get_pseudo_contributor() ?>"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
+                </div>
+            </section>
+            <section class="note-event">
+                <div class="cards-note">
+                    <div class="participant card-note">
                         <i class="fas fa-calendar-plus"></i>
                         <span class="number"><?= $event->get_nombre_participant() ?></span>
                         <span class="text">Participant</span>
                     </div>
-                    <div class="interesser">
+                    <div class="interesser card-note">
                         <i class="far fa-heart"></i>
                         <span class="number"><?= $event->get_nombre_interesse() ?></span>
                         <span class="text">Interesser</span>
                     </div>
-                    <div class="note">
+                    <div class="note card-note">
                         <i class="fas fa-marker"></i>
                         <span class="number"><?= $event->get_note() ?></span>
                         <span class="text">Note</span>
@@ -100,17 +103,6 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <button type="button"><i class="fas fa-heart"></i>
                         Interesser
                     </button>
-                </div>
-            </section>
-            <section class="contributeur-card">
-                <div class="contributeur-img" style="background-image : url(<?= $server_root ?>view/img/profil/<?= $contributeur->get_url_image()?>);">
-                </div>
-                <div class="contributeur-information">
-                    <h3><b><?= $contributeur->get_nom() . ' ' . $contributeur->get_prenom() ?></b></h3>
-                    <ul>
-                        <li>Membre depuis le <?= $contributeur->get_date_inscr() ?></li>
-                    </ul>
-                    <a href="<?= $server_root ?>view/profil.php?user=<?= $event->get_pseudo_contributor() ?>"><button type="button"><i class="fas fa-user"></i> Voir profil</button></a>
                 </div>
             </section>
             <h3>L'évenement sur la map : </h3>

@@ -16,7 +16,7 @@ DELETE FROM ERREUR_INSERT;
 INSERT INTO `adresse` (`id_adresse`, `num_rue`, `nom_rue`, `ville`, `pays`, `code_postal`, `additional_adresse`) VALUES
 (1, 29, 'Frederic Peyson', 'Montpellier', 'France', '34000', 'Chez M.Zerroug Djamel'),
 (2, 15, 'Colin', 'Montpellier', 'France', '34000', ''),
-(3, 1, 'Tuel', 'Montpellier', 'France', '34000', '');
+(3, 1, 'Truel', 'Montpellier', 'France', '34000', '');
 
 /* insertion des user */
 
@@ -34,17 +34,22 @@ INSERT INTO theme (`titre`) VALUES
 INSERT INTO `events` (`id_event`, `titre`, `date_event`, `description_event`, `min_participant`, `max_participant`, `id_adresse`, `url_image`, `pseudo_contributor`, `theme`) VALUES
 (1, 'Évenement 1', '2019-11-07 17:00:00', 'description de l\'évenement 1', 5, 1000, 2, NULL, 'Y2ssam', 'informatique'),
 (2, 'Évenement 2', '2019-12-06 18:00:00', 'description de l\'évenement 2', 100, 10000, 1, NULL, 'chakibReds', 'informatique'),
-(3, 'Soutenance projet Web', '2019-12-16 09:00:00', 'Ra7 tetbetchek', 2, 3, 3, '1105133-skyrim-logo.jpg', 'Y2ssam', 'informatique');
+(3, 'Soutenance projet Web', '2019-12-18 09:00:00', 'Ra7 tetbetchek', 2, 3, 3, '1105133-skyrim-logo.jpg', 'Y2ssam', 'informatique');
 
 /* INSERTION participation */
 INSERT INTO `participate` (`pseudo`,`id_event`,`note`) VALUES
 ('Y2ssam',1,NULL),
-('chakibReds',2,NULL);
+('chakibReds',2,NULL),
+('Y2ssam',3,NULL),
+('Y2ssam',2,NULL),
+('chakibReds',3,NULL);
 
 /* INSERTION inetresser */
 INSERT INTO `interested` (`pseudo`,`id_event`) VALUES
 ('Y2ssam',2),
-('chakibReds',1);
+('chakibReds',1),
+('Y2ssam',3),
+('chakibReds',3);
 
 /* ERREUR */
 INSERT INTO `ERREUR_INSERT` (`TEXT_ERREUR`) VALUES

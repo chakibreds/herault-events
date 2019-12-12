@@ -26,7 +26,7 @@ class Event extends Model
                 self::__construct2($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8], $argv[9]);
                 break;
             case 11:
-                self::__construct($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8], $argv[9], $argv[10]);
+                self::__construct3($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8], $argv[9], $argv[10]);
                 break;
             default:
                 echo "Erreur constructeur Event";
@@ -97,23 +97,19 @@ class Event extends Model
                 AND  e.date_event > NOW()
                 GROUP BY e.id_event
                 ORDER BY count(*)) k
-                WHERE events.id_event = k.id_event
-                LIMIT 0,?';
-        $param = array(
-            $limit
-        );
+                WHERE events.id_event = k.id_event';
         $best = array();
 
         $db = Model::dbConnect();
         $req = $db->prepare($query);
-        $req->execute($param) or die('Erreur Event::get_best_events()');
+        $req->execute() or die('Erreur Event::get_best_events()<br>' . print_r($req->errorInfo(), TRUE));
 
-        while ($res = $req->fetch() && $limit > 0) {
+        while (($res = $req->fetch()) && $limit > 0) {
             $best[] = new Event(
                 $res['id_event'],
                 $res['titre'],
                 $res['date_event'],
-                $res['desciption'],
+                $res['description_event'],
                 $res['url_image'],
                 $res['min_participant'],
                 $res['max_participant'],
