@@ -51,7 +51,7 @@ require_once $dir_root . 'view/head.php';
                         </div>
                     </div>
                     <div class="input-label">
-                        <input type="date" name="date_nai" id="date_nai" required>
+                        <input type="date" name="date_nai" id="date_nai" max="<?= date_date_set(new DateTime(),getdate()['year']-12,getdate()['mon'],getdate()['mday'])->format('Y-m-d')?>" required>
                         <label for="date_nai">Date de naissance</label>
                     </div>
                     <div class="input-label">

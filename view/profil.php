@@ -70,8 +70,12 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     <li class="edit"><button type="button"><i class="fas fa-edit"></i> Modifier</button></li>
                 <?php
                 }
-                ?>
+                if ($profil_adresse->get_pays()!=""&& $profil_adresse->get_ville()!="") {
+                    ?>
                 <li class="localisation"><i class="fas fa-map-marker-alt"></i> <?= $profil_adresse->get_ville() . ", " . $profil_adresse->get_pays() ?></li>
+                 <?php
+                 }
+                ?>
                 <li class="Role">Rôle : <?= $profil_user->get_role() ?></li>
                 <li class="membre">Membre depuis : <?= $profil_user->get_date_inscr() ?></li>
                 <li class="bio"><?= $profil_user->get_bio() ?></li>
