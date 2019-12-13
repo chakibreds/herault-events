@@ -45,5 +45,18 @@ class Theme extends Model{
     {
         return $this->titre;
     }
+    public static function get_all_themes()
+    {
+        $themes = array();
+        $db=Model::dbConnect();
+        $query='SELECT titre from theme';
+        $req = $db->prepare($query);
+        $req->execute(array());
+        while($res = $req->fetch())
+        {
+            $themes[] = $res['titre'];
+        }
+        return $themes;
+    }
     
 }

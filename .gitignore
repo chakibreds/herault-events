@@ -1,3 +1,4 @@
 
 view/css/*.css.map
 model/mysqlUserName.php
+log/*

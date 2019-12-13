@@ -21,3 +21,9 @@ function logTime($dir_root,$script_name,$begin,$end) {
 function find($titre,$ville,$date) {
     return Event::find($titre,$ville,$date);
 }
+
+
+function get_all_themes()
+{
+    return Theme::get_all_themes();
+}

@@ -149,7 +149,18 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                 <legend>Information sur l'évenement</legend>
                                 <div class="label-input">
                                     <label for="theme">Theme</label>
-                                    <input type="text" name="theme" id="theme" required />
+                                    
+                                    <select name="theme" id="theme">
+                                        <?php
+                                        $themes = get_all_themes();
+                                       
+                                        foreach ($themes as  $theme) {
+                                            ?>
+                                            <option value="<?=$theme?>"><?=$theme?></option>
+                                            <?php
+                                        }
+                                        ?> 
+                                    </select>
                                 </div>
                                 <div class="label-input">
                                     <label for="title">Titre</label>
