@@ -170,7 +170,7 @@ main.profil {
 
 
 					legend {
-						display         : inline-block;
+						display         : inline-table;
 						color           : $vertFonce;
 						position        : relative;
 						top             : 0;
@@ -178,6 +178,8 @@ main.profil {
 						font-size       : 1.2em;
 						padding         : 2px 10px;
 						background-color: #F6F8FA;
+						
+						
 
 					}
 
@@ -203,6 +205,19 @@ main.profil {
 					&.add-rm-contributeur,
 					&.add-rm-theme {
 						grid-column: 1 / 3;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-evenly;
+						div.add-rm
+						{
+
+							display : flex;
+							align-items: flex-end;
+							button{
+								width: auto;
+								
+							}
+						}
 					}
 
 					&.submit {

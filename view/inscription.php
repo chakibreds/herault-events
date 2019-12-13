@@ -7,9 +7,9 @@ $pseudo = "";
 $email = "";
 $mdp = "";
 if (isset($_POST['inscrire-index'])) {
-    $pseudo = isset($_POST['pseudo'])? $_POST['pseudo'] : "";
-    $email = isset($_POST['email'])? $_POST['email'] : "";
-    $mdp = isset($_POST['mdp'])? $_POST['mdp'] : "";
+    $pseudo = isset($_POST['pseudo']) ? $_POST['pseudo'] : "";
+    $email = isset($_POST['email']) ? $_POST['email'] : "";
+    $mdp = isset($_POST['mdp']) ? $_POST['mdp'] : "";
 }
 
 if (isset($_POST['inscrire'])) {
@@ -17,7 +17,7 @@ if (isset($_POST['inscrire'])) {
     if ($user) {
         $_SESSION['user'] = serialize($user);
     } else {
-        echo "Impossible d'ajouter l'utilisateur";
+        $erreur_pseudo_existant = true;
     }
 }
 
@@ -58,7 +58,7 @@ require_once $dir_root . 'view/head.php';
                         </div>
                     </div>
                     <div class="input-label">
-                        <input type="date" name="date_nai" id="date_nai" max="<?= date_date_set(new DateTime(),getdate()['year']-12,getdate()['mon'],getdate()['mday'])->format('Y-m-d')?>" required>
+                        <input type="date" name="date_nai" id="date_nai" max="<?= date_date_set(new DateTime(), getdate()['year'] - 12, getdate()['mon'], getdate()['mday'])->format('Y-m-d') ?>" required>
                         <label for="date_nai">Date de naissance</label>
                     </div>
                     <div class="input-label">
@@ -69,6 +69,15 @@ require_once $dir_root . 'view/head.php';
                         </select>
                         <label for="civilite">Civilité</label>
                     </div>
+                    <?php
+                    if ($erreur_pseudo_existant) {
+                     ?>   
+                        <div class="errorBlock ">
+                        Nom d'utilisateur existant.
+                        </div>
+                      <?php  
+                    }
+                    ?>
                 </div>
 
                 <div class="donnees-adresse">
@@ -107,7 +116,7 @@ require_once $dir_root . 'view/head.php';
 
                     <div class="email-tel">
                         <div class="input-label">
-                            <input type="email" name="email" id="email" value="<?=$email?>" required>
+                            <input type="email" name="email" id="email" value="<?= $email ?>" required>
                             <label for="email">E-mail</label>
                         </div>
                         <div class="input-label">
@@ -116,12 +125,12 @@ require_once $dir_root . 'view/head.php';
                         </div>
                     </div>
                     <div class="input-label">
-                        <input type="text" name="pseudo" id="pseudo" value="<?=$pseudo?>" required>
+                        <input type="text" name="pseudo" id="pseudo" value="<?= $pseudo ?>" required>
                         <label for="pseudo">Nom d'utilisateur</label>
                     </div>
                     <div class="mdp">
                         <div class="input-label">
-                            <input type="password" name="password" id="password"value="<?=$mdp?>" required>
+                            <input type="password" name="password" id="password" value="<?= $mdp ?>" required>
                             <label for="password">Mot de passe</label>
                         </div>
                         <div class="input-label">
@@ -129,11 +138,12 @@ require_once $dir_root . 'view/head.php';
                             <label for="Cpassword">confirmation</label>
                         </div>
                     </div>
-                    <div class="errorBlock errMdp">No match password</div>
+                    <div class="errorBlock errMdp">No match password.</div>
                 </div>
                 <div class="errorBlock info">
-                    Veuillez renseigner tous les champs
+                    Veuillez renseigner tous les champs.
                 </div>
+
                 <div class="continuer-retour-inscrire">
                     <button type="button" class="btn retour">Retour</button>
                     <button type="submit" name="inscrire" class="btn inscrire">S'inscrire</button>
@@ -153,4 +163,4 @@ require_once $dir_root . 'view/head.php';
 
 $end_time = array_sum(explode(' ', microtime()));
 
-logTime($dir_root,__FILE__,$begin_time,$end_time);
+logTime($dir_root, __FILE__, $begin_time, $end_time);

@@ -27,3 +27,7 @@ function get_all_themes()
 {
     return Theme::get_all_themes();
 }
+function get_all_contributeurs()
+{
+    return User::get_all_contributeurs();
+}

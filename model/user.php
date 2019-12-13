@@ -256,6 +256,21 @@ class User extends Model
         return (bool)$req->fetch();
     }
 
+    public static function get_all_contributeurs()
+    {
+        $contributeurs = array();
+        $db=Model::dbConnect();
+        $query='SELECT pseudo from user WHERE role_user = "contributor"';
+        $req = $db->prepare($query);
+        $req->execute(array())or  die(print_r($req->errorInfo(), TRUE));
+        while($res = $req->fetch())
+        {
+            echo 'kayen resultat';
+            $contributeurs[] = $res['pseudo'];
+        }
+        return $contributeurs;
+    }
+
     /**
      * Hash the password
      * @return password hassed

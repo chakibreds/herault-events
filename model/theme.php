@@ -26,6 +26,16 @@ class Theme extends Model{
         $req = $db->prepare($query);
         $req->execute($param) or die(print_r($req->errorInfo(),TRUE));
     }
+    public static function delete($titre)
+    {
+        $query = 'DELETE FROM theme WHERE titre = ?';
+        $param = array(
+            $titre
+        );
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die(print_r($req->errorInfo(),TRUE));
+    }
 
     public static function exists($titre) {
         $query =  "SELECT titre FROM theme where titre = ?";

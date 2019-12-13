@@ -116,12 +116,20 @@ function ajout_event($post, $pseudo, $upload_dir)
 }
 function ajout_theme($post)
 {
-    if (isset($post['theme'])) {
-        return new Theme($post['theme']);
+    if (isset($post['theme-ajout'])) {
+        
+        return new Theme($post['theme-ajout']);
     } else {
         return false;
     }
 }
+function supprimer_theme($post)
+{
+    if (isset($post['theme-supprime'])) {
+        Theme::delete($post['theme-supprime']);
+    }
+}
+
 function modifier_profil($post, $pseudo,$upload_dir)
 {
     if (
