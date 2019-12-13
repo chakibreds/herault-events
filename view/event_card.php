@@ -1,11 +1,12 @@
 <?php
 
-if(!isset($title) || !isset($url_image) || !isset($localisation) || !isset($id_event))
+if(!isset($title) || !isset($url_image) || !isset($localisation) || !isset($id_event) || !isset($date))
 {
     $title = "title";
     $url_image = "default_event.jpg";
     $localisation = "Montpellier";
     $id_event = "";
+    $date = "Bientôt";
 }
 ?>
 <div class="events-card">
@@ -13,7 +14,12 @@ if(!isset($title) || !isset($url_image) || !isset($localisation) || !isset($id_e
     </div>
     <div class="event-info">
         <h2><?=$title?></h2>
-        <p><i class="fas fa-map-marker-alt"></i> <?=$localisation?></p>
+        <p>
+            <?= $date ?>
+        </p>
+        <p>
+            <i class="fas fa-map-marker-alt"></i> <?=$localisation?>
+        </p>
         <div class="event-button">
             <a href="<?= $server_root ?>view/events.php?event=<?=$id_event?>">
                 <button type="button">Voir plus</button>

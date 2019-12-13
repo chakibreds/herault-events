@@ -3,8 +3,12 @@ session_start();
 require_once '../controller/path.php';
 require_once $dir_root . 'controller/all.php';
 
+$titre = "";
+$ville = "";
 if (isset($_POST['search'])) {
     $events = find($_POST['titre'],$_POST['ville'],$_POST['date']);
+    $titre = $_POST['titre'];
+    $ville = $_POST['ville'];
 } else {
     $events = get_best_events(5);
 }
@@ -38,8 +42,8 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
         </aside>
         <article class="search">
             <form action="" method="post">
-                <input placeholder="Par mot clef" type="text" name="titre" id="titre">
-                <input placeholder="Par ville" type="text" name="ville" id="ville">
+                <input placeholder="Par mot clef" type="text" name="titre" value="<?=$titre?>" id="titre">
+                <input placeholder="Par ville" type="text" name="ville" value="<?=$ville?>"id="ville">
                 <div class="label-input">
                     <label for="date">Par dates </label>
                     <select name="date" id="date">

@@ -127,11 +127,43 @@ class Event extends Model
 
     public static function find($titre,$ville,$date) {
         $query = 'SELECT e.* FROM events e,adresse a WHERE e.id_adresse = a.id_adresse';
-        if (isset($titre)) 
-            $query .= ' AND (e.titre like "%' . $titre . '%" OR e.description_event like "%' . $titre . '%")';
-        if (isset($ville)) {
-            $query .= ' AND a.ville like "%'. $ville . '%"';
+        $param = array();
+        if (isset($titre) && $titre !== "") {
+            $query .= ' AND (e.titre like ? OR e.description_event like ?)';
+            $param[] = '%'.$titre.'%';
+            $param[] = '%'.$titre.'%';
         }
+        if (isset($ville) && $ville !== ""){
+            $query .= ' AND a.ville like ?';
+            $param[] = '%'.$ville.'%';
+        }
+        if (isset($date) && ($date === "asc" || $date === "desc")){
+            $date = strtoupper($date);
+            $query .= " ORDER BY e.date_event $date";
+        }
+
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die('Erreur Event::find()<br>' . print_r($req->errorInfo(), TRUE));
+
+        $events = array();
+        while ($res = $req->fetch()) {
+            $events[] = new Event(
+                $res['id_event'],
+                $res['titre'],
+                $res['date_event'],
+                $res['description_event'],
+                $res['url_image'],
+                $res['min_participant'],
+                $res['max_participant'],
+                $res['id_adresse'],
+                $res['pseudo_contributor'],
+                $res['theme'],
+                NULL // obligatoire afin de le differencier du construct2
+            );
+        }
+        $req->closeCursor();
+        return $events;
     }
 
     public static function exists($id_event)
