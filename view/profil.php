@@ -256,7 +256,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                     </div>
                                     <div class="label-input">
                                         <label for="date_nai">Date naissance</label>
-                                        <input value="<?= $user->get_date_nai() ?>" type="date" name="date_nai" id="date_nai" />
+                                        <input value="<?= $user->get_date_nai() ?>" type="date" name="date_nai" id="date_nai" max="<?= date_date_set(new DateTime(),getdate()['year']-12,getdate()['mon'],getdate()['mday'])->format('Y-m-d')?>"/>
                                     </div>
                                     <div class="label-input">
                                         <label for="tel">Numéro de télephone</label>
