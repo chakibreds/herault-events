@@ -24,7 +24,7 @@ require $dir_root . 'view/head.php';
                         <button type="submit" name="search" class="btn btn-search"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
-                <form action="" class="sign-up">
+                <form action="<?= $server_root?>view/inscription.php" method="post" class="sign-up">
                     <div class="pseudo">
                         <label for="pseudo">Nom d'utilisateur</label>
                         <input type="text" name="pseudo" id="pseudo">
@@ -35,9 +35,9 @@ require $dir_root . 'view/head.php';
                     </div>
                     <div class="password">
                         <label for="password">Mot de passe</label>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="mdp" id="mdp">
                     </div>
-                    <button type="submit" class="btn">Sign Up</button>
+                    <button type="submit" name="inscrire-index" class="btn">S'inscrire</button>
                 </form>
             </div>
         </section>

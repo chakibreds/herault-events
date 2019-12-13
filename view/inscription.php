@@ -3,7 +3,14 @@ $begin_time = array_sum(explode(' ', microtime()));
 session_start();
 require_once '../controller/path.php';
 require_once $dir_root . 'controller/all.php';
-
+$pseudo = "";
+$email = "";
+$mdp = "";
+if (isset($_POST['inscrire-index'])) {
+    $pseudo = isset($_POST['pseudo'])? $_POST['pseudo'] : "";
+    $email = isset($_POST['email'])? $_POST['email'] : "";
+    $mdp = isset($_POST['mdp'])? $_POST['mdp'] : "";
+}
 
 if (isset($_POST['inscrire'])) {
     $user = inscription($_POST);
@@ -100,7 +107,7 @@ require_once $dir_root . 'view/head.php';
 
                     <div class="email-tel">
                         <div class="input-label">
-                            <input type="email" name="email" id="email" required>
+                            <input type="email" name="email" id="email" value="<?=$email?>" required>
                             <label for="email">E-mail</label>
                         </div>
                         <div class="input-label">
@@ -109,12 +116,12 @@ require_once $dir_root . 'view/head.php';
                         </div>
                     </div>
                     <div class="input-label">
-                        <input type="text" name="pseudo" id="pseudo" required>
+                        <input type="text" name="pseudo" id="pseudo" value="<?=$pseudo?>" required>
                         <label for="pseudo">Nom d'utilisateur</label>
                     </div>
                     <div class="mdp">
                         <div class="input-label">
-                            <input type="password" name="password" id="password" required>
+                            <input type="password" name="password" id="password"value="<?=$mdp?>" required>
                             <label for="password">Mot de passe</label>
                         </div>
                         <div class="input-label">
