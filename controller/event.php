@@ -10,18 +10,24 @@
  */
 function affiche_events($events, $dir_root, $server_root, $simple = false)
 {
-    foreach ($events as $event) {
-        $title = $event->get_titre();
-        $id_event = $event->get_id_event();
-        if (!$simple) {
-            $url_image = $event->get_url_image();
-            $adrese = new Adresse($event->get_id_adresse());
-            $localisation = $adrese->get_ville();
+    if (count($events) > 0) {
+        foreach ($events as $event) {
+            $title = $event->get_titre();
+            $id_event = $event->get_id_event();
+            if (!$simple) {
+                $date = $event->get_date_event();
+                $url_image = $event->get_url_image();
+                $adrese = new Adresse($event->get_id_adresse());
+                $localisation = $adrese->get_ville();
 
-            require $dir_root . 'view/event_card.php';
-        } else {
-            require $dir_root . 'view/simple_event.php';
+                require $dir_root . 'view/event_card.php';
+            } else {
+                require $dir_root . 'view/simple_event.php';
+            }
         }
+    } else {
+        /* Tableau vide */
+        echo "<b>Aucun résultat trouvé</b>";
     }
 }
 

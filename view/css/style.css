@@ -1556,6 +1556,7 @@ div.events .events-card .event-info h2 {
   text-decoration: underline;
   font-size: 2em;
   text-align: center;
+  margin: 0 !important;
 }
 
 div.events .events-card .event-info .event-button {
@@ -1574,8 +1575,8 @@ div.events .events-card .event-info .event-button button {
 }
 
 div.events .events-card .event-info p {
-  width: 85%;
   text-align: center;
+  color: 1.4em;
 }
 
 div.events .events-card .event-info p i {
@@ -1587,8 +1588,6 @@ div.events .events-card .event-image {
   background-size: cover;
   background-position: center;
   height: 55%;
-  /* border-top-right-radius : 5px;
-      border-top-left-radius : 5px; */
 }
 
 main.search {
