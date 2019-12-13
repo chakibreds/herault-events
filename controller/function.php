@@ -16,10 +16,10 @@ function logTime($dir_root,$script_name,$begin,$end) {
 }
 
 /**
- * 
+ * rechrche d'evenement
  */
-function find($titre,$ville,$date) {
-    return Event::find($titre,$ville,$date);
+function find($titre,$ville,$date,$theme) {
+    return Event::find($titre,$ville,$date,$theme);
 }
 
 

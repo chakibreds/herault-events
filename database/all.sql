@@ -6,6 +6,8 @@ source database/create.sql;
 
 source database/insert.sql;
 
+source database/info_fictif.sql;
+
 -- source database/view.sql;
 
 -- source database/trigger.sql;
