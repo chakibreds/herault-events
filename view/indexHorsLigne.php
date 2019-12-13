@@ -52,7 +52,7 @@ require $dir_root . 'view/head.php';
             </div>
             <div class="events">
                 <?php
-                    affiche_events(get_best_events(2),$dir_root,$server_root);
+                    affiche_events(get_best_events(3),$dir_root,$server_root);
                 ?>
             </div>
         </section>

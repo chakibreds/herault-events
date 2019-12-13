@@ -392,7 +392,6 @@ main.index-en-ligne article.acceuil {
 }
 
 main.index-en-ligne article.acceuil > section {
-  text-align: center;
   border-bottom: 1px solid grey;
   padding: 20px 10px;
 }
@@ -702,8 +701,9 @@ main.events article.event section.note-event div.cards-note {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 main.events article.event section.note-event div.cards-note div.card-note {
@@ -740,7 +740,69 @@ main.events article.event section.note-event div.cards-note div.card-note span {
   font-size: 1.3em;
 }
 
-main.events article.event section.note-event div.button-rejoindre-interesser {
+main.events article.event section.note-event form.donnez-note {
+  margin: 30px 10px 0 10px;
+  padding-bottom: 20px;
+  border: 1px solid #008556;
+}
+
+main.events article.event section.note-event form.donnez-note legend {
+  position: relative;
+  padding: 0 10px;
+  display: inline-block;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: white;
+  color: #008556;
+  font-size: 1.2em;
+}
+
+main.events article.event section.note-event form.donnez-note button {
+  display: block;
+  width: auto;
+  margin: auto;
+}
+
+main.events article.event section.note-event form.donnez-note div.star-rating {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  font-size: 1.5em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0.2em;
+  text-align: center;
+  -webkit-transform: translateY(-15%);
+          transform: translateY(-15%);
+}
+
+main.events article.event section.note-event form.donnez-note div.star-rating input {
+  display: none;
+}
+
+main.events article.event section.note-event form.donnez-note div.star-rating label {
+  font-size: 2em;
+  color: #ccc;
+  cursor: pointer;
+}
+
+main.events article.event section.note-event form.donnez-note div.star-rating :checked ~ label {
+  color: #008556;
+}
+
+main.events article.event section.note-event form.donnez-note div.star-rating label:hover,
+main.events article.event section.note-event form.donnez-note div.star-rating label:hover ~ label {
+  color: #00ce87;
+}
+
+main.events article.event section.note-event form.button-rejoindre-interesser {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -756,6 +818,10 @@ main.events article.event section.note-event div.button-rejoindre-interesser {
           align-items: center;
   width: 100%;
   margin: 25px 0 15px 0;
+}
+
+main.events article.event section.note-event form.button-rejoindre-interesser button {
+  width: auto;
 }
 
 main.events article.event section.contributeur-card {
@@ -1635,6 +1701,17 @@ div.events .events-card .event-image {
   background-size: cover;
   background-position: center;
   height: 55%;
+}
+
+span.terminer {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  border: 1px solid white;
+  color: white;
+  background-color: indianred;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 main.search {

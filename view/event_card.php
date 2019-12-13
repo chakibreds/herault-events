@@ -7,10 +7,18 @@ if(!isset($title) || !isset($url_image) || !isset($localisation) || !isset($id_e
     $localisation = "Montpellier";
     $id_event = "";
     $date = "Bientôt";
+    $terminer = false;
 }
 ?>
 <div class="events-card">
     <div class="event-image" style="background-image: url('<?= $server_root  ?>view/img/event/<?=$url_image?>');">
+        <?php
+        if ($terminer) {
+            ?>
+            <span class="terminer">Passé</span>
+            <?php
+        }
+        ?>
     </div>
     <div class="event-info">
         <h2><?=$title?></h2>

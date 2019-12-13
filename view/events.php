@@ -13,6 +13,25 @@ if (isset($_GET['event'])) {
     exit();
 }
 
+if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
+    $user = unserialize($_SESSION['user']);
+}
+
+/* User participe ou s'interesse à un evenement */
+if (isset($user)) {
+    if (isset($_POST['rejoindre'])) {
+        $user->participer($event->get_id_event());
+    }
+    if (isset($_POST['interesser'])) {
+        $user->interesser($event->get_id_event());
+    }
+    if (isset($_POST['quitter'])) {
+        $user->quitter($event->get_id_event());
+    }
+    if (isset($_POST['desinteresser'])) {
+        $user->desinteresser($event->get_id_event());
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +40,7 @@ if (isset($_GET['event'])) {
 <?php
 
 require_once $dir_root . 'view/head.php';
-if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
-    $user = unserialize($_SESSION['user']);
+if (isset($user)) {
     require_once $dir_root . 'view/headerEnLigne.php';
 } else {
     require_once $dir_root . 'view/headerHorsLigne.php';
@@ -36,7 +54,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
             <h2>Les meilleurs évenements</h2>
             <form class="find" action="<?= $server_root ?>view/search.php" method="post">
                 <input type="text" name="titre" placeholder="Trouver un évenment..." class="find-event" />
-                <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn btn-search" name="search" type="submit"><i class="fas fa-search"></i></button>
             </form>
             <ul>
                 <?php
@@ -47,8 +65,15 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 
         <article class="event">
             <div class="image-event" style="background-image : url('<?= $server_root ?>view/img/event/<?= $event->get_url_image() ?>');">
+                <?php
+                if ($event->is_terminer()) {
+                    ?>
+                    <span class="terminer">Passé</span>
+                <?php
+                }
+                ?>
             </div>
-            <h2><?= $event->get_titre() ?></h2>
+            <h2><?= $event->get_titre_complet() ?></h2>
             <section class="description-event">
                 <h3>Description :</h3>
                 <p>
@@ -91,20 +116,75 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                         <span class="number"><?= $event->get_nombre_interesse() ?></span>
                         <span class="text">Interesser</span>
                     </div>
-                    <div class="note card-note">
-                        <i class="fas fa-marker"></i>
-                        <span class="number"><?= $event->get_note() ?></span>
-                        <span class="text">Note</span>
-                    </div>
+                    <?php
+                    if ($event->is_terminer()) {
+                        ?>
+                        <div class="note card-note">
+                            <i class="fas fa-marker"></i>
+                            <span class="number"><?= $event->get_note() ?></span>
+                            <span class="text">Note</span>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
-                <div class="button-rejoindre-interesser">
-                    <button type="button"><i class="fas fa-plus"></i>
-                        Rejoindre
-                    </button>
-                    <button type="button"><i class="fas fa-heart"></i>
-                        Interesser
-                    </button>
-                </div>
+                <?php
+                if ($event->is_terminer() && isset($user) && $user->is_participe($event->get_id_event())) {
+                    ?>
+                    <form class="donnez-note">
+                        <legend>Donnez une note</legend>
+                        <div class="star-rating">
+                            <input type="radio" id="5-stars" name="rating" value="5" />
+                            <label for="5-stars" class="star"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="4-stars" name="rating" value="4" />
+                            <label for="4-stars" class="star"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="3-stars" name="rating" value="3" />
+                            <label for="3-stars" class="star"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="2-stars" name="rating" value="2" />
+                            <label for="2-stars" class="star"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="1-star" name="rating" value="1" />
+                            <label for="1-star" class="star"><i class="fas fa-star"></i></label>
+                        </div>
+                        <button type="submit" name="note">
+                            <i class="fas fa-star"></i> Noter
+                        </button>
+                    </form>
+                <?php
+                } else if (!$event->is_terminer() && isset($user)) {
+                    ?>
+                    <form action="" method="post" class="button-rejoindre-interesser">
+                        <?php
+                        if (!$user->is_participe($event->get_id_event())) {
+                        ?>
+                        <button name="rejoindre" type="submit"><i class="fas fa-plus"></i>
+                            Rejoindre
+                        </button>
+                        <?php
+                        } else {
+                            ?>
+                        <button name="quitter" type="submit"><i class="fas fa-minus"></i>
+                            Quitter
+                        </button>
+                            <?php
+                        }
+                        if (!$user->is_interesse($event->get_id_event())) {
+                                ?>
+                            <button name="interesser" type="submit"><i class="fas fa-heart"></i>
+                                Interesser
+                            </button>
+                        <?php
+                            } else {
+                                ?>
+                                <button name="desinteresser" type="submit"><i class="fas fa-heart-broken"></i>
+                                Désinteresser
+                            </button>
+                        <?php
+                            }
+                            ?>
+                    </form>
+                <?php
+                }
+                ?>
             </section>
             <h3>L'évenement sur la map : </h3>
             <section id="map" class="map">
@@ -135,4 +215,4 @@ require_once $dir_root . '/view/footer.php';
 
 $end_time = array_sum(explode(' ', microtime()));
 
-logTime($dir_root,__FILE__,$begin_time,$end_time);
+logTime($dir_root, __FILE__, $begin_time, $end_time);

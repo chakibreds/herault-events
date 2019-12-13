@@ -15,6 +15,7 @@ function affiche_events($events, $dir_root, $server_root, $simple = false)
             $title = $event->get_titre();
             $id_event = $event->get_id_event();
             if (!$simple) {
+                $terminer = $event->is_terminer();
                 $date = $event->get_date_event();
                 $url_image = $event->get_url_image();
                 $adrese = new Adresse($event->get_id_adresse());
