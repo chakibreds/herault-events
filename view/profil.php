@@ -245,9 +245,9 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                     <div class="label-input">
                                         <label for="civilite">Civilité</label>
                                         <select name="civilite" id="civilite">
-                                            <option value="monsieur">Mr</option>
-                                            <option value="madame">Mme</option>
-                                            <option value="autre">Autres</option>
+                                            <option <?php if ($profil_user->get_civilite() == "monsieur") echo 'selected' ?> value="monsieur">Mr</option>
+                                            <option <?php if ($profil_user->get_civilite() == "madame") echo 'selected' ?> value="madame">Mme</option>
+                                            <option <?php if ($profil_user->get_civilite() == "autre") echo 'selected' ?> value="autre">Autres</option>
                                         </select>
                                     </div>
                                     <div class="label-input">
