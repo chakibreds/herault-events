@@ -125,7 +125,7 @@ class Event extends Model
         return $best;
     }
 
-    public static function find($titre,$ville,$date) {
+    public static function find($titre,$ville,$date,$theme) {
         $query = 'SELECT e.* FROM events e,adresse a WHERE e.id_adresse = a.id_adresse';
         $param = array();
         if (isset($titre) && $titre !== "") {
@@ -137,10 +137,17 @@ class Event extends Model
             $query .= ' AND a.ville like ?';
             $param[] = '%'.$ville.'%';
         }
+        
+        if (isset($theme) && $theme !== "") {
+            $query .= ' AND e.theme = ?';
+            $param[] = $theme;
+        }
+        
         if (isset($date) && ($date === "asc" || $date === "desc")){
             $date = strtoupper($date);
             $query .= " ORDER BY e.date_event $date";
         }
+
 
         $db = Model::dbConnect();
         $req = $db->prepare($query);

@@ -88,7 +88,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                         <a id="find-events" href="#">interssé Par</a>
                     </li>
                     <?php
-                    if ((isset($user) && $user->get_role() != "visitor") || $profil_user->get_role() != "visitor") {
+                    if ($profil_user->get_role() != "visitor") {
                         ?>
                         <li>
                             <a id="contribution" href="#">Contributions</a>
@@ -129,7 +129,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 </div>
             </section>
             <?php
-                if ((isset($user) && $user->get_role() != "visitor") || $profil_user->get_role() != "visitor") {
+                if ($profil_user->get_role() != "visitor") {
                     ?>
                     <section class="contribution">
                         <h2>Contributions</h2>

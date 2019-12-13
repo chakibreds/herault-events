@@ -278,7 +278,7 @@ class User extends Model
      *  @return bool if $this->role === ('contributeur' || 'admin')
      */
     public function is_contributeur() {
-        return (($this->role === 'contributeur') || ($this->role === 'admin'));
+        return (($this->role === 'contributor') || ($this->role === 'admin'));
     }
 
 
