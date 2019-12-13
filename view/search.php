@@ -6,9 +6,10 @@ require_once $dir_root . 'controller/all.php';
 $titre = "";
 $ville = "";
 if (isset($_POST['search'])) {
-    $events = find($_POST['titre'],$_POST['ville'],$_POST['date']);
-    $titre = $_POST['titre'];
-    $ville = $_POST['ville'];
+    $titre = isset($_POST['titre'])?$_POST['titre']:"";
+    $ville = isset($_POST['ville'])?$_POST['ville']:"";
+    $date = isset($_POST['date'])?$_POST['date']:"";
+    $events = find($titre,$ville,$date);
 } else {
     $events = get_best_events(5);
 }
@@ -52,10 +53,9 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                     </select>
                 </div>
                 <div class="label-input">
-                    <label for="note">Par notes </label>
-                    <select name="note" id="note">
-                        <option value="asc">Croissantes</option>
-                        <option value="desc">Décroissantes </option>
+                    <label for="theme">Par themes </label>
+                    <select name="theme" id="theme">
+                        
                     </select>
                 </div>
                 <button class="search" name="search" type="submit">Rechercher <i class="fas fa-search"></i></button>
