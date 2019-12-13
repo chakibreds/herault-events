@@ -136,14 +136,14 @@ class User extends Model
     }
 
     public function get_events_by_contributeur() {
-        $query = 'SELECT * FROM events WHERE pseudo_contributeur = ?';
+        $query = 'SELECT * FROM events WHERE pseudo_contributor = ?';
         $param = array(
             $this->pseudo
         );
         
         $db = Model::dbConnect();
         $req = $db->prepare($query);
-        $req->execute($param) or die("Erreur User::get_events_by_contributeur();");
+        $req->execute($param) or die("Erreur User::get_events_by_contributeur()<br>". print_r($req->errorInfo(), TRUE));
 
         $events = array();
 
@@ -152,7 +152,7 @@ class User extends Model
                 $res['id_event'],
                 $res['titre'],
                 $res['date_event'],
-                $res['desciption'],
+                $res['description_event'],
                 $res['url_image'],
                 $res['min_participant'],
                 $res['max_participant'],
@@ -184,7 +184,7 @@ class User extends Model
                 $res['id_event'],
                 $res['titre'],
                 $res['date_event'],
-                $res['desciption'],
+                $res['description_event'],
                 $res['url_image'],
                 $res['min_participant'],
                 $res['max_participant'],
@@ -216,7 +216,7 @@ class User extends Model
                 $res['id_event'],
                 $res['titre'],
                 $res['date_event'],
-                $res['desciption'],
+                $res['description_event'],
                 $res['url_image'],
                 $res['min_participant'],
                 $res['max_participant'],

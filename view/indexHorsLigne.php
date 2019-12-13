@@ -51,24 +51,9 @@ require $dir_root . 'view/head.php';
                 </p>
             </div>
             <div class="events">
-                <div class="events-card">
-                    <div class="event-image" style="background-image: url('<?= $server_root  ?>view/img/compressed/background-1.jpg');">
-                        
-                    </div>
-                    <div class="event-info">
-                        <h2>Title event</h2>
-                        <p><i class="fas fa-map-marker-alt"></i> Localisation.</p>
-                        <div class="event-button">
-                        <a href="<?= $server_root ?>view/events.php?event=2">
-                            <button type="button">Voir plus</button>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
+                <?php
+                    affiche_events(get_best_events(2),$dir_root,$server_root);
+                ?>
             </div>
         </section>
     </main>

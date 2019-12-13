@@ -9,7 +9,7 @@ $couleurPrincipal : #444;// #2a2627;
 $couleurSecondaire: #00ce87;
 $vertFonce        : #008556;
 $couleurTroisieme : whitesmoke;
-$blanc            : #F6F6F8;
+$blanc            : #F6F8FA;
 
 @mixin flex-column-start {
   display        : flex;
@@ -47,9 +47,9 @@ $blanc            : #F6F6F8;
 @import "./events";
 @import "./footer";
 @import "./profil";
-@import "./search";
 @import "./default";
-
+@import "./search";
+@import "./404";
 
 
 main.index-hors-ligne {

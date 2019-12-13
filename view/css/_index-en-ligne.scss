@@ -1,15 +1,28 @@
 aside.explore {
-    flex: 1;
+    flex            : 1;
     background-color: white;
-    border-right: 1px solid $couleurPrincipal;
+    border-right    : 1px solid $couleurPrincipal;
+
     h2 {
-        font-size: larger;
+        font-size    : larger;
         margin-bottom: 10px;
+    }
+
+    .find {
+        display        : flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        input {
+            padding-right: 45px;
+            margin       : 0;
+            margin-right : -35px;
+        }
     }
 
     ul {
         a {
-            color: $vertFonce;
+            color          : $vertFonce;
             text-decoration: none;
 
             &:hover {
@@ -23,55 +36,58 @@ aside.explore {
                     padding: 0 5px;
                 }
             }
-            
+
         }
     }
 }
 
 main.index-en-ligne {
-    min-height: 90vh;
-    display: flex;
+    min-height    : 90vh;
+    display       : flex;
     flex-direction: row;
-    
+    background-color: $blanc;
+
     li {
         list-style: none;
     }
-    
-    & > * {
+
+    &>* {
         padding: 25px 15px;
     }
 
 
     article.acceuil {
         flex: 4;
-        
 
-        & > section {
-            text-align: center;
+
+        &>section {
+            text-align   : center;
             border-bottom: 1px solid grey;
-            padding: 20px 10px;
+            padding      : 20px 10px;
         }
 
-        section.my-events, section.find-events {
+        section.my-events,
+        section.find-events {
             h2 {
                 margin-bottom: 20px;
             }
+
             ul {
-                display: flex;
+                display       : flex;
                 flex-direction: row;
-                flex-wrap: wrap;
+                flex-wrap     : wrap;
 
                 a {
-                    border-radius: 5px;
+                    border-radius   : 5px;
                     background-color: white;
-                    width: 30%;
-                    border: 1px solid grey ;
-                    margin: 10px auto;
-                    padding: 15px 10px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    text-decoration: none;
+                    width           : 30%;
+                    border          : 1px solid grey;
+                    margin          : 10px auto;
+                    padding         : 15px 10px;
+                    display         : flex;
+                    flex-direction  : column;
+                    align-items     : center;
+                    text-decoration : none;
 
                     text-align: left;
 
@@ -79,33 +95,35 @@ main.index-en-ligne {
                         color: inherit;
 
                         h3 {
-                            color: $vertFonce;
+                            color          : $vertFonce;
                             text-decoration: underline;
                         }
                     }
 
                     div.localisation {
-                        width: 100%;
+                        width : 100%;
                         margin: 10px 0;
+
                         * {
                             display: inline;
                         }
                     }
 
                     div.button {
-                        width: 100%;
-                        display: flex;
+                        width          : 100%;
+                        display        : flex;
                         justify-content: space-around;
 
                         button {
                             display: flex;
-                            margin: inherit auto;
+                            margin : inherit auto;
 
                             i {
                                 margin-right: 5px;
                             }
                         }
                     }
+
                     img {
                         width        : 100%;
                         border-radius: 5px;
@@ -117,4 +135,3 @@ main.index-en-ligne {
         }
     }
 }
-
