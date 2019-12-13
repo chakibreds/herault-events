@@ -50,6 +50,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 <div class="label-input">
                     <label for="date">Par dates </label>
                     <select name="date" id="date">
+                        <option value="">-- Aucun --</option>
                         <option value="asc">Ascendentes</option>
                         <option value="desc">Descendentes</option>
                     </select>
@@ -57,6 +58,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 <div class="label-input">
                     <label for="theme">Par themes </label>
                     <select name="theme" id="theme">
+                        <option value="">-- Aucun --</option>
                         <?php
                         $themes = get_all_themes();
 

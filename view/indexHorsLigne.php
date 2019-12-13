@@ -17,11 +17,11 @@ require $dir_root . 'view/head.php';
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="form">
-                <form action="" class="find-form">
+                <form action="<?= $server_root?>view/search.php" method="post" class="find-form">
                     <label for="find">Rechercher un événement</label>
                     <div class="find">
-                        <input type="text" name="find" id="find" />
-                        <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
+                        <input type="text" name="titre" id="find" />
+                        <button type="submit" name="search" class="btn btn-search"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
                 <form action="" class="sign-up">
