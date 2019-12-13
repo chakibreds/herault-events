@@ -220,7 +220,17 @@ div.events {
       background-position: center;
 
       height: 55%;
-
     }
   }
+}
+
+span.terminer {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  border: 1px solid white;
+  color : white;
+  background-color: indianred;
+  padding: 5px 10px;
+  border-radius: 5px;
 }

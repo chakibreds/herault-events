@@ -281,6 +281,102 @@ class User extends Model
         return (($this->role === 'contributor') || ($this->role === 'admin'));
     }
 
+    /**
+     * @return bool
+     */
+    public function is_participe($id_event) {
+        $query = 'SELECT pseudo FROM participate WHERE pseudo = ? AND id_event = ?';
+        $param = array(
+            $this->pseudo,
+            $id_event
+        );
+
+        $db = $this->dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param);
+
+        return (bool)$req->fetch();
+    }
+    /**
+     * @return bool
+     */
+    public function is_interesse($id_event) {
+        $query = 'SELECT pseudo FROM interested WHERE pseudo = ? AND id_event = ?';
+        $param = array(
+            $this->pseudo,
+            $id_event
+        );
+
+        $db = $this->dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param);
+
+        return (bool)$req->fetch();
+    }
+
+    /**
+     * @var this user va participer à l'event @var id_event
+     * @return void 
+     */
+    public function participer($id_event) {
+        if (!$this->is_participe($id_event)) {
+            /* si ne participe pas déjà */
+            $query = 'INSERT INTO participate (`pseudo`,`id_event`) VALUES (? , ?)';
+            $param = array(
+                $this->pseudo,
+                $id_event
+            );
+
+            $db = $this->dbConnect();
+            $req = $db->prepare($query);
+            $req->execute($param) or die("User::participer()<br>" . print_r($req->errorInfo(), TRUE));
+        }
+    }
+
+    public function interesser($id_event) {
+        if (!$this->is_interesse($id_event)) {
+            /* si ne s'interesse pas déjà */
+            $query = 'INSERT INTO interested (`pseudo`,`id_event`) VALUES (? , ?)';
+            $param = array(
+                $this->pseudo,
+                $id_event
+            );
+
+            $db = $this->dbConnect();
+            $req = $db->prepare($query);
+            $req->execute($param);
+        }
+    }
+
+    public function quitter($id_event) {
+        if ($this->is_participe($id_event)) {
+            /* si ne participe pas déjà */
+            $query = 'DELETE FROM participate WHERE id_event = ? AND pseudo = ?';
+            $param = array(
+                $id_event,
+                $this->pseudo
+            );
+
+            $db = $this->dbConnect();
+            $req = $db->prepare($query);
+            $req->execute($param) or die("User::quitter()<br>" . print_r($req->errorInfo(), TRUE));
+        }
+    }
+
+    public function desinteresser($id_event) {
+        if ($this->is_interesse($id_event)) {
+            /* si ne s'interesse pas déjà */
+            $query = 'DELETE FROM interested WHERE id_event = ? AND pseudo = ?';
+            $param = array(
+                $id_event,
+                $this->pseudo
+            );
+
+            $db = $this->dbConnect();
+            $req = $db->prepare($query);
+            $req->execute($param);
+        }
+    }
 
     /*  getters */
     public function get_pseudo()
@@ -289,11 +385,11 @@ class User extends Model
     }
     public function get_nom()
     {
-        return $this->nom;
+        return ucfirst($this->nom);
     }
     public function get_prenom()
     {
-        return $this->prenom;
+        return ucfirst($this->prenom);
     }
     public function get_civilite()
     {

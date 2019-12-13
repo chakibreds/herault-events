@@ -14,7 +14,7 @@ require_once $dir_root . 'view/head.php';
             <h2>Les meilleurs évenements</h2>
             <form class="find" action="<?= $server_root ?>view/search.php" method="post">
                 <input type="text" name="titre" placeholder="Trouver un évenment..." class="find-event" />
-                <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn btn-search" name="search" type="submit"><i class="fas fa-search"></i></button>
             </form>
             <ul>
                 <?php
@@ -36,7 +36,7 @@ require_once $dir_root . 'view/head.php';
                 <div class="events">
                     <?php
 
-                    affiche_events(get_best_events(2), $dir_root, $server_root);
+                    affiche_events(get_best_events(3), $dir_root, $server_root);
 
                     ?>
                 </div>
