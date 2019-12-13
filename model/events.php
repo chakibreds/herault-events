@@ -125,6 +125,15 @@ class Event extends Model
         return $best;
     }
 
+    public static function find($titre,$ville,$date) {
+        $query = 'SELECT e.* FROM events e,adresse a WHERE e.id_adresse = a.id_adresse';
+        if (isset($titre)) 
+            $query .= ' AND (e.titre like "%' . $titre . '%" OR e.description_event like "%' . $titre . '%")';
+        if (isset($ville)) {
+            $query .= ' AND a.ville like "%'. $ville . '%"';
+        }
+    }
+
     public static function exists($id_event)
     {
         $db = Model::dbConnect();
