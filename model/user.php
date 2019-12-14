@@ -316,6 +316,22 @@ class User extends Model
         return (($this->role === 'contributor') || ($this->role === 'admin'));
     }
 
+    public function noter($id_event,$note ) {
+        if ($this->is_participe($id_event)) {
+            /* si participe déjà */
+            $query = 'UPDATE participate SET note = ? WHERE pseudo = ? AND id_event = ?';
+            $param = array(
+                $note,
+                $this->pseudo,
+                $id_event
+            );
+
+            $db = $this->dbConnect();
+            $req = $db->prepare($query);
+            $req->execute($param) or die("User::noter()<br>" . print_r($req->errorInfo(), TRUE));
+        }
+    }
+
     /**
      * @return bool
      */

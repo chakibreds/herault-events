@@ -4,17 +4,28 @@ session_start();
 require_once '../controller/path.php';
 require_once $dir_root . 'controller/all.php';
 
-if (isset($_GET['event'])) {
-    $event = new Event($_GET['event']);
-    $contributeur = new User($event->get_pseudo_contributor());
-    $adresse = new Adresse($event->get_id_adresse());
+if (isset($_GET['event']) || isset($_POST['event'])) {
+    if (!isset($_GET['event']))
+        $_GET['event'] = $_POST['event'];
 } else {
     header('Location: ' . $server_root . 'view/404.php');
     exit();
 }
 
+$event = new Event($_GET['event']);
+$contributeur = new User($event->get_pseudo_contributor());
+$adresse = new Adresse($event->get_id_adresse());
+
 if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     $user = unserialize($_SESSION['user']);
+}
+
+/* noter l'evenement */
+if (isset($_POST['note'])) {
+    if (!isset($_POST['rating'])) 
+        $_POST['rating'] = '0';
+
+    $user->noter($event->get_id_event(),$_POST['rating']);
 }
 
 /* User participe ou s'interesse à un evenement */
@@ -122,7 +133,7 @@ if (isset($user)) {
                         ?>
                         <div class="note card-note">
                             <i class="fas fa-marker"></i>
-                            <span class="number"><?= $event->get_note() ?></span>
+                            <span class="number"><?= $event->get_note() ?> / 5</span>
                             <span class="text">Note</span>
                         </div>
                     <?php
@@ -132,9 +143,10 @@ if (isset($user)) {
                 <?php
                 if ($event->is_terminer() && isset($user) && $user->is_participe($event->get_id_event())) {
                     ?>
-                    <form class="donnez-note">
+                    <form method="post" action="" class="donnez-note">
                         <legend>Donnez une note</legend>
                         <div class="star-rating">
+                            <input type="hidden" name="event" value="<?= $event->get_id_event()?>">
                             <input type="radio" id="5-stars" name="rating" value="5" />
                             <label for="5-stars" class="star"><i class="fas fa-star"></i></label>
                             <input type="radio" id="4-stars" name="rating" value="4" />
