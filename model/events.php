@@ -252,12 +252,12 @@ class Event extends Model
     public function get_note()
     {
         $db = $this->dbConnect();
-        $req = $db->prepare("SELECT avg(note) as note FROM user u,participate p WHERE u.pseudo = p.pseudo AND p.id_event = ?");
+        $req = $db->prepare("SELECT avg(note) as moy FROM participate WHERE id_event = ? AND note is not null");
 
-        $req->execute(array($this->id_event));
+        $req->execute(array($this->id_event)) or die("Event::get_note()");
 
         if (($res = $req->fetch())) {
-            return (float) $res['note'];
+            return (float) $res['moy'] - 1.0;
         } else {
             return -1;
         }
