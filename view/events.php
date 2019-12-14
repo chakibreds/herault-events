@@ -109,12 +109,13 @@ if (isset($user)) {
                     <div class="participant card-note">
                         <i class="fas fa-calendar-plus"></i>
                         <span class="number"><?= $event->get_nombre_participant() ?></span>
-                        <span class="text">Participant</span>
+                        <span class="text">
+                        Participants</span>
                     </div>
                     <div class="interesser card-note">
                         <i class="far fa-heart"></i>
                         <span class="number"><?= $event->get_nombre_interesse() ?></span>
-                        <span class="text">Interesser</span>
+                        <span class="text">Interessés</span>
                     </div>
                     <?php
                     if ($event->is_terminer()) {
