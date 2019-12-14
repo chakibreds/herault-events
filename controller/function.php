@@ -31,3 +31,14 @@ function get_all_contributeurs()
 {
     return User::get_all_contributeurs();
 }
+function ajout_contributeur($post)
+{
+  if(isset($post['user-pseduo-add']))
+        User::ajout_contributeur($post['user-pseduo-add']);
+}
+function supprimer_contributeur($post)
+{
+    if (isset($post['user-pseudo-rm'])) {
+        User::delete_contributeur($post['user-pseudo-rm']);
+    }
+}

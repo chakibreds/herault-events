@@ -270,6 +270,26 @@ class User extends Model
         }
         return $contributeurs;
     }
+    public static function ajout_contributeur($pseudo)
+    {
+        $query = 'UPDATE user SET role_user  = "contributor" WHERE pseudo = ? AND role_user  != "admin"';
+        $param = array(
+            $pseudo
+        );
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die(print_r($req->errorInfo(),TRUE));
+    }
+    public static function delete_contributeur($pseudo)
+    {
+        $query = 'UPDATE user SET role_user = "visitor" WHERE pseudo = ? AND role_user!="admin"';
+        $param = array(
+            $pseudo
+        );
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die(print_r($req->errorInfo(),TRUE));
+    }
 
     /**
      * Hash the password

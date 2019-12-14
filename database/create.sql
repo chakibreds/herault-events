@@ -69,9 +69,9 @@ CREATE TABLE events (
     pseudo_contributor VARCHAR(100) NOT NULL,
     theme VARCHAR(100) NOT NULL,
     CONSTRAINT PK_events PRIMARY KEY (id_event),
-    CONSTRAINT FK_events_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse),
-    CONSTRAINT FK_events_user FOREIGN KEY (pseudo_contributor) REFERENCES user(pseudo),
-    CONSTRAINT FK_events_theme FOREIGN KEY (theme) REFERENCES theme(titre)
+    CONSTRAINT FK_events_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse) ON DELETE SET NULL,
+    CONSTRAINT FK_events_user FOREIGN KEY (pseudo_contributor) REFERENCES user(pseudo) ON DELETE CASCADE,
+    CONSTRAINT FK_events_theme FOREIGN KEY (theme) REFERENCES theme(titre) ON DELETE CASCADE 
 
 );
 
@@ -82,8 +82,8 @@ CREATE TABLE commentaire(
     date_commentaire DATETIME,
     text_commentaire TEXT NOT NULL,
     CONSTRAINT PK_commentaire PRIMARY KEY (id_event, pseudo, date_commentaire),
-    CONSTRAINT FK_commentaire_events FOREIGN KEY (id_event) REFERENCES events(id_event),
-    CONSTRAINT FK_commentaire_user FOREIGN KEY (pseudo) REFERENCES user(pseudo)
+    CONSTRAINT FK_commentaire_events FOREIGN KEY (id_event) REFERENCES events(id_event) ON DELETE CASCADE,
+    CONSTRAINT FK_commentaire_user FOREIGN KEY (pseudo) REFERENCES user(pseudo) ON DELETE CASCADE
 );
 
 /*table participate*/
@@ -92,8 +92,8 @@ CREATE TABLE participate(
     pseudo VARCHAR(100),
     note ENUM('0','1','2','3','4','5'),
     CONSTRAINT PK_participate PRIMARY KEY (id_event, pseudo),
-    CONSTRAINT FK_participate_events FOREIGN KEY (id_event) REFERENCES events(id_event),
-    CONSTRAINT FK_participate_user FOREIGN KEY (pseudo) REFERENCES user(pseudo)
+    CONSTRAINT FK_participate_events FOREIGN KEY (id_event) REFERENCES events(id_event) ON DELETE CASCADE,
+    CONSTRAINT FK_participate_user FOREIGN KEY (pseudo) REFERENCES user(pseudo) ON DELETE CASCADE
 );
 
 /*table interested*/
@@ -101,8 +101,8 @@ CREATE TABLE interested(
     id_event INT,
     pseudo VARCHAR(100),
     CONSTRAINT PK_interested PRIMARY KEY (id_event, pseudo),
-    CONSTRAINT FK_interested_events FOREIGN KEY (id_event) REFERENCES events(id_event),
-    CONSTRAINT FK_interested_user FOREIGN KEY (pseudo) REFERENCES user(pseudo)
+    CONSTRAINT FK_interested_events FOREIGN KEY (id_event) REFERENCES events(id_event) ON DELETE CASCADE,
+    CONSTRAINT FK_interested_user FOREIGN KEY (pseudo) REFERENCES user(pseudo) ON DELETE CASCADE
 );
 
 

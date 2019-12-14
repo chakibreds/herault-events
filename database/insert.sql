@@ -21,7 +21,7 @@ INSERT INTO `adresse` (`id_adresse`, `num_rue`, `nom_rue`, `ville`, `pays`, `cod
 /* insertion des user */
 
 INSERT INTO `user` (`pseudo`, `nom`, `prenom`, `civilite`, `date_nai`, `email`, `tel`, `mdp`, `date_inscr`, `role_user`, `id_adresse`, `url_image`, `bio`) VALUES
-('chakibReds', 'ELHOUITI', 'Chakib', 'monsieur', '1998-09-19', 'celhouiti@gmail.com', '0751847995', '$2y$10$EEvHtqefzRT6AfrMTOH.d..NpWTcMzIUldVQm.Zu4pRMH1IECgSRi', '2019-12-04 22:23:53', 'admin', 2, NULL, 'Bio ta3 chakib'),
+('chakibReds', 'ELHOUITI', 'Chakib', 'monsieur', '1998-09-19', 'celhouiti@gmail.com', '0751847995', '$2y$10$EEvHtqefzRT6AfrMTOH.d..NpWTcMzIUldVQm.Zu4pRMH1IECgSRi', '2019-12-04 22:23:53', 'admin', 2, 'chakib.jpg', 'Bio ta3 chakib'),
 ('Y2ssam', 'Kezzoul', 'Massili', 'monsieur', '1998-08-20', 'massy.kezzoul@gmail.com', '0776021794', '$2y$10$jxJX7qPmUyPd3ahQ8GHeouKpCrCjOcYESgamAb1l1fwgSGo8eIn7O', '2019-12-04 22:18:56', 'admin', 1, 'massy.jpeg', 'Hadi bio ta3 massy.');
 
 /* INSERTION des themes */

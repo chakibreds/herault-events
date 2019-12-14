@@ -33,6 +33,13 @@ if (isset($_POST['add-theme']) && isset($user)) {
 if (isset($_POST['rm-theme']) && isset($user)) {
     supprimer_theme($_POST);
 }
+if (isset($_POST['ajout-contributeur']) && isset($user)) {
+    ajout_contributeur($_POST);
+}
+if (isset($_POST['supprime-contributeur']) && isset($user)) {
+    supprimer_contributeur($_POST);
+}
+
 
 
 // Modification d'un utilisateur
@@ -334,15 +341,15 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                             <div class="add-rm">
                                 <div class="input-label">
                                     <label for="nom">Entrez un utilisateur</label>
-                                    <input type="text" name="user-pseduo" id="nom">
+                                    <input type="text" name="user-pseduo-add" id="nom">
                                 </div>
-                                <button type="submit"><i class="fas fa-check"></i> Ajouter</button>
+                                <button name = "ajout-contributeur" type="submit"><i class="fas fa-check"></i> Ajouter</button>
                             </div>
 
                             <div class="add-rm">
                                 <div class="input-label">
                                     <label for="nom">Selectionner un utilisateur</label>
-                                    <select name="user-pseudo" id="nom">
+                                    <select name="user-pseudo-rm" id="nom">
                                         <?php
                                             $contributeurs = get_all_contributeurs();
                                             foreach ($contributeurs as  $contributor) {
@@ -353,7 +360,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                             ?>
                                     </select>
                                 </div>
-                                <button type="submit"><i class="fas fa-times"></i> Supprimer</button>
+                                <button name = "supprime-contributeur" type="submit"><i class="fas fa-times"></i> Supprimer</button>
                             </div>
                         </section>
                     </form>
