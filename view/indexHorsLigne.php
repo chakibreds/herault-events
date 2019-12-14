@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-$title = "Hérault events";
+$titre = "Hérault events";
 require $dir_root . 'view/head.php';
 ?>
 
 <body>
     <?php require $dir_root . 'view/headerHorsLigne.php'; ?>
+    <?php require $dir_root . 'view/intro.html'; ?>
     <main class="index-hors-ligne">
         <section class="first-page">
             <div class="title-page">

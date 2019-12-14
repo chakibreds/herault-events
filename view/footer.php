@@ -5,7 +5,7 @@
             <h1>Hérault events</h1>
         </span>
         <ul>
-            <li><a href="<?= $server_root . 'view/contact.html' ?>">Contact</a></li>
+            <li><a href="<?= $server_root . 'view/contact.php' ?>">Contact</a></li>
             <li><a href="<?= $server_root . 'view/about.html' ?>">À propos</a></li>
             <li><a href="<?= $server_root . 'view/security.html' ?>">Sécurite</a></li>
             <li><a href="<?= $server_root . 'view/privacy.html' ?>">Privacy</a></li>

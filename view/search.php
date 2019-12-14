@@ -20,6 +20,7 @@ if (isset($_POST['search'])) {
 <!DOCTYPE html>
 <html lang="fr">
 <?php
+$titre = "Search";
 require_once $dir_root . 'view/head.php';
 if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     $user = unserialize($_SESSION['user']);

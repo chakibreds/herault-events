@@ -49,7 +49,7 @@ if (isset($user)) {
 <html lang="fr">
 
 <?php
-
+$titre = $event->get_titre_complet();
 require_once $dir_root . 'view/head.php';
 if (isset($user)) {
     require_once $dir_root . 'view/headerEnLigne.php';

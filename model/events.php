@@ -257,7 +257,11 @@ class Event extends Model
         $req->execute(array($this->id_event)) or die("Event::get_note()");
 
         if (($res = $req->fetch())) {
-            return (float) $res['moy'] - 1.0;
+            if ((float) $res['moy'] == 0) {
+                return 0.0;
+            }
+            else
+                return (float) $res['moy'] - 1.0;
         } else {
             return -1;
         }

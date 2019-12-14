@@ -51,10 +51,11 @@ if (isset($_POST['modifier-profil']) && isset($user)) {
     $profil_adresse = $adresse_user;
 }
 
-?>
+?>  
 <!DOCTYPE html>
 <html lang="fr">
 <?php
+$titre = $profil_user->get_pseudo();
 require_once $dir_root . 'view/head.php';
 if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     require_once $dir_root . 'view/headerEnLigne.php';

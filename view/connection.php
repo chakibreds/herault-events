@@ -30,7 +30,7 @@ if (isset($_POST['connection'])) {
 <html lang="fr">
 <?php
 
-$title = "Connection";
+$titre = "Connection";
 require $dir_root . 'view/head.php';
 
 ?>

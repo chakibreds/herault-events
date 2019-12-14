@@ -1896,6 +1896,222 @@ main.not-found .image-404 {
           align-items: center;
 }
 
+main.contact {
+  background-color: #444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.contact a {
+  color: #00ce87;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 3em;
+}
+
+main.contact a:hover {
+  text-decoration: underline;
+}
+
+main.contact h2 {
+  color: #00ce87;
+  margin-bottom: 50px;
+  font-size: 4em;
+}
+
+main.contact button {
+  margin-top: 50px;
+}
+
+div.intro {
+  width: 100vw;
+  height: 100vh;
+  background-color: #444;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  -webkit-animation: 0.5s ease forwards 6.1s;
+          animation: 0.5s ease forwards 6.1s;
+  -webkit-animation-name: op;
+          animation-name: op;
+}
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: fill 0.5s ease forwards 5.6s;
+          animation: fill 0.5s ease forwards 5.6s;
+}
+
+/*h*/
+#logo path:nth-child(1) {
+  stroke-dasharray: 534.5279541015625px;
+  stroke-dashoffset: 534.5279541015625px;
+  -webkit-animation: line-anim 2s ease forwards;
+          animation: line-anim 2s ease forwards;
+}
+
+/*e*/
+#logo path:nth-child(2) {
+  stroke-dasharray: 515px;
+  stroke-dashoffset: 515px;
+  -webkit-animation: line-anim 2s ease forwards 0.3s;
+          animation: line-anim 2s ease forwards 0.3s;
+}
+
+/*r*/
+#logo path:nth-child(3) {
+  stroke-dasharray: 246px;
+  stroke-dashoffset: 246px;
+  -webkit-animation: line-anim 2s ease forwards 0.6s;
+          animation: line-anim 2s ease forwards 0.6s;
+}
+
+/*a*/
+#logo path:nth-child(4) {
+  stroke-dasharray: 506px;
+  stroke-dashoffset: 506px;
+  -webkit-animation: line-anim 2s ease forwards 0.9s;
+          animation: line-anim 2s ease forwards 0.9s;
+}
+
+/*u*/
+#logo path:nth-child(5) {
+  stroke-dasharray: 422px;
+  stroke-dashoffset: 422px;
+  -webkit-animation: line-anim 2s ease forwards 1.2s;
+          animation: line-anim 2s ease forwards 1.2s;
+}
+
+/*l*/
+#logo path:nth-child(6) {
+  stroke-dasharray: 239px;
+  stroke-dashoffset: 239px;
+  -webkit-animation: line-anim 2s ease forwards 1.5s;
+          animation: line-anim 2s ease forwards 1.5s;
+}
+
+/*t*/
+#logo path:nth-child(7) {
+  stroke-dasharray: 314px;
+  stroke-dashoffset: 314px;
+  -webkit-animation: line-anim 2s ease forwards 1.8s;
+          animation: line-anim 2s ease forwards 1.8s;
+}
+
+/*e*/
+#logo path:nth-child(8) {
+  stroke-dasharray: 463px;
+  stroke-dashoffset: 463px;
+  -webkit-animation: line-anim 2s ease forwards 2.1s;
+          animation: line-anim 2s ease forwards 2.1s;
+}
+
+/*v*/
+#logo path:nth-child(9) {
+  stroke-dasharray: 355px;
+  stroke-dashoffset: 355px;
+  -webkit-animation: line-anim 2s ease forwards 2.4s;
+          animation: line-anim 2s ease forwards 2.4s;
+}
+
+/*e*/
+#logo path:nth-child(10) {
+  stroke-dasharray: 515px;
+  stroke-dashoffset: 515px;
+  -webkit-animation: line-anim 2s ease forwards 2.7s;
+          animation: line-anim 2s ease forwards 2.7s;
+}
+
+/*n*/
+#logo path:nth-child(11) {
+  stroke-dasharray: 422px;
+  stroke-dashoffset: 422px;
+  -webkit-animation: line-anim 2s ease forwards 3.0s;
+          animation: line-anim 2s ease forwards 3.0s;
+}
+
+/*t*/
+#logo path:nth-child(12) {
+  stroke-dasharray: 314px;
+  stroke-dashoffset: 314px;
+  -webkit-animation: line-anim 2s ease forwards 3.3s;
+          animation: line-anim 2s ease forwards 3.3s;
+}
+
+/*s*/
+#logo path:nth-child(13) {
+  stroke-dasharray: 418px;
+  stroke-dashoffset: 418px;
+  -webkit-animation: line-anim 2s ease forwards 3.6s;
+          animation: line-anim 2s ease forwards 3.6s;
+}
+
+@-webkit-keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #00ce87;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #00ce87;
+  }
+}
+
+@-webkit-keyframes op {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: -9000px;
+  }
+}
+
+@keyframes op {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: -9000px;
+  }
+}
+
 main.index-hors-ligne {
   position: relative;
   z-index: 0;

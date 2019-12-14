@@ -11,7 +11,7 @@ if (isset($_POST['inscrire-index'])) {
     $email = isset($_POST['email']) ? $_POST['email'] : "";
     $mdp = isset($_POST['mdp']) ? $_POST['mdp'] : "";
 }
-
+$erreur_pseudo_existant = false;
 if (isset($_POST['inscrire'])) {
     $user = inscription($_POST);
     if ($user) {
@@ -31,6 +31,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="fr">
 <?php
+$titre = "Inscription";
 require_once $dir_root . 'view/head.php';
 ?>
 

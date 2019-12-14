@@ -1,0 +1,27 @@
+main.contact{
+    background-color: $couleurPrincipal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    a{
+        color: $couleurSecondaire;
+        text-decoration: none;
+        font-weight: bolder; 
+        font-size: 3em;
+        &:hover
+        {
+            text-decoration: underline;
+        }
+    }
+
+    h2{
+        color: $couleurSecondaire;
+        margin-bottom: 50px;
+        font-size: 4em;
+    }
+    button{
+        margin-top: 50px;
+    }
+}
