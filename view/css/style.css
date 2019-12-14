@@ -1939,7 +1939,7 @@ div.intro {
   width: 100vw;
   height: 100vh;
   background-color: #444;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 3;
   -webkit-animation: 0.5s ease forwards 6.1s;
@@ -1952,6 +1952,7 @@ div.intro {
   position: absolute;
   top: 50%;
   left: 50%;
+  max-width: 95%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-animation: fill 0.5s ease forwards 5.6s;
@@ -2354,7 +2355,7 @@ main.index-hors-ligne .events-page .events-title p {
 /* 
     Gérer le responsive
 */
-@media (max-width: 760px), (max-height: 545px) {
+@media (max-width: 930px) {
   header {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -2502,7 +2503,7 @@ main.index-hors-ligne .events-page .events-title p {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 1140px) {
   header h1 {
     display: none;
   }

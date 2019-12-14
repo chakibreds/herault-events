@@ -2,7 +2,7 @@
     Gérer le responsive
 */
 
-@media (max-width: 760px), (max-height: 545px) {
+@media (max-width: 930px) {
   header {
     justify-content: center;
     div.menu {
@@ -157,7 +157,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 1140px) {
   header {
     h1 {
       display: none;
