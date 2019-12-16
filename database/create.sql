@@ -66,18 +66,18 @@ CREATE TABLE events (
     url_image VARCHAR(255) ,
     /* check don't work here, implements a trigger */
     /* CONSTRAINT CHK_events_adresse CHECK (gps_coord IS NOT NULL OR id_adresse IS NOT NULL),*/ 
-    pseudo_contributor VARCHAR(100) NOT NULL,
-    theme VARCHAR(100) NOT NULL,
+    pseudo_contributor VARCHAR(100) ,
+    theme VARCHAR(100) ,
     CONSTRAINT PK_events PRIMARY KEY (id_event),
     CONSTRAINT FK_events_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse) ON DELETE SET NULL,
-    CONSTRAINT FK_events_user FOREIGN KEY (pseudo_contributor) REFERENCES user(pseudo) ON DELETE CASCADE,
-    CONSTRAINT FK_events_theme FOREIGN KEY (theme) REFERENCES theme(titre) ON DELETE CASCADE 
+    CONSTRAINT FK_events_user FOREIGN KEY (pseudo_contributor) REFERENCES user(pseudo) ON DELETE SET NULL,
+    CONSTRAINT FK_events_theme FOREIGN KEY (theme) REFERENCES theme(titre) ON DELETE SET NULL 
 
 );
 
 /*table commentaire*/
 CREATE TABLE commentaire(
-    id_event INT,
+    id_event INT NOT NULL,
     pseudo VARCHAR(100),
     date_commentaire DATETIME,
     text_commentaire TEXT NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE commentaire(
 
 /*table participate*/
 CREATE TABLE participate(
-    id_event INT,
+    id_event INT NOT NULL,
     pseudo VARCHAR(100),
     note ENUM('0','1','2','3','4','5'),
     CONSTRAINT PK_participate PRIMARY KEY (id_event, pseudo),
@@ -98,7 +98,7 @@ CREATE TABLE participate(
 
 /*table interested*/
 CREATE TABLE interested(
-    id_event INT,
+    id_event INT NOT NULL,
     pseudo VARCHAR(100),
     CONSTRAINT PK_interested PRIMARY KEY (id_event, pseudo),
     CONSTRAINT FK_interested_events FOREIGN KEY (id_event) REFERENCES events(id_event) ON DELETE CASCADE,

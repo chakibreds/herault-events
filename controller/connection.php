@@ -110,7 +110,6 @@ function ajout_event($post, $pseudo, $upload_dir)
         if (move_uploaded_file($_FILES['image']['tmp_name'], $upload_file)) { }
         return $event;
     } else {
-        echo 'marche pas';
         return false;
     }
 }

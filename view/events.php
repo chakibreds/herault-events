@@ -22,10 +22,15 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 
 /* noter l'evenement */
 if (isset($_POST['note'])) {
-    if (!isset($_POST['rating'])) 
+    if (!isset($_POST['rating']))
         $_POST['rating'] = '0';
 
-    $user->noter($event->get_id_event(),$_POST['rating']);
+    $user->noter($event->get_id_event(), $_POST['rating']);
+}
+if (isset($_POST['rm-event'])) {
+    delete_event($event->get_id_event());
+    header('Location: ' . $server_root );
+
 }
 
 /* User participe ou s'interesse à un evenement */
@@ -121,7 +126,7 @@ if (isset($user)) {
                         <i class="fas fa-calendar-plus"></i>
                         <span class="number"><?= $event->get_nombre_participant() ?></span>
                         <span class="text">
-                        Participants</span>
+                            Participants</span>
                     </div>
                     <div class="interesser card-note">
                         <i class="far fa-heart"></i>
@@ -146,7 +151,7 @@ if (isset($user)) {
                     <form method="post" action="" class="donnez-note">
                         <legend>Donnez une note</legend>
                         <div class="star-rating">
-                            <input type="hidden" name="event" value="<?= $event->get_id_event()?>">
+                            <input type="hidden" name="event" value="<?= $event->get_id_event() ?>">
                             <input type="radio" id="5-stars" name="rating" value="5" />
                             <label for="5-stars" class="star"><i class="fas fa-star"></i></label>
                             <input type="radio" id="4-stars" name="rating" value="4" />
@@ -167,20 +172,20 @@ if (isset($user)) {
                     ?>
                     <form action="" method="post" class="button-rejoindre-interesser">
                         <?php
-                        if (!$user->is_participe($event->get_id_event())) {
-                        ?>
-                        <button name="rejoindre" type="submit"><i class="fas fa-plus"></i>
-                            Rejoindre
-                        </button>
+                            if (!$user->is_participe($event->get_id_event())) {
+                                ?>
+                            <button name="rejoindre" type="submit"><i class="fas fa-plus"></i>
+                                Rejoindre
+                            </button>
                         <?php
-                        } else {
-                            ?>
-                        <button name="quitter" type="submit"><i class="fas fa-minus"></i>
-                            Quitter
-                        </button>
-                            <?php
-                        }
-                        if (!$user->is_interesse($event->get_id_event())) {
+                            } else {
+                                ?>
+                            <button name="quitter" type="submit"><i class="fas fa-minus"></i>
+                                Quitter
+                            </button>
+                        <?php
+                            }
+                            if (!$user->is_interesse($event->get_id_event())) {
                                 ?>
                             <button name="interesser" type="submit"><i class="fas fa-heart"></i>
                                 Interesser
@@ -188,7 +193,7 @@ if (isset($user)) {
                         <?php
                             } else {
                                 ?>
-                                <button name="desinteresser" type="submit"><i class="fas fa-heart-broken"></i>
+                            <button name="desinteresser" type="submit"><i class="fas fa-heart-broken"></i>
                                 Désinteresser
                             </button>
                         <?php
@@ -203,6 +208,16 @@ if (isset($user)) {
             <section id="map" class="map">
                 <i id="marker" class="fas fa-map-pin"></i>
             </section>
+            <?php
+            if ((isset($user) && $user->get_pseudo() == $contributeur->get_pseudo()) || (isset($user)) && $user->get_role() == "admin") {
+                ?>
+                <form class="supprime-event" action="" method="post">
+                  <a href=""><button type="submit" name="rm-event">Supprimer cet event</button></a>
+                </form>
+            <?php
+            }
+            ?>
+
         </article>
     </main>
 </body>

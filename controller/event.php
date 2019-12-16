@@ -90,7 +90,9 @@ function get_interesser($pseudo)
     }
     return $interet;
 }
-
+function delete_event($id_event){
+    Event::delete_event($id_event);
+}
 /**
  * @var pseudo : le pseudo d'un utilisateur
  * @return interet[] : tout les évenement auquel l'utilisateur donnés en paramètre peut être interessé

@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($title) || !isset($url_image) || !isset($localisation) || !isset($id_event) || !isset($date))
+if(!isset($title) && !isset($url_image) && !isset($localisation) && !isset($id_event) && !isset($date))
 {
     $title = "title";
     $url_image = "default_event.jpg";

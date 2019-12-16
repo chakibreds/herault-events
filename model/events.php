@@ -220,6 +220,16 @@ class Event extends Model
         $res = $req->fetch();
         $this->id_event = (int) $res['id_event'];
     }
+    public static function delete_event($id_event){
+        $query = 'DELETE FROM events WHERE id_event = ?';
+        $param = array(
+            $id_event
+        );
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die(print_r($req->errorInfo(), TRUE));
+
+    }
 
     public function get_nombre_participant()
     {

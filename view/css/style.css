@@ -883,6 +883,17 @@ main.events article.event section.map i {
           transform: translate(-50%, -100%);
 }
 
+main.events article.event form.supprime-event {
+  margin-left: 240px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+main.events article.event form.supprime-event button {
+  color: white;
+  background-color: indianred;
+}
+
 footer {
   min-height: 40vh;
   width: 100%;

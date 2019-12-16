@@ -51,7 +51,7 @@ if (isset($_POST['modifier-profil']) && isset($user)) {
     $profil_adresse = $adresse_user;
 }
 
-?>  
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php
@@ -161,28 +161,25 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                             <div class="label-input">
                                 <label for="theme">Theme</label>
 
-                                <select name="theme" id="theme">
-                                    <?php
-                                        $themes = get_all_themes();
-
-                                        foreach ($themes as  $theme) {
-                                            ?>
-                                        <option value="<?= $theme ?>"><?= $theme ?></option>
-                                    <?php
-                                        }
-                                        ?>
+                                <select name="theme" id="theme"><?php
+                                                                    $themes = get_all_themes();
+                                                                    foreach ($themes as  $theme) {
+                                                                        ?> <option value="<?= $theme ?>"><?= $theme ?></option>
+                                <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="label-input">
-                                <label for="title">Titre</label>
+                                <label for="title" required>Titre</label>
                                 <input type="text" name="title" id="title" required />
                             </div>
                             <div class="label-input">
-                                <label for="date_event">Date</label>
+                                <label for="date_event" required>Date</label>
                                 <input type="date" name="date_event" id="date_event" />
                             </div>
                             <div class="label-input">
-                                <label for="heure_event">Heure</label>
+                                <label for="heure_event" required>Heure</label>
                                 <input type="time" name="heure_event" id="heure_event" />
                             </div>
                             <div class="label-input">
@@ -205,23 +202,23 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                         <section class="adresse">
                             <legend>Informations sur l'adresse</legend>
                             <div class="label-input">
-                                <label for="num_r">Numéro de la rue</label>
+                                <label for="num_r" required>Numéro de la rue</label>
                                 <input type="number" name="num_r" id="num_r" />
                             </div>
                             <div class="label-input">
-                                <label for="nom_r">Nom de la rue</label>
+                                <label for="nom_r" required>Nom de la rue</label>
                                 <input type="text" name="nom_r" id="nom_r" />
                             </div>
                             <div class="label-input">
-                                <label for="ville">Ville</label>
+                                <label for="ville" required>Ville</label>
                                 <input type="text" name="ville" id="ville" />
                             </div>
                             <div class="label-input">
-                                <label for="pays">Pays</label>
+                                <label for="pays" required>Pays</label>
                                 <input type="text" name="pays" id="pays" />
                             </div>
                             <div class="label-input">
-                                <label for="code_postal">Code postal</label>
+                                <label for="code_postal" required>Code postal</label>
                                 <input type="text" name="code_postal" id="code_postal" />
                             </div>
                             <div class="label-input">
@@ -344,7 +341,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                     <label for="nom">Entrez un utilisateur</label>
                                     <input type="text" name="user-pseduo-add" id="nom">
                                 </div>
-                                <button name = "ajout-contributeur" type="submit"><i class="fas fa-check"></i> Ajouter</button>
+                                <button name="ajout-contributeur" type="submit"><i class="fas fa-check"></i> Ajouter</button>
                             </div>
 
                             <div class="add-rm">
@@ -361,7 +358,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                                             ?>
                                     </select>
                                 </div>
-                                <button name = "supprime-contributeur" type="submit"><i class="fas fa-times"></i> Supprimer</button>
+                                <button name="supprime-contributeur" type="submit"><i class="fas fa-times"></i> Supprimer</button>
                             </div>
                         </section>
                     </form>
