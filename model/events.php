@@ -317,6 +317,8 @@ class Event extends Model
     {
         if ($this->url_image == "")
             return "default_event.jpg";
+        else if (substr($this->url_image,0,4) === 'http')
+            return $this->url_image;
         return 'event_' . $this->id_event . '_' . $this->url_image;
     }
 
