@@ -24,7 +24,7 @@ main.events {
         grid-template-columns: 3fr 1fr;
         grid-gap             : 20px;
 
-        div.image-event {
+        a.image-event ,div.image-event {
             grid-column        : 1 / 3;
             min-height         : 250px;
             background-size    : cover;

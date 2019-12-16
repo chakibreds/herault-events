@@ -4,14 +4,14 @@ session_start();
 require_once '../controller/path.php';
 require_once $dir_root . 'controller/all.php';
 
-$titre = "";
+$title = "";
 $ville = "";
 if (isset($_POST['search'])) {
-    $titre = isset($_POST['titre']) ? $_POST['titre'] : "";
+    $title = isset($_POST['title']) ? $_POST['title'] : "";
     $ville = isset($_POST['ville']) ? $_POST['ville'] : "";
     $date = isset($_POST['date']) ? $_POST['date'] : "";
     $theme = isset($_POST['theme']) ? $_POST['theme'] : "";
-    $events = find($titre, $ville, $date,$theme);
+    $events = find($title, $ville, $date,$theme);
 } else {
     $events = get_best_events(5);
 }
@@ -35,7 +35,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
         <aside class="explore">
             <h2>Les meilleurs évenements</h2>
             <form class="find" action="<?= $server_root ?>view/search.php" method="post">
-                <input type="text" name="titre" placeholder="Trouver un évenment..." class="find-event" />
+                <input type="text" name="title" placeholder="Trouver un évenment..." class="find-event" />
                 <button class="btn btn-search" name="search" type="submit"><i class="fas fa-search"></i></button>
             </form>
             <ul>
@@ -46,7 +46,7 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
         </aside>
         <article class="search">
             <form action="" method="post">
-                <input placeholder="Par mot clef" type="text" name="titre" value="<?= $titre ?>" id="titre">
+                <input placeholder="Par mot clef" type="text" name="title" value="<?= $title ?>" id="title">
                 <input placeholder="Par ville" type="text" name="ville" value="<?= $ville ?>" id="ville">
                 <div class="label-input">
                     <label for="date">Par dates </label>

@@ -15,6 +15,10 @@ if (isset($_GET['event']) || isset($_POST['event'])) {
 $event = new Event($_GET['event']);
 $contributeur = new User($event->get_pseudo_contributor());
 $adresse = new Adresse($event->get_id_adresse());
+$url_image = $event->get_url_image();
+if (substr($url_image, 0, 4) !== 'http') {
+    $url_image = $server_root . 'view/img/event/' . $url_image;
+}
 
 if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
     $user = unserialize($_SESSION['user']);
@@ -22,10 +26,10 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
 
 /* noter l'evenement */
 if (isset($_POST['note'])) {
-    if (!isset($_POST['rating'])) 
+    if (!isset($_POST['rating']))
         $_POST['rating'] = '0';
 
-    $user->noter($event->get_id_event(),$_POST['rating']);
+    $user->noter($event->get_id_event(), $_POST['rating']);
 }
 
 /* User participe ou s'interesse à un evenement */
@@ -69,21 +73,23 @@ if (isset($user)) {
             </form>
             <ul>
                 <?php
-                affiche_events(get_best_events(5), $dir_root, $server_root, true);
+                                        affiche_events(get_best_events(5), $dir_root, $server_root, true);
                 ?>
             </ul>
         </aside>
 
         <article class="event">
-            <div class="image-event" style="background-image : url('<?= $server_root ?>view/img/event/<?= $event->get_url_image() ?>');">
-                <?php
-                if ($event->is_terminer()) {
+            <a class="image-event" target="_blank" href="<?= $url_image ?>">
+                <div class="image-event" style="background-image : url('<?= $url_image ?>');">
+                    <?php
+                        if ($event->is_terminer()) {
                     ?>
-                    <span class="terminer">Passé</span>
-                <?php
-                }
-                ?>
-            </div>
+                        <span class="terminer">Passé</span>
+                    <?php
+                                                                        }
+                    ?>
+                </div>
+            </a>
             <h2><?= $event->get_titre_complet() ?></h2>
             <section class="description-event">
                 <h3>Description :</h3>
@@ -121,7 +127,7 @@ if (isset($user)) {
                         <i class="fas fa-calendar-plus"></i>
                         <span class="number"><?= $event->get_nombre_participant() ?></span>
                         <span class="text">
-                        Participants</span>
+                            Participants</span>
                     </div>
                     <div class="interesser card-note">
                         <i class="far fa-heart"></i>
@@ -129,24 +135,24 @@ if (isset($user)) {
                         <span class="text">Interessés</span>
                     </div>
                     <?php
-                    if ($event->is_terminer()) {
-                        ?>
+                                                                                                                if ($event->is_terminer()) {
+                    ?>
                         <div class="note card-note">
                             <i class="fas fa-marker"></i>
                             <span class="number"><?= $event->get_note() ?> / 5</span>
                             <span class="text">Note</span>
                         </div>
                     <?php
-                    }
+                                                                                                                }
                     ?>
                 </div>
                 <?php
-                if ($event->is_terminer() && isset($user) && $user->is_participe($event->get_id_event())) {
-                    ?>
+                                                                                                                if ($event->is_terminer() && isset($user) && $user->is_participe($event->get_id_event())) {
+                ?>
                     <form method="post" action="" class="donnez-note">
                         <legend>Donnez une note</legend>
                         <div class="star-rating">
-                            <input type="hidden" name="event" value="<?= $event->get_id_event()?>">
+                            <input type="hidden" name="event" value="<?= $event->get_id_event() ?>">
                             <input type="radio" id="5-stars" name="rating" value="5" />
                             <label for="5-stars" class="star"><i class="fas fa-star"></i></label>
                             <input type="radio" id="4-stars" name="rating" value="4" />
@@ -163,40 +169,40 @@ if (isset($user)) {
                         </button>
                     </form>
                 <?php
-                } else if (!$event->is_terminer() && isset($user)) {
-                    ?>
+                                                                                                                } else if (!$event->is_terminer() && isset($user)) {
+                ?>
                     <form action="" method="post" class="button-rejoindre-interesser">
                         <?php
-                        if (!$user->is_participe($event->get_id_event())) {
+                                                                                                                    if (!$user->is_participe($event->get_id_event())) {
                         ?>
-                        <button name="rejoindre" type="submit"><i class="fas fa-plus"></i>
-                            Rejoindre
-                        </button>
+                            <button name="rejoindre" type="submit"><i class="fas fa-plus"></i>
+                                Rejoindre
+                            </button>
                         <?php
-                        } else {
-                            ?>
-                        <button name="quitter" type="submit"><i class="fas fa-minus"></i>
-                            Quitter
-                        </button>
-                            <?php
-                        }
-                        if (!$user->is_interesse($event->get_id_event())) {
-                                ?>
+                                                                                                                    } else {
+                        ?>
+                            <button name="quitter" type="submit"><i class="fas fa-minus"></i>
+                                Quitter
+                            </button>
+                        <?php
+                                                                                                                    }
+                                                                                                                    if (!$user->is_interesse($event->get_id_event())) {
+                        ?>
                             <button name="interesser" type="submit"><i class="fas fa-heart"></i>
                                 Interesser
                             </button>
                         <?php
-                            } else {
-                                ?>
-                                <button name="desinteresser" type="submit"><i class="fas fa-heart-broken"></i>
+                                                                                                                    } else {
+                        ?>
+                            <button name="desinteresser" type="submit"><i class="fas fa-heart-broken"></i>
                                 Désinteresser
                             </button>
                         <?php
-                            }
-                            ?>
+                                                                                                                    }
+                        ?>
                     </form>
                 <?php
-                }
+                                                                                                                }
                 ?>
             </section>
             <h3>L'évenement sur la map : </h3>
@@ -207,8 +213,8 @@ if (isset($user)) {
     </main>
 </body>
 <?php
-$adresse->get_lat();
-require_once $dir_root . '/view/footer.php';
+                                                                                                                $adresse->get_lat();
+                                                                                                                require_once $dir_root . '/view/footer.php';
 ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -226,6 +232,6 @@ require_once $dir_root . '/view/footer.php';
 </html>
 <?php
 
-$end_time = array_sum(explode(' ', microtime()));
+                                                                                                                $end_time = array_sum(explode(' ', microtime()));
 
-logTime($dir_root, __FILE__, $begin_time, $end_time);
+                                                                                                                logTime($dir_root, __FILE__, $begin_time, $end_time);

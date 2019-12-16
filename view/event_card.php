@@ -9,9 +9,13 @@ if(!isset($title) || !isset($url_image) || !isset($localisation) || !isset($id_e
     $date = "Bientôt";
     $terminer = false;
 }
+
+if (substr($url_image,0,4) !== 'http') {
+    $url_image = $server_root . 'view/img/event/' . $url_image;
+}
 ?>
 <div class="events-card">
-    <div class="event-image" style="background-image: url('<?= $server_root  ?>view/img/event/<?=$url_image?>');">
+    <div class="event-image" style="background-image: url('<?=$url_image?>');">
         <?php
         if ($terminer) {
             ?>
