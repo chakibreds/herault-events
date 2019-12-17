@@ -113,6 +113,10 @@ function ajout_event($post, $pseudo, $upload_dir)
         return false;
     }
 }
+function delete_user($pseudo)
+{
+    User::delete_user($pseudo);
+}
 function ajout_theme($post)
 {
     if (isset($post['theme-ajout'])) {

@@ -33,6 +33,16 @@ main.profil {
 				margin-left: 0;
 				width      : 100%;
 			}
+			form.supprime-user{
+                button{
+                    color: white;
+					background-color:indianred;
+					&:hover
+					{
+						border-color: white;
+					}
+                }
+            }
 
 		}
 

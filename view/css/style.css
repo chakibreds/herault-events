@@ -885,7 +885,7 @@ main.events article.event section.map i {
 }
 
 main.events article.event form.supprime-event {
-  margin-left: 240px;
+  margin-left: 230px;
   -ms-grid-column-align: center;
       justify-self: center;
 }
@@ -893,6 +893,10 @@ main.events article.event form.supprime-event {
 main.events article.event form.supprime-event button {
   color: white;
   background-color: indianred;
+}
+
+main.events article.event form.supprime-event button:hover {
+  border-color: white;
 }
 
 footer {
@@ -1089,6 +1093,15 @@ main.profil aside.profil-information ul li.pseudo {
 main.profil aside.profil-information ul button {
   margin-left: 0;
   width: 100%;
+}
+
+main.profil aside.profil-information ul form.supprime-user button {
+  color: white;
+  background-color: indianred;
+}
+
+main.profil aside.profil-information ul form.supprime-user button:hover {
+  border-color: white;
 }
 
 main.profil aside.profil-information img {
@@ -2551,3 +2564,4 @@ main.index-hors-ligne .events-page .events-title p {
             flex-direction: column;
   }
 }
+/*# sourceMappingURL=style.css.map */

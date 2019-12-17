@@ -280,6 +280,16 @@ class User extends Model
         $req = $db->prepare($query);
         $req->execute($param) or die(print_r($req->errorInfo(),TRUE));
     }
+    public static function delete_user($pseudo)
+    {
+        $query = 'DELETE FROM user WHERE pseudo = ?';
+        $param = array(
+            $pseudo
+        );
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die(print_r($req->errorInfo(), TRUE));
+    }
     public static function delete_contributeur($pseudo)
     {
         $query = 'UPDATE user SET role_user = "visitor" WHERE pseudo = ? AND role_user!="admin"';
