@@ -624,6 +624,7 @@ main.events article.event a.image-event, main.events article.event div.image-eve
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 main.events article.event a.image-event:hover, main.events article.event div.image-event:hover {

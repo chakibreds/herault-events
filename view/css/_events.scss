@@ -32,6 +32,8 @@ main.events {
             border-bottom      : 1px solid $couleurPrincipal;
 
             @include shadow-card;
+
+            text-decoration: none;
         }
 
         h2 {
