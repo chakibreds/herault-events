@@ -1,3 +1,7 @@
+<?php
+$nb_events = Event::get_nb_events();
+echo 'nbevents : '.$nb_events; 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php
@@ -48,7 +52,7 @@ require $dir_root . 'view/head.php';
                 <h1>Trouver votre plaisir :</h1>
                 <p>
                     <b>Hérault Events</b> est un site web qui regroupe des événements qui se déroule dans le département de l'<a href="https://fr.wikipedia.org/wiki/H%C3%A9rault_(d%C3%A9partement)">Hérault</a>.<br>
-                    Nous proposant plus de <b>(inserer un nombre énorme ici)</b> événements. c'est pour dire que vous trouverez sûrement votre bonheur:
+                    Nous proposant plus de <b>(<?php$nb_events?>)</b> événements. c'est pour dire que vous trouverez sûrement votre bonheur:
                 </p>
             </div>
             <div class="events">

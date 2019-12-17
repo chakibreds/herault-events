@@ -276,6 +276,16 @@ class Event extends Model
             return -1;
         }
     }
+    public static function get_nb_events()
+    {
+        $query  = 'SELECT count(*) as nb_events FROM events';
+        $param = array();
+        $db = Model::dbConnect();
+        $req = $db->prepare($query);
+        $req->execute($param) or die("Event::get_nb_events()");
+        $res = $req->fetch();
+        return $res['nb_events'];
+    }
 
     public function get_id_event()
     {
