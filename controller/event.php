@@ -102,3 +102,7 @@ function get_peuvent_interesser($pseudo)
 {
     $interet = array();
 }
+function get_nb_events()
+{
+    return Event::get_nb_events();
+}
