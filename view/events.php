@@ -111,8 +111,14 @@ if (isset($user)) {
                     <li>Nombre de participant : <?= $event->get_nombre_participant() ?></li>
                     <li>Capacité max : <?= $event->get_max_participant() ?></li>
                     <li>Thème : <?= $event->get_theme() ?></li>
+                    <?php
+                    if ($event->has_adresse()) {
+                    ?>
                     <li>Ville : <?= $adresse->get_ville() ?></li>
                     <li>Rue : <?= $adresse->get_num_rue() . ' Rue ' . $adresse->get_nom_rue() ?></li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </section>
             <section class="contributeur-card">
@@ -140,7 +146,7 @@ if (isset($user)) {
                         <span class="text">Interessés</span>
                     </div>
                     <?php
-                                                                                                                if ($event->is_terminer()) {
+                    if ($event->is_terminer()) {
                     ?>
                         <div class="note card-note">
                             <i class="fas fa-marker"></i>
@@ -148,11 +154,11 @@ if (isset($user)) {
                             <span class="text">Note</span>
                         </div>
                     <?php
-                                                                                                                }
+                    }
                     ?>
                 </div>
                 <?php
-                                                                                                                if ($event->is_terminer() && isset($user) && $user->is_participe($event->get_id_event())) {
+                if ($event->is_terminer() && isset($user) && $user->is_participe($event->get_id_event())) {
                 ?>
                     <form method="post" action="" class="donnez-note">
                         <legend>Donnez une note</legend>
@@ -174,7 +180,7 @@ if (isset($user)) {
                         </button>
                     </form>
                 <?php
-                                                                                                                } else if (!$event->is_terminer() && isset($user)) {
+                } else if (!$event->is_terminer() && isset($user)) {
                 ?>
                     <form action="" method="post" class="button-rejoindre-interesser">
                         <?php
@@ -203,11 +209,11 @@ if (isset($user)) {
                                 Désinteresser
                             </button>
                         <?php
-                                                                                                                    }
+                        }
                         ?>
                     </form>
                 <?php
-                                                                                                                }
+                    }
                 ?>
             </section>
             <h3>L'évenement sur la map : </h3>
@@ -228,9 +234,9 @@ if (isset($user)) {
     </main>
 </body>
 <?php
-                                                                                                                $adresse->get_lat();
-                                                                                                                require_once $dir_root . '/view/footer.php';
+require_once $dir_root . '/view/footer.php';
 ?>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
@@ -238,15 +244,28 @@ if (isset($user)) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.0.1/css/ol.css" />
 
+<?php
+    if ($event->has_adresse()) {
+?>
 <script type="text/javascript">
     var lat = <?= $adresse->get_lat() ?>;
     var lon = <?= $adresse->get_lon() ?>;
 </script>
+<?php
+  } else {
+?>
+    <script type="text/javascript">
+    var lat = NaN;
+    var lon = NaN;
+</script>
+<?php
+  }
+?>
+
 <script src="<?= $server_root ?>view/js/map.js"></script>
 
 </html>
 <?php
 
-                                                                                                                $end_time = array_sum(explode(' ', microtime()));
-
-                                                                                                                logTime($dir_root, __FILE__, $begin_time, $end_time);
+$end_time = array_sum(explode(' ', microtime()));
+logTime($dir_root, __FILE__, $begin_time, $end_time);
