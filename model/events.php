@@ -271,10 +271,14 @@ class Event extends Model
                 return 0.0;
             }
             else
-                return (float) $res['moy'] - 1.0;
+                return round((float) $res['moy'],2) - 1.0;
         } else {
             return -1;
         }
+    }
+
+    public function has_adresse() {
+        return $this->id_adresse != NULL;
     }
 
     public function get_id_event()
