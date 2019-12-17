@@ -218,7 +218,7 @@ if (isset($user)) {
             if ((isset($user) && $user->get_pseudo() == $contributeur->get_pseudo()) || (isset($user)) && $user->get_role() == "admin") {
                 ?>
                 <form class="supprime-event" action="" method="post">
-                  <a href=""><button type="submit" name="rm-event">Supprimer cet event</button></a>
+                  <a href=""><button type="submit" name="rm-event"><i class="fas fa-trash-alt"></i>     Supprimer cet event</button></a>
                 </form>
             <?php
             }

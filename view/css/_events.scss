@@ -246,11 +246,15 @@ main.events {
         
             
             form.supprime-event{
-                margin-left: 240px;
+                margin-left: 230px;
                 justify-self: center;
                 button{
                     color: white;
                     background-color:indianred;
+                    &:hover
+					{
+						border-color: white;
+					}
                 }
             }
         }

@@ -50,6 +50,11 @@ if (isset($_POST['modifier-profil']) && isset($user)) {
     $adresse_user = new Adresse($user->get_adresse());
     $profil_adresse = $adresse_user;
 }
+if (isset($_POST['rm-user']) && isset($user)) {
+    delete_user($user->get_pseudo());
+
+    header('Location: '.$server_root . 'view/disconnect.php');
+}
 
 ?>
 <!DOCTYPE html>
@@ -87,6 +92,16 @@ if (isset($_SESSION['user']) && logged($_SESSION['user'])) {
                 <li class="membre">Membre depuis : <?= $profil_user->get_date_inscr() ?></li>
                 <li class="bio"><?= $profil_user->get_bio() ?></li>
                 <li class="contact"><a href="mailto:<?= $profil_user->get_email() ?>"><button type="button"><i class="fas fa-envelope"></i> Contacter</button></a></li>
+                
+                <?php
+                if (isset($user) && $user->get_pseudo() == $profil_user->get_pseudo()) {
+                    ?>
+                <li><form class="supprime-user" action="" method="post">
+                  <a href=""><button type="submit" name="rm-user"><i class="fas fa-user-slash"></i>   Supprimer compte</button></a>
+                </form></li>
+                <?php
+                }
+                ?>
             </ul>
         </aside>
         <article class="options">
