@@ -1,34 +1,74 @@
-/* 
-    CREATE [OR REPLACE ] TRIGGER nom_trigger
-    {BEFORE | AFTER | INSTEAD OF } {INSERT[OR] | UPDATE [OR] | DELETE} 
-    [OF col_name] ON table_name 
-    [REFERENCING OLD AS o NEW AS n]
-    [FOR EACH ROW] WHEN (condition)  
-    DECLARE   
-        Declaration-statements
-    BEGIN    
-        Executable-statements
-        EXCEPTION   
-            Exception-handling-statements
-    END;
- */
 
-DELIMITER //
+DELIMITER |
 
-CREATE TRIGGER CHK_EVENTS_ADRESSE
-BEFORE INSERT 
-ON events FOR EACH ROW
+DROP PROCEDURE IF EXISTS `throw_err`;
+CREATE PROCEDURE `throw_err`(IN msg VARCHAR(255))
 BEGIN
-    IF (gps_coord IS NULL AND id_adresse IS NULL) THEN
-        INSERT INTO ERREUR_INSERT(TEXT_ERREUR) VALUES('ERR_CHK_EVENTS_ADRESSE');
-    END IF;
-
-END//
+    SIGNAL sqlstate '45000' SET MESSAGE_TEXT = msg;
+END|
 
 DELIMITER ;
 
+DELIMITER | 
 
+-- TRIGGER qui vérifie qu'un utilisateur à plus de 12 ans 
 
+DROP TRIGGER IF EXISTS `BEFORE_INSERT_USER`;
+CREATE TRIGGER `BEFORE_INSERT_USER` BEFORE INSERT ON `user` FOR EACH ROW
+BEGIN
+    CALL throw_err('ERR');
+    IF (DATEDIFF(DATE(NOW()),NEW.date_nai) < (12 * 365)) THEN
+        CALL throw_err(CONCAT('cette date : ',NEW.date_nai,' ne respecte pas l age de 12 ans'));
+    END IF;
+END |
 
+DROP TRIGGER IF EXISTS `BEFORE_UPDATE_USER`;
+CREATE TRIGGER `BEFORE_UPDATE_USER` BEFORE UPDATE ON `user` FOR EACH ROW
+BEGIN
+    IF (DATEDIFF(DATE(NOW()),NEW.date_nai) < (12 * 365)) THEN
+        CALL throw_err(CONCAT ('cette date : ',NEW.date_nai,' ne respecte pas l age de 12 ans'));
+    END IF;
+END |
 
-/* CONSTRAINT CHK_events_adresse CHECK (gps_coord IS NOT NULL OR id_adresse IS NOT NULL),*/ 
+DELIMITER ;
+
+DELIMITER |
+
+-- un trigger qui verifie que le contributeur d'evenement peut bien contribuer (n'est pas un visiteur seulement)
+
+DROP TRIGGER IF EXISTS `BEFORE_INSERT_EVENT`;
+CREATE TRIGGER `BEFORE_INSERT_EVENT` BEFORE INSERT ON `events` FOR EACH ROW
+BEGIN
+    DECLARE user_role ENUM('visitor', 'contributor', 'admin');
+    SELECT role_user INTO user_role FROM user WHERE pseudo = NEW.pseudo_contributor;
+
+    IF (user_role <> 'contributor' AND user_role <> 'admin') THEN
+        CALL throw_err(CONCAT("l'utilisateur ", NEW.pseudo_contributor , " ne peut pas contribuer"));
+    END IF;
+END|
+
+DROP TRIGGER IF EXISTS `BEFORE_INSERT_EVENT`;
+CREATE TRIGGER `BEFORE_INSERT_EVENT` BEFORE UPDATE ON `events` FOR EACH ROW
+BEGIN
+    DECLARE user_role VARCHAR(15);
+    SET user_role = (SELECT role_user FROM user WHERE pseudo = NEW.pseudo_contributor);
+    IF (user_role = 'visitor') THEN
+        CALL throw_err(CONCAT("l'utilisateur ", NEW.pseudo_contributor , " ne peut pas contribuer"));
+    END IF;
+END|
+
+DELIMITER ;
+
+/**
+    TODO 
+    - TRIGGER:
+        *- brefore : check id_contributor in events is contrubutor or admin (on events)
+        * brefore : min_participant must be < to max_participant
+        * brefore : date_event à l'insertion doit être > à NOW()
+        * after : insertion dans participate insere le meme pseudo et event dans interested
+    - FONCTION:
+        * calcul la note total d'un events
+        * calcul le nombre de participant pour un evenement
+        * calcul le nombre de personnes interesser pour une evenement
+        * calculer le nombre d'évenement
+**/

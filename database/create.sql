@@ -18,7 +18,6 @@ DROP TABLE IF EXISTS theme;
 /* 
     Création des tables
 */
-/* Table adress*/
 CREATE TABLE adresse (
     id_adresse INT AUTO_INCREMENT,
     num_rue INT NOT NULL,
@@ -30,7 +29,6 @@ CREATE TABLE adresse (
     CONSTRAINT PK_adresse PRIMARY KEY (id_adresse)
 );
 
-/* Table user */
 CREATE TABLE user (
     pseudo VARCHAR(100),
     nom VARCHAR(100) NOT NULL,
@@ -49,12 +47,10 @@ CREATE TABLE user (
     CONSTRAINT FK_user_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse)
 );
 
-/* table theme */
 CREATE TABLE theme(
     titre VARCHAR(100),
     CONSTRAINT PK_theme PRIMARY KEY (titre)
 );
-/*table event*/
 CREATE TABLE events (
     id_event INT AUTO_INCREMENT,
     titre VARCHAR(255) NOT NULL,
@@ -63,9 +59,7 @@ CREATE TABLE events (
     min_participant INT,
     max_participant INT,
     id_adresse INT,
-    url_image VARCHAR(255) ,
-    /* check don't work here, implements a trigger */
-    /* CONSTRAINT CHK_events_adresse CHECK (gps_coord IS NOT NULL OR id_adresse IS NOT NULL),*/ 
+    url_image VARCHAR(255),
     pseudo_contributor VARCHAR(100) ,
     theme VARCHAR(100) ,
     CONSTRAINT PK_events PRIMARY KEY (id_event),
@@ -75,7 +69,6 @@ CREATE TABLE events (
 
 );
 
-/*table commentaire*/
 CREATE TABLE commentaire(
     id_event INT NOT NULL,
     pseudo VARCHAR(100),
@@ -86,7 +79,6 @@ CREATE TABLE commentaire(
     CONSTRAINT FK_commentaire_user FOREIGN KEY (pseudo) REFERENCES user(pseudo) ON DELETE CASCADE
 );
 
-/*table participate*/
 CREATE TABLE participate(
     id_event INT NOT NULL,
     pseudo VARCHAR(100),
@@ -96,7 +88,6 @@ CREATE TABLE participate(
     CONSTRAINT FK_participate_user FOREIGN KEY (pseudo) REFERENCES user(pseudo) ON DELETE CASCADE
 );
 
-/*table interested*/
 CREATE TABLE interested(
     id_event INT NOT NULL,
     pseudo VARCHAR(100),
@@ -104,14 +95,3 @@ CREATE TABLE interested(
     CONSTRAINT FK_interested_events FOREIGN KEY (id_event) REFERENCES events(id_event) ON DELETE CASCADE,
     CONSTRAINT FK_interested_user FOREIGN KEY (pseudo) REFERENCES user(pseudo) ON DELETE CASCADE
 );
-
-
-/* TABLES STOCKANT LES ERREURS QUI PEUVENT ARRIVER */
-
-/* LES ERREUR D'INSERTION */
-DROP TABLE IF EXISTS ERREUR_INSERT;
-CREATE TABLE ERREUR_INSERT(
-    TEXT_ERREUR VARCHAR(255) NOT NULL UNIQUE,
-    CONSTRAINT PK_ERREUR_INSERT PRIMARY KEY (TEXT_ERREUR)
-);
-
