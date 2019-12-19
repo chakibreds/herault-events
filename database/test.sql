@@ -44,3 +44,26 @@ system echo "\nSupression des tuples de test\n";
 
 DELETE FROM `user` WHERE pseudo = 'IamVisitor';
 DELETE FROM `events` WHERE id_event = -1;
+
+system echo "\nTest des Procédures\n";
+-- FUNCTION note_event
+SELECT note_event(2);
+
+-- PROCEDURE  events_users_par_annee
+CALL events_users_par_annee('2019','events');
+CALL events_users_par_annee('2017','utilisateurs');
+
+
+-- FUNCTION nb_participants
+SELECT nb_participants(2);
+
+-- FUNCTION nb_interesses
+SELECT nb_interesses(2);
+
+-- PROCEDURE  events_par_commentaires
+CALL events_par_commentaires('desc');
+
+-- FUNCTION classement_event
+SELECT classement_event(2);
+
+system echo "\nFin des test des Procédures\n";
