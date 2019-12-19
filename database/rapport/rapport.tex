@@ -140,21 +140,21 @@ Ensuite nous avons réaliser le modèle relationnel :
 Enfin on a écrit le script sql permettant de créer les tables du modèle relationnel (MYSQL).
 \section{Les procédures}
 \begin{description}
-	\item[ throw\_err : ] C'est une procédure .
+	\item[ throw\_err : ] C'est une procédure qui jette une erreur et affiche  un message donné en paramètres, elle est utilisé dans les triggers et les procédures pour les arrêtées avec une erreur.
 	 
-	\item[ ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul sa note moyenne.
+	\item[ ] C'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul sa note moyenne.
 	\item[] 
-	\item[nb\_participate : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre de particpants à cet évenement.
+	\item[nb\_participate : ] C'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre de particpants à cet évenement.
 \end{description}
 \section{Les fonctions}
 \begin{description}
 	
-	\item[note\_event : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul sa note moyenne.
+	\item[note\_event : ] C'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul sa note moyenne.
 	
-	\item[nb\_participate : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre de particpants à cet évenement.
+	\item[nb\_participate : ] C'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre de particpants à cet évenement.
 	
-	\item[nb\_interesses : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre d'intéressés à cet évenement.
-	\item[classement\_event : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et retourne le classement de l'évenemets par note moyenne, c'est à dire son classement parmi tous les évenements, s'il y'a des évenements de même note, la fonction retourne son classement par note et par son id(du plus petit au plus grand).
+	\item[nb\_interesses : ] C'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre d'intéressés à cet évenement.
+	\item[classement\_event : ] C'est une fonction, elle prend en paramètres un id\_event(un évenement) et retourne le classement de l'évenemets par note moyenne, c'est à dire son classement parmi tous les évenements, s'il y'a des évenements de même note, la fonction retourne son classement par note et par son id(du plus petit au plus grand).
 	
 	
 \end{description}
