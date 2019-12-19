@@ -50,7 +50,7 @@ system echo "\nTest des Procédures\n";
 SELECT note_event(2);
 
 -- PROCEDURE  events_users_par_annee
-CALL events_users_par_annee('2019','events');
+CALL events_users_par_annee('2020','events');
 CALL events_users_par_annee('2017','utilisateurs');
 
 
@@ -64,6 +64,7 @@ SELECT nb_interesses(2);
 CALL events_par_commentaires('desc');
 
 -- FUNCTION classement_event
-SELECT classement_event(2);
+SELECT id_event , note_event(id_event) from events ORDER BY note_event(id_event) DESC;  
+SELECT classement_event(29);
 
 system echo "\nFin des test des Procédures\n";
