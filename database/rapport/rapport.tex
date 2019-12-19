@@ -96,7 +96,7 @@ Tout d'abord nous avons modélisé notre base de données de la manière suivant
   \caption{Modèl E/A}
 \end{figure}
 
-\subsection{Explication du Scéma}
+\subsection{Explication du Schéma}
 
 \subsubsection*{Les tables}
 
@@ -117,27 +117,47 @@ Tout d'abord nous avons modélisé notre base de données de la manière suivant
 \subsubsection*{Les association}
 
 \begin{description}
-	\item[Contribue : ] zeb zeb zeb \lipsum[1]
-	\item[Participate : ] zeb zeb zeb \lipsum[1]
-	\item[Interested : ] zeb zeb zeb \lipsum[1]
-	\item[Commentaire : ] zeb zeb zeb \lipsum[1]
-	\item[Habite : ] zeb zeb zeb \lipsum[1]
-	\item[Locate : ] zeb zeb zeb \lipsum[1]
-	\item[A\_pour\_themes : ] zeb zeb zeb \lipsum[1]
+	
+	\item[Participate : ] cette association permet de stocker les participation des utilisateurs à des évenements.C'est à dire un utlisateur peut participer à plusieurs évenements comme ne pas participer à aucun évenement et un évenement peut avoir aucun ou plusieurs participants. C'est pareil pour les autres associations commentaires et interested
+	
+	\item[contribuer : ] permet de stocker un utillisateur qui sera un contributeur dans un ou plusieurs évenements. C'est pareil pour les autres associations père/fils. 
+	
+	
 \end{description}
 
 \subsection{Modèle logique de données}
+Ensuite nous avons réaliser le modèle relationnel : 
+\\	
+\textbf{adresse} (\underline{id\_adresse},num\_rue,nom\_rue,ville,pays,code\_postal,additional\_adresse)\\
+\textbf{user}(\underline{pseudo},nom,prenom,date\_nai,email,tel,mdp,date\_inscr,role,\textit{id\_adresse})\\
+\textbf{events}(\underline{id\_event},titre,date,url\_image,description,min-participant,max-participant,\textit{pseudo\_contributeur},\textit{id\_adresse},\textit{theme})\\
+\textbf{thème}(\underline{titre})\\
+\textbf{particiapte}(\underline{\textit{pseudo},\textit{id\_event}},note)\\
+\textbf{interested}(\underline{\textit{pseudo},\textit{id\_event}})\\
+\textbf{commentaires}(\underline{\textit{pseudo},\textit{id\_event}},text,date)\\
 
-\lipsum[1]
-
+\subsection{Traduction du modèle relationnel en Langage sql (Définition des données)}
+Enfin on a écrit le script sql permettant de créer les tables du modèle relationnel (MYSQL).
 \section{Les procédures}
-
-Puis pour mieux structurer les differents fichiers sources nous avons decidé d'utiliser la structure MVC (pour Model View Controller). Nous avons donc stocker tout nos fichiers dans trois dossiers : Model, View et Controller. Les fichiers du model se charge d'intéragir avec la base de données, les fichiers dans le dossier view se charge d'afficher et de donnez du style à nos pages, enfin les fichiers du dossier Controller fait la liason entre le model et les View. (voir : https://fr.wikipedia.org/wiki/Mod\%C3\%A8le-vue-contr\%C3\%B4leur).
-
-
-Vu le temps qu'il nous a été accordé, on a décidé d'écrire tout les codes sources de zéro (from Scratch) sans utiliser de framework. 
-Les fichiers css on été écrit en SASS.
-
+\begin{description}
+	\item[ throw\_err : ] C'est une procédure .
+	 
+	\item[ ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul sa note moyenne.
+	\item[] 
+	\item[nb\_participate : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre de particpants à cet évenement.
+\end{description}
+\section{Les fonctions}
+\begin{description}
+	
+	\item[note\_event : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul sa note moyenne.
+	
+	\item[nb\_participate : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre de particpants à cet évenement.
+	
+	\item[nb\_interesses : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre d'intéressés à cet évenement.
+	\item[classement\_event : ] c'est une fonction, elle prend en paramètres un id\_event(un évenement) et retourne le classement de l'évenemets par note moyenne, c'est à dire son classement parmi tous les évenements, s'il y'a des évenements de même note, la fonction retourne son classement par note et par son id(du plus petit au plus grand).
+	
+	
+\end{description}
 \section{Les triggers}
 
 Sur toutes les foncionnalitées demandées, nous les avons toutes implementées sauf :
@@ -150,7 +170,6 @@ Par contre, nous avons implementé la possibilité pour un utilisateur, une fois
 
 On a aussi ajouté la possibilité pour un utilisateur de s'interessé à un événement avant d'y participer.
 
-\section{Les fonctions}
 
 \section{Conclusion}
 
