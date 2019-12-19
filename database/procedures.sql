@@ -1,4 +1,4 @@
-
+--calcul la note moyenne d'un évenement donné
 DROP FUNCTION IF EXISTS `note_event`;
 DELIMITER |
 CREATE FUNCTION `note_event` (event_id INT)
@@ -14,7 +14,7 @@ DECLARE moy_note FLOAT;
 END|
 
 DELIMITER ;
-
+--select les évenements ou les utilisateurs d'une année donnée
 DROP PROCEDURE IF EXISTS `events_users_par_annee`;
 DELIMITER |
 CREATE PROCEDURE `events_users_par_annee` (IN annee VARCHAR(4),IN user_event ENUM('events','utilisateurs'))
@@ -29,7 +29,7 @@ BEGIN
     
 END|
 DELIMITER ;
-
+--calcul le nombre de particicpants
 DROP FUNCTION IF EXISTS `nb_participants`;
 DELIMITER |
 CREATE FUNCTION `nb_participants` (event_id INT)
@@ -44,7 +44,7 @@ DECLARE nb_part INT;
      RETURN nb_part;
 END|
 DELIMITER ;
-
+--calcul le nombre de personnes intéressées
 DROP FUNCTION IF EXISTS `nb_interesses`;
 DELIMITER |
 CREATE FUNCTION `nb_interesses` (event_id INT)
@@ -59,7 +59,7 @@ DECLARE nb_intss INT;
      RETURN nb_intss;
 END|
 DELIMITER ;
-
+--select les évenements par nombre de commentaires en ordre ascendant ou descendant
 DROP PROCEDURE IF EXISTS `events_par_commentaires`;
 DELIMITER |
 CREATE PROCEDURE `events_par_commentaires` (IN asc_desc VARCHAR(4))
@@ -73,7 +73,7 @@ BEGIN
     END IF;
 END|
 DELIMITER ;
-
+--retourne le classement d'un évenements donné par note moy(s'il y'a des évenements de même note moyenne la function retourne l'évenement en première position à cause de l'inférieur strictement)
 
 DROP FUNCTION IF EXISTS `classement_event`;
 DELIMITER | 
