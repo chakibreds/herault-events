@@ -2,3 +2,9 @@
 view/css/*.css.map
 model/mysqlUserName.php
 log/*
+
+## Core latex/pdflatex auxiliary files:
+**/tmp_tex_files/
+**/tmp_tex_files/*
+
+.vscode

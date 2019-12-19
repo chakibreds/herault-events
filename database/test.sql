@@ -44,13 +44,3 @@ system echo "\nSupression des tuples de test\n";
 
 DELETE FROM `user` WHERE pseudo = 'IamVisitor';
 DELETE FROM `events` WHERE id_event = -1;
-
-/* 
-INSERT INTO `user` (`pseudo`, `nom`, `prenom`, `date_nai`, `email`, `mdp`, `date_inscr`) 
-VALUES ('abraham80000', 'Reilly', 'Shad', '2019-11-27', 'obalistreri@exae.net', ' ', '2019-07-04 10:51:42');
-
-INSERT INTO `events` (`id_event`, `titre`, `date_event`, `description_event`, `min_participant`, `max_participant`, `id_adresse`, `url_image`, `pseudo_contributor`, `theme`) VALUES
-(1, 'Évenement 1', '2019-11-07 17:00:00', 'description de l\'évenement 1', 5, 1000, 2, NULL, 'Y2ssam', 'informatique'),
-(2, 'Évenement 2', '2019-12-06 18:00:00', 'description de l\'évenement 2', 100, 10000, 1, NULL, 'chakibReds', 'informatique');
-
-*/
