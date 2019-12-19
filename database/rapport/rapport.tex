@@ -128,13 +128,13 @@ Tout d'abord nous avons modélisé notre base de données de la manière suivant
 \subsection{Modèle logique de données}
 Ensuite nous avons réaliser le modèle relationnel : 
 \\	
-\textbf{adresse} (\underline{id\_adresse},num\_rue,nom\_rue,ville,pays,code\_postal,additional\_adresse)\\
-\textbf{user}(\underline{pseudo},nom,prenom,date\_nai,email,tel,mdp,date\_inscr,role,\textit{id\_adresse})\\
-\textbf{events}(\underline{id\_event},titre,date,url\_image,description,min-participant,max-participant,\textit{pseudo\_contributeur},\textit{id\_adresse},\textit{theme})\\
+\textbf{adresse} (\underline{id\_adresse}, num\_rue, nom\_rue, ville, pays, code\_postal, additional\_adresse)\\
+\textbf{user}(\underline{pseudo}, nom, prenom, date\_nai, email, tel, mdp, date\_inscr, role, \textit{id\_adresse})\\
+\textbf{events}(\underline{id\_event}, titre, date, url\_image, description, min-participant, max-participant, \textit{pseudo\_contributeur}, \textit{id\_adresse}, \textit{theme})\\
 \textbf{thème}(\underline{titre})\\
-\textbf{particiapte}(\underline{\textit{pseudo},\textit{id\_event}},note)\\
-\textbf{interested}(\underline{\textit{pseudo},\textit{id\_event}})\\
-\textbf{commentaires}(\underline{\textit{pseudo},\textit{id\_event}},text,date)\\
+\textbf{particiapte}(\underline{\textit{pseudo}, \textit{id\_event}}, note)\\
+\textbf{interested}(\underline{\textit{pseudo}, \textit{id\_event}})\\
+\textbf{commentaires}(\underline{\textit{pseudo}, \textit{id\_event}}, text, date).\\
 
 \subsection{Traduction du modèle relationnel en Langage sql (Définition des données)}
 Enfin on a écrit le script sql permettant de créer les tables du modèle relationnel (MYSQL).
@@ -142,9 +142,8 @@ Enfin on a écrit le script sql permettant de créer les tables du modèle relat
 \begin{description}
 	\item[ throw\_err : ] C'est une procédure qui jette une erreur et affiche  un message donné en paramètres, elle est utilisé dans les triggers et les procédures pour les arrêtées avec une erreur.
 	 
-	\item[ ] C'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul sa note moyenne.
-	\item[] 
-	\item[nb\_participate : ] C'est une fonction, elle prend en paramètres un id\_event(un évenement) et calcul le nombre de particpants à cet évenement.
+	\item[events\_users\_par\_annee] C'est une Procédure, elle prend en paramètres une année et une chaîne de caractères(events ou utilisateurs),si le deuxième paramètres est events, la procédure affiche les évenements de l'année donnée en paramètres, si non elle affiche les utilisateurs inscrit pendant l'année donnée en arguments.
+	\item[events\_par\_commentaires : ] C'est une Procédure, elle prend en paramètres une chaîne de caractères (asc ou desc pour l'ordre), elle ordonne les évenements par nombre de commentaires soit par ordre croissant ou décroissant selon la chaîne donnée en paramètres.
 \end{description}
 \section{Les fonctions}
 \begin{description}
@@ -174,13 +173,7 @@ On a aussi ajouté la possibilité pour un utilisateur de s'interessé à un év
 \section{Conclusion}
 
 \subsection{Les problèmes recontrés}
-
-Lors du développement du projet, nous n'avons rencontré aucun problème particulier. En revanche lors du déploiment de l'application sur le serveur de la faculté des sciences, nous avons recontrés deux problèmes que nous n'avons pas pu résoudre.
-
-\begin{itemize}
-	\item La fonction PHP `curl\_exec()` qui permet de récuperer des données via des requêtes HTTP ne fonctionne pas. ce qui est génant car elle nous permet de récuperer les coordonnées GPS d'une adresse donnée. (la map ne fonctionne donc pas sur le serveur de la fac)
-	\item Le serveur ne nous permet pas d'uploader des images. Il est donc impossible de mettre des images de profil et des images pour des événements.
-\end{itemize}
+On a rencontré quelques problèmes concernant la syntaxe mysql, qui était un peu difficile pour créer des triggers et des procédures, aussi 
 
 \subsection{Les compètences acquises}
 

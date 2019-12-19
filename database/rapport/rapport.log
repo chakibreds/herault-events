@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.12)  19 DEC 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.12)  19 DEC 2019 17:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -626,13 +626,13 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 107.
  [1 </home/chakib-reds/Bureau/project/herault-events/database/rapport/img/modelisation.jpeg>]
-Overfull \hbox (156.61302pt too wide) in paragraph at lines 129--138
-\T1/cmr/bx/n/10.95 events\T1/cmr/m/n/10.95 ($[]$,titre,date,url_image,description,min-participant,max-participant,\T1/cmr/m/it/10.95 pseudo_contributeur\T1/cmr/m/n/10.95 ,\T1/cmr/m/it/10.95 id_adresse\T1/cmr/m/n/10.95 ,\T1/cmr/m/it/10.95 theme\T1/cmr/m/n/10.95 ) 
+Underfull \hbox (badness 10000) in paragraph at lines 129--138
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--138
-
+Overfull \hbox (2.62566pt too wide) in paragraph at lines 146--147
+[]\T1/cmr/m/n/10.95 C'est une Pro-cé-dure, elle prend en pa-ra-mètres une chaîne
  []
 
 [2] [3] (/home/chakib-reds/Bureau/project/herault-events/database/rapport/rapport.aux) ) 
@@ -645,7 +645,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  41i,8n,32p,861b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on /home/chakib-reds/Bureau/project/herault-events/database/rapport/rapport.pdf (4 pages, 421991 bytes).
+Output written on /home/chakib-reds/Bureau/project/herault-events/database/rapport/rapport.pdf (4 pages, 422061 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
