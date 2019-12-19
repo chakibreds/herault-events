@@ -160,16 +160,15 @@ Enfin on a écrit le script sql permettant de créer les tables du modèle relat
 \end{description}
 \section{Les triggers}
 
-Sur toutes les foncionnalitées demandées, nous les avons toutes implementées sauf :
+On aussi créer quelques triggers, qui s'éxecute lors des insertions de tuples, afin d'empêcher d'inserer des tuples qui risque de génerer des incohérences de données (BEFORE) ou bien d'éxecuter des actions (AFTER).
 
-\begin{itemize}
-  \item La visualisation de tout les événements en mode cartographique, néanmoins nous avons pu implementées dans la page d'un seul événement donné, sa position dans une carte (avec OpenLayers).
-\end{itemize}
-
-Par contre, nous avons implementé la possibilité pour un utilisateur, une fois inscrit, de modifier ses informations personnels, ajouter une photo pour son profil et aussi la possibilité de supprimer son compte.
-
-On a aussi ajouté la possibilité pour un utilisateur de s'interessé à un événement avant d'y participer.
-
+\begin{description}
+	\item[BEFORE\_INSERT\_USER : ] Ce trigger vérifie qu'un utilisateur à plus de 12 avant de l'inserer (Respectivement 'BEFORE\_UPDATE\_CONTRIBUTEUR\_EVENT' lors de la mise à jour), il calcul la difference entre la date d'aujourd'hui et la date de naissance donnée. si l'utilisateur a moin de 12 ans alors une erreur est géneré (Erreur 45000).
+	\item[BEFORE\_INSERT\_CONTRIBUTEUR\_EVENT : ] Ce trigger vérifie, lors de l'insertion d'un événement (Respectivement 'BEFORE\_UPDATE\_CONTRIBUTEUR\_EVENT' lors de la mise à jour), que le contributeur n'a pas comme rôle 'visitor'. Ce derniér ne peuvent pas contribuer.
+	\item[BEFORE\_INSERT\_DATE\_EVENT : ] Ce trigger vérifie à l'inserion d'un événement (Respectivement 'BEFORE\_UPDATE\_DATE\_EVENT' lors de la mise à jour) que la date de ce dernier est supérieur à la date d'aujourd'hui. Il est impossible d'inserer un événement qui est déjà passé.
+	\item[BEFORE\_INSERT\_NOTE\_PARTICIPATE : ] Ce trigger empeche d'inserer de note dans la table \textit{participate} tant que l'evenement n'est pas encore passé.
+	\item[AFTER\_INSERT\_PARTICIPATE\_INTERESTED : ] Lorsqu'un utilisateur participe à un événement il est considéré comme étant intéressé par cette événement. Ce trigger insére donc l'utilisateur dans la tables \textit{interested} (si il n'y est pas déjà) après son insertion dans la table \textit{participate}.
+\end{description}
 
 \section{Conclusion}
 
